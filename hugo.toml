@@ -20,8 +20,8 @@ theme = "diary"
 
 [params]
 subtitle = "Life is a Battle!"
-enableGitalk = true
-enableGiscus = false
+enableGitalk = false
+enableGiscus = true
 favicon = "/assets/favicon/favicon.ico"
 enableReadingTime=true
 enableAutoDarkMode=true
@@ -36,10 +36,10 @@ title = "My Blog" # will set 'og:site_name'
 description = "记录生活 | 学习"  # will set 'og:description'
 
 [params.gitalk]
-  owner = "tom2almighty"
-  repo = "gitalk"
-  client_id = "Ov23licB0Jevs9TEhars"
-  client_secret = "2b4e370b706e1d9a5c737a7ed71fd49b27932916"
+  owner = ""
+  repo = ""
+  client_id = ""
+  client_secret = ""
 [taxonomies]
    tag = "tags"
    category = "categories"
@@ -52,17 +52,17 @@ theme="github-light"
 
 # Please visit https://giscus.app/ to generate settings.
 [params.giscus]
-    data_repo="username/repo"
-    data_repo_id="**************************"    
+    data_repo="tom2almighty/giscus"
+    data_repo_id="R_kgDOMhXXdQ"    
     data_category="General"
-    data_category_id="*********************"
+    data_category_id="Announcements"
     data_mapping="pathname"
     data_strict="0"
     data_reactions_enabled="1"
     data_emit_metadata="0"
     data_input_position="bottom"
     data_theme="preferred_color_scheme"
-    data_lang="en"
+    data_lang="zh-CN"
     crossorigin="anonymous"
 
 
