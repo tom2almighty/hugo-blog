@@ -21,7 +21,6 @@ theme = "diary"
 [params]
 subtitle = "Life is a Battle!"
 enableGitalk = true
-enableGiscus = false
 favicon = "/assets/favicon/favicon.ico"
 enableReadingTime=true
 enableAutoDarkMode=true
