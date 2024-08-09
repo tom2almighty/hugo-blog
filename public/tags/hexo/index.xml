@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hexo on Tom&#39;s Blog</title>
+    <link>http://localhost:1313/tags/hexo/</link>
+    <description>Recent content in Hexo on Tom&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <copyright>Tom Almighty</copyright>
+    <lastBuildDate>Wed, 08 May 2024 08:46:52 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hexo-Butterfly修改记录</title>
+      <link>http://localhost:1313/posts/e1485cce/</link>
+      <pubDate>Wed, 08 May 2024 08:46:52 +0000</pubDate>
+      <guid>http://localhost:1313/posts/e1485cce/</guid>
+      <description>准备 在 [BlogRoot]\source 文件夹下新建一个文件夹 css，该文件夹用于存放自定义的 css 样式，再新建一个名为 custom.css，修改代码存于此处。&#xA;在主题配置文件 [BlogRoot]\_config.butterfly.yml 文件中的 inject 配置项的 head 子项加入以下代码，引入刚刚创建的 custom.css 文件（这是相对路径的写法）&#xA;inject: head: - &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;/css/custom.css&amp;#34; media=&amp;#34;defer&amp;#34; onload=&amp;#34;this.media=&amp;#39;all&amp;#39;&amp;#34;&amp;gt; 背景一图流 /* 页脚与头图透明 */ #footer { background: transparent !important; } #page-header { background: transparent !important; } /* 白天模式遮罩透明 */ #footer::before { background: transparent !important; } #page-header::before { background: transparent !important; } /* 夜间模式遮罩透明 */ [data-theme=&amp;#34;dark&amp;#34;] #footer::before { background: transparent !important; } [data-theme=&amp;#34;dark&amp;#34;] #page-header::before { background: transparent !</description>
+    </item>
+    <item>
+      <title>使用Windows脚本快速创建文章</title>
+      <link>http://localhost:1313/posts/bat-creat-post/</link>
+      <pubDate>Tue, 23 Apr 2024 10:43:51 +0000</pubDate>
+      <guid>http://localhost:1313/posts/bat-creat-post/</guid>
+      <description>前言 Hexo 每次新建文章都需要打开终端-切换目录-创建文章-打开笔记软件-打开新创建的文章。这一套流程不免步骤繁琐，因此尝试使用脚本简化流程。&#xA;代码 新建一个 .bat 文件，写入下面的代码：&#xA;@echo off :input set /p title=&amp;#34;请输入文章标题: &amp;#34; echo.%title%|findstr /r /c:&amp;#34;[&amp;amp;^&amp;lt;&amp;gt;|]&amp;#34; &amp;gt;nul &amp;amp;&amp;amp; ( echo 标题不能包含以下特殊字符: ^&amp;amp;^&amp;lt;^&amp;gt;^|^ goto input ) cd /D D:\GitHub\hexo-blog start /wait cmd /c hexo new post &amp;#34;%title%&amp;#34; set post_path=&amp;#34;D:\GitHub\hexo-blog\source\_posts\%title%.md&amp;#34; start &amp;#34;&amp;#34; &amp;#34;D:\Program\Typora\Typora.exe&amp;#34; %post_path% 将代码中的站点根目录和 Typora 的程序路径改为自己的路径。&#xA;{% note info flat %} 文件另存为 ANSI 编码，否则会乱码 {% endnote %}&#xA;排坑 过程中发现文章可以正常创建，但是并不能正常使用程序打开，排查下来发现执行完创建 post 命令后终端会直接关闭，因此代码中 start /wait cmd /c hexo new post &amp;quot;%title%&amp;quot; 命令会在新的命令提示符窗口中执行 hexo new post 命令，并且原来的批处理脚本会等待 hexo new post 命令执行完成后再继续执行。</description>
+    </item>
+    <item>
+      <title>为Hexo博客添加豆瓣观影信息</title>
+      <link>http://localhost:1313/posts/hexo-douban/</link>
+      <pubDate>Tue, 23 Apr 2024 10:38:35 +0000</pubDate>
+      <guid>http://localhost:1313/posts/hexo-douban/</guid>
+      <description>前言 通过 hexo-douban 插件可以为自己的博客添加豆瓣观影和读书页面，项目地址如下：&#xA;{% ghcard mythsman/hexo-douban, theme=onedark%}&#xA;安装 首先在站点根目录安装插件：&#xA;npm install hexo-douban --save 配置 将下面的配置写入站点的配置文件 _config.yml 里 (不是主题的配置文件)&#xA;douban: id: 162448367 builtin: true item_per_page: 10 meta_max_line: 4 customize_layout: page book: path: books/index.html title: &amp;#39;This is my book title&amp;#39; quote: &amp;#39;This is my book quote&amp;#39; option: movie: path: movies/index.html title: &amp;#39;This is my movie title&amp;#39; quote: &amp;#39;This is my movie quote&amp;#39; option: game: path: games/index.html title: &amp;#39;This is my game title&amp;#39; quote: &amp;#39;This is my game quote&amp;#39; option: song: path: songs/index.</description>
+    </item>
+    <item>
+      <title>Hexo博客Fluid主题修改</title>
+      <link>http://localhost:1313/posts/fluid-modify/</link>
+      <pubDate>Sun, 21 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/fluid-modify/</guid>
+      <description>前言 记录对于 Hexo 主题 Fluid 的修改，来源于网络。&#xA;替换 Mac 风格代码块 在主题文件 themes\fluid\source\css 目录下新建样式文件，如 macpanel.styl，内容参考：&#xA;.highlight background: #21252b border-radius: 5px box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .4) padding-top: 30px &amp;amp;::before background: #fc625d border-radius: 50% box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b content: &amp;#39; &amp;#39; height: 12px left: 12px margin-top: -20px position: absolute width: 12px 修改主题配置文件_config.fluid.yml，找到 custom_css 配置项，引入刚刚新建的样式文件（此处引入.styl 文件无需加后缀）：&#xA;custom_css: - /css/macpanel 参考 Kevin&amp;rsquo;s Blog </description>
+    </item>
+    <item>
+      <title>Hugo 文章转 Hexo</title>
+      <link>http://localhost:1313/posts/993cff99/</link>
+      <pubDate>Wed, 17 Apr 2024 10:58:55 +0000</pubDate>
+      <guid>http://localhost:1313/posts/993cff99/</guid>
+      <description>前言 将博客换成了 Hexo，因此 Front Matter 信息需要修改，使用 ChatGPT 写了一个简单的 Python 更改脚本，修改的项目可以自己更改。&#xA;使用 新建一个 Python 文件，写入以下代码，将需要更改的文件放入一个文件夹，然后将文件夹路径填入代码对应位置，运行即可，需要提前安装 pyyaml 模块。&#xA;代码中将 cover 更改为 index_img，具体可以自己更改。&#xA;import os import re import yaml def modify_frontmatter(frontmatter, modifications): frontmatter = frontmatter.copy() for key, value in modifications.items(): if key == &amp;#39;_add&amp;#39;: frontmatter.update(value) # 添加键值对 elif key == &amp;#39;_delete&amp;#39;: for k in value: frontmatter.pop(k, None) # 删除键 elif key in frontmatter: if value[&amp;#39;new_key&amp;#39;] is not None: # 修改键名 frontmatter[value[&amp;#39;new_key&amp;#39;]] = frontmatter.pop(key) if value[&amp;#39;new_value&amp;#39;] is not None: # 修改键值 frontmatter[key if value[&amp;#39;new_key&amp;#39;] is None else value[&amp;#39;new_key&amp;#39;]] = value[&amp;#39;new_value&amp;#39;] return frontmatter def convert_frontmatter(folder_path, modifications): for root, dirs, files in os.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PDF on Tom&#39;s Blog</title>
+    <link>http://localhost:1313/tags/pdf/</link>
+    <description>Recent content in PDF on Tom&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <copyright>Tom Almighty</copyright>
+    <lastBuildDate>Thu, 09 May 2024 16:36:57 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/pdf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stirling-PDF：强大的PDF工具箱</title>
+      <link>http://localhost:1313/posts/stirling-pdf/</link>
+      <pubDate>Thu, 09 May 2024 16:36:57 +0000</pubDate>
+      <guid>http://localhost:1313/posts/stirling-pdf/</guid>
+      <description>前言 通常我们需要处理一些 PDF 文档，使用时再寻找工具多有不便，不妨自己部署一个工具箱。&#xA;Stirling-PDF 是一个使用 Docker 部署的本地托管的、基于 Web 的 PDF 操作工具，支持多种语言它使您能够对 PDF 文件进行各种操作，包括分割、合并、转换、重组、添加图像、旋转、压缩等。这个本地托管的 Web 应用程序已发展为包含一组全面的功能，可满足您的所有 PDF 要求。&#xA;项目功能强大，详细的 Feature 可查看项目地址：&#xA;{% ghcard Stirling-Tools/Stirling-PDF, theme=onedark%}&#xA;本站预览地址如下：&#xA;{% link Stirling-PDF, https://pdf.grew.cc, /img/link.png %}&#xA;部署 版本差异 Stirling PDF 有两个不同的版本：完整版和超精简版，二者相差 400MB 左右，版本区别如下：&#xA;Technology Ultra-Lite Full Java ✔️ ✔️ JavaScript ✔️ ✔️ Libre ✔️ Python ✔️ OpenCV ✔️ OCRmyPDF ✔️ Operation Ultra-Lite Full add-page-numbers ✔️ ✔️ add-password ✔️ ✔️ add-image ✔️ ✔️ add-watermark ✔️ ✔️ adjust-contrast ✔️ ✔️ auto-split-pdf ✔️ ✔️ auto-redact ✔️ ✔️ auto-rename ✔️ ✔️ cert-sign ✔️ ✔️ crop ✔️ ✔️ change-metadata ✔️ ✔️ change-permissions ✔️ ✔️ compare ✔️ ✔️ extract-page ✔️ ✔️ extract-images ✔️ ✔️ flatten ✔️ ✔️ get-info-on-pdf ✔️ ✔️ img-to-pdf ✔️ ✔️ markdown-to-pdf ✔️ ✔️ merge-pdfs ✔️ ✔️ multi-page-layout ✔️ ✔️ overlay-pdf ✔️ ✔️ pdf-organizer ✔️ ✔️ pdf-to-csv ✔️ ✔️ pdf-to-img ✔️ ✔️ pdf-to-single-page ✔️ ✔️ remove-pages ✔️ ✔️ remove-password ✔️ ✔️ rotate-pdf ✔️ ✔️ sanitize-pdf ✔️ ✔️ scale-pages ✔️ ✔️ sign ✔️ ✔️ show-javascript ✔️ ✔️ split-by-size-or-count ✔️ ✔️ split-pdf-by-sections ✔️ ✔️ split-pdfs ✔️ ✔️ compress-pdf ✔️ extract-image-scans ✔️ ocr-pdf ✔️ pdf-to-pdfa ✔️ remove-blanks ✔️ Docker 部署 可以使用 docker run 命令运行，如下：</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Surge on Tom&#39;s Blog</title>
+    <link>http://localhost:1313/tags/surge/</link>
+    <description>Recent content in Surge on Tom&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <copyright>Tom Almighty</copyright>
+    <lastBuildDate>Fri, 23 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/surge/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决Surge部分应用代理提示</title>
+      <link>http://localhost:1313/posts/surge/</link>
+      <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/surge/</guid>
+      <description>注意：Surge 更改了方式，目前已不需要此模块。&#xA;前言 很多应用在开启时会检测是否开启代理，如果开启则无法正常使用，这里记录一下如何解决此类问题。&#xA;跳过代理 有的应用只需要设跳过代理即可解决。&#xA;首先打开 Surge 的 工具-最近请求，查找目标 APP 的 域名，然后在首页-更多设置中将其添加入跳过代理的列表中。&#xA;如果此种方法不能解决，可尝试以下两种方法。&#xA;兼容模式 对于第一种方法无法解决的 APP ，可以打开 Surge 的兼容模式，位置在首页-更多设置-兼容性-Tun-Only。这种方法设置简单，然而存在一定问题。&#xA;部分应用在启动时会检查是否配置了代理，如果检查到代理就会停止工作（如浦发银行）。这是一种不专业的做法，代理既不会降低安全性，也是在企业网络下一种常见的配置。&#xA;Surge 在启动时，为了实现多种复杂功能，会同时配置虚拟代理设置和虚拟 VPN，从而引发上述应用的反代理检查。（部分同类应用没有此问题是因为只配置了虚拟 VPN）&#xA;该问题可通过开启 Surge 的兼容性模式 VIF Only 解决，但是开启后会导致 HTTP 相关高级功能失效，不推荐。&#xA;Surge 手册&#xA;如果希望更好地解决可使用第三种方法。&#xA;快捷指令 此方法其实是创建一个自动化的快捷指令，在每次打开特定应用时打开兼容模式，关闭应用时再关闭兼容模式，因为 Surge 模块的优先级比配置更高，因此使用模块控制兼容模式的开关，然后通过 API 控制模块的开关。&#xA;1. 打开 Surge HTTP API 功能 首先打开 Surge 的 API 功能。在配置文件 General 下加入如下设置：&#xA;[General] http-api = 你的密码@127.0.0.1:7170 2. 创建模块 创建一个模块控制兼容模式的开关，可以建立本地模块也可使用外部链接。&#xA;模块内容如下：&#xA;#!name=TUN Only #!desc=开启 Tun Only 兼容模式，解决某些 APP 不能正常连接的问题 #!</description>
+    </item>
+  </channel>
+</rss>

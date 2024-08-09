@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sub-Store on Tom&#39;s Blog</title>
+    <link>http://localhost:1313/tags/sub-store/</link>
+    <description>Recent content in Sub-Store on Tom&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <copyright>Tom Almighty</copyright>
+    <lastBuildDate>Mon, 08 Apr 2024 10:58:03 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/sub-store/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker部署Sub-Store后端</title>
+      <link>http://localhost:1313/posts/sub-store/</link>
+      <pubDate>Mon, 08 Apr 2024 10:58:03 +0800</pubDate>
+      <guid>http://localhost:1313/posts/sub-store/</guid>
+      <description>前言 Sub-Store 是一个适用于 Loon 、 Surge 和 Quantumult X 的高级订阅管理工具。完全本地解析，无订阅泄露的风险。相关地址及文档见下方：&#xA;Github 地址 使用教程 自建教程 部署 mkdir -p /opt/sub-store &amp;amp;&amp;amp; cd /opt/sub-store cat &amp;gt; /opt/sub-store/docker-compose.yml &amp;lt;&amp;lt;EOF version: &amp;#34;3.8&amp;#34; services: sub-store: image: xream/sub-store:latest container_name: sub-store restart: always volumes: - /opt/sub-store:/opt/app/data environment: - SUB_STORE_FRONTEND_BACKEND_PATH=/xxx # 20位随机字符串 - SUB_STORE_CRON=1 0 * * * ports: - 3001:3001 stdin_open: true tty: true EOF docker compose up -d 随机字符串生成可以使用下面的网站：&#xA;IT 工具箱 1Password 密码生成 反向代理 使用 Nginx 或者其他工具反向代理，端口为 3001，代理完成后访问的地址为：</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Alist on Tom&#39;s Blog</title>
+    <link>http://localhost:1313/tags/alist/</link>
+    <description>Recent content in Alist on Tom&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <copyright>Tom Almighty</copyright>
+    <lastBuildDate>Fri, 09 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/alist/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>部署Plex并挂载Alist</title>
+      <link>http://localhost:1313/posts/plex/</link>
+      <pubDate>Fri, 09 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/plex/</guid>
+      <description>前言 由于最近 Netflix 清退了一大批低价区用户，并且不退款，需要与银行争议，就开了一个月的土耳其区，然而土耳其第一个月并不能用土耳其之外的 IP 观看，白白浪费一个月，虽然最近尼日利亚的低价已经超过了巴基斯坦，但还是决定放弃了，花钱找罪受，不如买个 Emby 。 之后在网上看到可以通过服务器部署 Plex Media Server ，将 Alist 挂载到服务器，Plex 添加 Alist 目录，然后 infuse 连接 Plex ，这样可以实现刮削，并且全平台同步，还可以搭配 Aria2 下载自动上传网盘，达到良好的观影效果。&#xA;一、可执行程序部署 1. 部署 Plex 部署可以通过可执行程序，也可以通过 docker ，如果想挂载 alist ，记得和 alist 程序安装在同一台服务器。&#xA;部署程序&#xA;# centos yum -y update &amp;amp;&amp;amp; yum -y install wget https://downloads.plex.tv/plex-media-server-new/1.32.8.7639-fb6452ebf/redhat/plexmediaserver-1.32.8.7639-fb6452ebf.x86_64.rpm yum install plexmediaserver*.rpm # Debian/Ubuntu系统 apt-get -y update &amp;amp;&amp;amp; apt-get -y upgrade wget https://downloads.plex.tv/plex-media-server-new/1.32.8.7639-fb6452ebf/debian/plexmediaserver_1.32.8.7639-fb6452ebf_amd64.deb dpkg -i plexmediaserver*.deb 设置开机自启&#xA;systemctl enable plexmediaserver.service systemctl start plexmediaserver.</description>
+    </item>
+    <item>
+      <title>Alist部署</title>
+      <link>http://localhost:1313/posts/alist/</link>
+      <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/alist/</guid>
+      <description>前言 目前很多人通过网盘分享影视资源，如阿里云盘、115网盘等，同时还有微软的 E5 管理员账号，一个账号就有 5T 空间，用来做存储很不错，但是众多网盘分享文件很不方便，网盘自己的页面看视频也比较简陋，这个时候我们可以通过目录列表整合各种网盘，如以前的 oneindex、olaindex，最近常用的是 Alist ，支持网盘众多，部署方便。&#xA;Alist 是一个支持多种存储，支持网页浏览和 WebDAV 的文件列表程序，由 gin 和 Solidjs 驱动，程序开源地址以及文档如下：&#xA;Github&#xA;文档&#xA;一、官方 Alist 1. 安装 安装非常简单，直接使用官方的一键脚本&#xA;# 安装 curl -fsSL &amp;#34;https://alist.nn.ci/v3.sh&amp;#34; | bash -s install # 更新 curl -fsSL &amp;#34;https://alist.nn.ci/v3.sh&amp;#34; | bash -s update # 卸载 curl -fsSL &amp;#34;https://alist.nn.ci/v3.sh&amp;#34; | bash -s uninstall 默认安装在 /opt/alist 中。自定义安装路径，将安装路径作为第二个参数添加，必须是绝对路径（如果路径以 alist 结尾，则直接安装到给定路径，否则会安装在给定路径 alist 目录下），如 安装到 /root：&#xA;# Install curl -fsSL &amp;#34;https://alist.nn.ci/v3.sh&amp;#34; | bash -s install /root # update curl -fsSL &amp;#34;https://alist.</description>
+    </item>
+    <item>
+      <title>Alist自定义美化</title>
+      <link>http://localhost:1313/posts/alist-modify/</link>
+      <pubDate>Sun, 04 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/alist-modify/</guid>
+      <description>自定义头部 &amp;lt;!--Alist V3建议添加的，已经默认添加了，如果你的没有建议加上--&amp;gt; &amp;lt;script src=&amp;#34;https://polyfill.io/v3/polyfill.min.js?features=String.prototype.replaceAll&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;!--引入字体，全局字体使用--&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://npm.elemecdn.com/lxgw-wenkai-webfont@1.1.0/lxgwwenkai-regular.css&amp;#34; /&amp;gt; &amp;lt;!--不蒜子计数器--&amp;gt; &amp;lt;script async src=&amp;#34;https://busuanzi.icodeq.com/busuanzi.pure.mini.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;!-- Font6，自定义底部使用和看板娘使用的图标和字体文件--&amp;gt; &amp;lt;link type=&amp;#39;text/css&amp;#39; rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://npm.elemecdn.com/font6pro@6.3.0/css/fontawesome.min.css&amp;#34; media=&amp;#39;all&amp;#39;&amp;gt; &amp;lt;link href=&amp;#34;https://npm.elemecdn.com/font6pro@6.3.0/css/all.min.css&amp;#34; rel=&amp;#34;stylesheet&amp;#34;&amp;gt; &amp;lt;style&amp;gt; /* 去除通知栏 右上角 X */ .notify-render .hope-close-button { display: none; } /* 文字超长自动换行 */ .name-box .name { white-space: unset !important; overflow: unset !important; } /* 缩略图图片变大 代码中的160px 自己改 现在是注释状态若需要自行解除注释 */ /*.obj-box &amp;gt; div { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)) } .obj-box &amp;gt; div .item-thumbnail{ height: 100px; }*/ /* 图片API用法点进去都会有食用说明的,API来自网络不保证实效性稳定性自己测试 樱花：https://www.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<title>Nginx Proxy Manager：替代宝塔的又一选择</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="简洁美观的反向代理面板，快速反向代理并申请证书。">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:url" content="http://localhost:1313/posts/npm/">
+  <meta property="og:site_name" content="Tom&#39;s Blog">
+  <meta property="og:title" content="Nginx Proxy Manager：替代宝塔的又一选择">
+  <meta property="og:description" content="简洁美观的反向代理面板，快速反向代理并申请证书。">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-05-09T12:14:50+00:00">
+    <meta property="article:modified_time" content="2024-05-09T12:14:50+00:00">
+    <meta property="article:tag" content="宝塔">
+    <meta property="article:tag" content="Docker">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>console.log("Hello from 'layouts/partials/extended_head.html'")</script>
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档 | Archive
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类 | Categories
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签 | Tags
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%89%8d%e8%a8%80" class="nav-前言">
+									前言
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%83%a8%e7%bd%b2" class="nav-部署">
+									部署
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%8d%e5%90%91%e4%bb%a3%e7%90%86" class="nav-反向代理">
+									反向代理
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%b7%bb%e5%8a%a0%e7%bd%91%e7%ab%99" class="nav-添加网站">
+									添加网站
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%94%b3%e8%af%b7%e8%af%81%e4%b9%a6" class="nav-申请证书">
+									申请证书
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e6%b7%bb%e5%8a%a0%e9%9d%99%e6%80%81%e7%bd%91%e7%ab%99" class="nav-添加静态网站">
+									添加静态网站
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83" class="nav-参考">
+									参考
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="http://localhost:1313/">
+            Tom&#39;s Blog
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="http://localhost:1313/">
+        <div class="single-column-header-title">Tom&#39;s Blog</div>
+        
+        <div class="single-column-header-subtitle">Life is a Battle!</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+                
+            
+
+            <div class="post-head-wrapper"
+                
+                    
+                    
+                    style="background-image: url('https://image.dooo.ng/c/2024/05/09/663c62cc6cd93.webp')"
+                    
+                
+            >
+                <div class="post-title">
+                    Nginx Proxy Manager：替代宝塔的又一选择
+                    
+                    <div class="post-subtitle">
+                        简洁美观的反向代理面板，快速反向代理并申请证书。
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2024-05-09 12:14
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/%E5%BB%BA%E7%AB%99">建站</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/%E5%AE%9D%E5%A1%94">宝塔</a>
+                                &nbsp;
+                            
+                                <a href="/tags/docker">Docker</a>
+                                &nbsp;
+                            
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            2 min
+                            
+                            48 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h2 id="前言">前言</h2>
+<p>由于低版本的宝塔面板存在漏洞，高版本需要绑定手机，且占用较高，加上自己的服务大多是 <code>Docker</code> 部署，因此直接使用反向代理的面板更加方便。
+<code>Nginx Proxy Manager</code> 是一个 <code>Nginx</code> 的代理管理器，简单方便，并且支持一键申请证书、自动续期。
+项目地址如下：
+{% ghcard NginxProxyManager/nginx-proxy-manager, theme=onedark%}</p>
+<h2 id="部署">部署</h2>
+<p>使用 <code>Docker</code> 部署，命令如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir /opt/npm <span style="color:#f92672">&amp;&amp;</span> cd /opt/npm <span style="color:#f92672">&amp;&amp;</span> cat <span style="color:#e6db74">&lt;&lt; EOF &gt; docker-compose.yml
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">version: &#39;3.8&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">services:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  app:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    image: &#39;docker.io/jc21/nginx-proxy-manager:latest&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    restart: unless-stopped
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    ports:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      - &#39;80:80&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      - &#39;81:81&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      - &#39;443:443&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    volumes:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      - ./data:/data
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      - ./letsencrypt:/etc/letsencrypt
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>docker compose up -d
+</span></span></code></pre></div><p>安装完成后可以使用 <code>http://IP:81</code> 访问后台，默认的用户名密码如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Email:    admin@example.com
+</span></span><span style="display:flex;"><span>Password: changeme
+</span></span></code></pre></div><p>修改后即可正常使用，建议给后台地址反向代理。</p>
+<h2 id="反向代理">反向代理</h2>
+<h3 id="添加网站">添加网站</h3>
+<p>主界面点击 <code>Proxy Host</code>- <code>Add Proxy Host</code>
+<img src="https://nginxproxymanager.com/screenshots/proxy-hosts-add.png" alt="proxy-host">
+{% note success flat %}
+三个选项可以自己选择是否开启</p>
+<ul>
+<li><code>Cache Assets</code>: 缓存</li>
+<li><code>Block Common Exploits</code>: 屏蔽常见漏洞</li>
+<li><code>Websockets Support</code>: <code>Websockets</code> 支持
+{% endnote %}
+<code>Forward Hostname / IP</code> 处填写反向代理的网站，如果服务部署在本机，可以使用如下命令获取 <code>docker</code> 的网络接口的 <code>IP</code>，一般为 <code>172.17.0.1</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ip addr show docker0
+</span></span></code></pre></div><h3 id="申请证书">申请证书</h3>
+<p>依次点击 <code>SSL Certificates</code>-<code>Add SSL Cerfificate</code>-<code>Let's Encrypt</code>，填写域名，点击 <code>Use a DNS Challenge</code> 填写对应域名商的 <code>API</code>
+<img src="https://image.dooo.ng/c/2024/05/09/663c5ae445503.webp" alt="ssl">
+以 <code>Cloudflare</code>为例，申请一个自定义令牌，依次点击<code>创建令牌</code>-<code>编辑区域DNS</code>-<code>使用模板</code>，区域资源处选择对应的资源，可以选定所有区域，然后选择账号，最后点击<code>继续以显示摘要</code>-<code>创建令牌</code>，完成后只显示一次，注意保存。
+<img src="https://image.dooo.ng/c/2024/05/09/663c5bd77a2d6.webp" alt="">
+将创建的令牌填写到对应的位置</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dns_cloudflare_api_token <span style="color:#f92672">=</span> 0123456789abcdef0123456789abcdef01234567
+</span></span></code></pre></div><p>完成后反向代理的网站就可以在 <code>SSL</code> 选项卡选择对应的证书。</p>
+<h2 id="添加静态网站">添加静态网站</h2>
+<ol>
+<li>在 <code>/data</code> 下建立对应的网站路径</li>
+<li>将静态文件保存到里面</li>
+<li>添加反向代理，代理的地址填写服务器地址</li>
+<li>在 Advanced 设置中添加下面的设置，将其中的 <code>domain.com</code> 换成自己的域名即可</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">location</span> <span style="color:#e6db74">/</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">root</span> <span style="color:#e6db74">/data/domain.com</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="参考">参考</h2>
+<ul>
+<li><a href="https://blog.laoda.de/archives/host-static-sites-on-npm">如何在 Nginx Proxy Manager（NPM）上部署静态网站</a></li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2024-05-09</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/posts/stirling-pdf/">
+			下回<br>Stirling-PDF：强大的PDF工具箱
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/dockge/">
+			上回<br>Dockge：面向堆栈的docker-compose文件管理器
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="username/repo"
+        data-repo-id="**************************"
+        data-category="General"
+        data-category-id="*********************"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="http://localhost:1313/">
+    
+        <div class="nav-title">
+            Tom&#39;s Blog
+        </div>
+        
+        <div class="nav-subtitle">
+            Life is a Battle!
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档 | Archive
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类 | Categories
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签 | Tags
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Tom Almighty
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%89%8d%e8%a8%80" class="nav-前言">
+									前言
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%83%a8%e7%bd%b2" class="nav-部署">
+									部署
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%8d%e5%90%91%e4%bb%a3%e7%90%86" class="nav-反向代理">
+									反向代理
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%b7%bb%e5%8a%a0%e7%bd%91%e7%ab%99" class="nav-添加网站">
+									添加网站
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%94%b3%e8%af%b7%e8%af%81%e4%b9%a6" class="nav-申请证书">
+									申请证书
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e6%b7%bb%e5%8a%a0%e9%9d%99%e6%80%81%e7%bd%91%e7%ab%99" class="nav-添加静态网站">
+									添加静态网站
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83" class="nav-参考">
+									参考
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Tom Almighty
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

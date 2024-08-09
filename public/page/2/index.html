@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html><head>
+	<meta name="generator" content="Hugo 0.131.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<title>Tom&#39;s Blog</title>
+
+
+
+  
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="记录生活 | 学习">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:url" content="http://localhost:1313/">
+  <meta property="og:site_name" content="Tom&#39;s Blog">
+  <meta property="og:title" content="Tom&#39;s Blog">
+  <meta property="og:description" content="记录生活 | 学习">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="website">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+
+
+
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>console.log("Hello from 'layouts/partials/extended_head.html'")</script>
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/posts">
+                    归档 | Archive
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类 | Categories
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签 | Tags
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="http://localhost:1313/">
+            Tom&#39;s Blog
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="http://localhost:1313/">
+        <div class="single-column-header-title">Tom&#39;s Blog</div>
+        
+        <div class="single-column-header-subtitle">Life is a Battle!</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-no-background">
+        
+        
+            <a href="/posts/navidrome/" class="a-block">
+                <div class="post-item-wrapper">
+                    <div class="post-item post-item-no-divider">
+                        <div class="post-item-info-wrapper">
+                            <div class="post-item-title">
+                                自建navidrome音乐服务
+                            </div>
+                            <div class="post-item-summary">
+                                
+                                    自建音乐服务 navidrome，搭配音流软件，优化听歌体验。
+                                
+                            </div>
+                            <div class="post-item-meta">
+    2024-05-04
+    &emsp;
+    
+    
+    <i class="material-icons" style="font-size:10px">schedule</i>
+    
+
+    
+    
+
+    
+    4 min
+    
+    2 s
+    
+    
+    &emsp;
+    
+</div>
+
+                        </div>
+                        
+                        
+                            
+                            <div class="post-item-image-wrapper">
+                            <div class="post-item-image"
+                            
+                            
+                                style="background-image: url('https://image.dooo.ng/c/2024/05/04/6635ac86b444b.webp')"
+                            
+                            ></div>
+                            </div>
+                        
+                    </div>
+                </div>
+        
+            <a href="/posts/bat-creat-post/" class="a-block">
+                <div class="post-item-wrapper">
+                    <div class="post-item post-item-no-divider">
+                        <div class="post-item-info-wrapper">
+                            <div class="post-item-title">
+                                使用Windows脚本快速创建文章
+                            </div>
+                            <div class="post-item-summary">
+                                
+                                    通过 Windows 批处理命令快速创建文章，并使用Typora 打开。
+                                
+                            </div>
+                            <div class="post-item-meta">
+    2024-04-23
+    &emsp;
+    
+    
+    <i class="material-icons" style="font-size:10px">schedule</i>
+    
+
+    
+    
+
+    
+    2 min
+    
+    14 s
+    
+    
+    &emsp;
+    
+</div>
+
+                        </div>
+                        
+                        
+                            
+                            <div class="post-item-image-wrapper">
+                            <div class="post-item-image"
+                            
+                            
+                                style="background-image: url('https://image.dooo.ng/c/2024/04/23/662755095236e.webp')"
+                            
+                            ></div>
+                            </div>
+                        
+                    </div>
+                </div>
+        
+            <a href="/posts/hexo-douban/" class="a-block">
+                <div class="post-item-wrapper">
+                    <div class="post-item post-item-no-divider">
+                        <div class="post-item-info-wrapper">
+                            <div class="post-item-title">
+                                为Hexo博客添加豆瓣观影信息
+                            </div>
+                            <div class="post-item-summary">
+                                
+                                    通过hexo-douban插件为Hexo博客添加豆瓣观影信息、书单页面。
+                                
+                            </div>
+                            <div class="post-item-meta">
+    2024-04-23
+    &emsp;
+    
+    
+    <i class="material-icons" style="font-size:10px">schedule</i>
+    
+
+    
+    
+
+    
+    2 min
+    
+    58 s
+    
+    
+    &emsp;
+    
+</div>
+
+                        </div>
+                        
+                        
+                            
+                            <div class="post-item-image-wrapper">
+                            <div class="post-item-image"
+                            
+                            
+                                style="background-image: url('https://image.dooo.ng/c/2024/04/23/6627362a57794.webp')"
+                            
+                            ></div>
+                            </div>
+                        
+                    </div>
+                </div>
+        
+            <a href="/posts/fluid-modify/" class="a-block">
+                <div class="post-item-wrapper">
+                    <div class="post-item post-item-no-divider">
+                        <div class="post-item-info-wrapper">
+                            <div class="post-item-title">
+                                Hexo博客Fluid主题修改
+                            </div>
+                            <div class="post-item-summary">
+                                
+                                    Hexo 博客 Fluid 主题的修改记录。
+                                
+                            </div>
+                            <div class="post-item-meta">
+    2024-04-21
+    &emsp;
+    
+    
+    <i class="material-icons" style="font-size:10px">schedule</i>
+    
+
+    
+    
+
+    
+    47 s
+    
+    
+    &emsp;
+    
+</div>
+
+                        </div>
+                        
+                        
+                            
+                            <div class="post-item-image-wrapper">
+                            <div class="post-item-image"
+                            
+                            
+                                style="background-image: url('https://image.dooo.ng/i/2024/04/21/66247a735f3a7.webp')"
+                            
+                            ></div>
+                            </div>
+                        
+                    </div>
+                </div>
+        
+            <a href="/posts/993cff99/" class="a-block">
+                <div class="post-item-wrapper">
+                    <div class="post-item post-item-no-divider">
+                        <div class="post-item-info-wrapper">
+                            <div class="post-item-title">
+                                Hugo 文章转 Hexo
+                            </div>
+                            <div class="post-item-summary">
+                                
+                                    通过 Python 脚本，将 Hugo 文章的头文件转换成 Hexo 框架支持。
+                                
+                            </div>
+                            <div class="post-item-meta">
+    2024-04-17
+    &emsp;
+    
+    
+    <i class="material-icons" style="font-size:10px">schedule</i>
+    
+
+    
+    
+
+    
+    1 min
+    
+    36 s
+    
+    
+    &emsp;
+    
+</div>
+
+                        </div>
+                        
+                        
+                            
+                            <div class="post-item-image-wrapper">
+                            <div class="post-item-image"
+                            
+                            
+                                style="background-image: url('https://image.dooo.ng/i/2024/04/17/661f45f2701d7.webp')"
+                            
+                            ></div>
+                            </div>
+                        
+                    </div>
+                </div>
+        
+            <a href="/posts/61ca2491/" class="a-block">
+                <div class="post-item-wrapper">
+                    <div class="post-item post-item-no-divider">
+                        <div class="post-item-info-wrapper">
+                            <div class="post-item-title">
+                                终端设置代理
+                            </div>
+                            <div class="post-item-summary">
+                                
+                                    终端代理设置。
+                                
+                            </div>
+                            <div class="post-item-meta">
+    2024-04-17
+    &emsp;
+    
+    
+    <i class="material-icons" style="font-size:10px">schedule</i>
+    
+
+    
+    
+
+    
+    3 min
+    
+    20 s
+    
+    
+    &emsp;
+    
+</div>
+
+                        </div>
+                        
+                        
+                            
+                            <div class="post-item-image-wrapper">
+                            <div class="post-item-image"
+                            
+                            
+                                style="background-image: url('https://image.dooo.ng/i/2024/04/18/6620f0d4b5382.webp')"
+                            
+                            ></div>
+                            </div>
+                        
+                    </div>
+                </div>
+        
+            <a href="/posts/sub-store/" class="a-block">
+                <div class="post-item-wrapper">
+                    <div class="post-item post-item-no-divider">
+                        <div class="post-item-info-wrapper">
+                            <div class="post-item-title">
+                                Docker部署Sub-Store后端
+                            </div>
+                            <div class="post-item-summary">
+                                
+                                    使用Docker部署Sub-Store，全平台管理订阅。
+                                
+                            </div>
+                            <div class="post-item-meta">
+    2024-04-08
+    &emsp;
+    
+    
+    <i class="material-icons" style="font-size:10px">schedule</i>
+    
+
+    
+    
+
+    
+    1 min
+    
+    7 s
+    
+    
+    &emsp;
+    
+</div>
+
+                        </div>
+                        
+                        
+                            
+                            <div class="post-item-image-wrapper">
+                            <div class="post-item-image"
+                            
+                            
+                                style="background-image: url('https://image.dooo.ng/i/2024/04/18/6620f113329c2.webp')"
+                            
+                            ></div>
+                            </div>
+                        
+                    </div>
+                </div>
+        
+            <a href="/posts/vercel-cdn/" class="a-block">
+                <div class="post-item-wrapper">
+                    <div class="post-item post-item-no-divider">
+                        <div class="post-item-info-wrapper">
+                            <div class="post-item-title">
+                                推一下Vercel加速节点
+                            </div>
+                            <div class="post-item-summary">
+                                
+                                    推一下Vercel加速节点
+                                
+                            </div>
+                            <div class="post-item-meta">
+    2024-03-24
+    &emsp;
+    
+    
+    <i class="material-icons" style="font-size:10px">schedule</i>
+    
+
+    
+    
+
+    
+    3 min
+    
+    56 s
+    
+    
+    &emsp;
+    
+</div>
+
+                        </div>
+                        
+                        
+                            
+                            <div class="post-item-image-wrapper">
+                            <div class="post-item-image"
+                            
+                            
+                                style="background-image: url('https://image.dooo.ng/i/2024/04/19/6621cd348de60.webp')"
+                            
+                            ></div>
+                            </div>
+                        
+                    </div>
+                </div>
+        
+            <a href="/posts/obsidian%E5%BF%AB%E9%80%9F%E5%8F%91%E5%B8%83hugo%E6%96%87%E7%AB%A0/" class="a-block">
+                <div class="post-item-wrapper">
+                    <div class="post-item post-item-no-divider">
+                        <div class="post-item-info-wrapper">
+                            <div class="post-item-title">
+                                Obsidian快速发布Hugo文章
+                            </div>
+                            <div class="post-item-summary">
+                                
+                                    使用 `Obsidian` 配合 `Shell commands` 插件快速创建文章并预览发布
+                                
+                            </div>
+                            <div class="post-item-meta">
+    2024-03-23
+    &emsp;
+    
+    
+    <i class="material-icons" style="font-size:10px">schedule</i>
+    
+
+    
+    
+
+    
+    4 min
+    
+    34 s
+    
+    
+    &emsp;
+    
+</div>
+
+                        </div>
+                        
+                        
+                            
+                            <div class="post-item-image-wrapper">
+                            <div class="post-item-image"
+                            
+                            
+                                style="background-image: url('https://r2.grew.cc/2024/07/67bf37b865eb80925e38e747c0e355a5.webp')"
+                            
+                            ></div>
+                            </div>
+                        
+                    </div>
+                </div>
+        
+            <a href="/posts/stack/" class="a-block">
+                <div class="post-item-wrapper">
+                    <div class="post-item post-item-no-divider">
+                        <div class="post-item-info-wrapper">
+                            <div class="post-item-title">
+                                Hugo Stack主题修改
+                            </div>
+                            <div class="post-item-summary">
+                                
+                                    Stack 主题修改记录。
+                                
+                            </div>
+                            <div class="post-item-meta">
+    2024-03-21
+    &emsp;
+    
+    
+    <i class="material-icons" style="font-size:10px">schedule</i>
+    
+
+    
+    
+
+    
+    8 min
+    
+    11 s
+    
+    
+    &emsp;
+    
+</div>
+
+                        </div>
+                        
+                        
+                            
+                            <div class="post-item-image-wrapper">
+                            <div class="post-item-image"
+                            
+                            
+                                style="background-image: url('https://image.dooo.ng/i/2024/04/14/661b4ccc75308.webp')"
+                            
+                            ></div>
+                            </div>
+                        
+                    </div>
+                </div>
+        
+        </a>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head active" href="http://localhost:1313/">
+    
+        <div class="nav-title">
+            Tom&#39;s Blog
+        </div>
+        
+        <div class="nav-subtitle">
+            Life is a Battle!
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/posts">
+                归档 | Archive
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类 | Categories
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签 | Tags
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Tom Almighty
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+        
+
+        <a class="pagination-action"  href="/">
+            
+            <i class="material-icons pagination-action-icon">
+                chevron_left
+            </i>
+        </a>
+
+        <div class="pagination-indicator">
+            <span style="text-align: center">
+                2<br>
+                <div style="display: inline-block; transform: rotate(-28deg)">-</div><br>6
+            </span>
+        </div>
+
+
+        <a class="pagination-action"  href="/page/3/">
+            
+            <i class="material-icons pagination-action-icon">
+                chevron_right
+            </i>
+        </a>
+        
+        
+    </div>
+</div>
+
+
+<div class="pagination">
+    
+    <a class="pagination-action" href="/" style="opacity:1">
+    
+        <i class="material-icons pagination-action-icon">
+            chevron_left
+        </i>
+    </a>
+
+        <div class="pagination-indicator">
+            <span>2/6</span>
+        </div>
+
+        
+        <a class="pagination-action" href="/page/3/"
+           style="opacity:1">
+        
+                <i class="material-icons pagination-action-icon">
+                    chevron_right
+                </i>
+            </a>
+</div>
+
+
+
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Tom Almighty
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

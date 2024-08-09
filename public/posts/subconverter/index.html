@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<title>最全的订阅转换项目</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="订阅转换项目部署大全。">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:url" content="http://localhost:1313/posts/subconverter/">
+  <meta property="og:site_name" content="Tom&#39;s Blog">
+  <meta property="og:title" content="最全的订阅转换项目">
+  <meta property="og:description" content="订阅转换项目部署大全。">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-08-22T00:00:00+00:00">
+    <meta property="article:modified_time" content="2022-08-22T00:00:00+00:00">
+    <meta property="article:tag" content="订阅转换">
+    <meta property="article:tag" content="Subconverter">
+    <meta property="article:tag" content="Sub-Web">
+    <meta property="article:tag" content="Docker">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>console.log("Hello from 'layouts/partials/extended_head.html'")</script>
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档 | Archive
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类 | Categories
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签 | Tags
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%89%8d%e8%a8%80" class="nav-前言">
+									前言
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%87%86%e5%a4%87%e5%b7%a5%e4%bd%9c" class="nav-准备工作">
+									准备工作
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%a1%b9%e7%9b%ae%e4%b8%80subconverter--sub-web" class="nav-项目一subconverter--sub-web">
+									项目一：subconverter &amp; sub-web
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e4%b8%80%e9%94%ae%e8%84%9a%e6%9c%ac%e5%ae%89%e8%a3%85" class="nav-一键脚本安装">
+									一键脚本安装
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%89%8b%e5%8a%a8%e5%ae%89%e8%a3%85" class="nav-手动安装">
+									手动安装
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%90%8e%e7%ab%af%e6%90%ad%e5%bb%ba" class="nav-后端搭建">
+									后端搭建
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%89%8d%e7%ab%af%e6%90%ad%e5%bb%ba" class="nav-前端搭建">
+									前端搭建
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e9%a1%b9%e7%9b%ae%e4%ba%8csubweb" class="nav-项目二subweb">
+									项目二：subweb
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e9%83%a8%e7%bd%b2" class="nav-部署">
+									部署
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%8d%e5%90%91%e4%bb%a3%e7%90%86" class="nav-反向代理">
+									反向代理
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e9%a1%b9%e7%9b%ae%e4%b8%89sub2clash" class="nav-项目三sub2clash">
+									项目三：sub2clash
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e9%83%a8%e7%bd%b2-1" class="nav-部署-1">
+									部署
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%a8%a1%e6%9d%bf" class="nav-模板">
+									模板
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e9%a1%b9%e7%9b%ae%e5%9b%9bsubconv" class="nav-项目四subconv">
+									项目四：SubConv
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e9%83%a8%e7%bd%b2-2" class="nav-部署-2">
+									部署
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e9%a1%b9%e7%9b%ae%e4%ba%94sublink" class="nav-项目五sublink">
+									项目五：sublink
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e9%83%a8%e7%bd%b2-3" class="nav-部署-3">
+									部署
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83" class="nav-参考">
+									参考
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="http://localhost:1313/">
+            Tom&#39;s Blog
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="http://localhost:1313/">
+        <div class="single-column-header-title">Tom&#39;s Blog</div>
+        
+        <div class="single-column-header-subtitle">Life is a Battle!</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+                
+            
+
+            <div class="post-head-wrapper"
+                
+                    
+                    
+                    style="background-image: url('https://image.dooo.ng/i/2024/04/19/6621cd427b7fe.webp')"
+                    
+                
+            >
+                <div class="post-title">
+                    最全的订阅转换项目
+                    
+                    <div class="post-subtitle">
+                        订阅转换项目部署大全。
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2022-08-22 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/%E4%B8%8A%E7%BD%91">上网</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/%E8%AE%A2%E9%98%85%E8%BD%AC%E6%8D%A2">订阅转换</a>
+                                &nbsp;
+                            
+                                <a href="/tags/subconverter">subconverter</a>
+                                &nbsp;
+                            
+                                <a href="/tags/sub-web">sub-web</a>
+                                &nbsp;
+                            
+                                <a href="/tags/docker">Docker</a>
+                                &nbsp;
+                            
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            15 min
+                            
+                            25 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h2 id="前言"><strong>前言</strong></h2>
+<p>目前各个平台的代理软件的格式各不相同，各个服务厂商通常会提供给我们各个软件的订阅链接，但一些比较小的厂商提供的链接有限，或者提供的分流策略组不符合我们的预期，这个时候我们可以通过转换工具转换成我们所用软件的链接格式，或者使用自己修改的策略组实现更加灵活的分流。</p>
+<h2 id="准备工作"><strong>准备工作</strong></h2>
+<p>部署自己的前后端通常需要自己的域名，部分项目使用 Vercel 托管也可，因此最好准备：</p>
+<ul>
+<li><code>VPS</code>一台</li>
+<li>两个解析的域名，二级域名即可</li>
+</ul>
+<h2 id="项目一subconverter--sub-web">项目一：subconverter &amp; sub-web</h2>
+<p><code>subconverter</code> 加 <code>sub-web</code> 是最常用的项目，目前后端仍在更新，并且支持了最新的协议转换。</p>
+<p><strong>项目地址：</strong></p>
+<p>前端：<a href="https://github.com/CareyWang/sub-web">sub-web</a></p>
+<p>后端：<a href="https://github.com/tindy2013/subconverter">subconverter</a></p>
+<h3 id="一键脚本安装">一键脚本安装</h3>
+<p>网上找到的一键脚本：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># ubuntu</span>
+</span></span><span style="display:flex;"><span>apt-get install -y wget <span style="color:#f92672">&amp;&amp;</span> wget -O install.sh https://cdn.mxlong.com/install/subweb/install.sh <span style="color:#f92672">&amp;&amp;</span> chmod +x ./install.sh <span style="color:#f92672">&amp;&amp;</span> ./install.sh
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># centos</span>
+</span></span><span style="display:flex;"><span>yum install -y wget <span style="color:#f92672">&amp;&amp;</span> wget -O install.sh https://cdn.mxlong.com/install/subweb/install.sh <span style="color:#f92672">&amp;&amp;</span> chmod +x ./install.sh <span style="color:#f92672">&amp;&amp;</span> ./install.sh
+</span></span></code></pre></div><blockquote>
+<p>脚本中的后端并不是原作者的后端，如有需要可以自行更换脚本中的下载地址。</p>
+</blockquote>
+<h3 id="手动安装">手动安装</h3>
+<h4 id="后端搭建">后端搭建</h4>
+<p>首先解析一个域名用作后端访问，这里以 <code>backend.domain.com</code> 为例，实际以自己的域名为准。</p>
+<p>连接VPS后，下载并解压后端程序，可以使用如下命令，也可以使用宝塔面板，下载程序后解压。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /opt <span style="color:#75715e"># 这里是程序安装目录，可以自行更换</span>
+</span></span><span style="display:flex;"><span>wget https://github.com/tindy2013/subconverter/releases/download/v0.9.0/subconverter_linux64.tar.gz
+</span></span><span style="display:flex;"><span>tar -zxvf subconverter_linux64.tar.gz
+</span></span></code></pre></div><p>完成以后在 <code>/opt</code> 文件夹下会出现 <code>subconverter</code>文件夹，出现如下结构：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> .
+</span></span><span style="display:flex;"><span> ├── subconverter
+</span></span><span style="display:flex;"><span> │   ├── base
+</span></span><span style="display:flex;"><span> │   ├── cache
+</span></span><span style="display:flex;"><span> │   ├── config
+</span></span><span style="display:flex;"><span> │   ├── generate.ini
+</span></span><span style="display:flex;"><span> │   ├── gistconf.ini
+</span></span><span style="display:flex;"><span> │   ├── pref.example.ini
+</span></span><span style="display:flex;"><span> │   ├── pref.example.toml
+</span></span><span style="display:flex;"><span> │   ├── pref.example.yml
+</span></span><span style="display:flex;"><span> │   ├── pref.toml
+</span></span><span style="display:flex;"><span> │   ├── profiles
+</span></span><span style="display:flex;"><span> │   ├── rules
+</span></span><span style="display:flex;"><span> │   ├── snippets
+</span></span><span style="display:flex;"><span> │   └── subconverter
+</span></span><span style="display:flex;"><span> └── subconverter_linux64.tar.gz
+</span></span><span style="display:flex;"><span> 
+</span></span></code></pre></div><p>修改相关配置参数，找到文件：<code>/opt/subconverter/pref.toml</code>，修改下面两个参数：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>api_access_token <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;密码可以随意更改，也不用记住&#34;</span>  <span style="color:#75715e"># 大概在第7行</span>
+</span></span><span style="display:flex;"><span>managed_config_prefix <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://backend.domain.com&#34;</span> <span style="color:#75715e"># 改成解析的后端域名，大概在第149行</span>
+</span></span></code></pre></div><p>这里需要注意以下两点：</p>
+<blockquote>
+<ul>
+<li>
+<p>配置文件按照 <code>pref.toml pref.yml pref.ini</code> 的顺序加载。</p>
+</li>
+<li>
+<p>第一次解压程序后会发现只有<code>pref.example.toml</code> 文件，这时候可以在程序所在目录 <code>/opt/subconverter</code> 手动运行一下程序：<code>./subconverter</code>，文件就会出现。
+接下来创建开机自启服务，在终端窗口输入如下命令，全部粘贴回车即可</p>
+</li>
+</ul>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat &gt; /etc/systemd/system/sub.service <span style="color:#e6db74">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[Unit]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Description=Subconverter
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">After=network.target
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[Service]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Type=simple
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">LimitAS=infinity
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">LimitRSS=infinity
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">LimitCORE=infinity
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">LimitNOFILE=65535
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ExecStart=/opt/subconverter/subconverter
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Restart=on-failure
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">RestartSec=10
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[Install]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">WantedBy=multi-user.target
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><blockquote>
+<p>如果修改了后端的运行目录，上边命令中第 <code>12</code> 行运行位置也要相应更改。</p>
+</blockquote>
+<p>设置开机自启：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl enable sub <span style="color:#75715e"># 开机自启</span>
+</span></span><span style="display:flex;"><span>systemctl start sub <span style="color:#75715e"># 启动</span>
+</span></span><span style="display:flex;"><span>systemctl restart sub <span style="color:#75715e"># 重启</span>
+</span></span><span style="display:flex;"><span>systemctl status sub <span style="color:#75715e"># 查看运行状态</span>
+</span></span></code></pre></div><p>到这里后端地址是 <code>http://127.0.0.1:25500/sub?</code>，由于上边修改了 <code>managed_config_prefix</code>，这时候我们需要反向代理。以后端域名新建一个站点，以宝塔为例，新建站点后打开设置，点击 <code>反向代理</code>，设置如下内容</p>
+<p><img src="https://pic.imgdb.cn/item/62f5bb0716f2c2beb1f69f76.png" alt="https://pic.imgdb.cn/item/62f5bb0716f2c2beb1f69f76.png"></p>
+<p>保存后添加 <code>SSL</code>访问，至此后端搭建完成。</p>
+<h4 id="前端搭建">前端搭建</h4>
+<p>首先新建一个前端站点目录，无需数据库，新建后配置好 <code>SSL</code>，这里以 <code>web.domain.com</code> 为例。</p>
+<p>前端项目需要用到 <code>Node</code> 和 <code>Yarn</code> ，因此首先安装：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt update <span style="color:#f92672">&amp;&amp;</span> apt upgrade
+</span></span><span style="display:flex;"><span>apt install nodejs
+</span></span><span style="display:flex;"><span>apt install yarn
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 完成后使用如下命令查看是否安装成功</span>
+</span></span><span style="display:flex;"><span>node -v
+</span></span><span style="display:flex;"><span>yarn --version
+</span></span></code></pre></div><p>下载 <code>sub-web</code>。默认下载到当前目录<code>/root</code>，下载的位置可以自行选择，可以下载到前端站点目录中下（首先进入<code>/web.domain.com</code>后再执行如下命令）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/CareyWang/sub-web.git
+</span></span><span style="display:flex;"><span>cd sub-web
+</span></span></code></pre></div><p>安装依赖</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yarn install
+</span></span></code></pre></div><p>修改后端配置及策略组文件。找到<code>/root/sub-web/src/views/Subconverter.vue</code> 文件，打开后在258行找到如下内容并修改，即将本地地址修改为后端地址，也可以添加多个后端地址。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#f92672">- backendOptions: [{ value: &#34;http://127.0.0.1:25500/sub?&#34; }]
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+ backendOptions: [{ value: &#34;https://backend.domain.com/sub?&#34; }]
+</span></span></span></code></pre></div><p>随后在下边的 <code>remoteConfig</code> 后修改策略组配置地址，可以根据文件的格式添加，这里给出 <code>ACL4SSR规则</code>配置，<code>remoteConfig[</code>后回车复制即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>             label: <span style="color:#e6db74">&#34;ACL4SSR&#34;</span>,
+</span></span><span style="display:flex;"><span>             options: <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online 默认版 分组比较全 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value:
+</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_AdblockPlus 更多去广告 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value:
+</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_AdblockPlus.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_NoAuto 无自动测速 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value:
+</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_NoAuto.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_NoReject 无广告拦截规则 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value:
+</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_NoReject.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_Mini 精简版 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value:
+</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_Mini_AdblockPlus.ini 精简版 更多去广告 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value:
+</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini_AdblockPlus.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_Mini_NoAuto.ini 精简版 不带自动测速 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value:
+</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini_NoAuto.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_Mini_Fallback.ini 精简版 带故障转移 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value:
+</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini_Fallback.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_Mini_MultiMode.ini 精简版 自动测速、故障转移、负载均衡 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value:
+</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini_MultiMode.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_Full 全分组 重度用户使用 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value:
+</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_Full_NoAuto.ini 全分组 无自动测速 重度用户使用 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value:
+</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_NoAuto.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_Full_AdblockPlus 全分组 重度用户使用 更多去广告 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value:
+</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_AdblockPlus.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_Full_Netflix 全分组 重度用户使用 奈飞全量 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value:
+</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_Netflix.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR 本地 默认版 分组比较全&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value: <span style="color:#e6db74">&#34;config/ACL4SSR.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Mini 本地 精简版&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value: <span style="color:#e6db74">&#34;config/ACL4SSR_Mini.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Mini_NoAuto.ini 本地 精简版+无自动测速&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value: <span style="color:#e6db74">&#34;config/ACL4SSR_Mini_NoAuto.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Mini_Fallback.ini 本地 精简版+fallback&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value: <span style="color:#e6db74">&#34;config/ACL4SSR_Mini_Fallback.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_BackCN 本地 回国&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value: <span style="color:#e6db74">&#34;config/ACL4SSR_BackCN.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_NoApple 本地 无苹果分流&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value: <span style="color:#e6db74">&#34;config/ACL4SSR_NoApple.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_NoAuto 本地 无自动测速 &#34;</span>,
+</span></span><span style="display:flex;"><span>                 value: <span style="color:#e6db74">&#34;config/ACL4SSR_NoAuto.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_NoAuto_NoApple 本地 无自动测速&amp;无苹果分流&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value: <span style="color:#e6db74">&#34;config/ACL4SSR_NoAuto_NoApple.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_NoMicrosoft 本地 无微软分流&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value: <span style="color:#e6db74">&#34;config/ACL4SSR_NoMicrosoft.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_WithGFW 本地 GFW列表&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value: <span style="color:#e6db74">&#34;config/ACL4SSR_WithGFW.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>             <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">}</span>,
+</span></span></code></pre></div><p>最后执行如下命令可打包网站：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yarn build
+</span></span></code></pre></div><p>完成后会在 <code>/root/sub-web/</code>文件夹下生成一个 <code>dist</code>目录，这个目录就是网站的全部内容，可以将里面所有内容复制到前端站点的目录，如果是将前端下载到了站点目录而不是根目录，可以在宝塔面板中设置网站的运行目录，选择为 <code>/dist</code>即可。</p>
+<p><img src="https://pic.imgdb.cn/item/62f5c5af16f2c2beb1146e2d.png" alt="https://pic.imgdb.cn/item/62f5c5af16f2c2beb1146e2d.png"></p>
+<blockquote>
+<p>如需要修改前端的配置，如加入更多的策略组配置文件，修改 <code>/root/sub-web/src/views/Subconverter.vue</code> 文件后，再在 <code>/root/sub-web</code> 目录下执行 <code>yarn build</code> 命令，随后再把 <code>/dist</code> 目录下内容替换到网站目录。</p>
+</blockquote>
+<p>至此前后端都已搭建完毕，打开前端地址即可正常使用。</p>
+<h2 id="项目二subweb">项目二：subweb</h2>
+<p>这个项目是一个前后端加短链的 <code>Docker</code> 整合版，相比较原项目前后端，有如下优点：</p>
+<ul>
+<li><code>Docker Compose</code> 部署十分方便</li>
+<li>前端界面美观</li>
+<li>远程配置和自定义后端选择框比较明显</li>
+</ul>
+<p><strong>项目地址：</strong></p>
+<ul>
+<li><a href="https://github.com/stilleshan/subweb">subweb</a></li>
+</ul>
+<h3 id="部署">部署</h3>
+<p>同样部署两个网站，并配置好证书，一个用作短链，一个用作订阅转换前后端，如果不需要短链服务，一个二级域名即可。</p>
+<p>然后使用 <code>docker compose</code> 直接部署：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~ <span style="color:#f92672">&amp;&amp;</span> mkdir subconverter <span style="color:#f92672">&amp;&amp;</span> cd subconverter
+</span></span><span style="display:flex;"><span>wget https://raw.githubusercontent.com/stilleshan/dockerfiles/main/sub/docker-compose.yml
+</span></span></code></pre></div><p>将下载的 <code>compose</code>文件中第 <code>16</code> 行的域名改为自己的短链，然后运行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /root/subconverter
+</span></span><span style="display:flex;"><span>docker-compose up -d
+</span></span></code></pre></div><p>完成后文件夹下会多出两个文件夹，<code>/data &amp; /conf</code>，在 <code>conf/config.js</code>文件中修改对应的地址：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apiUrl: <span style="color:#e6db74">&#39;http://web.sub.com&#39;</span>, <span style="color:#75715e"># 订阅转换</span>
+</span></span><span style="display:flex;"><span>shortUrl: <span style="color:#e6db74">&#39;https://a.com&#39;</span>, <span style="color:#75715e"># 短链</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 13行的短链地址也要更换</span>
+</span></span></code></pre></div><blockquote>
+<p>💡  如果不需要短链服务，只需要在 <code>compose</code> 文件中删除第 <code>12-32</code> 行,将默认使用作者短链接，也可以修改 <code>conf/config.js</code> 使用其他短链接服务。</p>
+</blockquote>
+<h3 id="反向代理">反向代理</h3>
+<p>订阅转换前后端的反向代理目标 <code>url</code>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 订阅转换前后端的目标url</span>
+</span></span><span style="display:flex;"><span>http://127.0.0.1:18080
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 短链反向代理配置(可直接添加到配置文件)：</span>
+</span></span><span style="display:flex;"><span>        location / <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        proxy_redirect off;
+</span></span><span style="display:flex;"><span>        proxy_pass http://127.0.0.1:8002;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        add_header <span style="color:#e6db74">&#39;Access-Control-Allow-Origin&#39;</span> <span style="color:#e6db74">&#39;*&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        proxy_set_header  Host                $http_host;
+</span></span><span style="display:flex;"><span>        proxy_set_header  X-Real-IP           $remote_addr;
+</span></span><span style="display:flex;"><span>        proxy_set_header  X-Forwarded-Ssl     on;
+</span></span><span style="display:flex;"><span>        proxy_set_header  X-Forwarded-For     $proxy_add_x_forwarded_for;
+</span></span><span style="display:flex;"><span>        proxy_set_header  X-Forwarded-Proto   $scheme;
+</span></span><span style="display:flex;"><span>        proxy_set_header  X-Frame-Options     SAMEORIGIN;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        client_max_body_size        100m;
+</span></span><span style="display:flex;"><span>        client_body_buffer_size     128k;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="项目三sub2clash">项目三：sub2clash</h2>
+<p>这个项目主要是将其他格式转换成 <code>clash</code> 订阅，有如下特点：</p>
+<ul>
+<li>可以方便地添加最新协议节点</li>
+<li>可以灵活添加国家和地区分组</li>
+<li>可以添加自定义规则</li>
+<li>可以使用自定义短链接</li>
+</ul>
+<p><strong>项目地址：</strong></p>
+<p><a href="https://github.com/nitezs/sub2clash">sub2clash</a></p>
+<h3 id="部署-1">部署</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p /opt/sub2clash <span style="color:#f92672">&amp;&amp;</span> cd /opt/sub2clash
+</span></span><span style="display:flex;"><span>wget https://raw.githubusercontent.com/nitezs/sub2clash/main/docker-compose.yml
+</span></span><span style="display:flex;"><span>docker-compose up -d
+</span></span></code></pre></div><p>可以自己修改 <code>docker compose</code> 的环境变量，可修改参数如下：</p>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PORT</td>
+<td>端口</td>
+<td><code>8011</code></td>
+</tr>
+<tr>
+<td>META_TEMPLATE</td>
+<td>默认 meta 模板文件名</td>
+<td><code>template_meta.yaml</code></td>
+</tr>
+<tr>
+<td>CLASH_TEMPLATE</td>
+<td>默认 clash 模板文件名</td>
+<td><code>template_clash.yaml</code></td>
+</tr>
+<tr>
+<td>REQUEST_RETRY_TIMES</td>
+<td>Get 请求重试次数</td>
+<td><code>3</code></td>
+</tr>
+<tr>
+<td>REQUEST_MAX_FILE_SIZE</td>
+<td>Get 请求订阅文件最大大小（byte）</td>
+<td><code>1048576</code></td>
+</tr>
+<tr>
+<td>CACHE_EXPIRE</td>
+<td>订阅缓存时间（秒）</td>
+<td><code>300</code></td>
+</tr>
+<tr>
+<td>LOG_LEVEL</td>
+<td>日志等级，可选值 <code>debug</code>,<code>info</code>,<code>warn</code>,<code>error</code></td>
+<td><code>info</code></td>
+</tr>
+<tr>
+<td>SHORT_LINK_LENGTH</td>
+<td>短链长度</td>
+<td><code>6</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="模板">模板</h3>
+<p>模板的设置可以参考默认，也可以自行设置：</p>
+<ul>
+<li><code>&lt;all&gt;</code> 为添加所有节点</li>
+<li><code>&lt;countries&gt;</code> 为添加所有国家策略组</li>
+<li><code>&lt;地区二位字母代码&gt;</code> 为添加指定地区所有节点，例如 <code>&lt;hk&gt;</code> 将添加所有香港节点</li>
+</ul>
+<p>meta 配置也可以参考内核文档的推荐配置：<a href="https://wiki.metacubex.one/example/conf/#__tabbed_1_1">虚空终端</a>，<code>GEOSITE</code>目录可以参考 <a href="https://github.com/v2fly/domain-list-community/tree/master/data">v2fly/domain-list-community</a></p>
+<h2 id="项目四subconv">项目四：SubConv</h2>
+<p><code>Python</code> 实现的开源 <code>Clash</code> 订阅转换，与 <code>subconverter</code> 相同，接受各种格式的原始订阅，也支持多个订阅。但是使用了 <code>proxy-provider</code> 和 <code>rule-provider</code> 特性实现了任意系统上节点和规则的自动更新。为了解决无法访问 <code>GitHub</code> 上的规则集的问题，项目默认开启了对规则集的代理。同时，由于使用 <code>Python</code> 实现，这个项目非常容易运行在 <code>Serverless</code> 服务，例如 <a href="https://vercel.com/">Vercel</a> 上。</p>
+<p><strong>项目地址：</strong></p>
+<ul>
+<li>
+<p><a href="https://github.com/SubConv/SubConv">项目地址</a></p>
+</li>
+<li>
+<p><a href="https://subconv.is-sb.com/">文档地址</a></p>
+</li>
+</ul>
+<h3 id="部署-2">部署</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~ <span style="color:#f92672">&amp;&amp;</span> mkdir /opt/subconv <span style="color:#f92672">&amp;&amp;</span> cd /opt/subconv
+</span></span><span style="display:flex;"><span>wget https://raw.githubusercontent.com/SubConv/SubConv/main/docker-compose.yml
+</span></span><span style="display:flex;"><span>docker-compose up -d
+</span></span></code></pre></div><p>也可以使用 Vercel 部署，成本更低，并且部署也方便，Fork 原项目后在 Vercel 新建项目导入即可，如有需要可以修改配置文件 <code>config.yaml</code>。</p>
+<h2 id="项目五sublink">项目五：sublink</h2>
+<p>这个项目主要是方便自建用户统一管理节点地址，并生成唯一的链接，同时也支持添加自定义配置，只是添加起来并不是那么方便，此外项目占用较大。</p>
+<p><strong>项目地址：</strong></p>
+<p><a href="https://github.com/jaaksii/sublink">sublink</a></p>
+<h3 id="部署-3">部署</h3>
+<p>同样使用 <code>docker-compose</code>，完成后再反向代理，地址为 <code>http://127.0.0.1:8000</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /opt <span style="color:#f92672">&amp;&amp;</span> mkdir sublink <span style="color:#f92672">&amp;&amp;</span> cd sublink
+</span></span><span style="display:flex;"><span>wget https://raw.githubusercontent.com/jaaksii/sublink/master/docker-compose.yml
+</span></span><span style="display:flex;"><span>docker-compose up -d
+</span></span></code></pre></div><h2 id="参考">参考</h2>
+<ul>
+<li>
+<p><a href="https://www.v2rayssr.com/sub-web.html">参考地址1</a></p>
+</li>
+<li>
+<p><a href="https://qingsay.com/subscription-converter.html">参考地址2</a></p>
+</li>
+<li>
+<p><a href="https://www.mxlong.com/13.html">参考地址3</a></p>
+</li>
+<li>
+<p><a href="https://github.com/stilleshan/subweb">stilleshan/subweb</a></p>
+</li>
+<li>
+<p><a href="https://github.com/nitezs/sub2clash">sub2clash</a></p>
+</li>
+<li>
+<p><a href="https://github.com/jaaksii/sublink">sublink</a></p>
+</li>
+<li>
+<p><a href="https://github.com/SubConv/SubConv">SubConv</a></p>
+</li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2022-08-22</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/posts/thesis-writing/">
+			下回<br>英文论文写作
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/bitwarden/">
+			上回<br>宝塔面板部署Bitwarden密码管理
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="username/repo"
+        data-repo-id="**************************"
+        data-category="General"
+        data-category-id="*********************"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="http://localhost:1313/">
+    
+        <div class="nav-title">
+            Tom&#39;s Blog
+        </div>
+        
+        <div class="nav-subtitle">
+            Life is a Battle!
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档 | Archive
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类 | Categories
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签 | Tags
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Tom Almighty
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%89%8d%e8%a8%80" class="nav-前言">
+									前言
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%87%86%e5%a4%87%e5%b7%a5%e4%bd%9c" class="nav-准备工作">
+									准备工作
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%a1%b9%e7%9b%ae%e4%b8%80subconverter--sub-web" class="nav-项目一subconverter--sub-web">
+									项目一：subconverter &amp; sub-web
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e4%b8%80%e9%94%ae%e8%84%9a%e6%9c%ac%e5%ae%89%e8%a3%85" class="nav-一键脚本安装">
+									一键脚本安装
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%89%8b%e5%8a%a8%e5%ae%89%e8%a3%85" class="nav-手动安装">
+									手动安装
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%90%8e%e7%ab%af%e6%90%ad%e5%bb%ba" class="nav-后端搭建">
+									后端搭建
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%89%8d%e7%ab%af%e6%90%ad%e5%bb%ba" class="nav-前端搭建">
+									前端搭建
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e9%a1%b9%e7%9b%ae%e4%ba%8csubweb" class="nav-项目二subweb">
+									项目二：subweb
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e9%83%a8%e7%bd%b2" class="nav-部署">
+									部署
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%8d%e5%90%91%e4%bb%a3%e7%90%86" class="nav-反向代理">
+									反向代理
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e9%a1%b9%e7%9b%ae%e4%b8%89sub2clash" class="nav-项目三sub2clash">
+									项目三：sub2clash
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e9%83%a8%e7%bd%b2-1" class="nav-部署-1">
+									部署
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%a8%a1%e6%9d%bf" class="nav-模板">
+									模板
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e9%a1%b9%e7%9b%ae%e5%9b%9bsubconv" class="nav-项目四subconv">
+									项目四：SubConv
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e9%83%a8%e7%bd%b2-2" class="nav-部署-2">
+									部署
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e9%a1%b9%e7%9b%ae%e4%ba%94sublink" class="nav-项目五sublink">
+									项目五：sublink
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e9%83%a8%e7%bd%b2-3" class="nav-部署-3">
+									部署
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83" class="nav-参考">
+									参考
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Tom Almighty
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

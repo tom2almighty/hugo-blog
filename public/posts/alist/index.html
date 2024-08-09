@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<title>Alist部署</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="服务器部署 Alist，并可部署小雅 Alist 镜像瞬间拥有海量影视资源。">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:url" content="http://localhost:1313/posts/alist/">
+  <meta property="og:site_name" content="Tom&#39;s Blog">
+  <meta property="og:title" content="Alist部署">
+  <meta property="og:description" content="服务器部署 Alist，并可部署小雅 Alist 镜像瞬间拥有海量影视资源。">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-02-08T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-02-08T00:00:00+00:00">
+    <meta property="article:tag" content="Alist">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>console.log("Hello from 'layouts/partials/extended_head.html'")</script>
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档 | Archive
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类 | Categories
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签 | Tags
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%89%8d%e8%a8%80" class="nav-前言">
+									前言
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%80%e5%ae%98%e6%96%b9-alist" class="nav-一官方-alist">
+									一、官方 Alist
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#1-%e5%ae%89%e8%a3%85" class="nav-1-安装">
+									1. 安装
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#2-%e8%8e%b7%e5%8f%96%e5%af%86%e7%a0%81" class="nav-2-获取密码">
+									2. 获取密码
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e4%ba%8c%e5%b0%8f%e9%9b%85-alist" class="nav-二小雅-alist">
+									二、小雅 Alist
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#1-%e5%ae%89%e8%a3%85-dokcer" class="nav-1-安装-dokcer">
+									1. 安装 Dokcer
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#2-%e5%ae%89%e8%a3%85%e5%b0%8f%e9%9b%85-alist" class="nav-2-安装小雅-alist">
+									2. 安装小雅 Alist
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#-%e5%8f%82%e8%80%83%e6%96%87%e7%ab%a0" class="nav--参考文章">
+									📎 参考文章
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="http://localhost:1313/">
+            Tom&#39;s Blog
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="http://localhost:1313/">
+        <div class="single-column-header-title">Tom&#39;s Blog</div>
+        
+        <div class="single-column-header-subtitle">Life is a Battle!</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+                
+            
+
+            <div class="post-head-wrapper"
+                
+                    
+                    
+                    style="background-image: url('https://pic.imgdb.cn/item/65f013c89f345e8d03fc5210.webp')"
+                    
+                
+            >
+                <div class="post-title">
+                    Alist部署
+                    
+                    <div class="post-subtitle">
+                        服务器部署 Alist，并可部署小雅 Alist 镜像瞬间拥有海量影视资源。
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2024-02-08 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/%E6%95%99%E7%A8%8B">教程</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/alist">Alist</a>
+                                &nbsp;
+                            
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            6 min
+                            
+                            50 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h2 id="前言">前言</h2>
+<p>目前很多人通过网盘分享影视资源，如阿里云盘、115网盘等，同时还有微软的 E5 管理员账号，一个账号就有 5T 空间，用来做存储很不错，但是众多网盘分享文件很不方便，网盘自己的页面看视频也比较简陋，这个时候我们可以通过目录列表整合各种网盘，如以前的  <code>oneindex、olaindex</code>，最近常用的是 Alist ，支持网盘众多，部署方便。</p>
+<blockquote>
+<p>Alist 是一个支持多种存储，支持网页浏览和 WebDAV 的文件列表程序，由 gin 和 Solidjs 驱动，程序开源地址以及文档如下：</p>
+</blockquote>
+<p><a href="https://github.com/alist-org/alist">Github</a></p>
+<p><a href="https://alist.nn.ci/zh/">文档</a></p>
+<h2 id="一官方-alist">一、官方 Alist</h2>
+<h3 id="1-安装">1. 安装</h3>
+<p>安装非常简单，直接使用官方的一键脚本</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 安装</span>
+</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#e6db74">&#34;https://alist.nn.ci/v3.sh&#34;</span> | bash -s install
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 更新</span>
+</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#e6db74">&#34;https://alist.nn.ci/v3.sh&#34;</span> | bash -s update
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 卸载</span>
+</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#e6db74">&#34;https://alist.nn.ci/v3.sh&#34;</span> | bash -s uninstall
+</span></span></code></pre></div><blockquote>
+<p>默认安装在 <code>/opt/alist</code> 中。自定义安装路径，将安装路径作为第二个参数添加，必须是绝对路径（如果路径以 alist 结尾，则直接安装到给定路径，否则会安装在给定路径 alist 目录下），如 安装到 <code>/root</code>：</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install</span>
+</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#e6db74">&#34;https://alist.nn.ci/v3.sh&#34;</span> | bash -s install /root
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># update</span>
+</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#e6db74">&#34;https://alist.nn.ci/v3.sh&#34;</span> | bash -s update /root
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Uninstall</span>
+</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#e6db74">&#34;https://alist.nn.ci/v3.sh&#34;</span> | bash -s uninstall /root
+</span></span></code></pre></div><h3 id="2-获取密码">2. 获取密码</h3>
+<p>随机生成一个密码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./alist admin random
+</span></span></code></pre></div><p>手动设置一个密码,<code>NEW_PASSWORD</code>是指你需要设置的密码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./alist admin set NEW_PASSWORD
+</span></span></code></pre></div><p>部署的 Alist可以挂载自己的阿里云盘、Onedrive 等，官方文档都有详细介绍，上述安装也都来自官方文档，如果想美化以下界面，可以参考另一篇<a href="https://www.notion.so/Alist-f50ef25f1c1a4fdebd5f3b53fa830adb?pvs=21">文章</a>。</p>
+<p>如果想瞬间拥有很多资源，我们可以部署别人整理好的 Alist 镜像。</p>
+<h2 id="二小雅-alist">二、小雅 Alist</h2>
+<p>首先列出作者的频道和文档：</p>
+<p><a href="https://t.me/xiaoyaliu">xiaoya Liu</a></p>
+<p><a href="http://xiaoya.it-cxy.top/">小雅的分类 Alist</a></p>
+<p><a href="https://www.notion.so/xiaoya-docker-69404af849504fa5bcf9f2dd5ecaa75f?pvs=21">如何设置xiaoya的docker</a></p>
+<blockquote>
+<p>💡 接下来的教程来自官方文档，部署在 VPS 上，由于家里并没有 NAS 和软路由，也不用电视看，因此记录仅限于电脑手机端观看，如果后续设备变化再更新记录。</p>
+</blockquote>
+<h3 id="1-安装-dokcer">1. 安装 Dokcer</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 卸载旧版本</span>
+</span></span><span style="display:flex;"><span>sudo apt-get remove docker <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>             docker-engine <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>             <span style="color:#f92672">[</span>docker.io<span style="color:#f92672">](</span>http://docker.io/<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 安装</span>
+</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#f92672">[</span>get.docker.com<span style="color:#f92672">](</span>http://get.docker.com/<span style="color:#f92672">)</span> -o <span style="color:#f92672">[</span>get-docker.sh<span style="color:#f92672">](</span>http://get-docker.sh/<span style="color:#f92672">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 启动并设置开机自启</span>
+</span></span><span style="display:flex;"><span>sudo systemctl enable docker
+</span></span><span style="display:flex;"><span>sudo systemctl start docker
+</span></span></code></pre></div><h3 id="2-安装小雅-alist">2. 安装小雅 Alist</h3>
+<p>首先获取阿里云盘的三个参数</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数必需</th>
+<th>对应文件</th>
+<th>获取地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>token</td>
+<td>是</td>
+<td>/etc/xiaoya/mytoken.txt</td>
+<td><a href="https://aliyuntoken.vercel.app/">https://aliyuntoken.vercel.app/</a></td>
+</tr>
+<tr>
+<td>open token</td>
+<td>是</td>
+<td>/etc/xiaoya/myopentoken.txt</td>
+<td><a href="https://alist.nn.ci/zh/guide/drivers/aliyundrive_open.html">https://alist.nn.ci/zh/guide/drivers/aliyundrive_open.html</a></td>
+</tr>
+<tr>
+<td>转存目录 ID</td>
+<td>是</td>
+<td>/etc/xiaoya/temp_transfer_folder_id.txt</td>
+<td>先转存这个</td>
+</tr>
+<tr>
+<td><a href="https://www.aliyundrive.com/s/rP9gP3h9asE">https://www.aliyundrive.com/s/rP9gP3h9asE</a> 到自己网盘（选择资源盘），然后浏览器打开转存后的目录，浏览器的url</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.aliyundrive.com/drive/file/resource/640xxxxxxxxxxxxxxxxxxxca8a">https://www.aliyundrive.com/drive/file/resource/640xxxxxxxxxxxxxxxxxxxca8a</a> 最后一串就是，记得这个目录不要删，里面的内容可以定期删除</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>登录</td>
+<td>否</td>
+<td>/etc/xiaoya/guestlogin.txt</td>
+<td>如果目录底下没有可以手动创建一个，里面不需要填写内容</td>
+</tr>
+<tr>
+<td>密码</td>
+<td>否(如果设置目录下有上一个登录参数，这个就得设置)</td>
+<td>/etc/xiaoya/guestpass.txt</td>
+<td>可以手动创建，里面填写用户的密码，但是尽量不要填写符号</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 获取到前三个参数就可以，如果不想别人蹭你的网盘观看，就可以设置必须登录观看，登录的账号是 <code>dav</code> ，密码就是设置的密码。</p>
+</blockquote>
+<p>接下来安装，使用一键脚本：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>**bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl http://docker.xiaoya.pro/update_new.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># host 模式**</span>
+</span></span><span style="display:flex;"><span>bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl <span style="color:#f92672">[</span>http://docker.xiaoya.pro/update_new.sh<span style="color:#f92672">](</span>http://docker.xiaoya.pro/update_new.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">)&#34;</span> -s host
+</span></span></code></pre></div><p>安装过程中填写三个参数，等待完成就可以了，服务器记得放行 5678 端口，后续如果需要反向代理也是这个端口。完成后可以通过 <a href="http://ip:5678">http://ip:5678</a> 进入，第一次进入会比较慢，如果很久没加载到存储，可以手动重启一下容器：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker restart xiaoya
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 更新也是这个命令，所以可以将这个命令设置定时任务，每天定时重启</span>
+</span></span></code></pre></div><blockquote>
+<p>💡 <strong>不建议使用 infuse 等挂载扫描，可能会触发风控。</strong></p>
+</blockquote>
+<p>接下来你可以将小雅 <code>Alist</code> 挂载到自己的 <code>Alist</code> 上，挂载时地址填写本机地址 <a href="http://127.0.0.1:5678">http://127.0.0.1:5678</a> 就可以。</p>
+<p>观看视频时，是先将视频转存到自己的目录，也就是安装时的那个文件夹，因此确保网盘有足够的容量，并定期清理，或者可以通过下面的小雅助手容器定时更新、签到、清理文件夹。此助手脚本包括几个模式，如下：</p>
+<ul>
+<li><strong>模式0</strong>：每天自动清理一次。如果系统重启需要手动重新运行或把命令加入系统启动。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -s https://xiaoyahelper.zengge99.eu.org/aliyun_clear.sh | tail -n +2<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -s <span style="color:#ae81ff">0</span> -tg
+</span></span></code></pre></div><ul>
+<li><strong>模式1</strong>：一次性清理，一般用于测试效果。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -s https://xiaoyahelper.zengge99.eu.org/aliyun_clear.sh | tail -n +2<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -s <span style="color:#ae81ff">1</span> -tg
+</span></span></code></pre></div><ul>
+<li><strong>模式3：<strong>创建一个名为 xiaoyakeeper 的docker</strong>定时运行小雅转存清理</strong>并升级小雅镜像</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -s https://xiaoyahelper.zengge99.eu.org/aliyun_clear.sh | tail -n +2<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -s <span style="color:#ae81ff">3</span> -tg
+</span></span></code></pre></div><ul>
+<li>**模式5：**与模式3的区别是实时清理，<strong>只要产生了播放缓存一分钟内立即清理</strong>。签到和定时升级同模式3</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -s https://xiaoyahelper.zengge99.eu.org/aliyun_clear.sh | tail -n +2<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -s <span style="color:#ae81ff">5</span> -tg
+</span></span></code></pre></div><p>以上所有模式加上 <strong><code>-tg</code></strong> 功能均可绑定消息推送的TG账号，只有第一次运行需要加上 <strong><code>-tg</code></strong> 参数，<strong>可以不加tg参数</strong></p>
+<h2 id="-参考文章">📎 参考文章</h2>
+<ul>
+<li><a href="https://www.cnblogs.com/xyztank/articles/17944085">博客</a></li>
+<li><a href="https://www.notion.so/xiaoya-docker-69404af849504fa5bcf9f2dd5ecaa75f?pvs=21">小雅文档</a></li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2024-02-08</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/posts/plex/">
+			下回<br>部署Plex并挂载Alist
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/zhuanyemulu/">
+			上回<br>本科和研究生专业目录
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="username/repo"
+        data-repo-id="**************************"
+        data-category="General"
+        data-category-id="*********************"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="http://localhost:1313/">
+    
+        <div class="nav-title">
+            Tom&#39;s Blog
+        </div>
+        
+        <div class="nav-subtitle">
+            Life is a Battle!
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档 | Archive
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类 | Categories
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签 | Tags
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Tom Almighty
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%89%8d%e8%a8%80" class="nav-前言">
+									前言
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%80%e5%ae%98%e6%96%b9-alist" class="nav-一官方-alist">
+									一、官方 Alist
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#1-%e5%ae%89%e8%a3%85" class="nav-1-安装">
+									1. 安装
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#2-%e8%8e%b7%e5%8f%96%e5%af%86%e7%a0%81" class="nav-2-获取密码">
+									2. 获取密码
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e4%ba%8c%e5%b0%8f%e9%9b%85-alist" class="nav-二小雅-alist">
+									二、小雅 Alist
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#1-%e5%ae%89%e8%a3%85-dokcer" class="nav-1-安装-dokcer">
+									1. 安装 Dokcer
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#2-%e5%ae%89%e8%a3%85%e5%b0%8f%e9%9b%85-alist" class="nav-2-安装小雅-alist">
+									2. 安装小雅 Alist
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#-%e5%8f%82%e8%80%83%e6%96%87%e7%ab%a0" class="nav--参考文章">
+									📎 参考文章
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Tom Almighty
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

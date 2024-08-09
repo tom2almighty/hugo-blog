@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Obsidian on Tom&#39;s Blog</title>
+    <link>http://localhost:1313/tags/obsidian/</link>
+    <description>Recent content in Obsidian on Tom&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <copyright>Tom Almighty</copyright>
+    <lastBuildDate>Sat, 23 Mar 2024 13:13:25 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/obsidian/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Obsidian快速发布Hugo文章</title>
+      <link>http://localhost:1313/posts/obsidian%E5%BF%AB%E9%80%9F%E5%8F%91%E5%B8%83hugo%E6%96%87%E7%AB%A0/</link>
+      <pubDate>Sat, 23 Mar 2024 13:13:25 +0800</pubDate>
+      <guid>http://localhost:1313/posts/obsidian%E5%BF%AB%E9%80%9F%E5%8F%91%E5%B8%83hugo%E6%96%87%E7%AB%A0/</guid>
+      <description>前言 通常使用静态博客写文章比较麻烦，上传图片也不方便，最近发现使用 Obsidian 配合 Shell commands 插件可以快速创建文章并预览发布，配合 Image auto upload Plugin 还可以快捷上传图片到图床。 需要用到的工具：&#xA;Obsidian Picgo 或者 Piclist 软件 快捷发布文章 首先下载好 Obsidian 并且开启第三方插件，在插件市场下载三个插件：&#xA;Image auto upload Plugin Shell commands Commander 然后在博客文章所在目录打开项目，即可看到所有博客文章。接下来通过 Shell commands 插件配置文章新建、预览、发布。&#xA;原理很简单，就是通过插件调用 CMD 程序，使用命令新建发布文章，然后通过 Commander 将命令绑定到 Obsidian 左侧快捷键，这样只需要点击对应的俺按钮即可快速运行命令。&#xA;创建命令 详细步骤以 新建文章 命令为参考，其余命令步骤相同。&#xA;设置工作目录：首先进入插件设置页面，选择 Environments 选项卡，在 Working Directiory 处输入自己博客的根目录。 新建命令：首先打开 Shell commands 插件设置，点击 New shell command，新建一个命令，输入命令 hugo new post/{{_post_title}}.md 。 设置别名：点击齿轮图标可以进入命令设置页面，在 Alias 处输入命名别名，输入 新建文章 ，可以自定义。 选择 Preactions： 在 Preactions 界面 Prompt 选项选择 Create a new prompt ，Prompt title 写 新建文章 ，然后点击 New prompt field，Field lable 设置为 请输入文章标题：，这个是文章运行前的提示，然后 target value 处选择 create a new custom variable，在 Variable name 处填写 post_title ，点击创建，最终值应该为为 {{_post_title}}，完成后点击创建，效果参考下图。接着在 Preaction 页面选择新创建的 Prompt 即可。 按照同样的步骤再创建预览文章、发布文章、停止 Hugo 进程几个命令。其中发布文章还需要创建新的 Prompt ，预览文章和停止进程仅需要输入命令即可。具体的命令和参数如下：</description>
+    </item>
+  </channel>
+</rss>

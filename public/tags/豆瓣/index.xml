@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>豆瓣 on Tom&#39;s Blog</title>
+    <link>http://localhost:1313/tags/%E8%B1%86%E7%93%A3/</link>
+    <description>Recent content in 豆瓣 on Tom&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <copyright>Tom Almighty</copyright>
+    <lastBuildDate>Tue, 23 Apr 2024 10:38:35 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E8%B1%86%E7%93%A3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>为Hexo博客添加豆瓣观影信息</title>
+      <link>http://localhost:1313/posts/hexo-douban/</link>
+      <pubDate>Tue, 23 Apr 2024 10:38:35 +0000</pubDate>
+      <guid>http://localhost:1313/posts/hexo-douban/</guid>
+      <description>前言 通过 hexo-douban 插件可以为自己的博客添加豆瓣观影和读书页面，项目地址如下：&#xA;{% ghcard mythsman/hexo-douban, theme=onedark%}&#xA;安装 首先在站点根目录安装插件：&#xA;npm install hexo-douban --save 配置 将下面的配置写入站点的配置文件 _config.yml 里 (不是主题的配置文件)&#xA;douban: id: 162448367 builtin: true item_per_page: 10 meta_max_line: 4 customize_layout: page book: path: books/index.html title: &amp;#39;This is my book title&amp;#39; quote: &amp;#39;This is my book quote&amp;#39; option: movie: path: movies/index.html title: &amp;#39;This is my movie title&amp;#39; quote: &amp;#39;This is my movie quote&amp;#39; option: game: path: games/index.html title: &amp;#39;This is my game title&amp;#39; quote: &amp;#39;This is my game quote&amp;#39; option: song: path: songs/index.</description>
+    </item>
+  </channel>
+</rss>

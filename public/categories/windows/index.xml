@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on Tom&#39;s Blog</title>
+    <link>http://localhost:1313/categories/windows/</link>
+    <description>Recent content in Windows on Tom&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <copyright>Tom Almighty</copyright>
+    <lastBuildDate>Mon, 18 Mar 2024 10:27:32 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows终端美化</title>
+      <link>http://localhost:1313/posts/windows-terminal/</link>
+      <pubDate>Mon, 18 Mar 2024 10:27:32 +0800</pubDate>
+      <guid>http://localhost:1313/posts/windows-terminal/</guid>
+      <description>前言 Windows 推出了新的终端 Windows Teminal，虽然外观有所进步，但还是达不到自己预期，因此可以自己简单修改一下。&#xA;准备工作 计算机上启动 Windows PowerShell 时，执行策略很可能是 Restricted（默认设置）。&#xA;Restricted 执行策略不允许任何脚本运行。 AllSigned 和 RemoteSigned 执行策略可防止 Windows PowerShell 运行没有数字签名的脚本。 因此如果直接安装很可能出现无法运行脚本的错误。&#xA;查看当前策略 打开 PowerShell 然后输入:&#xA;get-executionpolicy PS C:\WINDOWS\system32&amp;gt; get-executionpolicy Restricted 修改策略 以管理员身份打开 Windows Posershell，执行下列命令：&#xA;set-executionpolicy remotesigned # 运行后输入 Y 安装 首先在微软商店下载两个应用，直接搜索 Windows Terminal 以及 oh-my-posh。&#xA;安装字体。安装作者推荐的 MesloLGM NF 字体，点此下载，这样可以解决部分字体图标渲染问题。&#xA;设置字体。打开 Windows Terminal，按 Ctrl + Shift + 逗号打开设置文件，然后在第 41 行 profiles 下 default 中添加字体设置，在第 43 行回车，然后添加如下代码后保存。&#xA;&amp;#34;font&amp;#34;: { &amp;#34;face&amp;#34;: &amp;#34;MesloLGM NF&amp;#34; } 加载 oh-my-posh 设置，在 Windows Terminal 中输入下面第一行命令创建新配置文件，创建后输入第二行命令，然后将第三条命令保存：</description>
+    </item>
+    <item>
+      <title>Windows安装IDM下载器并解除限制</title>
+      <link>http://localhost:1313/posts/idm/</link>
+      <pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/idm/</guid>
+      <description>前言 在众多下载管理器中，IDM（Internet Download Manager）以其强大的功能和稳定的性能脱颖而出，成为许多用户的首选下载工具之一。IDM 不仅能够加速下载速度，还具备智能任务管理、断点续传、调度下载等一系列实用功能，极大地提升了下载文件的效率。之前的破解版很多已经不能使用，因此这里介绍新发现的工具。&#xA;⚠️ 本教程仅供学习和研究使用，如果你决定采用这种方法，那么风险自负。&#xA;1. 安装 IDM 首先，你需要在官方网站上下载 IDM 的安装包。下载完成后，按照提示进行安装。安装过程中可能会提示你关闭浏览器等软件，以保证安装顺利完成。IDM的安装过程非常简单，只需要按照提示一步步操作即可。&#xA;2. IDM 破解方法 本教程的工具来自以下网站：&#xA;[Microsoft Activation Scripts]&#xA;IDM Activation Script&#xA;方法一 打开Powershell工具，不是CMD 粘贴如下命令，打开后选择选项 1 安装即可 irm [https://massgrave.dev/ias](https://massgrave.dev/ias) | iex 方法二 在下载地址一或下载地址二)下载压缩包并解压。 解压后的文件夹内运行IAS.cmd文件，即可看到破解界面。 通过以上步骤，你应该了解如何在 Windows 系统上安装和破解 IDM。但是，如果有能力仍然建议购买正版软件，以支持软件开发者的工作并保证自己的电脑安全。在享受便利的同时，也要注重合法合规，尊重软件开发者的辛勤努力。&#xA;参考 Microsoft Activation Scripts 引用文章 </description>
+    </item>
+    <item>
+      <title>Windows10 Office安装指南</title>
+      <link>http://localhost:1313/posts/office/</link>
+      <pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/office/</guid>
+      <description>前言 Office 是日常办公必需品，目前新买到的笔记本都会自带正版 Office 2019 家庭中文版，而且只需要拿邮箱激活一次，之后重装电脑只需要登录激活的邮箱账号即可自动激活，这里简单记录一下下载 Office 的步骤。&#xA;使用工具 Office Tool Plus&#xA;Office Tool Plus 基于 Office 部署工具制作，除此之外还集成了各种实用性工具帮助用户部署和管理 Office.&#xA;Office Tool Plus官网&#xA;帮助文档&#xA;步骤 首先下载并解压工具，推荐下载包含框架的版本，不需要安装额外依赖，下载解压后运行文件夹内 RunMe.bat&#xA;选择 部署 按钮，进去后看到如下界面，选择需要安装的版本以及需要安装的应用，如 Word Excel PowerPoint，添加需要安装的语言，之后点击 开始部署 即可开始安装。&#xA;安装完成后登录第一次激活时的 Office 账号即可使用，若没有账号，可使用工具内的激活工具，首先点击主界面的 代码 按钮，然后在红框内输入代码按回车，等待激活结束 /osppilbyid MondoVolume /osppsethst:kms.loli.beer /osppsetprt:1688 /osppact Office Tool Plus 还提供了许多常用工具，可以解决日常使用中的许多问题，工具官方页面也有帮助文档，以及新手教程，自行探索。</description>
+    </item>
+    <item>
+      <title>Windows10常见问题</title>
+      <link>http://localhost:1313/posts/windows10/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/windows10/</guid>
+      <description>删除自带输入法 删除以下注册表&#xA;HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\CTF\\\\TIP {81d4e9c9-1d3b-41bc-9e6c-4b40bf79e35e} Linux + Windows 双系统时间问题 Windows 下以管理员身份打开命令行窗口&#xA;Reg add HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Control\\\\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1 解决部分图标加载不出来 在桌面新建文本文档，复制以下代码 rem 关闭Windows外壳程序explorer taskkill /f /im explorer.exe rem 清理系统图标缓存数据库 attrib -h -s -r &amp;#34;%userprofile%\\\\AppData\\\\Local\\\\IconCache.db&amp;#34; del /f &amp;#34;%userprofile%\\\\AppData\\\\Local\\\\IconCache.db&amp;#34; attrib /s /d -h -s -r &amp;#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\*&amp;#34; del /f &amp;#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_32.db&amp;#34; del /f &amp;#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_96.db&amp;#34; del /f &amp;#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_102.db&amp;#34; del /f &amp;#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_256.db&amp;#34; del /f &amp;#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_1024.db&amp;#34; del /f &amp;#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_idx.db&amp;#34; del /f &amp;#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_sr.db&amp;#34; rem 清理 系统托盘记忆的图标 echo y|reg delete &amp;#34;HKEY_CLASSES_ROOT\\\\Local Settings\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\TrayNotify&amp;#34; /v IconStreams echo y|reg delete &amp;#34;HKEY_CLASSES_ROOT\\\\Local Settings\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\TrayNotify&amp;#34; /v PastIconsStream rem 重启Windows外壳程序explorer start explorer 将 txt 后缀修改为 bat 双击运行 缩放问题 Win10 修改字体大小后，再改回去任务窗口顶栏并不会改变，此时只需要修改缩放为自定义缩放，然后再调整回去即可。</description>
+    </item>
+  </channel>
+</rss>

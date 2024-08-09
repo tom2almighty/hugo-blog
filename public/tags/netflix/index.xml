@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Netflix on Tom&#39;s Blog</title>
+    <link>http://localhost:1313/tags/netflix/</link>
+    <description>Recent content in Netflix on Tom&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <copyright>Tom Almighty</copyright>
+    <lastBuildDate>Sun, 03 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/netflix/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>自建DNS解锁Netflix</title>
+      <link>http://localhost:1313/posts/netfli-dns/</link>
+      <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/netfli-dns/</guid>
+      <description>通过 DNSmasq 和一台已解锁 Netflix 的服务器，将其余服务器全部解锁 Netflix 。&#xA;原理：使用 Dnsmasq 的DNS将网站解析劫持到 SNIproxy 反向代理的页面上。&#xA;特性：脚本默认解锁Netflix Hulu HBO 等，如需增减域名，请编辑下面文件： /etc/dnsmasq.d/custom_netflix.conf /etc/sniproxy.conf&#xA;项目地址：Github&#xA;安装 前提需求：&#xA;一台解锁 Netflix 的服务器 放行 53、80、443端口 快速安装：&#xA;wget --no-check-certificate -O dnsmasq_sniproxy.sh https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/dnsmasq_sniproxy.sh &amp;amp;&amp;amp; bash dnsmasq_sniproxy.sh -f 卸载：&#xA;wget --no-check-certificate -O dnsmasq_sniproxy.sh https://raw.githubusercontent.com/myxuchangbin/dnsmasq_sniproxy_install/master/dnsmasq_sniproxy.sh &amp;amp;&amp;amp; bash dnsmasq_sniproxy.sh -u systemd-resolve 服务占用 53 端口解决方法 systemctl stop systemd-resolved vim /etc/systemd/resolved.conf 按照下面说明修改文件&#xA;[Resolve] DNS=8.8.8.8 1.1.1.1 #取消注释，增加dns #FallbackDNS= #Domains= #LLMNR=no #MulticastDNS=no #DNSSEC=no #Cache=yes DNSStubListener=no #取消注释，把yes改为no 重启服务：</description>
+    </item>
+    <item>
+      <title>Netflix剧集介绍</title>
+      <link>http://localhost:1313/posts/netflix-info/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/netflix-info/</guid>
+      <description>前言 很多朋友很喜欢看 Netflix 的剧集，但是 Netflix 对于 IP 有一定的要求，很多广播 IP 无法访问，连首页都进不去。但是今年可能由于疫情，Netflix 放宽了 IP 审查，大部分广播 IP 都可以看大部分的剧集，但是部分剧集仍无法观看，所以特地详细了解了一下 Netflix 的剧集类型，并对 Netflix做一个简要介绍。&#xA;Netflix 简介 公司简介 Netflix 是一家美国的技术和媒体服务提供商及制作公司，总部位于 California 的 Los Gatos，主要提供流媒体服务，一般简称奈飞。&#xA;Netflix 于1997年在 California 的 Scotts Valley 成立，公司最初的商业模式包括 DVD 销售和邮寄租赁，之后放弃了销售，2007年引入流媒体服务，2013年进入内容制造行业，推出首个系列剧集 House of cards 即 纸牌屋 获得巨大成功。截止到2016年，发行了大约126部原创电视剧和电影。&#xA;如今 Netflix 在全球大部分国家和地区运营，截至2020年4月，Netflix 在全球范围内拥有超过1.93亿付费订阅，美国达7300万。&#xA;特点 Netflix 采用订阅的方式，如果你不付款，根本连首页都无法进去。但是如果你订阅了套餐，你可以享受两个最基本观影体验：&#xA;平台所有视频都可以无障碍播放，不需要各种点播券。 观影全程无广告，不会有各种 VIP 专享广告。 在账户方面，Netflix 也很灵活，有试用阶段，还可以多用户观看。&#xA;Netflix 提供了一个月的免费试用。你可以首先注册一个账户，绑定你的付款卡片，然后你可以随时删除卡片防止扣费，因此市面上出现了很多月抛账户。 最高级的套餐可以创建5个用户，同时4个屏幕同时在线观看。 Netflix上的视频码率很高，有很好的清晰度，720P视频往往比很多服务商所谓的蓝光都要清晰 Chrome 浏览器上最高只有720P的清晰度，但对大部分人来说足够，也可采用插件解锁1080P&#xA;订阅 Netflix 的订阅套餐分为三档，基本、标准、高级，具体内容如下(以美区为例)&#xA;基本 标准 高级 月费 $8.99 $12.99 $15.</description>
+    </item>
+  </channel>
+</rss>

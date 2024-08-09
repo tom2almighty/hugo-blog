@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Plex on Tom&#39;s Blog</title>
+    <link>http://localhost:1313/tags/plex/</link>
+    <description>Recent content in Plex on Tom&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <copyright>Tom Almighty</copyright>
+    <lastBuildDate>Fri, 09 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/plex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>部署Plex并挂载Alist</title>
+      <link>http://localhost:1313/posts/plex/</link>
+      <pubDate>Fri, 09 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/plex/</guid>
+      <description>前言 由于最近 Netflix 清退了一大批低价区用户，并且不退款，需要与银行争议，就开了一个月的土耳其区，然而土耳其第一个月并不能用土耳其之外的 IP 观看，白白浪费一个月，虽然最近尼日利亚的低价已经超过了巴基斯坦，但还是决定放弃了，花钱找罪受，不如买个 Emby 。 之后在网上看到可以通过服务器部署 Plex Media Server ，将 Alist 挂载到服务器，Plex 添加 Alist 目录，然后 infuse 连接 Plex ，这样可以实现刮削，并且全平台同步，还可以搭配 Aria2 下载自动上传网盘，达到良好的观影效果。&#xA;一、可执行程序部署 1. 部署 Plex 部署可以通过可执行程序，也可以通过 docker ，如果想挂载 alist ，记得和 alist 程序安装在同一台服务器。&#xA;部署程序&#xA;# centos yum -y update &amp;amp;&amp;amp; yum -y install wget https://downloads.plex.tv/plex-media-server-new/1.32.8.7639-fb6452ebf/redhat/plexmediaserver-1.32.8.7639-fb6452ebf.x86_64.rpm yum install plexmediaserver*.rpm # Debian/Ubuntu系统 apt-get -y update &amp;amp;&amp;amp; apt-get -y upgrade wget https://downloads.plex.tv/plex-media-server-new/1.32.8.7639-fb6452ebf/debian/plexmediaserver_1.32.8.7639-fb6452ebf_amd64.deb dpkg -i plexmediaserver*.deb 设置开机自启&#xA;systemctl enable plexmediaserver.service systemctl start plexmediaserver.</description>
+    </item>
+  </channel>
+</rss>

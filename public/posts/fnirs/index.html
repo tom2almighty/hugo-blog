@@ -1,0 +1,2220 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<title>近红外数据分析步骤</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="fNIRS Data Preprocessing使用步骤。">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:url" content="http://localhost:1313/posts/fnirs/">
+  <meta property="og:site_name" content="Tom&#39;s Blog">
+  <meta property="og:title" content="近红外数据分析步骤">
+  <meta property="og:description" content="fNIRS Data Preprocessing使用步骤。">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-05-13T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-05-13T00:00:00+00:00">
+    <meta property="article:tag" content="FNIRS">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>console.log("Hello from 'layouts/partials/extended_head.html'")</script>
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档 | Archive
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类 | Categories
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签 | Tags
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#fnirs-data-preprocessing%e4%bd%bf%e7%94%a8%e6%ad%a5%e9%aa%a4" class="nav-fnirs-data-preprocessing使用步骤">
+									fNIRS Data Preprocessing使用步骤
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#fnirs-data-preprocessing-%e5%ae%8f%e7%a8%8b%e5%ba%8f%e4%bb%8b%e7%bb%8d" class="nav-fnirs-data-preprocessing-宏程序介绍">
+									fNIRS Data Preprocessing 宏程序介绍
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%84%91%e5%86%85%e6%bf%80%e6%b4%bbintra-brain-activation" class="nav-脑内激活intra-brain-activation">
+									脑内激活（Intra-brain activation）
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#step01-hitachi" class="nav-step01-hitachi">
+									Step01. Hitachi
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step02-trigger-check" class="nav-step02-trigger-check">
+									Step02. Trigger Check
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step03-%e6%a0%bc%e5%bc%8f%e8%bd%ac%e6%8d%a2-xlsx-to-mat" class="nav-step03-格式转换-xlsx-to-mat">
+									Step03. 格式转换 xlsx to mat
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step04-%e5%b8%a6%e9%80%9a%e6%bb%a4%e6%b3%a2bandpass-filter" class="nav-step04-带通滤波bandpass-filter">
+									Step04. 带通滤波(bandpass-filter)
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step05-%e5%b0%86-txt-%e6%a0%bc%e5%bc%8f%e8%bd%ac%e4%b8%ba-xlsx-%e6%96%87%e4%bb%b6" class="nav-step05-将-txt-格式转为-xlsx-文件">
+									Step05. 将 txt 格式转为 xlsx 文件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step06-%e6%8f%90%e5%8f%96%e8%a1%8c%e4%b8%ba%e6%95%b0%e6%8d%ae" class="nav-step06-提取行为数据">
+									Step06. 提取行为数据
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step07-%e6%95%b4%e5%90%88%e8%a1%8c%e4%b8%ba%e6%95%b0%e6%8d%ae" class="nav-step07-整合行为数据">
+									Step07. 整合行为数据
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step08-%e6%b7%bb%e5%8a%a0-mark" class="nav-step08-添加-mark">
+									Step08. 添加 Mark
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step09-%e5%9f%ba%e7%ba%bf%e6%a0%a1%e6%ad%a3%e5%92%8cz%e5%88%86%e6%95%b0%e8%bd%ac%e6%8d%a2" class="nav-step09-基线校正和z分数转换">
+									Step09. 基线校正和Z分数转换
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step10-%e5%88%86%e7%a6%bb%e6%9d%a1%e4%bb%b6" class="nav-step10-分离条件">
+									Step10. 分离条件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step11-%e8%ae%a1%e7%ae%97%e5%b9%b3%e5%9d%87%e8%84%91%e6%bf%80%e6%b4%bb" class="nav-step11-计算平均脑激活">
+									Step11. 计算平均脑激活
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step12-%e5%b0%86%e6%89%80%e6%9c%89%e8%a2%ab%e8%af%95%e6%95%b0%e6%8d%ae%e6%8c%89%e6%9d%a1%e4%bb%b6%e6%95%b4%e5%90%88" class="nav-step12-将所有被试数据按条件整合">
+									Step12. 将所有被试数据按条件整合
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step13-%e5%b0%86%e6%89%80%e6%9c%89%e8%a2%ab%e8%af%95%e6%95%b0%e6%8d%ae%e9%9b%86%e4%b8%ad%e5%88%b0%e4%b8%80%e4%b8%aa-sheet" class="nav-step13-将所有被试数据集中到一个-sheet">
+									Step13. 将所有被试数据集中到一个 Sheet
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step14-%e6%95%b4%e5%90%88%e6%9d%a1%e4%bb%b6" class="nav-step14-整合条件">
+									Step14. 整合条件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step15-%e5%88%87%e5%88%86%e9%80%9a%e9%81%93" class="nav-step15-切分通道">
+									Step15. 切分通道
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step16-%e5%b9%b3%e5%9d%87-run" class="nav-step16-平均-run">
+									Step16. 平均 run
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e8%84%91%e9%97%b4%e5%90%8c%e6%ad%a5inter-brain-neural-synchronization-" class="nav-脑间同步inter-brain-neural-synchronization-">
+									脑间同步（Inter-brain neural synchronization ）
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#step01---step09" class="nav-step01---step09">
+									Step01 - Step09
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step10-%e5%88%86%e7%a6%bb%e6%9d%a1%e4%bb%b6-1" class="nav-step10-分离条件-1">
+									Step10. 分离条件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step11-%e5%b0%86%e6%89%80%e6%9c%89%e8%a2%ab%e8%af%95%e6%95%b0%e6%8d%ae%e6%8c%89%e6%9d%a1%e4%bb%b6%e6%95%b4%e5%90%88" class="nav-step11-将所有被试数据按条件整合">
+									Step11. 将所有被试数据按条件整合
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step12-%e5%b0%86%e6%89%80%e6%9c%89%e8%a2%ab%e8%af%95%e6%95%b0%e6%8d%ae%e9%9b%86%e4%b8%ad%e5%88%b0%e4%b8%80%e4%b8%aa-sheet" class="nav-step12-将所有被试数据集中到一个-sheet">
+									Step12. 将所有被试数据集中到一个 Sheet
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step13-%e8%ae%a1%e7%ae%97%e5%9f%ba%e4%ba%8e-ins-%e7%9a%84%e7%9b%b8%e5%85%b3%e7%9f%a9%e9%98%b5" class="nav-step13-计算基于-ins-的相关矩阵">
+									Step13. 计算基于 INS 的相关矩阵
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step14-%e6%8f%90%e5%8f%96%e7%9b%b8%e5%85%b3%e6%95%b0%e6%8d%ae" class="nav-step14-提取相关数据">
+									Step14. 提取相关数据
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step15-%e5%b9%b3%e5%9d%87-run" class="nav-step15-平均-run">
+									Step15. 平均 run
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step16-%e9%85%8d%e5%af%b9%e6%a0%b7%e6%9c%ac-t-%e6%a3%80%e9%aa%8c" class="nav-step16-配对样本-t-检验">
+									Step16. 配对样本 t 检验
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step17-%e5%88%87%e5%88%86%e9%80%9a%e9%81%93" class="nav-step17-切分通道">
+									Step17. 切分通道
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="http://localhost:1313/">
+            Tom&#39;s Blog
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="http://localhost:1313/">
+        <div class="single-column-header-title">Tom&#39;s Blog</div>
+        
+        <div class="single-column-header-subtitle">Life is a Battle!</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+                
+            
+
+            <div class="post-head-wrapper"
+                
+                    
+                    
+                    style="background-image: url('https://pic.imgdb.cn/item/65f021be9f345e8d03339c1b.webp')"
+                    
+                
+            >
+                <div class="post-title">
+                    近红外数据分析步骤
+                    
+                    <div class="post-subtitle">
+                        fNIRS Data Preprocessing使用步骤。
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2023-05-13 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/%E7%AC%94%E8%AE%B0">笔记</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/fnirs">fNIRS</a>
+                                &nbsp;
+                            
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            25 min
+                            
+                            9 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h1 id="fnirs-data-preprocessing使用步骤">fNIRS Data Preprocessing使用步骤</h1>
+<p>本文是近红外数据分析步骤，适用于<code>joint Simon task</code>，使用 宏程序<code>fNIRS Data Preprocessing</code> 以及其他宏程序完成，<code>ETG7100</code>型号设备数据格式为<code>编号_HBA_Probe1_Oxy.csv</code>，编号自定义，最好写成<code>sub001_run1</code>这种形式，命名最好采用单数，即第1对被试为<code>sub01</code>，第2对为<code>sub03</code>，方便后续分割两个被试的数据。</p>
+<h2 id="fnirs-data-preprocessing-宏程序介绍">fNIRS Data Preprocessing 宏程序介绍</h2>
+<p>程序界面包括三部分，步骤选择、设置、文件列表查看，如下图。</p>
+<p><img src="https://pic.imgdb.cn/item/65f01f4e9f345e8d032a4b57.webp" alt="程序界面"></p>
+<p>主要使用步骤为首先选择源数据路径，粘贴进对话框后点击<code>File List</code>查看是否正确，然后在 <code>Type of calculation</code> 选择程序，点击<code>Set </code>设置，设置无误后点击 <code>Start</code>开始。</p>
+<h2 id="脑内激活intra-brain-activation">脑内激活（Intra-brain activation）</h2>
+<p>前面步骤使用 <code>fNIRS Data Preprocessing</code>程序完成，十三步后可使用自定义宏程序。</p>
+<h3 id="step01-hitachi">Step01. Hitachi</h3>
+<p>使用 <code>Excel</code> 程序<code>Hitachi</code>更新数据格式</p>
+<ol>
+<li>输入目标文件的路径保存 <code>Oxy</code> 数据，按 <code>File List</code> 按钮</li>
+<li>从<code>Type of Calculation</code>中选择<code>Hitachi</code>，按<code>Set</code>按钮</li>
+<li>按 <code>Start</code>开始程序</li>
+<li>结束后程序<strong>不会</strong>输出新的文件</li>
+</ol>
+<h3 id="step02-trigger-check">Step02. Trigger Check</h3>
+<ol>
+<li>输入目标文件路径，按 <code>File List</code> 按钮</li>
+<li>输入结果文件<code>Trigger.xlsx</code>的保存路径</li>
+<li>从<code>Type of Calculation</code>中选择<code>Trigger Check</code>，按<code>Set</code>按钮</li>
+<li>按 <code>Start</code>开始程序，对话框中输入 <code>1</code></li>
+<li>结束后程序<strong>会</strong>输出新的文件 <code>Trigger.xlsx</code></li>
+</ol>
+<h3 id="step03-格式转换-xlsx-to-mat">Step03. 格式转换 xlsx to mat</h3>
+<ol>
+<li>打开 <code>Matlab</code>，路径选择到 <code>Hitachi</code>后的文件路径，左侧出现文件后即成功</li>
+<li>输入下列代码转换格式</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i = <span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">9</span> # i代表 sub0 后的数量 这里表示 sub01到 sub09
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> j = <span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">2</span> # j 代表run数量，有几个修改一下即可
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> k = <span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">4</span> # k 代表 Probe数量，即光极片数量
+</span></span><span style="display:flex;"><span>a = [<span style="color:#e6db74">&#39;sub0&#39;</span>,num2str(i),<span style="color:#e6db74">&#39;_run&#39;</span>, num2str(j),<span style="color:#e6db74">&#39;_HBA_Probe&#39;</span>, num2str(k),<span style="color:#e6db74">&#39;_Oxy.csv&#39;</span>]
+</span></span><span style="display:flex;"><span>xlsread(a,<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>b = [<span style="color:#e6db74">&#39;sub0&#39;</span>,num2str(i),<span style="color:#e6db74">&#39;_run&#39;</span>, num2str(j),<span style="color:#e6db74">&#39;_HBA_Probe&#39;</span>, num2str(k),<span style="color:#e6db74">&#39;_Oxy.mat&#39;</span>]
+</span></span><span style="display:flex;"><span>save(b)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><ol start="3">
+<li>上述代码可以修改 01-09编号的被试数据，如果要修改10以后的数据，可以将第4 、6行代码中 <code>sub0</code> 改为 <code>sub1</code></li>
+<li>回车键执行代码，被试超过10需要多次执行</li>
+</ol>
+<h3 id="step04-带通滤波bandpass-filter">Step04. 带通滤波(bandpass-filter)</h3>
+<p>使用 <code>Matlab</code>代码进行带通滤波（通常设置0.01-0.1Hz）（作用是降噪）,将 <code>matlab</code>代码文件和转换格式后的文件放到一个文件夹下</p>
+<ol>
+<li>将<code>bandpass-filter</code>设置为当前路径</li>
+<li>打开 M 文件<code>data_bpfilt.m</code>，将<code>fs</code>修改为正确采样率（默认设置为fs=10）并保存</li>
+<li>打开<code>filt_all.m</code>，设置正确的文件路径，该路径需包含<code>data_bpfilt.m</code>文件,文件路径后记得加“\”</li>
+<li>按<code>Run</code>按钮运行<code>filt_all.m</code>代码</li>
+</ol>
+<p><img src="C:%5CUsers%5Ccc%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20230513193756552.png" alt="image-20230513193756552"></p>
+<h3 id="step05-将-txt-格式转为-xlsx-文件">Step05. 将 <code>txt</code> 格式转为 <code>xlsx</code> 文件</h3>
+<ol>
+<li>将 <code>Eprime</code>数据 <code>txt</code> 格式文件整理到一起</li>
+<li>使用 <code>Make xls files</code>程序读取</li>
+<li>需要输入源文件路径和保存路径</li>
+<li>保存后会输出新的 <code>xlsx</code> 文件</li>
+</ol>
+<h3 id="step06-提取行为数据">Step06. 提取行为数据</h3>
+<ol>
+<li>输入源文件路径</li>
+<li>选择 <code>BehavData_gather</code>程序</li>
+<li>结束后不会生成新的文件，会在原有文件生成新的工作表</li>
+</ol>
+<h3 id="step07-整合行为数据">Step07. 整合行为数据</h3>
+<ol>
+<li>输入目标文件 <code>Eprime (.xls)</code>的路径，按 <code>File List</code>按钮</li>
+<li>输入行为数据的目标保存路径</li>
+<li>输入行为数据的文件名（保留“EprimeData.xlsx”）</li>
+<li>输入包含行为数据的表格编号，这里为 <code>2</code></li>
+<li>选择 <code>Gather the files</code>，并开始程序</li>
+</ol>
+<h3 id="step08-添加-mark">Step08. 添加 <code>Mark</code></h3>
+<ol>
+<li>
+<p>打开第 7 步后生成的文件 <code>EprimeData.xlsx</code></p>
+</li>
+<li>
+<p>输入包含带通滤波后的Oxy的目标文件的路径(第4步)</p>
+</li>
+<li>
+<p>输入“Sheet number of the data”，这里为 1</p>
+</li>
+<li>
+<p>选择 <code>Mark Add</code>，<code>Set</code> 并 <code>Start</code></p>
+</li>
+<li>
+<p>结束后可再执行一次 <code>Trigger Check</code> 程序，步骤与 <code>Step02</code>一致，Step02第4步对话框选择时输入 <code>2</code></p>
+</li>
+</ol>
+<blockquote>
+<p>前八步都是进行mark补充的功能，如果Eprime编实验程序时，设置刺激出现前打一个mark，刺激刚出现时打一个mark，刺激出现结束后两秒打一个mark。Mark在设计程序时就已经打好的话，那么前八步就不用操作了。</p>
+</blockquote>
+<h3 id="step09-基线校正和z分数转换">Step09. 基线校正和Z分数转换</h3>
+<ol>
+<li>使用添加 <code>mark</code> 后的 <code>oxy</code>文件，如果文件少 <code>mark</code> 会报错</li>
+<li>使用程序<code>Baseline correction</code></li>
+<li>结束后不会生成新的文件</li>
+</ol>
+<h3 id="step10-分离条件">Step10. 分离条件</h3>
+<ol>
+<li>输入基线校正和Z分数转换后的数据路径</li>
+<li>选择程序 <code>Data Cut (mode1)</code></li>
+<li>结束后不会生成新的文件</li>
+</ol>
+<h3 id="step11-计算平均脑激活">Step11. 计算平均脑激活</h3>
+<ol>
+<li>输入分离条件后的数据文件夹为源文件夹</li>
+<li>选择程序 <code>Average Calculation</code>计算平均脑激活</li>
+<li>结束后不会生成新的文件</li>
+</ol>
+<h3 id="step12-将所有被试数据按条件整合">Step12. 将所有被试数据按条件整合</h3>
+<ol>
+<li>输入包含平均脑激活的目标文件的路径</li>
+<li>输入保存文件的目标路径</li>
+<li>输入文件名保存不同实验条件的平均脑激活数据，Condition1/2/3/4，并选择相应的Sheet number，第1个条件在 <code>Sheet1</code>，以此类推</li>
+<li>选择程序 <code>Gather the files</code>，按 <code>Set</code> 并 <code>Start</code></li>
+</ol>
+<h3 id="step13-将所有被试数据集中到一个-sheet">Step13. 将所有被试数据集中到一个 Sheet</h3>
+<ol>
+<li>输入包含Condition文件目标文件的路径</li>
+<li>选择程序 <code>Data Gather(mode1)</code></li>
+<li>按 <code>Set</code> 并 <code>Start</code></li>
+</ol>
+<h3 id="step14-整合条件">Step14. 整合条件</h3>
+<ol>
+<li>接下来步骤需要自己新建宏程序</li>
+<li>在个人宏工作簿中点击 <code>开发工具-Visual Basic</code></li>
+<li>点击<code>插入-模块</code></li>
+<li>输入下列代码：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vb" data-lang="vb"><span style="display:flex;"><span><span style="color:#66d9ef">Option</span> Explicit
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">组内整合条件</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> ws <span style="color:#f92672">As</span> Worksheet
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> wb <span style="color:#f92672">As</span> Workbook
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> newWb <span style="color:#f92672">As</span> Workbook
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> myPath <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> myFile <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> i <span style="color:#f92672">As</span> <span style="color:#66d9ef">Long</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> col <span style="color:#f92672">As</span> <span style="color:#66d9ef">Long</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> lastRow <span style="color:#f92672">As</span> <span style="color:#66d9ef">Long</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> header <span style="color:#f92672">As</span> Range
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> filtereRange <span style="color:#f92672">As</span> Range
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> filterValue <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Application.ScreenUpdating <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; 获取当前文件夹路径&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    myPath <span style="color:#f92672">=</span> InputBox(<span style="color:#e6db74">&#34;请输入文件路径:&#34;</span>) <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;\&#34;</span>
+</span></span><span style="display:flex;"><span>    myFile <span style="color:#f92672">=</span> Dir(myPath <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;*.xlsx&#34;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; 新建all_condition工作簿&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">Set</span> newWb <span style="color:#f92672">=</span> Workbooks.Add
+</span></span><span style="display:flex;"><span>    newWb.SaveAs myPath <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;all_condition.xlsx&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Set</span> ws <span style="color:#f92672">=</span> newWb.Worksheets(1)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    col <span style="color:#f92672">=</span> 3
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; 遍历目录下的所有Excel文件&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">Do</span> <span style="color:#66d9ef">While</span> myFile <span style="color:#f92672">&lt;&gt;</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">If</span> myFile <span style="color:#f92672">&lt;&gt;</span> <span style="color:#e6db74">&#34;all_condition.xlsx&#34;</span> <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">&#39; 打开原始工作簿&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">Set</span> wb <span style="color:#f92672">=</span> Workbooks.Open(myPath <span style="color:#f92672">&amp;</span> myFile)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">&#39; 复制第2个工作表的第3到6列到新工作簿&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">With</span> wb.Worksheets(<span style="color:#e6db74">&#34;Sheet1DataListSPSS&#34;</span>)
+</span></span><span style="display:flex;"><span>                lastRow <span style="color:#f92672">=</span> .Cells(.Rows.Count, 3).End(xlUp).Row
+</span></span><span style="display:flex;"><span>                .Range(.Cells(1, 3), .Cells(lastRow, 6)).Copy ws.Cells(1, col)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">With</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">&#39; 补充表头&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">For</span> i <span style="color:#f92672">=</span> 1 <span style="color:#66d9ef">To</span> 4
+</span></span><span style="display:flex;"><span>                ws.Cells(1, col <span style="color:#f92672">+</span> i <span style="color:#f92672">-</span> 1).Value <span style="color:#f92672">=</span> ws.Cells(1, col <span style="color:#f92672">+</span> i <span style="color:#f92672">-</span> 1).Value <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;_&#34;</span> <span style="color:#f92672">&amp;</span> Replace(myFile, <span style="color:#e6db74">&#34;.xlsx&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Next</span> i
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            col <span style="color:#f92672">=</span> col <span style="color:#f92672">+</span> 4
+</span></span><span style="display:flex;"><span>            wb.Close SaveChanges:<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>        myFile <span style="color:#f92672">=</span> Dir
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Loop</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39;复制第一个原始工作簿的前两列&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">Set</span> wb <span style="color:#f92672">=</span> Workbooks.Open(myPath <span style="color:#f92672">&amp;</span> Dir(myPath <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;Condition1.xlsx&#34;</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">With</span> wb.Worksheets(<span style="color:#e6db74">&#34;Sheet1DataListSPSS&#34;</span>)
+</span></span><span style="display:flex;"><span>        lastRow <span style="color:#f92672">=</span> .Cells(.Rows.Count, 1).End(xlUp).Row
+</span></span><span style="display:flex;"><span>        .Range(.Cells(1, 1), .Cells(lastRow, 2)).Copy ws.Cells(1, 1)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">With</span>
+</span></span><span style="display:flex;"><span>    wb.Close SaveChanges:<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; 保存新工作簿修改&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    newWb.Save
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; 复制第一个工作表&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    ws.Copy After:<span style="color:#f92672">=</span>ws
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Set</span> ws <span style="color:#f92672">=</span> newWb.Worksheets(2)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; 添加subject列&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    ws.Columns(2).Insert
+</span></span><span style="display:flex;"><span>    ws.Cells(1, 1).Value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;subject_pair&#34;</span>
+</span></span><span style="display:flex;"><span>    ws.Cells(1, 2).Value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;subject&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; 修改subject列内容&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    lastRow <span style="color:#f92672">=</span> ws.Cells(ws.Rows.Count, 1).End(xlUp).Row
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">For</span> i <span style="color:#f92672">=</span> 2 <span style="color:#66d9ef">To</span> lastRow
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Dim</span> parts() <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>
+</span></span><span style="display:flex;"><span>        parts <span style="color:#f92672">=</span> Split(ws.Cells(i, 1).Value, <span style="color:#e6db74">&#34;_&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">If</span> InStr(parts(2), <span style="color:#e6db74">&#34;Probe1&#34;</span>) <span style="color:#f92672">&gt;</span> 0 <span style="color:#f92672">Or</span> InStr(parts(2), <span style="color:#e6db74">&#34;Probe2&#34;</span>) <span style="color:#f92672">&gt;</span> 0 <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>            ws.Cells(i, 2).Value <span style="color:#f92672">=</span> parts(0) <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;_&#34;</span> <span style="color:#f92672">&amp;</span> parts(1)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Else</span>
+</span></span><span style="display:flex;"><span>            ws.Cells(i, 2).Value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sub&#34;</span> <span style="color:#f92672">&amp;</span> Format(<span style="color:#66d9ef">CInt</span>(Mid(parts(0), 4)) <span style="color:#f92672">+</span> 1, <span style="color:#e6db74">&#34;000&#34;</span>) <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;_&#34;</span> <span style="color:#f92672">&amp;</span> parts(1)
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">&#39; 交换第3到6列和第7到10列&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">Dim</span> temp <span style="color:#f92672">As</span> <span style="color:#66d9ef">Variant</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Dim</span> j <span style="color:#f92672">As</span> <span style="color:#66d9ef">Long</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Dim</span> k <span style="color:#f92672">As</span> <span style="color:#66d9ef">Long</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">For</span> j <span style="color:#f92672">=</span> 4 <span style="color:#66d9ef">To</span> 7
+</span></span><span style="display:flex;"><span>                temp <span style="color:#f92672">=</span> ws.Cells(i, j).Value
+</span></span><span style="display:flex;"><span>                ws.Cells(i, j).Value <span style="color:#f92672">=</span> ws.Cells(i, j <span style="color:#f92672">+</span> 4).Value
+</span></span><span style="display:flex;"><span>                ws.Cells(i, j <span style="color:#f92672">+</span> 4).Value <span style="color:#f92672">=</span> temp
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Next</span> j
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">&#39; 交换第11到14列和第15到18列&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">For</span> k <span style="color:#f92672">=</span> 12 <span style="color:#66d9ef">To</span> 15
+</span></span><span style="display:flex;"><span>                temp <span style="color:#f92672">=</span> ws.Cells(i, k).Value
+</span></span><span style="display:flex;"><span>                ws.Cells(i, k).Value <span style="color:#f92672">=</span> ws.Cells(i, k <span style="color:#f92672">+</span> 4).Value
+</span></span><span style="display:flex;"><span>                ws.Cells(i, k <span style="color:#f92672">+</span> 4).Value <span style="color:#f92672">=</span> temp
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Next</span> k
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Next</span> i
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; 删除第1列并排序&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    ws.Columns(1).Delete
+</span></span><span style="display:flex;"><span>    ws.Sort.SortFields.Clear
+</span></span><span style="display:flex;"><span>    ws.Sort.SortFields.Add Key:<span style="color:#f92672">=</span>ws.Range(<span style="color:#e6db74">&#34;A2&#34;</span>), SortOn:<span style="color:#f92672">=</span>xlSortOnValues, Order:<span style="color:#f92672">=</span>xlAscending, DataOption:<span style="color:#f92672">=</span>xlSortNormal
+</span></span><span style="display:flex;"><span>    ws.Sort.SortFields.Add Key:<span style="color:#f92672">=</span>ws.Range(<span style="color:#e6db74">&#34;B2&#34;</span>), SortOn:<span style="color:#f92672">=</span>xlSortOnValues, Order:<span style="color:#f92672">=</span>xlAscending, DataOption:<span style="color:#f92672">=</span>xlSortNormal
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">With</span> ws.Sort
+</span></span><span style="display:flex;"><span>        .SetRange ws.Range(<span style="color:#e6db74">&#34;A1&#34;</span>).CurrentRegion
+</span></span><span style="display:flex;"><span>        .Header <span style="color:#f92672">=</span> xlYes
+</span></span><span style="display:flex;"><span>        .MatchCase <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>        .Orientation <span style="color:#f92672">=</span> xlTopToBottom
+</span></span><span style="display:flex;"><span>        .SortMethod <span style="color:#f92672">=</span> xlPinYin
+</span></span><span style="display:flex;"><span>        .Apply
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">With</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; Turn on screen updating&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    Application.ScreenUpdating <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>    newWb.Save
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span></code></pre></div><ol start="5">
+<li>保存后运行，输入 <code>Step13</code> 后的文件路径后点击确定开始</li>
+</ol>
+<blockquote>
+<p>**注意：**这里程序会将 <code>Probe1 &amp; 2</code>的数据 和<code>Probe3 &amp; 4</code>的数据分开，将 <code>Probe3 &amp; 4</code>的数据编号加1，<strong>如果被试编号不是单数命名则不能使用此程序</strong></p>
+</blockquote>
+<blockquote>
+<p>同时程序会将被试对中第2个被试的 condition1 和 condition2的数据交换，condition3 和 condition4的数据交换。原因如下：</p>
+<p>Eprime 程序中 Mark 设置为 condition1 为 <code>左侧-红色</code>刺激，condition2为 <code>右侧-绿色</code>刺激，condition3为 <code>右侧-红色</code>刺激，condition2为 <code>左侧-绿色</code>刺激，因此交换后被试对中两名对应的一致性和反应性相符。</p>
+</blockquote>
+<h3 id="step15-切分通道">Step15. 切分通道</h3>
+<ol>
+<li>新建一个宏程序，粘贴下面代码</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vb" data-lang="vb"><span style="display:flex;"><span><span style="color:#66d9ef">Option</span> Explicit
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&#39;切分通道
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">组内切分通道</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> wbSource <span style="color:#f92672">As</span> Workbook
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> wsSource <span style="color:#f92672">As</span> Worksheet
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> wsNew <span style="color:#f92672">As</span> Worksheet
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> rngData <span style="color:#f92672">As</span> Range
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> cell <span style="color:#f92672">As</span> Range
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> filterValue <span style="color:#f92672">As</span> <span style="color:#66d9ef">Variant</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> dict <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> key <span style="color:#f92672">As</span> <span style="color:#66d9ef">Variant</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; 1. 选择要执行的工作簿，将输入的工作簿第2个工作表设置为活动表
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">Set</span> wbSource <span style="color:#f92672">=</span> Workbooks.Open(Application.GetOpenFilename(FileFilter:<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Excel Files (*.xls; *.xlsx; *.xlsm),*.xls; *.xlsx; *.xlsm&#34;</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Set</span> wsSource <span style="color:#f92672">=</span> wbSource.Worksheets(2)
+</span></span><span style="display:flex;"><span>    wsSource.Activate
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; 2. 根据第2列值筛选表格数据
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">Set</span> rngData <span style="color:#f92672">=</span> wsSource.Range(<span style="color:#e6db74">&#34;A1&#34;</span>).CurrentRegion
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Set</span> dict <span style="color:#f92672">=</span> CreateObject(<span style="color:#e6db74">&#34;Scripting.Dictionary&#34;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; a. 重复值只筛选一次，空白值不筛选，从第2列第2个单元格开始筛选
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">For</span> <span style="color:#66d9ef">Each</span> cell <span style="color:#f92672">In</span> rngData.Columns(2).Cells
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">If</span> cell.Row <span style="color:#f92672">&gt;</span> 1 <span style="color:#f92672">And</span> <span style="color:#66d9ef">Not</span> IsEmpty(cell.Value) <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>            dict(cell.Value) <span style="color:#f92672">=</span> 1
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Next</span> cell
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; b. 根据筛选值创建新表，表名字为筛选值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39; c. 将筛选后的值保存到对应名字的新表中
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">&#39; d. 筛选结束后取消筛选
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    Application.ScreenUpdating <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">For</span> <span style="color:#66d9ef">Each</span> key <span style="color:#f92672">In</span> dict.keys
+</span></span><span style="display:flex;"><span>        wsSource.Rows(1).AutoFilter Field:<span style="color:#f92672">=</span>2, Criteria1:<span style="color:#f92672">=</span>key
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Set</span> wsNew <span style="color:#f92672">=</span> wbSource.Worksheets.Add(After:<span style="color:#f92672">=</span>wbSource.Worksheets(wbSource.Worksheets.Count))
+</span></span><span style="display:flex;"><span>        wsNew.Name <span style="color:#f92672">=</span> key
+</span></span><span style="display:flex;"><span>        rngData.SpecialCells(xlCellTypeVisible).Copy Destination:<span style="color:#f92672">=</span>wsNew.Range(<span style="color:#e6db74">&#34;A1&#34;</span>)
+</span></span><span style="display:flex;"><span>        wsSource.Rows(1).AutoFilter
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Next</span> key
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; 3. 删除第1个和第二个工作表
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    Application.DisplayAlerts <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>    wbSource.Worksheets(1).Delete
+</span></span><span style="display:flex;"><span>    wsSource.Delete
+</span></span><span style="display:flex;"><span>    Application.DisplayAlerts <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; 4. 将剩余工作表中第2列删除
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">For</span> <span style="color:#66d9ef">Each</span> wsNew <span style="color:#f92672">In</span> wbSource.Worksheets
+</span></span><span style="display:flex;"><span>        wsNew.Columns(2).Delete
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Next</span> wsNew
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; 5. 保存工作簿到当前工作簿下
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    wbSource.SaveAs wbSource.Path <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;\&#34;</span> <span style="color:#f92672">&amp;</span> Left(wbSource.Name, InStrRev(wbSource.Name, <span style="color:#e6db74">&#34;.&#34;</span>) <span style="color:#f92672">-</span> 1) <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;_split&#34;</span>
+</span></span><span style="display:flex;"><span>    Application.ScreenUpdating <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>    MsgBox <span style="color:#e6db74">&#34;操作完成&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>wbSource.SaveAs 
+</span></span></code></pre></div><ol start="2">
+<li>选择 <code>Step14</code> 后的文件路径后执行</li>
+</ol>
+<h3 id="step16-平均-run">Step16. 平均 <code>run</code></h3>
+<ol>
+<li>新建一个宏程序保存下面代码：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vb" data-lang="vb"><span style="display:flex;"><span><span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">AverageRuns</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> originalWorkbook <span style="color:#f92672">As</span> Workbook
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> newWorkbook <span style="color:#f92672">As</span> Workbook
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> originalWorksheet <span style="color:#f92672">As</span> Worksheet
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> newWorksheet <span style="color:#f92672">As</span> Worksheet
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> runCount <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> rowCount <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> colCount <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> currentRow <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> currentCol <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> sum <span style="color:#f92672">As</span> <span style="color:#66d9ef">Double</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> count <span style="color:#f92672">As</span> <span style="color:#66d9ef">Integer</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> average <span style="color:#f92672">As</span> <span style="color:#66d9ef">Double</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39;获取当前活动的工作簿&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">Set</span> originalWorkbook <span style="color:#f92672">=</span> ActiveWorkbook
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39;通过对话框获取run次数&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    runCount <span style="color:#f92672">=</span> InputBox(<span style="color:#e6db74">&#34;请输入run次数:&#34;</span>, <span style="color:#e6db74">&#34;输入run次数&#34;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39;创建一个新的工作簿，用于保存平均后的结果&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">Set</span> newWorkbook <span style="color:#f92672">=</span> Workbooks.Add
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39;循环处理每个工作表&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">For</span> <span style="color:#66d9ef">Each</span> originalWorksheet <span style="color:#f92672">In</span> originalWorkbook.Worksheets
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&#39;添加一个新的工作表，并将名称设置为原名称+_average&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">Set</span> newWorksheet <span style="color:#f92672">=</span> newWorkbook.Worksheets.Add(After:<span style="color:#f92672">=</span>newWorkbook.Worksheets(newWorkbook.Worksheets.Count))
+</span></span><span style="display:flex;"><span>        newWorksheet.Name <span style="color:#f92672">=</span> originalWorksheet.Name <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;_average&#34;</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&#39;获取行数和列数&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        rowCount <span style="color:#f92672">=</span> originalWorksheet.Cells(Rows.Count, 1).End(xlUp).Row
+</span></span><span style="display:flex;"><span>        colCount <span style="color:#f92672">=</span> originalWorksheet.Cells(1, Columns.Count).End(xlToLeft).Column
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&#39;添加行标题&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">For</span> currentCol <span style="color:#f92672">=</span> 2 <span style="color:#66d9ef">To</span> colCount
+</span></span><span style="display:flex;"><span>            newWorksheet.Cells(1, currentCol).Value <span style="color:#f92672">=</span> originalWorksheet.Cells(1, currentCol)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Next</span> currentCol
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&#39;添加列标题并计算每个被试每个通道的均值&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        currentRow <span style="color:#f92672">=</span> 2
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">For</span> i <span style="color:#f92672">=</span> 2 <span style="color:#66d9ef">To</span> rowCount <span style="color:#66d9ef">Step</span> runCount
+</span></span><span style="display:flex;"><span>            newWorksheet.Cells(currentRow, 1).Value <span style="color:#f92672">=</span> Left(originalWorksheet.Cells(2 <span style="color:#f92672">+</span> runCount <span style="color:#f92672">*</span> (currentRow <span style="color:#f92672">-</span> 2), 1), 6)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">For</span> currentCol <span style="color:#f92672">=</span> 2 <span style="color:#66d9ef">To</span> colCount
+</span></span><span style="display:flex;"><span>                sum <span style="color:#f92672">=</span> 0
+</span></span><span style="display:flex;"><span>                count <span style="color:#f92672">=</span> 0
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">For</span> k <span style="color:#f92672">=</span> i <span style="color:#66d9ef">To</span> i <span style="color:#f92672">+</span> runCount <span style="color:#f92672">-</span> 1
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">If</span> <span style="color:#66d9ef">Not</span> IsEmpty(originalWorksheet.Cells(k, currentCol)) <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">If</span> originalWorksheet.Cells(k,currentCol) <span style="color:#f92672">&lt;&gt;</span> 0 <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>                            sum <span style="color:#f92672">=</span> sum <span style="color:#f92672">+</span> <span style="color:#66d9ef">CDbl</span>(originalWorksheet.Cells(k, currentCol).Value)
+</span></span><span style="display:flex;"><span>                            count <span style="color:#f92672">=</span> count <span style="color:#f92672">+</span> 1
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">Next</span> k
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">If</span> count <span style="color:#f92672">&gt;</span> 0 <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>                    average <span style="color:#f92672">=</span> sum <span style="color:#f92672">/</span> count
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">Else</span>
+</span></span><span style="display:flex;"><span>                    average <span style="color:#f92672">=</span> 0
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>                newWorksheet.Cells(currentRow, currentCol).Value <span style="color:#f92672">=</span> average
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Next</span> currentCol
+</span></span><span style="display:flex;"><span>            currentRow <span style="color:#f92672">=</span> currentRow <span style="color:#f92672">+</span> 1
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Next</span> i
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Next</span> originalWorksheet
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39;保存新的工作簿到当前文件夹下&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    newWorkbook.SaveAs originalWorkbook.Path <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;\&#34;</span> <span style="color:#f92672">&amp;</span> originalWorkbook.Name <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;_average.xlsx&#34;</span>
+</span></span><span style="display:flex;"><span>    newWorkbook.Close SaveChanges:<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span></code></pre></div><ol start="2">
+<li>将需要处理的文件放到一个文件夹内，并打开第一个文件的第一个工作表</li>
+<li>运行程序，输入run的次数</li>
+</ol>
+<p>程序运行结束后可将16步的结果文件导入到 SPSS 进行重复测量方差分析。</p>
+<h2 id="脑间同步inter-brain-neural-synchronization-">脑间同步（Inter-brain neural synchronization ）</h2>
+<h3 id="step01---step09">Step01 - Step09</h3>
+<p>与脑内激活处理步骤相同，可直接使用脑内 <code>Step 09</code> 结果进行脑间 <code>Step10</code> 操作</p>
+<h3 id="step10-分离条件-1">Step10. 分离条件</h3>
+<ol>
+<li>输入基线校正和Z分数转换后的数据路径</li>
+<li>选择程序 <code>Data Cut (mode2)</code></li>
+<li>结束后不会生成新的文件</li>
+</ol>
+<h3 id="step11-将所有被试数据按条件整合">Step11. 将所有被试数据按条件整合</h3>
+<ol>
+<li>输入包含 <code>Data Cut(mode2)</code>目标文件的路径</li>
+<li>输入保存文件的目标路径</li>
+<li>输入文件名保存不同实验条件的平均脑激活数据，Condition1/2/3/4，并选择相应的Sheet number，第1个条件在 <code>Sheet1</code>，以此类推</li>
+<li>选择程序 <code>Gather the files</code>，按 <code>Set</code> 并 <code>Start</code></li>
+</ol>
+<h3 id="step12-将所有被试数据集中到一个-sheet">Step12. 将所有被试数据集中到一个 Sheet</h3>
+<ol>
+<li>输入包含Condition文件目标文件的路径</li>
+<li>选择程序 <code>Data Gather(mode2)</code></li>
+<li>按 <code>Set</code> 并 <code>Start</code></li>
+</ol>
+<h3 id="step13-计算基于-ins-的相关矩阵">Step13. 计算基于 INS 的相关矩阵</h3>
+<p>此步骤会计算出被试对中两名被试的激活值之间的相关，包括同对伪时间序列的相关矩阵</p>
+<ol>
+<li>输入 <code>Step12</code> 后的文件路径</li>
+<li>选择程序 <code>Correlation Cal</code>，按 <code>Set</code> 并 <code>Start</code></li>
+</ol>
+<h3 id="step14-提取相关数据">Step14. 提取相关数据</h3>
+<p>此步骤后需要自定义宏程序</p>
+<ol>
+<li>在个人宏工作簿新建一个宏程序，输入如下代码：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vb" data-lang="vb"><span style="display:flex;"><span><span style="color:#66d9ef">Option</span> Explicit
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">组间提取相关数据</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> folderPath <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> fileName <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> wbSource <span style="color:#f92672">As</span> Workbook, wbNew <span style="color:#f92672">As</span> Workbook
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> wsSource <span style="color:#f92672">As</span> Worksheet, wsTrueCol <span style="color:#f92672">As</span> Worksheet, wsPesudoCol <span style="color:#f92672">As</span> Worksheet
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> cellCorrMatrix <span style="color:#f92672">As</span> Range, cellPseudoCorrMatrix <span style="color:#f92672">As</span> Range
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> startCell <span style="color:#f92672">As</span> Range
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> i <span style="color:#f92672">As</span> <span style="color:#66d9ef">Long</span>, j <span style="color:#f92672">As</span> <span style="color:#66d9ef">Long</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> newRowTrue <span style="color:#f92672">As</span> <span style="color:#66d9ef">Long</span>, newRowPesudo <span style="color:#f92672">As</span> <span style="color:#66d9ef">Long</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; 选择目录
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">With</span> Application.FileDialog(msoFileDialogFolderPicker)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">If</span> .Show <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1 <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>            folderPath <span style="color:#f92672">=</span> .SelectedItems(1)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Else</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Exit</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">With</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">If</span> Right(folderPath, 1) <span style="color:#f92672">&lt;&gt;</span> <span style="color:#e6db74">&#34;\&#34;</span> <span style="color:#66d9ef">Then</span> folderPath <span style="color:#f92672">=</span> folderPath <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;\&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; 遍历目录下的所有工作簿
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    fileName <span style="color:#f92672">=</span> Dir(folderPath <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;*.xls*&#34;</span>)
+</span></span><span style="display:flex;"><span>    Application.ScreenUpdating <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Do</span> <span style="color:#66d9ef">While</span> fileName <span style="color:#f92672">&lt;&gt;</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Set</span> wbSource <span style="color:#f92672">=</span> Workbooks.Open(folderPath <span style="color:#f92672">&amp;</span> fileName)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&#39; 创建新工作簿并命名工作表
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">Set</span> wbNew <span style="color:#f92672">=</span> Workbooks.Add
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Set</span> wsTrueCol <span style="color:#f92672">=</span> wbNew.Worksheets(1)
+</span></span><span style="display:flex;"><span>        wsTrueCol.Name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;True_Col&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Set</span> wsPesudoCol <span style="color:#f92672">=</span> wbNew.Worksheets.Add(After:<span style="color:#f92672">=</span>wsTrueCol)
+</span></span><span style="display:flex;"><span>        wsPesudoCol.Name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Pesudo_Col&#34;</span>
+</span></span><span style="display:flex;"><span>        newRowTrue <span style="color:#f92672">=</span> 2
+</span></span><span style="display:flex;"><span>        newRowPesudo <span style="color:#f92672">=</span> 2
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&#39; 遍历原始工作簿的所有工作表
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">For</span> <span style="color:#66d9ef">Each</span> wsSource <span style="color:#f92672">In</span> wbSource.Worksheets
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Set</span> cellCorrMatrix <span style="color:#f92672">=</span> wsSource.Cells.Find(<span style="color:#e6db74">&#34;Correlation matrix&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Set</span> cellPseudoCorrMatrix <span style="color:#f92672">=</span> wsSource.Cells.Find(<span style="color:#e6db74">&#34;Correlation matrix (pseudo)&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            chCounts <span style="color:#f92672">=</span> Application.WorksheetFunction.CountA(wsSource.Rows(1)) <span style="color:#f92672">\</span> 2
+</span></span><span style="display:flex;"><span>            wsSource.Rows(1).Cells(1).Resize(, chCounts).Copy Destination:<span style="color:#f92672">=</span>wsTrueCol.Cells(1, 2)
+</span></span><span style="display:flex;"><span>            wsSource.Rows(1).Cells(1).Resize(, chCounts).Copy Destination:<span style="color:#f92672">=</span>wsPesudoCol.Cells(1, 2)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">&#39; 提取相关值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">If</span> <span style="color:#66d9ef">Not</span> cellCorrMatrix <span style="color:#f92672">Is</span> <span style="color:#66d9ef">Nothing</span> <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">Set</span> startCell <span style="color:#f92672">=</span> cellCorrMatrix.Offset(50, 1)
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">For</span> i <span style="color:#f92672">=</span> 0 <span style="color:#66d9ef">To</span> chCounts <span style="color:#f92672">-</span> 1
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">&#39;i = 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#75715e">&#39;Do While Not IsEmpty(startCell.Offset(i, i))
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    wsTrueCol.Cells(newRowTrue, i <span style="color:#f92672">+</span> 2).Value <span style="color:#f92672">=</span> startCell.Offset(i, i).Value
+</span></span><span style="display:flex;"><span>                    wsTrueCol.Cells(newRowTrue, 1).Value <span style="color:#f92672">=</span> Left(wsSource.Name, 11)
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">&#39;i = i + 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#75715e">&#39;Loop
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">Next</span> i
+</span></span><span style="display:flex;"><span>                newRowTrue <span style="color:#f92672">=</span> newRowTrue <span style="color:#f92672">+</span> 1
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">&#39; 提取伪相关值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">If</span> <span style="color:#66d9ef">Not</span> cellPseudoCorrMatrix <span style="color:#f92672">Is</span> <span style="color:#66d9ef">Nothing</span> <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">Set</span> startCell <span style="color:#f92672">=</span> cellPseudoCorrMatrix.Offset(50, 1)
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">&#39;j = 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#75715e">&#39;Do While Not IsEmpty(startCell.Offset(j, j))
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">For</span> j <span style="color:#f92672">=</span> 0 <span style="color:#66d9ef">To</span> chCounts <span style="color:#f92672">-</span> 1
+</span></span><span style="display:flex;"><span>                    wsPesudoCol.Cells(newRowPesudo, j <span style="color:#f92672">+</span> 2).Value <span style="color:#f92672">=</span> startCell.Offset(j, j).Value
+</span></span><span style="display:flex;"><span>                    wsPesudoCol.Cells(newRowPesudo, 1).Value <span style="color:#f92672">=</span> Left(wsSource.Name, 11)
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">&#39;j = j + 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#75715e">&#39;Loop
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">Next</span> j
+</span></span><span style="display:flex;"><span>                newRowPesudo <span style="color:#f92672">=</span> newRowPesudo <span style="color:#f92672">+</span> 1
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">Next</span> wsSource
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&#39; 保存新工作簿
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        wbNew.SaveAs folderPath <span style="color:#f92672">&amp;</span> Left(wbSource.Name, InStrRev(wbSource.Name, <span style="color:#e6db74">&#34;.&#34;</span>) <span style="color:#f92672">-</span> 1) <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;_ColExt.xlsx&#34;</span>
+</span></span><span style="display:flex;"><span>        wbNew.Close SaveChanges:<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>        wbSource.Close SaveChanges:<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>        fileName <span style="color:#f92672">=</span> Dir
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Loop</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    Application.ScreenUpdating <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>    MsgBox <span style="color:#e6db74">&#34;提取相关数据完成！&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span></code></pre></div><ol start="2">
+<li>运行宏程序，选择上一步结果的路径</li>
+</ol>
+<h3 id="step15-平均-run">Step15. 平均 run</h3>
+<ol>
+<li>与脑内步骤一致，将需要处理的文件放到一个文件夹内</li>
+<li>打开第1个文件第1个工作表，运行宏程序</li>
+</ol>
+<h3 id="step16-配对样本-t-检验">Step16. 配对样本 t 检验</h3>
+<p>对所有通道的脑间相关数据与伪随机数据进行配对样本T检验，这里使用 <code>R</code> 进行</p>
+<ol>
+<li>将 <code>Step15</code>后的数据放到一个文件夹</li>
+<li>建立一个文本文件，输入如下代码保存，并将文件后缀改为 <code>.r</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#75715e"># # 安装需要的包</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">require</span>(readxl)) <span style="color:#a6e22e">install.packages</span>(<span style="color:#e6db74">&#34;readxl&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">require</span>(writexl)) <span style="color:#a6e22e">install.packages</span>(<span style="color:#e6db74">&#34;writexl&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">require</span>(tidyverse)) <span style="color:#a6e22e">install.packages</span>(<span style="color:#e6db74">&#34;tidyverse&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">require</span>(effsize)) <span style="color:#a6e22e">install.packages</span>(<span style="color:#e6db74">&#34;effsize&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#if (!require(lsr)) install.packages(&#34;lsr&#34;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(readxl)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(writexl)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(tidyverse)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(effsize)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#library(lsr)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 程序名称为&#34;t检验&#34;</span>
+</span></span><span style="display:flex;"><span>t_test <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 选取工作目录</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">setwd</span>(<span style="color:#a6e22e">choose.dir</span>())
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 选取目录下所有excel工作簿循环执行程序</span>
+</span></span><span style="display:flex;"><span>  files <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list.files</span>(path <span style="color:#f92672">=</span> <span style="color:#a6e22e">getwd</span>(), pattern <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;\\.xlsx$&#34;</span>, full.names <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+</span></span><span style="display:flex;"><span>  ttest_result_list <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list</span>()
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (file <span style="color:#66d9ef">in</span> files) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 读取工作簿内的两个工作表</span>
+</span></span><span style="display:flex;"><span>    sheet1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">read_excel</span>(file, sheet <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    sheet2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">read_excel</span>(file, sheet <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 初始化结果数据框</span>
+</span></span><span style="display:flex;"><span>    ttest_res <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.frame</span>(Column <span style="color:#f92672">=</span> <span style="color:#a6e22e">character</span>(), p <span style="color:#f92672">=</span> <span style="color:#a6e22e">numeric</span>(), t <span style="color:#f92672">=</span> <span style="color:#a6e22e">numeric</span>(), d <span style="color:#f92672">=</span> <span style="color:#a6e22e">numeric</span>(), stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 从第2列开始进行t检验和Cohen&#39;s d计算</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (col_idx <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span><span style="color:#a6e22e">ncol</span>(sheet1)) {
+</span></span><span style="display:flex;"><span>      data1 <span style="color:#f92672">&lt;-</span> sheet1[<span style="color:#ae81ff">-1</span>, col_idx]
+</span></span><span style="display:flex;"><span>      data2 <span style="color:#f92672">&lt;-</span> sheet2[<span style="color:#ae81ff">-1</span>, col_idx]
+</span></span><span style="display:flex;"><span>      data1_num <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">as.matrix</span>(data1)
+</span></span><span style="display:flex;"><span>      data2_num <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">as.matrix</span>(data2)
+</span></span><span style="display:flex;"><span>      ttest <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">t.test</span>(data1_num, data2_num, paired <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, var.equal <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, conf.level <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.95</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      cohen_d <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">cohen.d</span>(data1_num, data2_num)
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      ttest_res <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rbind</span>(ttest_res, <span style="color:#a6e22e">data.frame</span>(Column <span style="color:#f92672">=</span> <span style="color:#a6e22e">colnames</span>(sheet1)[col_idx], p <span style="color:#f92672">=</span> ttest<span style="color:#f92672">$</span>p.value, t <span style="color:#f92672">=</span> ttest<span style="color:#f92672">$</span>statistic, d <span style="color:#f92672">=</span> <span style="color:#a6e22e">abs</span>(cohen_d<span style="color:#f92672">$</span>estimate), stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>))
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    filename <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sub</span>(<span style="color:#e6db74">&#34;.xlsx&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#a6e22e">basename</span>(file))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 将每一个工作簿的结果保存至ttest_result对应的工作表内，名称为执行程序的工作簿的名称</span>
+</span></span><span style="display:flex;"><span>    ttest_result_list[[filename]] <span style="color:#f92672">&lt;-</span> ttest_res
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 将每一次t检验的结果输出至一个新的工作簿，名称为&#34;ttest_result&#34;保存在当前目录下</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">write_xlsx</span>(ttest_result_list, <span style="color:#e6db74">&#34;ttest_result.xlsx&#34;</span>)
+</span></span><span style="display:flex;"><span>  infoMes <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;检验完成!&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">print</span>(infoMes)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 运行t检验程序</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">t_test</span>()
+</span></span></code></pre></div><ol start="3">
+<li>打开 <code>R</code>，点击 <code>文件---运行 r 脚本文件</code>，选择刚才的代码文件运行</li>
+</ol>
+<h3 id="step17-切分通道">Step17. 切分通道</h3>
+<ol>
+<li>选择 <code>Step15</code> 运行后的结果文件路径，注意是第15步</li>
+<li>新建一个宏程序，粘贴如下代码，并运行：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vb" data-lang="vb"><span style="display:flex;"><span><span style="color:#66d9ef">Option</span> Explicit
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">组间切分通道</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> fDialog <span style="color:#f92672">As</span> FileDialog, sFolderPath <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> oFSO <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>, oFolder <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>, oFile <span style="color:#f92672">As</span> <span style="color:#66d9ef">Object</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> oOriginalWorkbook <span style="color:#f92672">As</span> Workbook, oNewWorkbook <span style="color:#f92672">As</span> Workbook
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> oOriginalWorksheet <span style="color:#f92672">As</span> Worksheet, oNewWorksheet <span style="color:#f92672">As</span> Worksheet
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> lLastCol <span style="color:#f92672">As</span> <span style="color:#66d9ef">Long</span>, lLastRow <span style="color:#f92672">As</span> <span style="color:#66d9ef">Long</span>, i <span style="color:#f92672">As</span> <span style="color:#66d9ef">Long</span>, j <span style="color:#f92672">As</span> <span style="color:#66d9ef">Long</span>, k <span style="color:#f92672">As</span> <span style="color:#66d9ef">Long</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Dim</span> sFileName <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>, sSheetName <span style="color:#f92672">As</span> <span style="color:#66d9ef">String</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; 选择文件夹
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">Set</span> fDialog <span style="color:#f92672">=</span> Application.FileDialog(msoFileDialogFolderPicker)
+</span></span><span style="display:flex;"><span>    fDialog.Title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;选择工作目录&#34;</span>
+</span></span><span style="display:flex;"><span>    fDialog.AllowMultiSelect <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">If</span> fDialog.Show <span style="color:#f92672">&lt;&gt;</span> <span style="color:#f92672">-</span>1 <span style="color:#66d9ef">Then</span> <span style="color:#66d9ef">Exit</span> <span style="color:#66d9ef">Sub</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">sFolderPath</span> <span style="color:#f92672">=</span> fDialog.SelectedItems(1)
+</span></span><span style="display:flex;"><span>    Application.ScreenUpdating <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39;创建结果文件夹
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    MkDir sFolderPath <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;\result&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; 创建新工作簿 &#34;all_condition_split&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">Set</span> oNewWorkbook <span style="color:#f92672">=</span> Workbooks.Add
+</span></span><span style="display:flex;"><span>    oNewWorkbook.SaveAs sFolderPath <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;\result&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;\&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;all_condition_split.xlsx&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">&#39; 遍历工作目录下的所有Excel文件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">Set</span> oFSO <span style="color:#f92672">=</span> CreateObject(<span style="color:#e6db74">&#34;Scripting.FileSystemObject&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Set</span> oFolder <span style="color:#f92672">=</span> oFSO.GetFolder(sFolderPath)
+</span></span><span style="display:flex;"><span>    k <span style="color:#f92672">=</span> 1
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">For</span> <span style="color:#66d9ef">Each</span> oFile <span style="color:#f92672">In</span> oFolder.Files
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">If</span> oFSO.GetExtensionName(oFile.Name) <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;xlsx&#34;</span> <span style="color:#f92672">Or</span> oFSO.GetExtensionName(oFile.Name) <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;xls&#34;</span> <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">If</span> oFile.Name <span style="color:#f92672">&lt;&gt;</span> <span style="color:#e6db74">&#34;all_condition_split.xlsx&#34;</span> <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">&#39; 打开原始工作簿
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">Set</span> oOriginalWorkbook <span style="color:#f92672">=</span> Workbooks.Open(oFile.Path)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">Set</span> oOriginalWorksheet <span style="color:#f92672">=</span> oOriginalWorkbook.Worksheets(2)
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">&#39; 新建工作表
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">If</span> k <span style="color:#f92672">=</span> 1 <span style="color:#66d9ef">Then</span>
+</span></span><span style="display:flex;"><span>                    lLastCol <span style="color:#f92672">=</span> oOriginalWorksheet.Cells(1, Columns.Count).End(xlToLeft).Column
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">For</span> i <span style="color:#f92672">=</span> 2 <span style="color:#66d9ef">To</span> lLastCol
+</span></span><span style="display:flex;"><span>                        sSheetName <span style="color:#f92672">=</span> oOriginalWorksheet.Cells(1, i).Value
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">Set</span> oNewWorksheet <span style="color:#f92672">=</span> oNewWorkbook.Worksheets.Add(, oNewWorkbook.Worksheets(oNewWorkbook.Worksheets.Count))
+</span></span><span style="display:flex;"><span>                        oNewWorksheet.Name <span style="color:#f92672">=</span> sSheetName
+</span></span><span style="display:flex;"><span>                        oNewWorksheet.Cells(1, 1).Value <span style="color:#f92672">=</span> oOriginalWorksheet.Cells(1, 1).Value
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">Next</span> i
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">&#39; 复制数据到新工作簿
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">For</span> i <span style="color:#f92672">=</span> 2 <span style="color:#66d9ef">To</span> lLastCol
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">Set</span> oNewWorksheet <span style="color:#f92672">=</span> oNewWorkbook.Worksheets(i)
+</span></span><span style="display:flex;"><span>                    lLastRow <span style="color:#f92672">=</span> oOriginalWorksheet.Cells(Rows.Count, i).End(xlUp).Row
+</span></span><span style="display:flex;"><span>                    oOriginalWorksheet.Range(oOriginalWorksheet.Cells(2, i), oOriginalWorksheet.Cells(lLastRow, i)).Copy oNewWorksheet.Cells(2, k <span style="color:#f92672">+</span> 1)
+</span></span><span style="display:flex;"><span>                    oNewWorksheet.Cells(1, k <span style="color:#f92672">+</span> 1).Value <span style="color:#f92672">=</span> Split(oFile.Name, <span style="color:#e6db74">&#34;_&#34;</span>)(0)
+</span></span><span style="display:flex;"><span>                    
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">&#39; 复制第一列数据到新工作簿
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    oOriginalWorksheet.Range(oOriginalWorksheet.Cells(2, 1), oOriginalWorksheet.Cells(lLastRow, 1)).Copy oNewWorksheet.Cells(2, 1)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">Next</span> i
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                k <span style="color:#f92672">=</span> k <span style="color:#f92672">+</span> 1
+</span></span><span style="display:flex;"><span>                oOriginalWorkbook.Close <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">End</span> <span style="color:#66d9ef">If</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Next</span> oFile
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; 保存新工作簿
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    oNewWorkbook.Save
+</span></span><span style="display:flex;"><span>    oNewWorkbook.Close
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; 打开 &#34;all_condition_split&#34; 工作簿
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">Set</span> oNewWorkbook <span style="color:#f92672">=</span> Workbooks.Open(sFolderPath <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;\result&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;\&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;all_condition_split.xlsx&#34;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; 循环操作每个工作表
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">For</span> <span style="color:#66d9ef">Each</span> oNewWorksheet <span style="color:#f92672">In</span> oNewWorkbook.Worksheets
+</span></span><span style="display:flex;"><span>        lLastRow <span style="color:#f92672">=</span> oNewWorksheet.Cells(Rows.Count, 1).End(xlUp).Row
+</span></span><span style="display:flex;"><span>        oNewWorksheet.Range(oNewWorksheet.Cells(2, 3), oNewWorksheet.Cells(lLastRow, 3)).Copy oNewWorksheet.Cells(lLastRow <span style="color:#f92672">+</span> 1, 2)
+</span></span><span style="display:flex;"><span>        oNewWorksheet.Range(oNewWorksheet.Cells(2, 5), oNewWorksheet.Cells(lLastRow, 5)).Copy oNewWorksheet.Cells(lLastRow <span style="color:#f92672">+</span> 1, 4)
+</span></span><span style="display:flex;"><span>        oNewWorksheet.Range(oNewWorksheet.Cells(2, 1), oNewWorksheet.Cells(lLastRow, 1)).Copy oNewWorksheet.Cells(lLastRow <span style="color:#f92672">+</span> 1, 1)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&#39; 删除第3列和第5列
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        oNewWorksheet.Columns(5).Delete
+</span></span><span style="display:flex;"><span>        oNewWorksheet.Columns(3).Delete
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Next</span> oNewWorksheet
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&#39; 保存修改并关闭
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    oNewWorkbook.Save
+</span></span><span style="display:flex;"><span>    oNewWorkbook.Close
+</span></span><span style="display:flex;"><span>    Application.ScreenUpdating <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>    MsgBox <span style="color:#e6db74">&#34;切分通道完成，结果保存在当前文件夹 result 目录下!&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span></code></pre></div><p>程序运行结束后可将17步的结果文件导入到 SPSS 进行重复测量方差分析。</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2023-05-13</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/posts/gpower/">
+			下回<br>Gpower计算效应量
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/surge/">
+			上回<br>解决Surge部分应用代理提示
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="username/repo"
+        data-repo-id="**************************"
+        data-category="General"
+        data-category-id="*********************"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="http://localhost:1313/">
+    
+        <div class="nav-title">
+            Tom&#39;s Blog
+        </div>
+        
+        <div class="nav-subtitle">
+            Life is a Battle!
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档 | Archive
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类 | Categories
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签 | Tags
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Tom Almighty
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#fnirs-data-preprocessing%e4%bd%bf%e7%94%a8%e6%ad%a5%e9%aa%a4" class="nav-fnirs-data-preprocessing使用步骤">
+									fNIRS Data Preprocessing使用步骤
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#fnirs-data-preprocessing-%e5%ae%8f%e7%a8%8b%e5%ba%8f%e4%bb%8b%e7%bb%8d" class="nav-fnirs-data-preprocessing-宏程序介绍">
+									fNIRS Data Preprocessing 宏程序介绍
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%84%91%e5%86%85%e6%bf%80%e6%b4%bbintra-brain-activation" class="nav-脑内激活intra-brain-activation">
+									脑内激活（Intra-brain activation）
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#step01-hitachi" class="nav-step01-hitachi">
+									Step01. Hitachi
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step02-trigger-check" class="nav-step02-trigger-check">
+									Step02. Trigger Check
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step03-%e6%a0%bc%e5%bc%8f%e8%bd%ac%e6%8d%a2-xlsx-to-mat" class="nav-step03-格式转换-xlsx-to-mat">
+									Step03. 格式转换 xlsx to mat
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step04-%e5%b8%a6%e9%80%9a%e6%bb%a4%e6%b3%a2bandpass-filter" class="nav-step04-带通滤波bandpass-filter">
+									Step04. 带通滤波(bandpass-filter)
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step05-%e5%b0%86-txt-%e6%a0%bc%e5%bc%8f%e8%bd%ac%e4%b8%ba-xlsx-%e6%96%87%e4%bb%b6" class="nav-step05-将-txt-格式转为-xlsx-文件">
+									Step05. 将 txt 格式转为 xlsx 文件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step06-%e6%8f%90%e5%8f%96%e8%a1%8c%e4%b8%ba%e6%95%b0%e6%8d%ae" class="nav-step06-提取行为数据">
+									Step06. 提取行为数据
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step07-%e6%95%b4%e5%90%88%e8%a1%8c%e4%b8%ba%e6%95%b0%e6%8d%ae" class="nav-step07-整合行为数据">
+									Step07. 整合行为数据
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step08-%e6%b7%bb%e5%8a%a0-mark" class="nav-step08-添加-mark">
+									Step08. 添加 Mark
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step09-%e5%9f%ba%e7%ba%bf%e6%a0%a1%e6%ad%a3%e5%92%8cz%e5%88%86%e6%95%b0%e8%bd%ac%e6%8d%a2" class="nav-step09-基线校正和z分数转换">
+									Step09. 基线校正和Z分数转换
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step10-%e5%88%86%e7%a6%bb%e6%9d%a1%e4%bb%b6" class="nav-step10-分离条件">
+									Step10. 分离条件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step11-%e8%ae%a1%e7%ae%97%e5%b9%b3%e5%9d%87%e8%84%91%e6%bf%80%e6%b4%bb" class="nav-step11-计算平均脑激活">
+									Step11. 计算平均脑激活
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step12-%e5%b0%86%e6%89%80%e6%9c%89%e8%a2%ab%e8%af%95%e6%95%b0%e6%8d%ae%e6%8c%89%e6%9d%a1%e4%bb%b6%e6%95%b4%e5%90%88" class="nav-step12-将所有被试数据按条件整合">
+									Step12. 将所有被试数据按条件整合
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step13-%e5%b0%86%e6%89%80%e6%9c%89%e8%a2%ab%e8%af%95%e6%95%b0%e6%8d%ae%e9%9b%86%e4%b8%ad%e5%88%b0%e4%b8%80%e4%b8%aa-sheet" class="nav-step13-将所有被试数据集中到一个-sheet">
+									Step13. 将所有被试数据集中到一个 Sheet
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step14-%e6%95%b4%e5%90%88%e6%9d%a1%e4%bb%b6" class="nav-step14-整合条件">
+									Step14. 整合条件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step15-%e5%88%87%e5%88%86%e9%80%9a%e9%81%93" class="nav-step15-切分通道">
+									Step15. 切分通道
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step16-%e5%b9%b3%e5%9d%87-run" class="nav-step16-平均-run">
+									Step16. 平均 run
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e8%84%91%e9%97%b4%e5%90%8c%e6%ad%a5inter-brain-neural-synchronization-" class="nav-脑间同步inter-brain-neural-synchronization-">
+									脑间同步（Inter-brain neural synchronization ）
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#step01---step09" class="nav-step01---step09">
+									Step01 - Step09
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step10-%e5%88%86%e7%a6%bb%e6%9d%a1%e4%bb%b6-1" class="nav-step10-分离条件-1">
+									Step10. 分离条件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step11-%e5%b0%86%e6%89%80%e6%9c%89%e8%a2%ab%e8%af%95%e6%95%b0%e6%8d%ae%e6%8c%89%e6%9d%a1%e4%bb%b6%e6%95%b4%e5%90%88" class="nav-step11-将所有被试数据按条件整合">
+									Step11. 将所有被试数据按条件整合
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step12-%e5%b0%86%e6%89%80%e6%9c%89%e8%a2%ab%e8%af%95%e6%95%b0%e6%8d%ae%e9%9b%86%e4%b8%ad%e5%88%b0%e4%b8%80%e4%b8%aa-sheet" class="nav-step12-将所有被试数据集中到一个-sheet">
+									Step12. 将所有被试数据集中到一个 Sheet
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step13-%e8%ae%a1%e7%ae%97%e5%9f%ba%e4%ba%8e-ins-%e7%9a%84%e7%9b%b8%e5%85%b3%e7%9f%a9%e9%98%b5" class="nav-step13-计算基于-ins-的相关矩阵">
+									Step13. 计算基于 INS 的相关矩阵
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step14-%e6%8f%90%e5%8f%96%e7%9b%b8%e5%85%b3%e6%95%b0%e6%8d%ae" class="nav-step14-提取相关数据">
+									Step14. 提取相关数据
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step15-%e5%b9%b3%e5%9d%87-run" class="nav-step15-平均-run">
+									Step15. 平均 run
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step16-%e9%85%8d%e5%af%b9%e6%a0%b7%e6%9c%ac-t-%e6%a3%80%e9%aa%8c" class="nav-step16-配对样本-t-检验">
+									Step16. 配对样本 t 检验
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#step17-%e5%88%87%e5%88%86%e9%80%9a%e9%81%93" class="nav-step17-切分通道">
+									Step17. 切分通道
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Tom Almighty
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

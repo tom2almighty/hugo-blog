@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>上网 on Tom&#39;s Blog</title>
+    <link>http://localhost:1313/categories/%E4%B8%8A%E7%BD%91/</link>
+    <description>Recent content in 上网 on Tom&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <copyright>Tom Almighty</copyright>
+    <lastBuildDate>Wed, 24 Jul 2024 19:06:29 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E4%B8%8A%E7%BD%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Terminus答案</title>
+      <link>http://localhost:1313/posts/terminus-emby/</link>
+      <pubDate>Wed, 24 Jul 2024 19:06:29 +0000</pubDate>
+      <guid>http://localhost:1313/posts/terminus-emby/</guid>
+      <description>a 代表✅ e 代表❌&#xA;window.QAA=[{ &amp;#34;q&amp;#34;: &amp;#34;如果出现使用emby connect登该:,录你应&amp;#34;, &amp;#34;e&amp;#34;: &amp;#34;点下一步&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;点跳过/手动输入&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;哪一个国家不能直接访问公益服的备用线路 (也就是cloudflare线路)?&amp;#34;, &amp;#34;e&amp;#34;: &amp;#34;新加坡|澳大利亚&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;使用了 Emby 公益服提供的 Android TV 官方客户端破解版，但一直提示试用即将到期或已过期怎么办？&amp;#34;, &amp;#34;e&amp;#34;: &amp;#34;破解失败，重新安装&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;无视它&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;美剧里「S1E1」「S2E3」中「E」指英文中哪个单词？&amp;#34;, &amp;#34;e&amp;#34;: &amp;#34;Earthling&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;遇到问题想在群里发问，又怕被办怎么办才好呢？&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;通读wiki 和提问的艺术全文&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;获得VIP的方法？&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;长期默默为群组解答问题&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;关于开放式提问，以下描述正确的是？&amp;#34;, &amp;#34;e&amp;#34;: &amp;#34;能获得想要的信息|会让一次聊天变得有意义&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;以上都是&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;从问题属性角度出发，MySQL数据库的使用问题适合在本群组提问吗？&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;不适合&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;小李想将 Emby 的 APK 安装文件传输到 Mibox 上，这样家里的老人就可以在电视上看 Emby 了，请问以下哪种方式可以将文件传输到电视盒子上？&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;以上均可以&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;怎么赞助 Emby 公益服？&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;他们不接受任何赞助&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;如果你想参与一个你不太了解的话题讨论，你应该怎么做。&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;不确定的看法要指出，不能误导&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;当他人为你排错时，在很基础的常识上，他要求你仔细检查，你应该？&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;认真检查并提供你的检查过程&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;使用 Emby 的 iOS 客户端观看公益服影片是否需要付费解锁或破解播放权限？&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;需要&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;提问前 确认自己已确定的各个步骤及其顺序都是必要的？&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;正确 失之毫厘差以千里&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;群友需要为公益服提供资源吗&amp;#34;, &amp;#34;e&amp;#34;: &amp;#34;需要&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;不需要&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;http://.</description>
+    </item>
+    <item>
+      <title>Docker部署Sub-Store后端</title>
+      <link>http://localhost:1313/posts/sub-store/</link>
+      <pubDate>Mon, 08 Apr 2024 10:58:03 +0800</pubDate>
+      <guid>http://localhost:1313/posts/sub-store/</guid>
+      <description>前言 Sub-Store 是一个适用于 Loon 、 Surge 和 Quantumult X 的高级订阅管理工具。完全本地解析，无订阅泄露的风险。相关地址及文档见下方：&#xA;Github 地址 使用教程 自建教程 部署 mkdir -p /opt/sub-store &amp;amp;&amp;amp; cd /opt/sub-store cat &amp;gt; /opt/sub-store/docker-compose.yml &amp;lt;&amp;lt;EOF version: &amp;#34;3.8&amp;#34; services: sub-store: image: xream/sub-store:latest container_name: sub-store restart: always volumes: - /opt/sub-store:/opt/app/data environment: - SUB_STORE_FRONTEND_BACKEND_PATH=/xxx # 20位随机字符串 - SUB_STORE_CRON=1 0 * * * ports: - 3001:3001 stdin_open: true tty: true EOF docker compose up -d 随机字符串生成可以使用下面的网站：&#xA;IT 工具箱 1Password 密码生成 反向代理 使用 Nginx 或者其他工具反向代理，端口为 3001，代理完成后访问的地址为：</description>
+    </item>
+    <item>
+      <title>常用审计规则</title>
+      <link>http://localhost:1313/posts/shenji/</link>
+      <pubDate>Tue, 12 Mar 2024 16:42:34 +0800</pubDate>
+      <guid>http://localhost:1313/posts/shenji/</guid>
+      <description>(api|ps|sv|offnavi|newvector|ulog\.imap|newloc)(\.map|)\.(baidu|n\.shifen)\.com (.+\.|^)(360|so)\.(cn|com) (.*\\.||)(dafahao|minghui|dongtaiwang|epochtimes|ntdtv|falundafa|wujieliulan|zhengjian)\.(org|com|net) (.*\\.||)(shenzhoufilm|secretchina|renminbao|aboluowang|mhradio|guangming|zhengwunet|soundofhope|yuanming|zhuichaguoji|fgmtv|xinsheng|shenyunperformingarts|epochweekly|tuidang|shenyun|falundata|bannedbook)\.(org|com|net) (.*\\.||)(icbc|ccb|boc|bankcomm|abchina|cmbchina|psbc|cebbank|cmbc|pingan|spdb|citicbank|cib|hxb|bankofbeijing|hsbank|tccb|4001961200|bosc|hkbchina|njcb|nbcb|lj-bank|bjrcb|jsbchina|gzcb|cqcbank|czbank|hzbank|srcb|cbhb|cqrcb|grcbank|qdccb|bocd|hrbcb|jlbank|bankofdl|qlbchina|dongguanbank|cscb|hebbank|drcbank|zzbank|bsb|xmccb|hljrcc|jxnxs|gsrcu|fjnx|sxnxs|gx966888|gx966888|zj96596|hnnxs|ahrcu|shanxinj|hainanbank|scrcu|gdrcu|hbxh|ynrcc|lnrcc|nmgnxs|hebnx|jlnls|js96008|hnnx|sdnxs)\.(org|com|net|cn) (.*\\.||)(unionpay|alipay|baifubao|yeepay|99bill|95516|51credit|cmpay|tenpay|lakala|jdpay)\.(org|com|net|cn) (.*\\.||)(firstbank|bot|cotabank|megabank|tcb-bank|landbank|hncb|bankchb|tbb|ktb|tcbbank|scsb|bop|sunnybank|kgibank|fubon|ctbcbank|cathaybk|eximbank|bok|ubot|feib|yuantabank|sinopac|esunbank|taishinbank|jihsunbank|entiebank|hwataibank|csc|skbank)\.(org|com|net|tw) (Subject|HELO|SMTP) (torrent|\.torrent|peer_id=|info_hash|get_peers|find_node|BitTorrent|announce_peer|announce\.php\?passkey=) BitTorrent protocol (^.*\@)(guerrillamail|guerrillamailblock|sharklasers|grr|pokemail|spam4|bccto|chacuo|027168)\.(info|biz|com|de|net|org|me|la) (.?)(xunlei|sandai|Thunder|XLLiveUD)(.) </description>
+    </item>
+    <item>
+      <title>SSPanel Uim部署及修复SS订阅下发教程</title>
+      <link>http://localhost:1313/posts/sspanel/</link>
+      <pubDate>Fri, 26 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/sspanel/</guid>
+      <description>前言 请注意，本教程仅用于学习目的，切勿将其用于非法用途。使用本教程搭建面板需要遵循法律法规，谨慎使用相关技术。&#xA;1. 安装宝塔面板 7.7 # 更新系统和安装 wget、curl apt-get update -y &amp;amp;&amp;amp; apt-get install wget -y &amp;amp;&amp;amp; apt-get install curl -y # 安装宝塔面板 curl -sSO &amp;lt;https://raw.githubusercontent.com/zhucaidan/btpanel-v7.7.0/main/install/install_panel.sh&amp;gt; &amp;amp;&amp;amp; bash install_panel.sh # 删除登录验证 sed -i &amp;#34;s|if (bind_user == &amp;#39;True&amp;#39;) {|if (bind_user == &amp;#39;REMOVED&amp;#39;) {|g&amp;#34; /www/server/panel/BTPanel/static/js/index.js rm -rf /www/server/panel/data/bind.pl 2. 配置宝塔面板 安装如下： Nginx 1.22.1 PHP 8.2 + MySQL 10.11.6-MariaDB Redis 7.0.11 phpMyAdmin 4.9 Pure-Ftpd 1.0.49 安装 PHP 扩展：fileinfo、redis、yaml。 删除 PHP 被禁用函数：proc_open、proc_get_status、putenv。 3. 创建网站并添加 SSL 证书 4.</description>
+    </item>
+    <item>
+      <title>解决Surge部分应用代理提示</title>
+      <link>http://localhost:1313/posts/surge/</link>
+      <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/surge/</guid>
+      <description>注意：Surge 更改了方式，目前已不需要此模块。&#xA;前言 很多应用在开启时会检测是否开启代理，如果开启则无法正常使用，这里记录一下如何解决此类问题。&#xA;跳过代理 有的应用只需要设跳过代理即可解决。&#xA;首先打开 Surge 的 工具-最近请求，查找目标 APP 的 域名，然后在首页-更多设置中将其添加入跳过代理的列表中。&#xA;如果此种方法不能解决，可尝试以下两种方法。&#xA;兼容模式 对于第一种方法无法解决的 APP ，可以打开 Surge 的兼容模式，位置在首页-更多设置-兼容性-Tun-Only。这种方法设置简单，然而存在一定问题。&#xA;部分应用在启动时会检查是否配置了代理，如果检查到代理就会停止工作（如浦发银行）。这是一种不专业的做法，代理既不会降低安全性，也是在企业网络下一种常见的配置。&#xA;Surge 在启动时，为了实现多种复杂功能，会同时配置虚拟代理设置和虚拟 VPN，从而引发上述应用的反代理检查。（部分同类应用没有此问题是因为只配置了虚拟 VPN）&#xA;该问题可通过开启 Surge 的兼容性模式 VIF Only 解决，但是开启后会导致 HTTP 相关高级功能失效，不推荐。&#xA;Surge 手册&#xA;如果希望更好地解决可使用第三种方法。&#xA;快捷指令 此方法其实是创建一个自动化的快捷指令，在每次打开特定应用时打开兼容模式，关闭应用时再关闭兼容模式，因为 Surge 模块的优先级比配置更高，因此使用模块控制兼容模式的开关，然后通过 API 控制模块的开关。&#xA;1. 打开 Surge HTTP API 功能 首先打开 Surge 的 API 功能。在配置文件 General 下加入如下设置：&#xA;[General] http-api = 你的密码@127.0.0.1:7170 2. 创建模块 创建一个模块控制兼容模式的开关，可以建立本地模块也可使用外部链接。&#xA;模块内容如下：&#xA;#!name=TUN Only #!desc=开启 Tun Only 兼容模式，解决某些 APP 不能正常连接的问题 #!</description>
+    </item>
+    <item>
+      <title>最全的订阅转换项目</title>
+      <link>http://localhost:1313/posts/subconverter/</link>
+      <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/subconverter/</guid>
+      <description>前言 目前各个平台的代理软件的格式各不相同，各个服务厂商通常会提供给我们各个软件的订阅链接，但一些比较小的厂商提供的链接有限，或者提供的分流策略组不符合我们的预期，这个时候我们可以通过转换工具转换成我们所用软件的链接格式，或者使用自己修改的策略组实现更加灵活的分流。&#xA;准备工作 部署自己的前后端通常需要自己的域名，部分项目使用 Vercel 托管也可，因此最好准备：&#xA;VPS一台 两个解析的域名，二级域名即可 项目一：subconverter &amp;amp; sub-web subconverter 加 sub-web 是最常用的项目，目前后端仍在更新，并且支持了最新的协议转换。&#xA;项目地址：&#xA;前端：sub-web&#xA;后端：subconverter&#xA;一键脚本安装 网上找到的一键脚本：&#xA;# ubuntu apt-get install -y wget &amp;amp;&amp;amp; wget -O install.sh https://cdn.mxlong.com/install/subweb/install.sh &amp;amp;&amp;amp; chmod +x ./install.sh &amp;amp;&amp;amp; ./install.sh # centos yum install -y wget &amp;amp;&amp;amp; wget -O install.sh https://cdn.mxlong.com/install/subweb/install.sh &amp;amp;&amp;amp; chmod +x ./install.sh &amp;amp;&amp;amp; ./install.sh 脚本中的后端并不是原作者的后端，如有需要可以自行更换脚本中的下载地址。&#xA;手动安装 后端搭建 首先解析一个域名用作后端访问，这里以 backend.domain.com 为例，实际以自己的域名为准。&#xA;连接VPS后，下载并解压后端程序，可以使用如下命令，也可以使用宝塔面板，下载程序后解压。&#xA;cd /opt # 这里是程序安装目录，可以自行更换 wget https://github.com/tindy2013/subconverter/releases/download/v0.9.0/subconverter_linux64.tar.gz tar -zxvf subconverter_linux64.tar.gz 完成以后在 /opt 文件夹下会出现 subconverter文件夹，出现如下结构：</description>
+    </item>
+    <item>
+      <title>Windows解除网络限制</title>
+      <link>http://localhost:1313/posts/windows-network/</link>
+      <pubDate>Tue, 07 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/windows-network/</guid>
+      <description>原理解释 了解一下原理有助于软件的使用。不想看也可以直接跳到下一节。以下是非专业人士的理解，如有错误请指出。&#xA;首先需要知道，我们所有的网络活动都是进行数据交换，这些数据存储在服务器上，服务器可以理解为配置很高的电脑。我们浏览网页或者观看视频的过程就是向存储这些内容的服务器发起请求，然后服务器给我们返回内容，就像你要在图书馆看书，告诉管理员我要看哪一本书，然后管理员找到这本书交给你。只是这个过程再稍微复杂一点，也就是我们找书给书的过程需要遵循一定的准则，也就是网络通讯的协议。 目前网络通讯的主要协议为 TCP/IP 协议。为了能让我们能准确拿到想要的东西，所有的计算机设备都会分配一个唯一的IP地址，也就是说IP地址和我们的设备绑定，IP的形式为32位的二进制数，通常被分割为4个“8位二进制数”，用点分十进制表示为 a.b.c.d 的形式，abcd的取值为 0-255 间的十进制整数，以上内容为 IPv4 地址，由于目前IPv4地址快不够用了，所以正在大力发展 IPv6，地址数更多。 IP地址分为公有地址和私有地址，像我们平时路由器使用的地址如 192.168.0.0 就属于私有地址，也就是我们可以用这些地址组件内网，不能从互联网直接访问。留出的私有地址如下：&#xA;A类 10.0.0.0--10.255.255.255 B类 172.16.0.0--172.31.255.255 C类 192.168.0.0--192.168.255.255 当我们访问网页时不可能每次输入一大串数字，因此我们通过一些好记的名称，指代IP地址，当我们输入这些名称时，就自动访问对应的IP，这就是域名。&#xA;比如当我们访问 www.baidu.com，实际上我们访问的是 220.181.38.148。那么我们怎么才能知道那个域名对应的是那个主机呢，这时候就需要一台专门的服务器做这个事情。也就是说你告诉管理员你要看一本书，这时候有一个人我们叫他小明，他告诉管理员你要看的书在哪个书架，管理员知道后再把书拿给你，完成这个流程的服务器叫域名服务器（Domain Name Server，DNS）。&#xA;那么知道这些后我们就能了解 GFW 防火墙简单的阻断方法，比如你说你要看越狱类的书，这时候小明一看你要看这种书？不行，直接给你拦下，或者给告诉管理员一个错误的信息，那么你就看不到你想要的书了。还有一种情况就是小明记住了哪一个书架的书不能看，也就是哪一个服务器上的内容不可以访问，那么发现你要看的书在这里，对不起，也不行。&#xA;那么如何解决呢？防火墙不可能不让你访问所有的服务器内容。这个时候我们可以找一个中间人，即让一台在防火墙外，不在防火墙名单上的服务器访问我们想要的内容，然后我们访问这台服务器，就可以拿到我们想要的东西。这个服务器就是一个代理人的角色，这也就是很多软件里会有的 Proxy 设置，即代理。&#xA;虽说有这种方法，但是如果小明能看到最后书的内容，那还是会被拦下来，因此我们就要对这些信息进行加密，这样他只知道你要看书，并且看的书不在黑名单书架上，内容也不清楚，那么他只能先给你。&#xA;因此就衍生出各种加密方法手段，这些加密方法都要有一定的载体，就像我们把书放在一个盒子里，不同的盒子都可以装书，但是我们的锁不一样。&#xA;总结一下解除限制的原理：以我们访问 YouTube 为例，首先我们本地通过加密发往防火墙外一台服务器，服务器进行解密，然后访问谷歌的服务器，将得到的视频进行加密，最后通过防火墙，我们本地再进行解密。所以我们本地安装的软件只是加密解密的载体，还需要我们的服务器信息才能正常使用，每一台服务器的信息称为一个节点（Node），因为有些服务器会根据IP地址返回不同的内容，比如首页的热门视频等，或者有些网站也会设置防火墙对 IP 地址进行限制，某些国家的 IP 不能访问因此不同的节点访问到的内容也是不一样的。&#xA;目前有很多核心如 Clash, v2ray(xray)，基于这些核心很多开发者做出了图形界面方便我们操作，这些软件都是开源免费的，但真正核心的是服务器节点，有一些公益的，但是不稳定，主要还是收费的节点更稳定一些，提供这些节点的服务商称为 机场。&#xA;另外说一下 VPN，VPN 的初衷不是为了跨过防火墙，而是为了企业的信息安全，因为其加密特征十分明显，很容易被识别，所以如果正常访问谷歌学术或者观看视频不建议使用VPN。&#xA;接下来介绍两个电脑软件的使用，电脑会用后安卓上的操作也异曲同工，而iOS上软件都收费，这里就先不讲。&#xA;v2rayN 此软件使用较为简单，适合简单用途，初上手使用。&#xA;首先下载软件，下载 v2rayN-Core.zip。 这是GUI图形界面和核心，如果下载另一个只有界面，还得再下载核心。 链接点这里&#xA;下载后直接解压，不需要安装，之后打开 v2rayN.exe。&#xA;打开后电脑任务栏右下角会有图标，双击打开界面，界面元素如下：&#xA;点击 订阅-订阅设置 即可添加订阅，添加完成后点击 订阅-更新订阅。&#xA;右击电脑任务栏右下角图标，将 系统代理 后的选项设置为 自动配置系统代理，即可正常使用。&#xA;关闭软件前一定要将系统代理后的选项设置为清除系统代理，然后退出软件，如果不清除只退出软件，会无法访问网络。&#xA;Clash for Windows 此软件适合进阶用户使用，通过使用 策略组，以域名或关键字进行分流，如一些流媒体视频网站使用某个节点，谷歌的服务使用某个节点。</description>
+    </item>
+  </channel>
+</rss>

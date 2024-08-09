@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bing on Tom&#39;s Blog</title>
+    <link>http://localhost:1313/tags/bing/</link>
+    <description>Recent content in Bing on Tom&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <copyright>Tom Almighty</copyright>
+    <lastBuildDate>Mon, 06 May 2024 10:40:45 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/bing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PHP获取Bing每日壁纸</title>
+      <link>http://localhost:1313/posts/php-bing-api/</link>
+      <pubDate>Mon, 06 May 2024 10:40:45 +0000</pubDate>
+      <guid>http://localhost:1313/posts/php-bing-api/</guid>
+      <description>前言 自建一个 API 获取随机图片可以用于博客 cover，网上找到一篇文章，本文仅记录，所有代码都来自 这篇文章。&#xA;部署 新建一个名为 bing.php 的文件，写入下面代码：&#xA;&amp;lt;?php // 判断是否随机调用 $gettimebase = isset($_GET[&amp;#39;day&amp;#39;]) ? $_GET[&amp;#39;day&amp;#39;] : &amp;#39;&amp;#39;; if (isset($_GET[&amp;#39;rand&amp;#39;]) &amp;amp;&amp;amp; $_GET[&amp;#39;rand&amp;#39;] === &amp;#39;false&amp;#39;) { $gettime = empty($gettimebase) ? 0 : $gettimebase; } else { // 若不为随机调用则判断是否指定日期 $gettime = empty($gettimebase) ? rand(-1, 7) : $gettimebase; } // 获取 Bing Json 信息 $mkt = isset($_GET[&amp;#39;cn&amp;#39;]) &amp;amp;&amp;amp; $_GET[&amp;#39;cn&amp;#39;] === &amp;#39;true&amp;#39; ? &amp;#39;zh-CN&amp;#39; : &amp;#39;en-US&amp;#39;; $json_string = file_get_contents(&amp;#34;https://www.bing.com/HPImageArchive.aspx?format=js&amp;amp;idx=$gettime&amp;amp;n=1&amp;amp;mkt=$mkt&amp;#34;); // 转换为 PHP 数组 $data = json_decode($json_string); // 提取基础 URL $imgurlbase = &amp;#34;https://www4.</description>
+    </item>
+  </channel>
+</rss>

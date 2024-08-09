@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<title>Windows终端美化</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="安装 oh-my-posh 美化 Windows 终端 Windows Terminal">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:url" content="http://localhost:1313/posts/windows-terminal/">
+  <meta property="og:site_name" content="Tom&#39;s Blog">
+  <meta property="og:title" content="Windows终端美化">
+  <meta property="og:description" content="安装 oh-my-posh 美化 Windows 终端 Windows Terminal">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-03-18T10:27:32+08:00">
+    <meta property="article:modified_time" content="2024-03-18T10:27:32+08:00">
+    <meta property="article:tag" content="Windows">
+    <meta property="article:tag" content="终端">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>console.log("Hello from 'layouts/partials/extended_head.html'")</script>
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档 | Archive
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类 | Categories
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签 | Tags
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%89%8d%e8%a8%80" class="nav-前言">
+									前言
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%87%86%e5%a4%87%e5%b7%a5%e4%bd%9c" class="nav-准备工作">
+									准备工作
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%9f%a5%e7%9c%8b%e5%bd%93%e5%89%8d%e7%ad%96%e7%95%a5" class="nav-查看当前策略">
+									查看当前策略
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bf%ae%e6%94%b9%e7%ad%96%e7%95%a5" class="nav-修改策略">
+									修改策略
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85" class="nav-安装">
+									安装
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%bb%e9%a2%98" class="nav-主题">
+									主题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%85%8d%e7%bd%ae%e8%87%aa%e5%8a%a8%e8%a1%a5%e5%85%a8" class="nav-配置自动补全">
+									配置自动补全
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%aa%e4%ba%ba%e9%85%8d%e7%bd%ae" class="nav-个人配置">
+									个人配置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83" class="nav-参考">
+									参考
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="http://localhost:1313/">
+            Tom&#39;s Blog
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="http://localhost:1313/">
+        <div class="single-column-header-title">Tom&#39;s Blog</div>
+        
+        <div class="single-column-header-subtitle">Life is a Battle!</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+                
+            
+
+            <div class="post-head-wrapper"
+                
+                    
+                    
+                    style="background-image: url('https://pic.imgdb.cn/item/65f7c4779f345e8d03321bad.webp')"
+                    
+                
+            >
+                <div class="post-title">
+                    Windows终端美化
+                    
+                    <div class="post-subtitle">
+                        安装 oh-my-posh 美化 Windows 终端 Windows Terminal
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2024-03-18 10:27
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/windows">Windows</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/windows">Windows</a>
+                                &nbsp;
+                            
+                                <a href="/tags/%E7%BB%88%E7%AB%AF">终端</a>
+                                &nbsp;
+                            
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            4 min
+                            
+                            6 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h2 id="前言">前言</h2>
+<p>Windows 推出了新的终端 <code>Windows Teminal</code>，虽然外观有所进步，但还是达不到自己预期，因此可以自己简单修改一下。</p>
+<h2 id="准备工作">准备工作</h2>
+<p>计算机上启动 <code>Windows PowerShell</code> 时，执行策略很可能是 <code>Restricted</code>（默认设置）。</p>
+<ul>
+<li><code>Restricted</code> 执行策略不允许任何脚本运行。</li>
+<li><code>AllSigned</code> 和 <code>RemoteSigned</code> 执行策略可防止 <code>Windows PowerShell</code> 运行没有数字签名的脚本。</li>
+</ul>
+<p>因此如果直接安装很可能出现无法运行脚本的错误。</p>
+<h3 id="查看当前策略">查看当前策略</h3>
+<p>打开 <code>PowerShell</code> 然后输入:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>get-executionpolicy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>PS C:\WINDOWS\system32&gt; get-executionpolicy
+</span></span><span style="display:flex;"><span>Restricted
+</span></span></code></pre></div><h3 id="修改策略">修改策略</h3>
+<p>以管理员身份打开 <code>Windows Posershell</code>，执行下列命令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>set-executionpolicy remotesigned
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 运行后输入 Y</span>
+</span></span></code></pre></div><h2 id="安装">安装</h2>
+<ol>
+<li>
+<p>首先在微软商店下载两个应用，直接搜索 <code>Windows Terminal</code> 以及 <code>oh-my-posh</code>。</p>
+</li>
+<li>
+<p>安装字体。安装作者推荐的 <code>MesloLGM NF</code> 字体，<a href="https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip">点此下载</a>，这样可以解决部分字体图标渲染问题。</p>
+</li>
+<li>
+<p>设置字体。打开 <code>Windows Terminal</code>，按 <code>Ctrl + Shift + 逗号</code>打开设置文件，然后在第 <code>41</code> 行 <code>profiles</code> 下 <code>default</code> 中添加字体设置，在第 <code>43</code> 行回车，然后添加如下代码后保存。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;font&#34;</span><span style="color:#960050;background-color:#1e0010">:</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;face&#34;</span>: <span style="color:#e6db74">&#34;MesloLGM NF&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p>加载 <code>oh-my-posh</code> 设置，在 <code>Windows Terminal</code> 中输入下面第一行命令创建新配置文件，创建后输入第二行命令，然后将第三条命令保存：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (!(Test-Path -Path $PROFILE )) { New-Item -Type File -Path $PROFILE -Force }
+</span></span><span style="display:flex;"><span>notepad $profile
+</span></span><span style="display:flex;"><span>oh-my-posh init pwsh | Invoke-Expression
+</span></span></code></pre></div><p>这样 <code>oh-my-posh</code> 就安装完成了，接下来可以自己选择主题。</p>
+</li>
+</ol>
+<h2 id="主题">主题</h2>
+<p><code>oh-my-posh</code> 有很多主题，可以在官方文档页面预览，地址如下：</p>
+<p><a href="https://ohmyposh.dev/docs/themes">主题预览</a></p>
+<p>选择好自己的主题后，在终端输入下面的命令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-PoshThemes
+</span></span></code></pre></div><p>然后终端会出现所有的主题预览，最后会出现主题文件所在地址，打开即可看到所有的主题文件，再次输入 <code>notepad $profile</code>，然后将配置修改为以下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>oh-my-posh init pwsh --config $env:POSH_THEMES_PATH/cloud-native-azure.omp.json | Invoke-Expression
+</span></span></code></pre></div><p>可以将主题名称修改为自己想要的主题，保存后即可完成。</p>
+<h2 id="配置自动补全">配置自动补全</h2>
+<p>自动补全插件为 <a href="https://github.com/PowerShell/PSReadLine">PSReadLine</a></p>
+<p>在终端安装模块：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Install-Module -Name PowerShellGet -Force -Scope CurrentUser
+</span></span><span style="display:flex;"><span>Install-Module PSReadLine -Scope CurrentUser
+</span></span></code></pre></div><blockquote>
+<p>或者可以使用管理员打开终端，这样命令后就不需要加 <code>-Scope CurrentUser</code></p>
+</blockquote>
+<p>安装好模块后输入 <code>notepad $profile</code>打开配置文件，添加下列命令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Import-Module PSReadLine
+</span></span><span style="display:flex;"><span>Set-PSReadlineKeyHandler -Key Tab -Function Complete
+</span></span></code></pre></div><p>或者可以直接在配置文件中添加官方示例的代码，地址<a href="https://raw.githubusercontent.com/PowerShell/PSReadLine/master/PSReadLine/SamplePSReadLineProfile.ps1">点击这里</a>，需要注意的是，下面两行代码需要放到最开头，同时在 <code>Import-Module PSReadLine</code> 下一行添加 <code>Set-PSReadlineKeyHandler -Key Tab -Function Complete</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># 放到开头</span>
+</span></span><span style="display:flex;"><span>using namespace System.Management.Automation
+</span></span><span style="display:flex;"><span>using namespace System.Management.Automation.Language
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>Import-Module PSReadLine
+</span></span><span style="display:flex;"><span>Set-PSReadlineKeyHandler -Key Tab -Function Complete
+</span></span></code></pre></div><h2 id="个人配置">个人配置</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># 初始化配置及主题</span>
+</span></span><span style="display:flex;"><span>oh-my-posh init pwsh --config $env:POSH_THEMES_PATH/cloud-native-azure.omp.json | Invoke-Expression
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 导入模块</span>
+</span></span><span style="display:flex;"><span>Import-Module PSReadLine
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置 TAB 键补全</span>
+</span></span><span style="display:flex;"><span>Set-PSReadlineKeyHandler -Key Tab -Function Complete
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置 Ctrl+z 为撤销</span>
+</span></span><span style="display:flex;"><span>Set-PSReadLineKeyHandler -Key <span style="color:#e6db74">&#34;Ctrl+z&#34;</span> -Function Undo
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置向上键为后向搜索历史记录</span>
+</span></span><span style="display:flex;"><span>Set-PSReadLineKeyHandler -Key UpArrow -ScriptBlock {
+</span></span><span style="display:flex;"><span>  [<span style="color:#66d9ef">Microsoft.PowerShell.PSConsoleReadLine</span>]::HistorySearchBackward()
+</span></span><span style="display:flex;"><span>  [<span style="color:#66d9ef">Microsoft.PowerShell.PSConsoleReadLine</span>]::EndOfLine()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置向下键为前向搜索历史纪录</span>
+</span></span><span style="display:flex;"><span>Set-PSReadLineKeyHandler -Key DownArrow -ScriptBlock {
+</span></span><span style="display:flex;"><span>  [<span style="color:#66d9ef">Microsoft.PowerShell.PSConsoleReadLine</span>]::HistorySearchForward()
+</span></span><span style="display:flex;"><span>  [<span style="color:#66d9ef">Microsoft.PowerShell.PSConsoleReadLine</span>]::EndOfLine()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="参考">参考</h2>
+<ul>
+<li>
+<p><a href="https://syxdevcode.github.io/2021/09/04/PowerShell%EF%BC%9A%E5%9B%A0%E4%B8%BA%E5%9C%A8%E6%AD%A4%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%A6%81%E6%AD%A2%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC%EF%BC%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">syxdevcode 博客</a></p>
+</li>
+<li>
+<p><a href="https://ohmyposh.dev/docs/themes">oh-my-posh 文档</a></p>
+</li>
+<li>
+<p><a href="https://blog.ichr.me/post/windows-terminal-configuration/#%E6%9B%B4%E8%BF%9B%E4%B8%80%E6%AD%A5%E2%80%94%E2%80%94Oh-My-Posh">ChrAlpha&rsquo;s Blog</a></p>
+</li>
+<li>
+<p><a href="https://zhuanlan.zhihu.com/p/354603010">知乎</a></p>
+</li>
+<li>
+<p><a href="https://lzw.me/a/windows-terminal-update-oh-my-posh.html/comment-page-1">志文工作室</a></p>
+</li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2024-03-18</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/posts/webstack-hugo/">
+			下回<br>Webstack Hugo导航
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/shenji/">
+			上回<br>常用审计规则
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="username/repo"
+        data-repo-id="**************************"
+        data-category="General"
+        data-category-id="*********************"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="http://localhost:1313/">
+    
+        <div class="nav-title">
+            Tom&#39;s Blog
+        </div>
+        
+        <div class="nav-subtitle">
+            Life is a Battle!
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档 | Archive
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类 | Categories
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签 | Tags
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Tom Almighty
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%89%8d%e8%a8%80" class="nav-前言">
+									前言
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%87%86%e5%a4%87%e5%b7%a5%e4%bd%9c" class="nav-准备工作">
+									准备工作
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%9f%a5%e7%9c%8b%e5%bd%93%e5%89%8d%e7%ad%96%e7%95%a5" class="nav-查看当前策略">
+									查看当前策略
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bf%ae%e6%94%b9%e7%ad%96%e7%95%a5" class="nav-修改策略">
+									修改策略
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85" class="nav-安装">
+									安装
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%bb%e9%a2%98" class="nav-主题">
+									主题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%85%8d%e7%bd%ae%e8%87%aa%e5%8a%a8%e8%a1%a5%e5%85%a8" class="nav-配置自动补全">
+									配置自动补全
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%aa%e4%ba%ba%e9%85%8d%e7%bd%ae" class="nav-个人配置">
+									个人配置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83" class="nav-参考">
+									参考
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Tom Almighty
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

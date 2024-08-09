@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<title>学习通刷课指南</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="通过油猴脚本实现学习通不间断刷课。">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:url" content="http://localhost:1313/posts/xuexitong/">
+  <meta property="og:site_name" content="Tom&#39;s Blog">
+  <meta property="og:title" content="学习通刷课指南">
+  <meta property="og:description" content="通过油猴脚本实现学习通不间断刷课。">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-09-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-09-10T00:00:00+00:00">
+    <meta property="article:tag" content="刷课">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>console.log("Hello from 'layouts/partials/extended_head.html'")</script>
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档 | Archive
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类 | Categories
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签 | Tags
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%89%8d%e8%a8%80" class="nav-前言">
+									前言：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bd%a0%e8%a6%81%e7%9f%a5%e9%81%93" class="nav-你要知道">
+									你要知道
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#firefox-%e6%96%b9%e6%b3%95" class="nav-firefox-方法">
+									Firefox 方法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e4%b8%8b%e8%bd%bd%e6%89%a9%e5%b1%95" class="nav-下载扩展">
+									下载扩展
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%8b%e8%bd%bd%e8%84%9a%e6%9c%ac" class="nav-下载脚本">
+									下载脚本
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#chrome-%e6%96%b9%e6%b3%95" class="nav-chrome-方法">
+									Chrome 方法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="http://localhost:1313/">
+            Tom&#39;s Blog
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="http://localhost:1313/">
+        <div class="single-column-header-title">Tom&#39;s Blog</div>
+        
+        <div class="single-column-header-subtitle">Life is a Battle!</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+                
+            
+
+            <div class="post-head-wrapper"
+                
+                    
+                    
+                    style="background-image: url('https://pic.imgdb.cn/item/65dc457b9f345e8d030782d8.webp')"
+                    
+                
+            >
+                <div class="post-title">
+                    学习通刷课指南
+                    
+                    <div class="post-subtitle">
+                        通过油猴脚本实现学习通不间断刷课。
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2020-09-10 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/%E6%97%A5%E5%B8%B8">日常</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/%E5%88%B7%E8%AF%BE">刷课</a>
+                                &nbsp;
+                            
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            4 min
+                            
+                            13 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h2 id="前言"><strong>前言：</strong></h2>
+<p>很多学生需要完成网课的学习，但是这些课程往往很长，而且还会有一些题目，这就需要我们隔几分钟就要看一下页面，阻碍了我们进行<del>快乐的阅读文献</del>，所以这里通过一些脚本插件来解放我们的双手。</p>
+<p>通过插件可以实现：</p>
+<ul>
+<li>自动下一章节</li>
+<li>自动答题并提交</li>
+<li>视频多倍速播放</li>
+<li>······</li>
+</ul>
+<h2 id="你要知道"><strong>你要知道</strong></h2>
+<p>使用插件会有不良记录的风险，请自行考虑</p>
+<p>实际播放时间和理论播放时间差距太大会增加风险，尽量不要拖动进度条，或者多倍速播放</p>
+<p>此方法是通过 <code>用户脚本</code>，脚本就是一段代码，可以为网页添加新功能，有些则可以去除广告，提升浏览体验。而管理脚本的插件可以理解为脚本管理器，这里使用的脚本管理器是 <code>Tampermonkey</code>。</p>
+<p>脚本则是在 <code>Greasy Fork</code> 找到。<code>Greasy Fork</code> 上的脚本由众多开发者开发并面向全世界发布，可以免费安装使用。</p>
+<p>有很多人将开源的程序拿来售卖盈利，请尽量多 Google 搜索，避免吃亏</p>
+<p><code>Tampermonkey</code> 支持的浏览器如下：</p>
+<ul>
+<li>Chrome</li>
+<li>Microsoft Edge</li>
+<li>Safari</li>
+<li>Firefox</li>
+<li>Opera Next</li>
+<li>Dolphin Browser</li>
+<li>UC Browser</li>
+</ul>
+<blockquote>
+<p>Chrome 是非常优秀的浏览器，但是碍于国内的上网环境，所以大多数人并不经常使用，但它的兼容性最好，一般情况不会出现问题，所以尽量使用 Chrome。
+由于谷歌的插件商店 Webstore 无法直接下载，所以这里主要介绍 Firefox 的方法，Chrome 安装简要介绍。</p>
+</blockquote>
+<h2 id="firefox-方法"><strong>Firefox 方法</strong></h2>
+<p>首先在官网下载浏览器</p>
+<p><a href="https://www.mozilla.org/zh-CN/firefox/new/">官网</a></p>
+<blockquote>
+<p>请注意：Firefox 区分国内版和国际版，这里使用国际版</p>
+</blockquote>
+<h3 id="下载扩展"><strong>下载扩展</strong></h3>
+<p>使用 <code>Tampermonkey</code> ，地址如下</p>
+<p><a href="https://www.tampermonkey.net/">Tampermonkey</a></p>
+<p>打开官网这里可以看到管理器支持的浏览器，你用什么浏览器打开，就会在相应的标签下。</p>
+<p><img src="https://pic.imgdb.cn/item/6321485116f2c2beb16808b2.png" alt="https://pic.imgdb.cn/item/6321485116f2c2beb16808b2.png"></p>
+<p>点击下载按键即可下载，一般选择稳定版。按照提示完成安装即可</p>
+<h3 id="下载脚本"><strong>下载脚本</strong></h3>
+<p>打开下载脚本的网站，地址如下</p>
+<p><a href="https://greasyfork.org/zh-CN%5C%5DGreasyfork">Greasyfork</a></p>
+<p>首先搜索插件</p>
+<p>在网站搜索 <code>超星</code>，插件的效果都大同小异，这里选择第一个，下载量较高的。</p>
+<p><img src="https://pic.imgdb.cn/item/63214f4416f2c2beb16f4da8.png" alt="https://pic.imgdb.cn/item/63214f4416f2c2beb16f4da8.png"></p>
+<p>点进去后点击 <code>安装此脚本</code>，即可安装成功</p>
+<p>接下来管理脚本，点击右上角的管理器图标即可进入面板，进入后编辑脚本，然后修改脚本参数，调整刷课方式，能修改的参数后面都有清楚的注释。</p>
+<p><img src="https://pic.imgdb.cn/item/63214af716f2c2beb16b1972.png" alt="https://pic.imgdb.cn/item/63214af716f2c2beb16b1972.png"></p>
+<p><img src="https://pic.imgdb.cn/item/63214b5b16f2c2beb16b7a4c.png" alt="https://pic.imgdb.cn/item/63214b5b16f2c2beb16b7a4c.png"></p>
+<p><img src="https://pic.imgdb.cn/item/63214ec016f2c2beb16ed36e.png" alt="https://pic.imgdb.cn/item/63214ec016f2c2beb16ed36e.png"></p>
+<blockquote>
+<p>修改参数后如果不生效请刷新页面或者重新登陆</p>
+</blockquote>
+<h2 id="chrome-方法"><strong>Chrome 方法</strong></h2>
+<p>首先下载脚本管理器，网站地址同上 → <a href="https://www.tampermonkey.net/">点这里</a></p>
+<p>点进去下载会跳转到 <code>Webstore</code>，然后安装，安装后的使用方法和 <code>Firefox</code>一样。</p>
+<p>如果打不开的话这里可以使用第三方的插件商店</p>
+<p><a href="https://chrome.zzzmh.cn/index">极简插件</a></p>
+<p>这里偷个懒，解压出来的文件有插件如何安装的<a href="https://chrome.zzzmh.cn/help?token=setup">网站教程</a>，打开就能看到。</p>
+<p>安装好插件后的步骤和 <code>Firefox</code> 一样，下载脚本，然后启用即可。</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2020-09-10</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/posts/handsome/">
+			下回<br>Typecho博客Handsome主题美化
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/windows10/">
+			上回<br>Windows10常见问题
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="username/repo"
+        data-repo-id="**************************"
+        data-category="General"
+        data-category-id="*********************"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="http://localhost:1313/">
+    
+        <div class="nav-title">
+            Tom&#39;s Blog
+        </div>
+        
+        <div class="nav-subtitle">
+            Life is a Battle!
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档 | Archive
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类 | Categories
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签 | Tags
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Tom Almighty
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%89%8d%e8%a8%80" class="nav-前言">
+									前言：
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bd%a0%e8%a6%81%e7%9f%a5%e9%81%93" class="nav-你要知道">
+									你要知道
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#firefox-%e6%96%b9%e6%b3%95" class="nav-firefox-方法">
+									Firefox 方法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e4%b8%8b%e8%bd%bd%e6%89%a9%e5%b1%95" class="nav-下载扩展">
+									下载扩展
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%8b%e8%bd%bd%e8%84%9a%e6%9c%ac" class="nav-下载脚本">
+									下载脚本
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#chrome-%e6%96%b9%e6%b3%95" class="nav-chrome-方法">
+									Chrome 方法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Tom Almighty
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

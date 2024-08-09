@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>终端 on Tom&#39;s Blog</title>
+    <link>http://localhost:1313/tags/%E7%BB%88%E7%AB%AF/</link>
+    <description>Recent content in 终端 on Tom&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <copyright>Tom Almighty</copyright>
+    <lastBuildDate>Wed, 17 Apr 2024 10:41:36 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E7%BB%88%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>终端设置代理</title>
+      <link>http://localhost:1313/posts/61ca2491/</link>
+      <pubDate>Wed, 17 Apr 2024 10:41:36 +0000</pubDate>
+      <guid>http://localhost:1313/posts/61ca2491/</guid>
+      <description>原文链接: https://doc.yoouu.cn/basic/proxy.html&#xA;前言 在国内使用终端安装各种依赖很有可能由于网络问题出错，因此通过设置终端本地代理，解决无法访问的问题。&#xA;Git git config --global http.proxy http://localhost:7890 git config --global https.proxy https://localhost:7890 # 恢复 git config --global --unset http.proxy git config --global --unset https.proxy # 如果发现取消代理的命令不生效，可以用以下命令查看全局配置信息 git config --global -l # 编辑全局配置，会启动编辑器，你可以手动去除代理信息 git config --global -e ssh clone 代理&#xA;找到你的 ssh 配置文件，没有就新建，例如 Windows -&amp;gt; C:\Users\your-username\.ssh\config&#xA;ProxyCommand connect -S 127.0.0.1:7890 -a none %h %p ...others Windows # 设置代理 netsh winhttp set proxy 127.0.0.1:1080 # 取消代理 netsh winhttp reset proxy # 查看代理 netsh winhttp show proxy CMD set http_proxy=http://127.</description>
+    </item>
+    <item>
+      <title>Windows终端美化</title>
+      <link>http://localhost:1313/posts/windows-terminal/</link>
+      <pubDate>Mon, 18 Mar 2024 10:27:32 +0800</pubDate>
+      <guid>http://localhost:1313/posts/windows-terminal/</guid>
+      <description>前言 Windows 推出了新的终端 Windows Teminal，虽然外观有所进步，但还是达不到自己预期，因此可以自己简单修改一下。&#xA;准备工作 计算机上启动 Windows PowerShell 时，执行策略很可能是 Restricted（默认设置）。&#xA;Restricted 执行策略不允许任何脚本运行。 AllSigned 和 RemoteSigned 执行策略可防止 Windows PowerShell 运行没有数字签名的脚本。 因此如果直接安装很可能出现无法运行脚本的错误。&#xA;查看当前策略 打开 PowerShell 然后输入:&#xA;get-executionpolicy PS C:\WINDOWS\system32&amp;gt; get-executionpolicy Restricted 修改策略 以管理员身份打开 Windows Posershell，执行下列命令：&#xA;set-executionpolicy remotesigned # 运行后输入 Y 安装 首先在微软商店下载两个应用，直接搜索 Windows Terminal 以及 oh-my-posh。&#xA;安装字体。安装作者推荐的 MesloLGM NF 字体，点此下载，这样可以解决部分字体图标渲染问题。&#xA;设置字体。打开 Windows Terminal，按 Ctrl + Shift + 逗号打开设置文件，然后在第 41 行 profiles 下 default 中添加字体设置，在第 43 行回车，然后添加如下代码后保存。&#xA;&amp;#34;font&amp;#34;: { &amp;#34;face&amp;#34;: &amp;#34;MesloLGM NF&amp;#34; } 加载 oh-my-posh 设置，在 Windows Terminal 中输入下面第一行命令创建新配置文件，创建后输入第二行命令，然后将第三条命令保存：</description>
+    </item>
+  </channel>
+</rss>

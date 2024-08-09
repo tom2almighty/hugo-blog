@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FNIRS on Tom&#39;s Blog</title>
+    <link>http://localhost:1313/tags/fnirs/</link>
+    <description>Recent content in FNIRS on Tom&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <copyright>Tom Almighty</copyright>
+    <lastBuildDate>Sat, 13 May 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/fnirs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>近红外数据分析步骤</title>
+      <link>http://localhost:1313/posts/fnirs/</link>
+      <pubDate>Sat, 13 May 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/fnirs/</guid>
+      <description>fNIRS Data Preprocessing使用步骤 本文是近红外数据分析步骤，适用于joint Simon task，使用 宏程序fNIRS Data Preprocessing 以及其他宏程序完成，ETG7100型号设备数据格式为编号_HBA_Probe1_Oxy.csv，编号自定义，最好写成sub001_run1这种形式，命名最好采用单数，即第1对被试为sub01，第2对为sub03，方便后续分割两个被试的数据。&#xA;fNIRS Data Preprocessing 宏程序介绍 程序界面包括三部分，步骤选择、设置、文件列表查看，如下图。&#xA;主要使用步骤为首先选择源数据路径，粘贴进对话框后点击File List查看是否正确，然后在 Type of calculation 选择程序，点击Set 设置，设置无误后点击 Start开始。&#xA;脑内激活（Intra-brain activation） 前面步骤使用 fNIRS Data Preprocessing程序完成，十三步后可使用自定义宏程序。&#xA;Step01. Hitachi 使用 Excel 程序Hitachi更新数据格式&#xA;输入目标文件的路径保存 Oxy 数据，按 File List 按钮 从Type of Calculation中选择Hitachi，按Set按钮 按 Start开始程序 结束后程序不会输出新的文件 Step02. Trigger Check 输入目标文件路径，按 File List 按钮 输入结果文件Trigger.xlsx的保存路径 从Type of Calculation中选择Trigger Check，按Set按钮 按 Start开始程序，对话框中输入 1 结束后程序会输出新的文件 Trigger.xlsx Step03. 格式转换 xlsx to mat 打开 Matlab，路径选择到 Hitachi后的文件路径，左侧出现文件后即成功 输入下列代码转换格式 for i = 1:9 # i代表 sub0 后的数量 这里表示 sub01到 sub09 for j = 1:2 # j 代表run数量，有几个修改一下即可 for k = 1:4 # k 代表 Probe数量，即光极片数量 a = [&amp;#39;sub0&amp;#39;,num2str(i),&amp;#39;_run&amp;#39;, num2str(j),&amp;#39;_HBA_Probe&amp;#39;, num2str(k),&amp;#39;_Oxy.</description>
+    </item>
+  </channel>
+</rss>

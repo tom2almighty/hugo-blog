@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Butterfly on Tom&#39;s Blog</title>
+    <link>http://localhost:1313/tags/butterfly/</link>
+    <description>Recent content in Butterfly on Tom&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <copyright>Tom Almighty</copyright>
+    <lastBuildDate>Wed, 08 May 2024 08:46:52 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/butterfly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hexo-Butterfly修改记录</title>
+      <link>http://localhost:1313/posts/e1485cce/</link>
+      <pubDate>Wed, 08 May 2024 08:46:52 +0000</pubDate>
+      <guid>http://localhost:1313/posts/e1485cce/</guid>
+      <description>准备 在 [BlogRoot]\source 文件夹下新建一个文件夹 css，该文件夹用于存放自定义的 css 样式，再新建一个名为 custom.css，修改代码存于此处。&#xA;在主题配置文件 [BlogRoot]\_config.butterfly.yml 文件中的 inject 配置项的 head 子项加入以下代码，引入刚刚创建的 custom.css 文件（这是相对路径的写法）&#xA;inject: head: - &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;/css/custom.css&amp;#34; media=&amp;#34;defer&amp;#34; onload=&amp;#34;this.media=&amp;#39;all&amp;#39;&amp;#34;&amp;gt; 背景一图流 /* 页脚与头图透明 */ #footer { background: transparent !important; } #page-header { background: transparent !important; } /* 白天模式遮罩透明 */ #footer::before { background: transparent !important; } #page-header::before { background: transparent !important; } /* 夜间模式遮罩透明 */ [data-theme=&amp;#34;dark&amp;#34;] #footer::before { background: transparent !important; } [data-theme=&amp;#34;dark&amp;#34;] #page-header::before { background: transparent !</description>
+    </item>
+  </channel>
+</rss>

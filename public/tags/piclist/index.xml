@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Piclist on Tom&#39;s Blog</title>
+    <link>http://localhost:1313/tags/piclist/</link>
+    <description>Recent content in Piclist on Tom&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <copyright>Tom Almighty</copyright>
+    <lastBuildDate>Thu, 03 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/piclist/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Typora配合PicList快速上传图片并加速 </title>
+      <link>http://localhost:1313/posts/piclist/</link>
+      <pubDate>Thu, 03 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/piclist/</guid>
+      <description>前言 在Typora写笔记时不免使用图片，这里使用GitHub作图床，配合PicList上传，并通过jsdelivr实现CDN加速。&#xA;一. 准备 首先在 GitHub 中创建一个新的公共仓库。接下来生成一个新的 Token，地址为https://github.com/settings/tokens， Token 权限需要勾选write:packages和read:packages&#xA;Token 只显示一次，忘记了需要重新生成，注意保存&#xA;二. 创建网站 在服务器上创建一个新的网站和数据库，将下面项目打包后放入网站根目录并解压。 autoPicCDN&#xA;将项目中的数据库文件pic.sql上传到数据库中并替换覆盖 三. 修改参数 在 up.php 中修改参数：&#xA;一般选择 GitHub USER 填写用户名 REPO 填写仓库名 TOKEN 填写第一步的TOKEN 数据库信息只需修改 dbname user pass，与第二步中一致 四. 配置 PicList 下载 PicList（PicGo基础上开发） 或者 Picgo，地址如下： PicList&#xA;PicGo&#xA;安装 web-uploader插件 配置上传参数，填好后确认 API 地址填写up.php路径，如www.pic.com/up.php POST 参数名填写 pic JSON 路径填写 data.url 五. 配置 Typora 依次打开文件-&amp;gt;偏好设置-&amp;gt;图像 插入图片时选择“上传图片” 在最下方上传服务设定选择对应的应用 PicList或者 PicGo 六. Themeable 主题添加 Mac 风格代码块 在主题文件夹下建立两个文件对应 light 和 dark 模式。</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zotero on Tom&#39;s Blog</title>
+    <link>http://localhost:1313/tags/zotero/</link>
+    <description>Recent content in Zotero on Tom&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <copyright>Tom Almighty</copyright>
+    <lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/zotero/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zotero简要使用指南</title>
+      <link>http://localhost:1313/posts/zotero/</link>
+      <pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/zotero/</guid>
+      <description>前言： Zotero 是一款文献及知识库管理软件，支持 Windows 、Mac、Linux 全平台，Zotero 词源可能来源于阿尔巴尼亚语动词，意为“掌握（to master）”。软件版本迭代周期较长，但每个版本都有非常实用的功能：&#xA;3.0 版本集成 Word 插件 4.0 版本增加期刊缩写、彩色标签等 5.0 版本 Zotero connector 更好的支持了 Firefox 6.0 版本内置了 PDF 阅读器，注释导出、非英语语法检查等，并且 iOS 端同步上线 具体版本记录可访问官网查看：更新日志&#xA;相比 Endnote、Mendeley、Citavi 等软件有独特得优势，主要有以下特性：&#xA;免费开源，有官方论坛 支持第三方插件 附件支持 Webdav 浏览器插件支持一键导入文献库 集成 Microsoft Word、LibreOffice 等插件，一键导入参考文献 但目前存在一些硬伤：&#xA;同步服务器位于国外，访问很慢 普通账户只有 300MB 的同步空间（可通过Webdav解决） 这里简要介绍一下软件的使用以及部分插件的安装。&#xA;1. 安装 首先需要访问官网下载程序以及图中的浏览器扩展，这样可以在程序打开时一键将条目保存到文献库中，同时建议注册账户使用，这样可以多平台协同工作。&#xA;下载地址：点这里&#xA;安装好插件以及应用后登录账号，连接插件，正常状态如下图红框：&#xA;2. 使用 软件打开后可看到除去菜单功能区外大致分为四个主要区域，如下图：&#xA;2.1 文库分类 Zotero 使用的文库的概念，可以建立文库以及在文库下建立分类，并且可以导出、创建分类报告等，新建只需要点击对应的按钮。&#xA;2.2 条目使用 添加条目有三种主要方式：&#xA;拖拽 PDF 进条目列表区，软件会自动访问 PDF 元数据，找到对应的条目 通过 DOI 添加条目，若存在可用的 PDF 会自动下载，可在上图软件功能分区看到 通过浏览器插件将条目保存入文库 主要介绍一下第三种方式</description>
+    </item>
+  </channel>
+</rss>

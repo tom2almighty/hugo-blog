@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emby on Tom&#39;s Blog</title>
+    <link>http://localhost:1313/tags/emby/</link>
+    <description>Recent content in Emby on Tom&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <copyright>Tom Almighty</copyright>
+    <lastBuildDate>Wed, 24 Jul 2024 19:06:29 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/emby/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Terminus答案</title>
+      <link>http://localhost:1313/posts/terminus-emby/</link>
+      <pubDate>Wed, 24 Jul 2024 19:06:29 +0000</pubDate>
+      <guid>http://localhost:1313/posts/terminus-emby/</guid>
+      <description>a 代表✅ e 代表❌&#xA;window.QAA=[{ &amp;#34;q&amp;#34;: &amp;#34;如果出现使用emby connect登该:,录你应&amp;#34;, &amp;#34;e&amp;#34;: &amp;#34;点下一步&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;点跳过/手动输入&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;哪一个国家不能直接访问公益服的备用线路 (也就是cloudflare线路)?&amp;#34;, &amp;#34;e&amp;#34;: &amp;#34;新加坡|澳大利亚&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;使用了 Emby 公益服提供的 Android TV 官方客户端破解版，但一直提示试用即将到期或已过期怎么办？&amp;#34;, &amp;#34;e&amp;#34;: &amp;#34;破解失败，重新安装&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;无视它&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;美剧里「S1E1」「S2E3」中「E」指英文中哪个单词？&amp;#34;, &amp;#34;e&amp;#34;: &amp;#34;Earthling&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;遇到问题想在群里发问，又怕被办怎么办才好呢？&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;通读wiki 和提问的艺术全文&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;获得VIP的方法？&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;长期默默为群组解答问题&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;关于开放式提问，以下描述正确的是？&amp;#34;, &amp;#34;e&amp;#34;: &amp;#34;能获得想要的信息|会让一次聊天变得有意义&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;以上都是&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;从问题属性角度出发，MySQL数据库的使用问题适合在本群组提问吗？&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;不适合&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;小李想将 Emby 的 APK 安装文件传输到 Mibox 上，这样家里的老人就可以在电视上看 Emby 了，请问以下哪种方式可以将文件传输到电视盒子上？&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;以上均可以&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;怎么赞助 Emby 公益服？&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;他们不接受任何赞助&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;如果你想参与一个你不太了解的话题讨论，你应该怎么做。&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;不确定的看法要指出，不能误导&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;当他人为你排错时，在很基础的常识上，他要求你仔细检查，你应该？&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;认真检查并提供你的检查过程&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;使用 Emby 的 iOS 客户端观看公益服影片是否需要付费解锁或破解播放权限？&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;需要&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;提问前 确认自己已确定的各个步骤及其顺序都是必要的？&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;正确 失之毫厘差以千里&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;群友需要为公益服提供资源吗&amp;#34;, &amp;#34;e&amp;#34;: &amp;#34;需要&amp;#34;, &amp;#34;a&amp;#34;: &amp;#34;不需要&amp;#34; }, { &amp;#34;q&amp;#34;: &amp;#34;http://.</description>
+    </item>
+  </channel>
+</rss>

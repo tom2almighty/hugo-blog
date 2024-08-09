@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<title>Windows10常见问题</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="解决 Windows10 经常出现的奇奇怪怪的问题。">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:url" content="http://localhost:1313/posts/windows10/">
+  <meta property="og:site_name" content="Tom&#39;s Blog">
+  <meta property="og:title" content="Windows10常见问题">
+  <meta property="og:description" content="解决 Windows10 经常出现的奇奇怪怪的问题。">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-09-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-09-01T00:00:00+00:00">
+    <meta property="article:tag" content="Windows">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>console.log("Hello from 'layouts/partials/extended_head.html'")</script>
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档 | Archive
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类 | Categories
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签 | Tags
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%88%a0%e9%99%a4%e8%87%aa%e5%b8%a6%e8%be%93%e5%85%a5%e6%b3%95" class="nav-删除自带输入法">
+									删除自带输入法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#linux--windows-%e5%8f%8c%e7%b3%bb%e7%bb%9f%e6%97%b6%e9%97%b4%e9%97%ae%e9%a2%98" class="nav-linux--windows-双系统时间问题">
+									Linux &#43; Windows 双系统时间问题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%a7%a3%e5%86%b3%e9%83%a8%e5%88%86%e5%9b%be%e6%a0%87%e5%8a%a0%e8%bd%bd%e4%b8%8d%e5%87%ba%e6%9d%a5" class="nav-解决部分图标加载不出来">
+									解决部分图标加载不出来
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%bc%a9%e6%94%be%e9%97%ae%e9%a2%98" class="nav-缩放问题">
+									缩放问题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#anne-pro-2-%e8%bf%9e%e6%8e%a5%e8%ae%be%e5%a4%87" class="nav-anne-pro-2-连接设备">
+									Anne Pro 2 连接设备
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%bd%91%e7%bb%9c%e8%bf%9e%e6%8e%a5%e9%97%ae%e9%a2%98" class="nav-网络连接问题">
+									网络连接问题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e5%85%a8%e4%b8%ad%e5%bf%83" class="nav-安全中心">
+									安全中心
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#hevc-%e6%8f%92%e4%bb%b6%e5%9c%b0%e5%9d%80" class="nav-hevc-插件地址">
+									HEVC 插件地址
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#win11%e8%b7%b3%e8%bf%87%e5%bc%80%e6%9c%ba%e8%81%94%e7%bd%91" class="nav-win11跳过开机联网">
+									win11跳过开机联网
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#ltsc%e7%89%88%e6%9c%ac%e5%ae%89%e8%a3%85-microsoft-store" class="nav-ltsc版本安装-microsoft-store">
+									LTSC版本安装 Microsoft Store
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#exe-%e7%97%85%e6%af%92%e8%a7%a3%e5%86%b3" class="nav-exe-病毒解决">
+									EXE 病毒解决
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83" class="nav-参考">
+									参考
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="http://localhost:1313/">
+            Tom&#39;s Blog
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="http://localhost:1313/">
+        <div class="single-column-header-title">Tom&#39;s Blog</div>
+        
+        <div class="single-column-header-subtitle">Life is a Battle!</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+                
+            
+
+            <div class="post-head-wrapper"
+                
+                    
+                    
+                    style="background-image: url('https://pic.imgdb.cn/item/62d6de99f54cd3f937dd4e5f.jpg')"
+                    
+                
+            >
+                <div class="post-title">
+                    Windows10常见问题
+                    
+                    <div class="post-subtitle">
+                        解决 Windows10 经常出现的奇奇怪怪的问题。
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2020-09-01 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/windows">Windows</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/windows">Windows</a>
+                                &nbsp;
+                            
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            4 min
+                            
+                            49 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h2 id="删除自带输入法"><strong>删除自带输入法</strong></h2>
+<p>删除以下注册表</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\CTF\\\\TIP
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>{81d4e9c9-1d3b-41bc-9e6c-4b40bf79e35e}
+</span></span></code></pre></div><h2 id="linux--windows-双系统时间问题"><strong>Linux + Windows 双系统时间问题</strong></h2>
+<p>Windows 下以管理员身份打开命令行窗口</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Reg add HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Control\\\\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d <span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><h2 id="解决部分图标加载不出来"><strong>解决部分图标加载不出来</strong></h2>
+<ol>
+<li>在桌面新建文本文档，复制以下代码</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rem 关闭Windows外壳程序explorer
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>taskkill /f /im explorer.exe
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>rem 清理系统图标缓存数据库
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>attrib -h -s -r <span style="color:#e6db74">&#34;%userprofile%\\\\AppData\\\\Local\\\\IconCache.db&#34;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>del /f <span style="color:#e6db74">&#34;%userprofile%\\\\AppData\\\\Local\\\\IconCache.db&#34;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>attrib /s /d -h -s -r <span style="color:#e6db74">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\*&#34;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>del /f <span style="color:#e6db74">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_32.db&#34;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>del /f <span style="color:#e6db74">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_96.db&#34;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>del /f <span style="color:#e6db74">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_102.db&#34;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>del /f <span style="color:#e6db74">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_256.db&#34;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>del /f <span style="color:#e6db74">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_1024.db&#34;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>del /f <span style="color:#e6db74">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_idx.db&#34;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>del /f <span style="color:#e6db74">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_sr.db&#34;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>rem 清理 系统托盘记忆的图标
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>echo y|reg delete <span style="color:#e6db74">&#34;HKEY_CLASSES_ROOT\\\\Local Settings\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\TrayNotify&#34;</span> /v IconStreams
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>echo y|reg delete <span style="color:#e6db74">&#34;HKEY_CLASSES_ROOT\\\\Local Settings\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\TrayNotify&#34;</span> /v PastIconsStream
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>rem 重启Windows外壳程序explorer
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>start explorer
+</span></span></code></pre></div><ol>
+<li>将 <code>txt</code> 后缀修改为 <code>bat</code></li>
+<li>双击运行</li>
+</ol>
+<h2 id="缩放问题"><strong>缩放问题</strong></h2>
+<p>Win10 修改<code>字体大小</code>后，再改回去任务窗口顶栏并不会改变，此时只需要修改缩放为<code>自定义缩放</code>，然后再调整回去即可。</p>
+<h2 id="anne-pro-2-连接设备"><strong>Anne Pro 2 连接设备</strong></h2>
+<p><code>Anne Pro 2</code> 由于固件问题，可能出现连接不上电脑的情况，这里给出淘宝客服的的步骤，已测试可以成功连接。</p>
+<ol>
+<li>插线连接电脑，打开键盘灯光，并清除蓝牙连接信息。</li>
+<li>准备连接，先打开蓝牙搜索界面，再打开键盘背部的开关，然后长按 <code>Fn2 + 1</code>5秒以上，不要放手，键盘上按键 <code>1</code> 的灯快速闪烁的时候，在蓝牙设备点击连接。</li>
+</ol>
+<blockquote>
+<p>注意：闪烁的数字其实就是连接的设备编号，如果没连接成功可以数字 1-4 都试一下</p>
+</blockquote>
+<p>Anne Pro 设备驱动：<a href="https://www.hexcore.xyz/obinskit">点击下载</a></p>
+<h2 id="网络连接问题"><strong>网络连接问题</strong></h2>
+<p>win10 18362版本后连接WiFi后可能出现已连接网络但显示未连接的情况，虽然仍能正常访问网络，但部分情境下可能受限，解决方法如下：</p>
+<p>找到如下注册表：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ae81ff">\H</span>KEY_LOCAL_MACHINE<span style="color:#ae81ff">\S</span>YSTEM<span style="color:#ae81ff">\C</span>urrentControlSet<span style="color:#ae81ff">\S</span>ervices<span style="color:#ae81ff">\N</span>laSvc<span style="color:#ae81ff">\P</span>arameters<span style="color:#ae81ff">\I</span>nternet
+</span></span></code></pre></div><p>修改如下项目值为右侧内容：</p>
+<pre tabindex="0"><code>ActiveWebProbeContent        →     Microsoft NCSI
+ActiveWebProbeContentV6      →     Microsoft NCSI
+ActiveWebProbeHost           →     www.msftncsi.com
+ActiveWebProbeHostV6         →     ipv6.msftncsi.com
+ActiveWebProbePath           →     ncsi.txt
+ActiveWebProbePathV6         →     ncsi.txt
+EnableActiveProbing          →     1
+</code></pre><blockquote>
+<p>原因：每当连网后，系统会自动向微软的 <a href="http://dns.msftncsi.com">http://dns.msftncsi.com</a>发出请求，然后返回一个NCSI.txt的值，这一值如果正确时，则确认为已连网。而Win10最近的版本中，这个返回服务器和值有了新变化并反映为6个注册表项中。这些变化因国内部分运行商的网络重定向，不能得到正确的反馈，因此出现实际能上网确显示为无internet的问题。</p>
+</blockquote>
+<h2 id="安全中心"><strong>安全中心</strong></h2>
+<p><code>windows11</code>部分精简系统重启后任务栏会出现安全中心图标，删除方法如下：</p>
+<p>以管理员身份运行终端，粘贴如下内容回车：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>reg delete HKEY_LOCAL_MACHINE<span style="color:#ae81ff">\S</span>OFTWARE<span style="color:#ae81ff">\M</span>icrosoft<span style="color:#ae81ff">\W</span>indows<span style="color:#ae81ff">\C</span>urrentVersion<span style="color:#ae81ff">\R</span>un /v <span style="color:#e6db74">&#34;SecurityHealth&#34;</span> /f
+</span></span></code></pre></div><h2 id="hevc-插件地址"><strong>HEVC 插件地址</strong></h2>
+<p><a href="https://www.microsoft.com/store/productId/9N4WGH0Z6VHQ">HEVC</a></p>
+<h2 id="win11跳过开机联网"><strong>win11跳过开机联网</strong></h2>
+<p>按键盘上的Shift+F10调出命令提示符，输入以下内容后回车，等待系统重启：</p>
+<pre tabindex="0"><code>oobe\bepassnro
+# 注意：不需要区分大小写
+</code></pre><h2 id="ltsc版本安装-microsoft-store"><strong>LTSC版本安装 Microsoft Store</strong></h2>
+<p>管理员身份运行 <code>cmd</code>，输入以下内容：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsreset -i
+</span></span></code></pre></div><blockquote>
+<p>适用于 LTSC2021 以及 LTSC2019，自行测试。</p>
+</blockquote>
+<h2 id="exe-病毒解决">EXE 病毒解决</h2>
+<p>创建两个文件依次执行：
+创建 <code>1.reg</code> 并执行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Windows Registry Editor Version 5.00 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>HKEY_LOCAL_ MACHINE <span style="color:#ae81ff">\S</span>OFTWARE<span style="color:#ae81ff">\M</span>icrosoft<span style="color:#ae81ff">\W</span>indows<span style="color:#ae81ff">\C</span>urrentVersion
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">\E</span>xplorer<span style="color:#ae81ff">\A</span>dvanced<span style="color:#ae81ff">\F</span>older<span style="color:#ae81ff">\H</span>idden
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">\S</span>HOWALL<span style="color:#f92672">]</span> <span style="color:#e6db74">&#34;CheckedValue&#34;</span><span style="color:#f92672">=</span>dword:00000001
+</span></span></code></pre></div><p>创建 <code>2.bat</code> 并执行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> /f <span style="color:#e6db74">&#34;delims=&#34;</span> %%i in <span style="color:#f92672">(</span><span style="color:#e6db74">&#39;dir /ah /s/b&#39;</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">do</span> attrib <span style="color:#e6db74">&#34;%%i&#34;</span> -s -h
+</span></span></code></pre></div><h2 id="参考"><strong>参考</strong></h2>
+<ul>
+<li>重启资源管理器：<a href="https://blog.csdn.net/win_turn/article/details/73612220">原文</a></li>
+<li>WiFi连接后无 Internet：<a href="https://www.zhihu.com/question/48856675/answer/814251635">知乎链接</a>)</li>
+<li>安全中心：<a href="https://bbs.pcbeta.com/viewthread-1912644-1-1.html">远景论坛</a></li>
+<li>win11跳过开机联网：<a href="https://bbs.pcbeta.com/viewthread-1951653-1-3.htmlhttps://bbs.pcbeta.com/viewthread-1951653-1-3.html">远景论坛</a></li>
+<li>LTSC 安装 Microsoft Store<a href="https://bbs.pcbeta.com/viewthread-1945054-1-2.html">远景论坛</a></li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2020-09-01</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/posts/xuexitong/">
+			下回<br>学习通刷课指南
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/python02/">
+			上回<br>Python学习笔记02 面向对象
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="username/repo"
+        data-repo-id="**************************"
+        data-category="General"
+        data-category-id="*********************"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="http://localhost:1313/">
+    
+        <div class="nav-title">
+            Tom&#39;s Blog
+        </div>
+        
+        <div class="nav-subtitle">
+            Life is a Battle!
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档 | Archive
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类 | Categories
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签 | Tags
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Tom Almighty
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%88%a0%e9%99%a4%e8%87%aa%e5%b8%a6%e8%be%93%e5%85%a5%e6%b3%95" class="nav-删除自带输入法">
+									删除自带输入法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#linux--windows-%e5%8f%8c%e7%b3%bb%e7%bb%9f%e6%97%b6%e9%97%b4%e9%97%ae%e9%a2%98" class="nav-linux--windows-双系统时间问题">
+									Linux &#43; Windows 双系统时间问题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%a7%a3%e5%86%b3%e9%83%a8%e5%88%86%e5%9b%be%e6%a0%87%e5%8a%a0%e8%bd%bd%e4%b8%8d%e5%87%ba%e6%9d%a5" class="nav-解决部分图标加载不出来">
+									解决部分图标加载不出来
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%bc%a9%e6%94%be%e9%97%ae%e9%a2%98" class="nav-缩放问题">
+									缩放问题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#anne-pro-2-%e8%bf%9e%e6%8e%a5%e8%ae%be%e5%a4%87" class="nav-anne-pro-2-连接设备">
+									Anne Pro 2 连接设备
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%bd%91%e7%bb%9c%e8%bf%9e%e6%8e%a5%e9%97%ae%e9%a2%98" class="nav-网络连接问题">
+									网络连接问题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e5%85%a8%e4%b8%ad%e5%bf%83" class="nav-安全中心">
+									安全中心
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#hevc-%e6%8f%92%e4%bb%b6%e5%9c%b0%e5%9d%80" class="nav-hevc-插件地址">
+									HEVC 插件地址
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#win11%e8%b7%b3%e8%bf%87%e5%bc%80%e6%9c%ba%e8%81%94%e7%bd%91" class="nav-win11跳过开机联网">
+									win11跳过开机联网
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#ltsc%e7%89%88%e6%9c%ac%e5%ae%89%e8%a3%85-microsoft-store" class="nav-ltsc版本安装-microsoft-store">
+									LTSC版本安装 Microsoft Store
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#exe-%e7%97%85%e6%af%92%e8%a7%a3%e5%86%b3" class="nav-exe-病毒解决">
+									EXE 病毒解决
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83" class="nav-参考">
+									参考
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Tom Almighty
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

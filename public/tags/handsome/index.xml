@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Handsome on Tom&#39;s Blog</title>
+    <link>http://localhost:1313/tags/handsome/</link>
+    <description>Recent content in Handsome on Tom&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <copyright>Tom Almighty</copyright>
+    <lastBuildDate>Fri, 18 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/handsome/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Typecho博客Handsome主题美化</title>
+      <link>http://localhost:1313/posts/handsome/</link>
+      <pubDate>Fri, 18 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/handsome/</guid>
+      <description>前言 Handsome 是一款精美的 Typecho 主题，后台功能强大，这里记录一下自己从网上找到的对主题的一些美化。&#xA;底部版权信息美化 底部左侧信息 在主题后台设置-开发者设置-博客底部左侧信息添加如下代码：&#xA;&amp;lt;div class=&amp;#34;github-badge&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;./&amp;#34; title=&amp;#34;©2021 XXX&amp;#34;&amp;gt; &amp;lt;span class=&amp;#34;badge-subject&amp;#34;&amp;gt;Copyright&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;badge-value bg-blue&amp;#34;&amp;gt;©2021 XXX&amp;lt;/span&amp;gt; &amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; | &amp;lt;div class=&amp;#34;github-badge&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;http://www.beian.gov.cn/&amp;#34; target=&amp;#34;_blank&amp;#34; title=&amp;#34;XICP备 XXXXXXXXXX号&amp;#34;), pointer;&amp;#34;&amp;gt; &amp;lt;span class=&amp;#34;badge-subject&amp;#34;&amp;gt;晋ICP备&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;badge-value bg-green&amp;#34;&amp;gt;XXXXXXXXXX号&amp;lt;/span&amp;gt; &amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; 删除对应代码&#xA;# 在 `handsome\component\footer.php` 文件中删除如下代码 by &amp;lt;a target=&amp;#34;blank&amp;#34; href=&amp;#34;https://www.ihewro.com/archives/489/&amp;#34;&amp;gt;handsome&amp;lt;/a&amp;gt; © &amp;lt;?php echo date(&amp;#34;Y&amp;#34;);?&amp;gt; Copyright 底部右侧信息 在主题后台设置-开发者设置-博客底部右侧信息添加如下代码：&#xA;&amp;lt;div class=&amp;#34;github-badge&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;http://www.typecho.org&amp;#34; target=&amp;#34;_blank&amp;#34; title=&amp;#34;由 Typecho 强力驱动&amp;#34;&amp;gt; &amp;lt;span class=&amp;#34;badge-subject&amp;#34;&amp;gt;Powered&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;badge-value bg-blue&amp;#34;&amp;gt;Typecho&amp;lt;/span&amp;gt; &amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; | &amp;lt;div class=&amp;#34;github-badge&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;https://www.</description>
+    </item>
+  </channel>
+</rss>

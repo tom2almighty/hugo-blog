@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dokcer on Tom&#39;s Blog</title>
+    <link>http://localhost:1313/tags/dokcer/</link>
+    <description>Recent content in Dokcer on Tom&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <copyright>Tom Almighty</copyright>
+    <lastBuildDate>Sun, 21 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/dokcer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hexo博客Fluid主题修改</title>
+      <link>http://localhost:1313/posts/fluid-modify/</link>
+      <pubDate>Sun, 21 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/fluid-modify/</guid>
+      <description>前言 记录对于 Hexo 主题 Fluid 的修改，来源于网络。&#xA;替换 Mac 风格代码块 在主题文件 themes\fluid\source\css 目录下新建样式文件，如 macpanel.styl，内容参考：&#xA;.highlight background: #21252b border-radius: 5px box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .4) padding-top: 30px &amp;amp;::before background: #fc625d border-radius: 50% box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b content: &amp;#39; &amp;#39; height: 12px left: 12px margin-top: -20px position: absolute width: 12px 修改主题配置文件_config.fluid.yml，找到 custom_css 配置项，引入刚刚新建的样式文件（此处引入.styl 文件无需加后缀）：&#xA;custom_css: - /css/macpanel 参考 Kevin&amp;rsquo;s Blog </description>
+    </item>
+  </channel>
+</rss>

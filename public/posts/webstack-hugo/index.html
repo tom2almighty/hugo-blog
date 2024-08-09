@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<title>Webstack Hugo导航</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="Webstack-Hugo导航部署及问题解决。">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:url" content="http://localhost:1313/posts/webstack-hugo/">
+  <meta property="og:site_name" content="Tom&#39;s Blog">
+  <meta property="og:title" content="Webstack Hugo导航">
+  <meta property="og:description" content="Webstack-Hugo导航部署及问题解决。">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-03-21T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-03-21T00:00:00+00:00">
+    <meta property="article:tag" content="导航">
+    <meta property="article:tag" content="Hugo">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>console.log("Hello from 'layouts/partials/extended_head.html'")</script>
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档 | Archive
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类 | Categories
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签 | Tags
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%89%8d%e8%a8%80" class="nav-前言">
+									前言
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%83%a8%e7%bd%b2" class="nav-部署">
+									部署
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%bd%91%e7%ab%99-icon-%e8%8e%b7%e5%8f%96" class="nav-网站-icon-获取">
+									网站 icon 获取
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%97%ae%e9%a2%98%e4%bf%ae%e5%a4%8d" class="nav-问题修复">
+									问题修复
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8e%bb%e6%8e%89%e7%bd%91%e6%a0%bc%e8%83%8c%e6%99%af" class="nav-去掉网格背景">
+									去掉网格背景
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83" class="nav-参考">
+									参考
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="http://localhost:1313/">
+            Tom&#39;s Blog
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="http://localhost:1313/">
+        <div class="single-column-header-title">Tom&#39;s Blog</div>
+        
+        <div class="single-column-header-subtitle">Life is a Battle!</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+                
+            
+
+            <div class="post-head-wrapper"
+                
+                    
+                    
+                    style="background-image: url('https://pic.imgdb.cn/item/65fc44b29f345e8d03b73249.webp')"
+                    
+                
+            >
+                <div class="post-title">
+                    Webstack Hugo导航
+                    
+                    <div class="post-subtitle">
+                        Webstack-Hugo导航部署及问题解决。
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2024-03-21 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/%E5%BB%BA%E7%AB%99">建站</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/%E5%AF%BC%E8%88%AA">导航</a>
+                                &nbsp;
+                            
+                                <a href="/tags/hugo">Hugo</a>
+                                &nbsp;
+                            
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            3 min
+                            
+                            46 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h2 id="前言">前言</h2>
+<p><code>Webstack-Hugo</code> 导航是基于纯静态的网址导航网站 <a href="https://github.com/WebStackPage/WebStackPage.github.io">webstack.cc</a> 制作的 <a href="https://gohugo.io/">Hugo</a> 主题，是一个基于 <code>Hugo</code> 的静态响应式网址导航主题。添加了天气及夜间模式，主要的配置信息都集成到了 <code>config.toml</code>，导航的各个信息都集成在 <code>data/webstack.yml</code> 文件中。</p>
+<h2 id="部署">部署</h2>
+<ol>
+<li>首先下载 <code>Hugo</code> 到本地，同时添加系统环境变量。找到一个文件夹，然后在文件夹下打开 <code>Windows Terminal</code> 创建一个新的 <code>Hugo</code> 站点。</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>hugo new site webstack-hugo
+</span></span></code></pre></div><ol start="2">
+<li>下载 <code>Webstack-Hugo</code> 源码，并解压到 <code>~/webstack-hugo/themes</code> 文件夹下，名称更改为 <code>Webstack-Hugo</code>，将 <code>~/webstack-hugo/themes/Webstack-Hugo/exampleSite</code> 文件夹下所有内容复制到 <code>Hugo</code> 站点根目录，并删除站点根目录的 <code>hugo.toml</code> 文件。</li>
+<li>修改网站配置。
+<ul>
+<li>配置信息在 <code>config.toml</code> 文件中</li>
+<li>导航信息在 <code>data/webstack.yml</code> 文件中</li>
+</ul>
+</li>
+<li>新建一个 <code>Github</code> 仓库，将 <code>Hugo</code> 站点根目录下的文件推送到仓库，然后在 <code>Vercel</code> 创建新的项目并导入仓库。</li>
+</ol>
+<h2 id="网站-icon-获取">网站 icon 获取</h2>
+<p>可以通过 API 获取网站的图标，地址如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>https://api.iowen.cn/favicon/www.iowen.cn.png
+</span></span></code></pre></div><p>将需要获取的网址替换到 <code>favicon/</code> 后 <code>.png</code> 前，也可以通过在线工具箱：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>https://tool.cccyun.cc/favicon
+</span></span></code></pre></div><h2 id="问题修复">问题修复</h2>
+<p>部署好站点后会发现网站样式无法正常加载，但是本地部署正常，解决方法：将 <code>layouts/partials</code> 文件夹下文件中 <code>relURL</code> 更换为 <code>absURL</code> 即可。</p>
+<blockquote>
+<p>在 <code>Hugo</code> 的模板中，<code>relURL</code> 用于将给定的路径转换为相对于网站根目录的 <code>URL</code>。如果你的 <code>Hugo</code> 网站部署在 <code>https://example.com/blog/</code>，则 <code>{{ &quot;css/styles.css&quot; | relURL }}</code> 将被渲染为 <code>/blog/css/styles.css</code>。</p>
+<p>然而，如果你的 <code>Hugo</code> 网站部署在域名的根目录（如 <code>https://example.com/</code>），则 <code>relURL</code> 可能会导致问题，因为它会在路径的开始处添加一个额外的 <code>/</code>。因此删除所有的 <code>relURL</code> 调用可以解决样式不显示的问题。</p>
+<p>另外，<code>GitHub Pages</code> 和 <code>Cloudflare Pages</code> 在处理静态资源路径时可能有所不同。<code>GitHub Pages</code> 默认将项目部署在子路径（如 <code>https://username.github.io/repo/</code>），而 <code>Cloudflare Pages</code> 可能将项目部署在域名的根目录。因此，如果 Hugo 模板使用了 <code>relURL</code>，则可能在 <code>GitHub Pages</code> 上出现问题，但在 <code>Cloudflare Pages</code> 上正常。</p>
+</blockquote>
+<h2 id="去掉网格背景">去掉网格背景</h2>
+<p>如果不喜欢网格背景可以更改下面两个文件内代码解决：</p>
+<p>修改 <code>assets/css/custom-style.css</code> 文件内 <code>109</code> 行也就是倒数第二行代码的背景颜色代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#f92672">- background-color: #d8d8d8;
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+ background-color: #f9f9f9;
+</span></span></span></code></pre></div><p>修改 <code>layouts/partials/content_header.html</code> 文件内第一行代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#f92672">- &lt;div class=&#34;main-content flex-fill grid-bg&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+ &lt;div class=&#34;main-content flex-fill&#34;&gt;
+</span></span></span></code></pre></div><h2 id="参考">参考</h2>
+<ul>
+<li><a href="https://github.com/shenweiyan/WebStack-Hugo/issues/24">页面样式和路径问题</a></li>
+<li><a href="https://yelleis.top/p/13cf63f4/">Yelle 博客</a></li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2024-03-21</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/posts/hugo-blog/">
+			下回<br>使用Hugo搭建个人博客
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/windows-terminal/">
+			上回<br>Windows终端美化
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="username/repo"
+        data-repo-id="**************************"
+        data-category="General"
+        data-category-id="*********************"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="http://localhost:1313/">
+    
+        <div class="nav-title">
+            Tom&#39;s Blog
+        </div>
+        
+        <div class="nav-subtitle">
+            Life is a Battle!
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档 | Archive
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类 | Categories
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签 | Tags
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Tom Almighty
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%89%8d%e8%a8%80" class="nav-前言">
+									前言
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%83%a8%e7%bd%b2" class="nav-部署">
+									部署
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%bd%91%e7%ab%99-icon-%e8%8e%b7%e5%8f%96" class="nav-网站-icon-获取">
+									网站 icon 获取
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%97%ae%e9%a2%98%e4%bf%ae%e5%a4%8d" class="nav-问题修复">
+									问题修复
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8e%bb%e6%8e%89%e7%bd%91%e6%a0%bc%e8%83%8c%e6%99%af" class="nav-去掉网格背景">
+									去掉网格背景
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83" class="nav-参考">
+									参考
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	Tom Almighty
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>
