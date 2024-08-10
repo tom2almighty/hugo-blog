@@ -14,7 +14,7 @@ title: 宝塔面板部署Bitwarden密码管理
 
 随着网站和程序注册增多，应用密码也难以记住，适用同一个密码存在风险，因此推荐使用密码管理软件，安全且方便，唯一的缺点可能是在别人设备登录，如果密码不能粘贴，输入会比较麻烦。这里推荐使用 `Bitwarden` 来进行管理，各个平台都有对应的客户端。
 [Bitwarden](https://bitwarden.com/) 是一款免费开源的密码管理软件，同时官方提供了 `docker` 镜像，将服务端部署在自己的设备上。`Bitwarden` 官方 `docker` 要求服务器内存在 `2G` 以上，但有大佬使用 `Rust` 进行重写，项目名为 `vaultwarden`, 降低了配置要求,地址如下：
-{% ghcard dani-garcia/vaultwarden, theme=onedark %}
+[vaultwarden](https://github.com/dani-garcia/vaultwarden)
 
 > 如果不是特别担心密码安全，还是建议使用官方服务端，自建和官方并没有什么差别
 

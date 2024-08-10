@@ -45,7 +45,7 @@
 
 
 
-<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -53,7 +53,7 @@
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.3ff4589617589a2f28f0f5b8d71dc2fdc6c9ee7e5a224c13c2cf0d276305ca38.css" integrity="sha256-P/RYlhdYmi8o8PW41x3C/cbJ7n5aIkwTws8NJ2MFyjg=" media="screen">
 
 
 <link rel="stylesheet"
@@ -95,7 +95,7 @@
                 
                 
                 <a class="a-block drawer-menu-item active" href="/posts">
-                    归档 | Archive
+                    归档
                 </a>
                 
             
@@ -105,7 +105,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/categories">
-                    分类 | Categories
+                    分类
                 </a>
                 
             
@@ -115,7 +115,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/tags">
-                    标签 | Tags
+                    标签
                 </a>
                 
             
@@ -125,7 +125,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/index.xml">
-                    RSS Feed
+                    聚合
                 </a>
                 
             
@@ -347,7 +347,7 @@
                             
                             2 min
                             
-                            18 s.
+                            15 s.
                         
                     </div>
                 </div>
@@ -360,7 +360,7 @@
                     <h2 id="前言">前言</h2>
 <p><code>Umami</code> 是一款开源的、注重隐私的网站流量统计分析工具，可以方便直观的观察到网站数据，并且不像谷歌统计过多地收集用户的隐私信息，而自建服务可以避免 <code>Adblock</code> 插件屏蔽导致统计不准的问题。
 仓库地址如下：
-{% ghcard umami-software/umami, theme=onedark %}
+[umani]https://github.com/umami-software/umami)
 部署所用工具：</p>
 <ul>
 <li><a href="https://github.com">Github</a></li>
@@ -398,51 +398,49 @@
 </tr>
 </tbody>
 </table>
-<p>{% note info flat %}
-将复制的 <code>url</code> 中 <code>[YOUR-PASSWORD]</code> 换位数据库的密码，并在 <code>url</code> 最后添加 <code>?pgbouncer=true</code>，最终链接如下形式：
-<code>postgres://postgres.xxxxxxxxxxxx:[YOUR-PASSWORD]@aws-0-us-east-1.pooler.supabase.com:5432/postgres?pgbouncer=true</code>
-{% endnote %}</p>
+<p>将复制的 <code>url</code> 中 <code>[YOUR-PASSWORD]</code> 换位数据库的密码，并在 <code>url</code> 最后添加 <code>?pgbouncer=true</code>，最终链接如下形式：
+<code>postgres://postgres.xxxxxxxxxxxx:[YOUR-PASSWORD]@aws-0-us-east-1.pooler.supabase.com:5432/postgres?pgbouncer=true</code></p>
 <p>待部署完成后须添加自定义域名，否则 <code>Vercel</code> 域名被墙，会无法正常使用，打开部署的网站后，默认用户名为 <code>admin</code>，默认密码为 <code>umami</code>。
 添加网站后在<code>设置-网站-跟踪代码</code> 处复制统计代码，添加到自己网站 <code>&lt;/body&gt;</code>前即可。
 <img src="https://jsd.cdn.zzko.cn/gh/tom2almighty/picx-images-hosting@master/piclist/f216860876097c36.webp" alt="Supabase"></p>
 <h3 id="docker">Docker</h3>
 <p><code>docker-compose</code> 文件如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">umami</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">ghcr.io/umami-software/umami:postgresql-latest</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;3000:3000&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">DATABASE_URL</span>: <span style="color:#ae81ff">postgresql://umami:umami@db:5432/umami</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">DATABASE_TYPE</span>: <span style="color:#ae81ff">postgresql</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">APP_SECRET</span>: <span style="color:#ae81ff">replace-me-with-a-random-string </span> <span style="color:#75715e"># 随机字符串</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">depends_on</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">db</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">condition</span>: <span style="color:#ae81ff">service_healthy</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">healthcheck</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">test</span>: [<span style="color:#e6db74">&#34;CMD-SHELL&#34;</span>, <span style="color:#e6db74">&#34;curl http://localhost:3000/api/heartbeat&#34;</span>]
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">interval</span>: <span style="color:#ae81ff">5s</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">timeout</span>: <span style="color:#ae81ff">5s</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">retries</span>: <span style="color:#ae81ff">5</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">db</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">postgres:15-alpine</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_DB</span>: <span style="color:#ae81ff">umami</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_USER</span>: <span style="color:#ae81ff">umami</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">POSTGRES_PASSWORD</span>: <span style="color:#ae81ff">umami</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">umami-db-data:/var/lib/postgresql/data</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">healthcheck</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">test</span>: [<span style="color:#e6db74">&#34;CMD-SHELL&#34;</span>, <span style="color:#e6db74">&#34;pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}&#34;</span>]
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">interval</span>: <span style="color:#ae81ff">5s</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">timeout</span>: <span style="color:#ae81ff">5s</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">retries</span>: <span style="color:#ae81ff">5</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">volumes</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">umami-db-data</span>:
-</span></span></code></pre></div><h2 id="参考">参考</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ffb8d1">version</span>:<span style="color:#a8757b"> </span><span style="color:#1bc5e0">&#39;3&#39;</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b"></span><span style="color:#ffb8d1">services</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">  </span><span style="color:#ffb8d1">umami</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">image</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">ghcr.io/umami-software/umami:postgresql-latest</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">ports</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#1bc5e0">&#34;3000:3000&#34;</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">environment</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">DATABASE_URL</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">postgresql://umami:umami@db:5432/umami</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">DATABASE_TYPE</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">postgresql</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">APP_SECRET</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">replace-me-with-a-random-string </span><span style="color:#a8757b"> </span><span style="color:#b0bec5"># 随机字符串</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">depends_on</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">db</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">        </span><span style="color:#ffb8d1">condition</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">service_healthy</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">restart</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">always</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">healthcheck</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">test</span>:<span style="color:#a8757b"> </span>[<span style="color:#1bc5e0">&#34;CMD-SHELL&#34;</span>,<span style="color:#a8757b"> </span><span style="color:#1bc5e0">&#34;curl http://localhost:3000/api/heartbeat&#34;</span>]<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">interval</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">5s</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">timeout</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">5s</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">retries</span>:<span style="color:#a8757b"> </span><span style="color:#c5a3ff">5</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">  </span><span style="color:#ffb8d1">db</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">image</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">postgres:15-alpine</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">environment</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">POSTGRES_DB</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">umami</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">POSTGRES_USER</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">umami</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">POSTGRES_PASSWORD</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">umami</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">volumes</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">umami-db-data:/var/lib/postgresql/data</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">restart</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">always</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">healthcheck</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">test</span>:<span style="color:#a8757b"> </span>[<span style="color:#1bc5e0">&#34;CMD-SHELL&#34;</span>,<span style="color:#a8757b"> </span><span style="color:#1bc5e0">&#34;pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}&#34;</span>]<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">interval</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">5s</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">timeout</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">5s</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">retries</span>:<span style="color:#a8757b"> </span><span style="color:#c5a3ff">5</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b"></span><span style="color:#ffb8d1">volumes</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">  </span><span style="color:#ffb8d1">umami-db-data</span>:<span style="color:#a8757b">
+</span></span></span></code></pre></div><h2 id="参考">参考</h2>
 <ul>
 <li><a href="https://yjk.im.sb/self-hosted-umami/">自建 Umami | 一个开源网站分析工具</a></li>
 </ul>
@@ -484,17 +482,17 @@
 
 
 <script src="https://giscus.app/client.js"
-        data-repo="username/repo"
-        data-repo-id="**************************"
-        data-category="General"
-        data-category-id="*********************"
+        data-repo="tom2almighty/giscus"
+        data-repo-id="R_kgDOMhXXdQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMhXXdc4Chgn1"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
         data-theme="preferred_color_scheme"
-        data-lang="en"
+        data-lang="zh-CN"
         crossorigin="anonymous"
         async>
 </script>
@@ -530,7 +528,7 @@
             
             
             <a class="a-block nav-link-item active" href="/posts">
-                归档 | Archive
+                归档
             </a>
             
         
@@ -540,7 +538,7 @@
             
             
             <a class="a-block nav-link-item false" href="/categories">
-                分类 | Categories
+                分类
             </a>
             
         
@@ -550,7 +548,7 @@
             
             
             <a class="a-block nav-link-item false" href="/tags">
-                标签 | Tags
+                标签
             </a>
             
         
@@ -560,7 +558,7 @@
             
             
             <a class="a-block nav-link-item false" href="/index.xml">
-                RSS Feed
+                聚合
             </a>
             
         

@@ -46,7 +46,7 @@
 
 
 
-<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -54,7 +54,7 @@
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.3ff4589617589a2f28f0f5b8d71dc2fdc6c9ee7e5a224c13c2cf0d276305ca38.css" integrity="sha256-P/RYlhdYmi8o8PW41x3C/cbJ7n5aIkwTws8NJ2MFyjg=" media="screen">
 
 
 <link rel="stylesheet"
@@ -96,7 +96,7 @@
                 
                 
                 <a class="a-block drawer-menu-item active" href="/posts">
-                    归档 | Archive
+                    归档
                 </a>
                 
             
@@ -106,7 +106,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/categories">
-                    分类 | Categories
+                    分类
                 </a>
                 
             
@@ -116,7 +116,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/tags">
-                    标签 | Tags
+                    标签
                 </a>
                 
             
@@ -126,7 +126,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/index.xml">
-                    RSS Feed
+                    聚合
                 </a>
                 
             
@@ -411,7 +411,7 @@
                             
                             5 min
                             
-                            24 s.
+                            23 s.
                         
                     </div>
                 </div>
@@ -424,7 +424,7 @@
                     <h2 id="前言">前言</h2>
 <p>随着网站和程序注册增多，应用密码也难以记住，适用同一个密码存在风险，因此推荐使用密码管理软件，安全且方便，唯一的缺点可能是在别人设备登录，如果密码不能粘贴，输入会比较麻烦。这里推荐使用 <code>Bitwarden</code> 来进行管理，各个平台都有对应的客户端。
 <a href="https://bitwarden.com/">Bitwarden</a> 是一款免费开源的密码管理软件，同时官方提供了 <code>docker</code> 镜像，将服务端部署在自己的设备上。<code>Bitwarden</code> 官方 <code>docker</code> 要求服务器内存在 <code>2G</code> 以上，但有大佬使用 <code>Rust</code> 进行重写，项目名为 <code>vaultwarden</code>, 降低了配置要求,地址如下：
-{% ghcard dani-garcia/vaultwarden, theme=onedark %}</p>
+<a href="https://github.com/dani-garcia/vaultwarden">vaultwarden</a></p>
 <blockquote>
 <p>如果不是特别担心密码安全，还是建议使用官方服务端，自建和官方并没有什么差别</p>
 </blockquote>
@@ -432,8 +432,8 @@
 <h3 id="方法一宝塔面板配合-docker-部署">方法一：宝塔面板配合 <code>Docker</code> 部署</h3>
 <p>首先安装好<code>宝塔面板</code>并配置好环境，这里采用的是<code>LNMP</code>，<code>PHP</code> 版本<code>7.4</code>，同时创建一个站点，不需要数据库。在软件商店第 <code>3</code> 页 找到 <code>Docker 管理器</code>并安装。</p>
 <p>打开 <code>Docker 管理器</code>，点击 <code>镜像管理</code>，再点击 <code>获取镜像</code>，如果是国内机器可以使用镜像加速：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&lt;https://docker.mirrors.ustc.edu.cn/&gt;
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 也可自行寻找其他地址</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&lt;https://docker.mirrors.ustc.edu.cn/&gt;
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 也可自行寻找其他地址</span>
 </span></span></code></pre></div><p>然后将以下镜像名称填入输入框：<code>vaultwarden/server</code>，之后点击 <code>获取镜像</code>。</p>
 <p><img src="https://pic.imgdb.cn/item/6321598d16f2c2beb17953c4.png" alt="https://pic.imgdb.cn/item/6321598d16f2c2beb17953c4.png"></p>
 <p>点击<code>容器列表</code>→<code>创建容器</code>，弹出创建容器界面后按如下填写四部分内容，并修改容器名称：</p>
@@ -450,42 +450,42 @@
 </blockquote>
 <h3 id="方法二docker-cli">方法二：Docker CLI</h3>
 <p><strong>上述步骤也可直接使用命令安装（前提已安装 <code>docker</code>）</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 安装 vaultwarden/拉取镜像</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># 安装 vaultwarden/拉取镜像</span>
 </span></span><span style="display:flex;"><span>docker pull vaultwarden/server:latest
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 创建容器 (domain.com 换成自己的网站目录)</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 创建容器 (domain.com 换成自己的网站目录)</span>
 </span></span><span style="display:flex;"><span>docker run -d --name vaultwarden -v /www/wwwroot/domain.com/:/data/ -p 6789:80 vaultwarden/server:latest
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 上述命令中：</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># -v 参数后格式为&lt;主机目录:容器目录&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># -p 参数后格式为&lt;主机端口:容器端口&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># --name 后为容器名称</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 上述命令中：</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># -v 参数后格式为&lt;主机目录:容器目录&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># -p 参数后格式为&lt;主机端口:容器端口&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># --name 后为容器名称</span>
 </span></span></code></pre></div><p>接下来在面板网站设置中的站点设置添加反向代理</p>
 <p><img src="https://pic.imgdb.cn/item/63215a3816f2c2beb17a0383.png" alt="https://pic.imgdb.cn/item/63215a3816f2c2beb17a0383.png"></p>
 <p><code>目标 URL</code> 填写 <code>http://127.0.0.1:6789</code>，端口即为上边服务器的端口，之后点击提交</p>
 <p>如果需要更新，直接拉取最新镜像，停止并删除旧容器，创建新容器</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 拉取最新镜像</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># 拉取最新镜像</span>
 </span></span><span style="display:flex;"><span>docker pull vaultwarden/server:latest
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 停止旧容器</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 停止旧容器</span>
 </span></span><span style="display:flex;"><span>docker stop vaultwarden
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 删除旧容器</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 删除旧容器</span>
 </span></span><span style="display:flex;"><span>docker rm vaultwarden
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 创建新容器</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 创建新容器</span>
 </span></span><span style="display:flex;"><span>docker run -d --name vaultwarden -v /www/wwwroot/domain.com/:/data/ -p 6789:80 vaultwarden/server:latest
 </span></span></code></pre></div><h3 id="方法三docker-compose-安装">方法三：<code>Docker Compose</code> 安装</h3>
 <p>直接使用 <code>Docker-compose</code> 部署，运行下面的命令，然后配置反向代理即可，安装、更新都比较方便。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p /opt/bitwarden <span style="color:#f92672">&amp;&amp;</span> cd /opt/bitwarden
-</span></span><span style="display:flex;"><span>cat &gt; /opt/bitwarden/docker-compose.yml <span style="color:#e6db74">&lt;&lt;EOF
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">version: &#39;3.9&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">services:
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    server:
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        image: &#39;vaultwarden/server:latest&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        ports:
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            - &#39;6789:80&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        volumes:
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            - &#39;/www/wwwroot/domain.com/:/data/&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        environment:
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            #- SIGNUPS_ALLOWED=false
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        container_name: vaultwarden
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p /opt/bitwarden <span style="color:#ffb8d1">&amp;&amp;</span> cd /opt/bitwarden
+</span></span><span style="display:flex;"><span>cat &gt; /opt/bitwarden/docker-compose.yml <span style="color:#1bc5e0">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">version: &#39;3.9&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">services:
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">    server:
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">        image: &#39;vaultwarden/server:latest&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">        ports:
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">            - &#39;6789:80&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">        volumes:
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">            - &#39;/www/wwwroot/domain.com/:/data/&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">        environment:
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">            #- SIGNUPS_ALLOWED=false
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">        container_name: vaultwarden
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">EOF</span>
 </span></span><span style="display:flex;"><span>docker compose up -d
 </span></span></code></pre></div><h2 id="使用">使用</h2>
 <h3 id="注册账号">注册账号</h3>
@@ -497,8 +497,8 @@
 <h3 id="关闭注册">关闭注册</h3>
 <p>如果不希望别人注册账号可以自己注册账号后在管理器中先<code>停止容器</code>，再<code>删除容器</code>，然后重新创建一个不开启注册功能的容器，已注册的账户及数据仍然存在，然后运行如下命令再次创建容器，并重启容器。</p>
 <p><strong>一定先停止再删除</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -d --name vaultwarden -e SIGNUPS_ALLOWED<span style="color:#f92672">=</span>false -v /www/wwwroot/domain.com/:/data/ -p 6789:80 vaultwarden/server:latest
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 停止及重启容器</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -d --name vaultwarden -e SIGNUPS_ALLOWED<span style="color:#ffb8d1">=</span>false -v /www/wwwroot/domain.com/:/data/ -p 6789:80 vaultwarden/server:latest
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 停止及重启容器</span>
 </span></span><span style="display:flex;"><span>docker stop vaultwarden
 </span></span><span style="display:flex;"><span>docker start vaultwarden
 </span></span></code></pre></div><p><code>docker-compose</code> 将 <code>yaml</code> 文件中 <code>environment</code> 下面的 <code>SIGNUPS_ALLOWED</code> 前的注释取消掉，再次运行 <code>docker compose up -d</code> 即可。</p>
@@ -520,8 +520,8 @@
                 
                 
                 
-                <a class="older-posts" href="/posts/windows-network/">
-			上回<br>Windows解除网络限制
+                <a class="older-posts" href="/posts/zotero/">
+			上回<br>Zotero简要使用指南
                 </a>
                 
             </nav>
@@ -540,17 +540,17 @@
 
 
 <script src="https://giscus.app/client.js"
-        data-repo="username/repo"
-        data-repo-id="**************************"
-        data-category="General"
-        data-category-id="*********************"
+        data-repo="tom2almighty/giscus"
+        data-repo-id="R_kgDOMhXXdQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMhXXdc4Chgn1"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
         data-theme="preferred_color_scheme"
-        data-lang="en"
+        data-lang="zh-CN"
         crossorigin="anonymous"
         async>
 </script>
@@ -586,7 +586,7 @@
             
             
             <a class="a-block nav-link-item active" href="/posts">
-                归档 | Archive
+                归档
             </a>
             
         
@@ -596,7 +596,7 @@
             
             
             <a class="a-block nav-link-item false" href="/categories">
-                分类 | Categories
+                分类
             </a>
             
         
@@ -606,7 +606,7 @@
             
             
             <a class="a-block nav-link-item false" href="/tags">
-                标签 | Tags
+                标签
             </a>
             
         
@@ -616,7 +616,7 @@
             
             
             <a class="a-block nav-link-item false" href="/index.xml">
-                RSS Feed
+                聚合
             </a>
             
         

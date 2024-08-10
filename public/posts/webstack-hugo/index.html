@@ -46,7 +46,7 @@
 
 
 
-<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -54,7 +54,7 @@
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.3ff4589617589a2f28f0f5b8d71dc2fdc6c9ee7e5a224c13c2cf0d276305ca38.css" integrity="sha256-P/RYlhdYmi8o8PW41x3C/cbJ7n5aIkwTws8NJ2MFyjg=" media="screen">
 
 
 <link rel="stylesheet"
@@ -96,7 +96,7 @@
                 
                 
                 <a class="a-block drawer-menu-item active" href="/posts">
-                    归档 | Archive
+                    归档
                 </a>
                 
             
@@ -106,7 +106,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/categories">
-                    分类 | Categories
+                    分类
                 </a>
                 
             
@@ -116,7 +116,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/tags">
-                    标签 | Tags
+                    标签
                 </a>
                 
             
@@ -126,7 +126,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/index.xml">
-                    RSS Feed
+                    聚合
                 </a>
                 
             
@@ -375,7 +375,7 @@
 <ol>
 <li>首先下载 <code>Hugo</code> 到本地，同时添加系统环境变量。找到一个文件夹，然后在文件夹下打开 <code>Windows Terminal</code> 创建一个新的 <code>Hugo</code> 站点。</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>hugo new site webstack-hugo
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>hugo new site webstack-hugo
 </span></span></code></pre></div><ol start="2">
 <li>下载 <code>Webstack-Hugo</code> 源码，并解压到 <code>~/webstack-hugo/themes</code> 文件夹下，名称更改为 <code>Webstack-Hugo</code>，将 <code>~/webstack-hugo/themes/Webstack-Hugo/exampleSite</code> 文件夹下所有内容复制到 <code>Hugo</code> 站点根目录，并删除站点根目录的 <code>hugo.toml</code> 文件。</li>
 <li>修改网站配置。
@@ -388,9 +388,9 @@
 </ol>
 <h2 id="网站-icon-获取">网站 icon 获取</h2>
 <p>可以通过 API 获取网站的图标，地址如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>https://api.iowen.cn/favicon/www.iowen.cn.png
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>https://api.iowen.cn/favicon/www.iowen.cn.png
 </span></span></code></pre></div><p>将需要获取的网址替换到 <code>favicon/</code> 后 <code>.png</code> 前，也可以通过在线工具箱：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>https://tool.cccyun.cc/favicon
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>https://tool.cccyun.cc/favicon
 </span></span></code></pre></div><h2 id="问题修复">问题修复</h2>
 <p>部署好站点后会发现网站样式无法正常加载，但是本地部署正常，解决方法：将 <code>layouts/partials</code> 文件夹下文件中 <code>relURL</code> 更换为 <code>absURL</code> 即可。</p>
 <blockquote>
@@ -401,10 +401,10 @@
 <h2 id="去掉网格背景">去掉网格背景</h2>
 <p>如果不喜欢网格背景可以更改下面两个文件内代码解决：</p>
 <p>修改 <code>assets/css/custom-style.css</code> 文件内 <code>109</code> 行也就是倒数第二行代码的背景颜色代码：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#f92672">- background-color: #d8d8d8;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#f92672">- background-color: #d8d8d8;
 </span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+ background-color: #f9f9f9;
 </span></span></span></code></pre></div><p>修改 <code>layouts/partials/content_header.html</code> 文件内第一行代码：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#f92672">- &lt;div class=&#34;main-content flex-fill grid-bg&#34;&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#f92672">- &lt;div class=&#34;main-content flex-fill grid-bg&#34;&gt;
 </span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+ &lt;div class=&#34;main-content flex-fill&#34;&gt;
 </span></span></span></code></pre></div><h2 id="参考">参考</h2>
 <ul>
@@ -449,17 +449,17 @@
 
 
 <script src="https://giscus.app/client.js"
-        data-repo="username/repo"
-        data-repo-id="**************************"
-        data-category="General"
-        data-category-id="*********************"
+        data-repo="tom2almighty/giscus"
+        data-repo-id="R_kgDOMhXXdQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMhXXdc4Chgn1"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
         data-theme="preferred_color_scheme"
-        data-lang="en"
+        data-lang="zh-CN"
         crossorigin="anonymous"
         async>
 </script>
@@ -495,7 +495,7 @@
             
             
             <a class="a-block nav-link-item active" href="/posts">
-                归档 | Archive
+                归档
             </a>
             
         
@@ -505,7 +505,7 @@
             
             
             <a class="a-block nav-link-item false" href="/categories">
-                分类 | Categories
+                分类
             </a>
             
         
@@ -515,7 +515,7 @@
             
             
             <a class="a-block nav-link-item false" href="/tags">
-                标签 | Tags
+                标签
             </a>
             
         
@@ -525,7 +525,7 @@
             
             
             <a class="a-block nav-link-item false" href="/index.xml">
-                RSS Feed
+                聚合
             </a>
             
         

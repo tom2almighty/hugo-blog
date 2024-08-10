@@ -14,14 +14,14 @@
       <link>http://localhost:1313/posts/sub-store/</link>
       <pubDate>Mon, 08 Apr 2024 10:58:03 +0800</pubDate>
       <guid>http://localhost:1313/posts/sub-store/</guid>
-      <description>前言 Sub-Store 是一个适用于 Loon 、 Surge 和 Quantumult X 的高级订阅管理工具。完全本地解析，无订阅泄露的风险。相关地址及文档见下方：&#xA;Github 地址 使用教程 自建教程 部署 mkdir -p /opt/sub-store &amp;amp;&amp;amp; cd /opt/sub-store cat &amp;gt; /opt/sub-store/docker-compose.yml &amp;lt;&amp;lt;EOF version: &amp;#34;3.8&amp;#34; services: sub-store: image: xream/sub-store:latest container_name: sub-store restart: always volumes: - /opt/sub-store:/opt/app/data environment: - SUB_STORE_FRONTEND_BACKEND_PATH=/xxx # 20位随机字符串 - SUB_STORE_CRON=1 0 * * * ports: - 3001:3001 stdin_open: true tty: true EOF docker compose up -d 随机字符串生成可以使用下面的网站：&#xA;IT 工具箱 1Password 密码生成 反向代理 使用 Nginx 或者其他工具反向代理，端口为 3001，代理完成后访问的地址为：</description>
+      <description>前言 Sub-Store 是一个适用于 Loon 、 Surge 和 Quantumult X 的高级订阅管理工具。完全本地解析，无订阅泄露的风险。相关地址及文档见下方： Github 地址 使用教程 自建教程 部署 mkdir -p /opt/sub-store &amp;amp;&amp;amp; cd</description>
     </item>
     <item>
       <title>最全的订阅转换项目</title>
       <link>http://localhost:1313/posts/subconverter/</link>
       <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/subconverter/</guid>
-      <description>前言 目前各个平台的代理软件的格式各不相同，各个服务厂商通常会提供给我们各个软件的订阅链接，但一些比较小的厂商提供的链接有限，或者提供的分流策略组不符合我们的预期，这个时候我们可以通过转换工具转换成我们所用软件的链接格式，或者使用自己修改的策略组实现更加灵活的分流。&#xA;准备工作 部署自己的前后端通常需要自己的域名，部分项目使用 Vercel 托管也可，因此最好准备：&#xA;VPS一台 两个解析的域名，二级域名即可 项目一：subconverter &amp;amp; sub-web subconverter 加 sub-web 是最常用的项目，目前后端仍在更新，并且支持了最新的协议转换。&#xA;项目地址：&#xA;前端：sub-web&#xA;后端：subconverter&#xA;一键脚本安装 网上找到的一键脚本：&#xA;# ubuntu apt-get install -y wget &amp;amp;&amp;amp; wget -O install.sh https://cdn.mxlong.com/install/subweb/install.sh &amp;amp;&amp;amp; chmod +x ./install.sh &amp;amp;&amp;amp; ./install.sh # centos yum install -y wget &amp;amp;&amp;amp; wget -O install.sh https://cdn.mxlong.com/install/subweb/install.sh &amp;amp;&amp;amp; chmod +x ./install.sh &amp;amp;&amp;amp; ./install.sh 脚本中的后端并不是原作者的后端，如有需要可以自行更换脚本中的下载地址。&#xA;手动安装 后端搭建 首先解析一个域名用作后端访问，这里以 backend.domain.com 为例，实际以自己的域名为准。&#xA;连接VPS后，下载并解压后端程序，可以使用如下命令，也可以使用宝塔面板，下载程序后解压。&#xA;cd /opt # 这里是程序安装目录，可以自行更换 wget https://github.com/tindy2013/subconverter/releases/download/v0.9.0/subconverter_linux64.tar.gz tar -zxvf subconverter_linux64.tar.gz 完成以后在 /opt 文件夹下会出现 subconverter文件夹，出现如下结构：</description>
+      <description>前言 目前各个平台的代理软件的格式各不相同，各个服务厂商通常会提供给我们各个软件的订阅链接，但一些比较小的厂商提供的链接有限，或者提供的分流策</description>
     </item>
   </channel>
 </rss>

@@ -14,7 +14,7 @@
       <link>http://localhost:1313/posts/jekyll/</link>
       <pubDate>Thu, 08 Aug 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/jekyll/</guid>
-      <description>前言 Hexo 的博客虽然外观精美，主题和插件都比较多，但实在是太复杂，更换主题或者更新插件都容易出现错误，所以决定将博客更换为其他框架，最开始决定使用 Hugo，毕竟之前使用过，文档齐全并且速度也够快，但是想用的 Stack 主题没有返回顶部按钮，一些细节不喜欢，文章 Feature 图还得重新做，所以决定使用 Jekyll Chirpy，也图个新鲜。&#xA;基础环境安装 首先根据官网教程安装基础环境，就像 Hugo 下载可执行文件一样，链接在此：RubyInstaller&#xA;下载后使用默认设置安装即可，完成后在终端输入 ruby -v 和 gem -v，出现版本号就代表环境安装成功了。&#xA;接下来安装 Jekyll，终端输入 gem install jekyll，等待安装完成。&#xA;输入 jekyll -v 检查是否安装成功。&#xA;新建站点 这里直接使用的是 Chirpy 主题的方法，文档链接：点此&#xA;首先使用 chirpy-starter 的模板新建一个仓库，我不使用 GitHub Pages 所以仓库名称就随便填写了。&#xA;将仓库拉到本地，然后在仓库跟目录执行下面的命令安装依赖：&#xA;bundle 然后可以使用命令预览一下是否成功：&#xA;bundle exec jekyll s 修改配置 在 _config.yml 中修改对应的配置，社交媒体配置对应的文件为 _data/contact.yml&#xA;依赖错误：tzinfo Windows 下部署时，使用 bundle 安装依赖后不会安装 tzinfo，如果设置了时区，会报错，因此手动安装下面两个依赖：&#xA;gem install tzinfo gem install tzinfo-data 然后在 Gemfile 文件中添加下面两行：&#xA;gem &amp;#39;tzinfo&amp;#39; gem &amp;#34;tzinfo-data&amp;#34;, platforms: [:mingw, :mswin, :x64_mingw, :jruby] 修改 favicon 在 ~/assets/img 下新建 favicons 文件夹，放入自己的 favicons 文件，可以在 favicon.</description>
+      <description>前言 Hexo 的博客虽然外观精美，主题和插件都比较多，但实在是太复杂，更换主题或者更新插件都容易出现错误，所以决定将博客更换为其他框架，最开始决定使</description>
     </item>
   </channel>
 </rss>

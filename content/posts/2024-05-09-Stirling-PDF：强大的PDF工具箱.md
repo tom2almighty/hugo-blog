@@ -18,11 +18,11 @@ title: Stirling-PDF：强大的PDF工具箱
 
 项目功能强大，详细的 `Feature` 可查看项目地址：
 
-{% ghcard Stirling-Tools/Stirling-PDF, theme=onedark%}
+[Stirling-PDF](https://github.com/Stirling-Tools/Stirling-PDF)
 
 本站预览地址如下：
 
-{% link Stirling-PDF, https://pdf.grew.cc, /img/link.png %}
+https://pdf.grew.cc
 
 ## 部署
 
@@ -104,9 +104,9 @@ docker run -d \
 
   -v /location/of/customFiles:/customFiles \
 ```
-{% note info flat %}
-注意将其中挂载的卷目录更改为自己的实际目录
-{% endnote %}
+
+> 注意将其中挂载的卷目录更改为自己的实际目录
+
 `docker-compose` 文件如下：
 ```bash
 version: '3.3'

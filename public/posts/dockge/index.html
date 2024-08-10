@@ -45,7 +45,7 @@
 
 
 
-<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -53,7 +53,7 @@
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.3ff4589617589a2f28f0f5b8d71dc2fdc6c9ee7e5a224c13c2cf0d276305ca38.css" integrity="sha256-P/RYlhdYmi8o8PW41x3C/cbJ7n5aIkwTws8NJ2MFyjg=" media="screen">
 
 
 <link rel="stylesheet"
@@ -95,7 +95,7 @@
                 
                 
                 <a class="a-block drawer-menu-item active" href="/posts">
-                    归档 | Archive
+                    归档
                 </a>
                 
             
@@ -105,7 +105,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/categories">
-                    分类 | Categories
+                    分类
                 </a>
                 
             
@@ -115,7 +115,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/tags">
-                    标签 | Tags
+                    标签
                 </a>
                 
             
@@ -125,7 +125,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/index.xml">
-                    RSS Feed
+                    聚合
                 </a>
                 
             
@@ -283,7 +283,7 @@
                             
                             1 min
                             
-                            16 s.
+                            14 s.
                         
                     </div>
                 </div>
@@ -295,7 +295,7 @@
                 
                     <h2 id="前言">前言</h2>
 <p>目前习惯使用 <code>Docker</code> 自建应用，而 <code>compose</code> 更是十分方便，本次使用的 <code>dockge</code> 是一个精美的、易于使用的、响应式的面向堆栈的自托管 <code>docker-compose.yaml</code> 管理器，项目地址如下：</p>
-<p>{% ghcard louislam/dockge, theme=onedark%}</p>
+<p>[dockge](<a href="https://github.com/louislam/dockge">https://github.com/louislam/dockge</a></p>
 <p>项目特点如下：</p>
 <ul>
 <li>可以在面板方便的启动、编辑、更新、停止、重启、删除项目</li>
@@ -307,15 +307,15 @@
 <p><img src="https://dockge.kuma.pet/screenshot.png" alt=""></p>
 <h2 id="安装">安装</h2>
 <p>以下使用的是项目推荐的命令，命令会在 <code>/opt</code> 目录下建立 <code>/dockge</code> 和 <code>/stacks</code> 目录，其中 <code>/dockge</code> 下为 <code>Dockge</code> 映射的文件夹， <code>/stacks</code> 为 <code>Dockge</code> 创建的项目，方便管理。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p /opt/stacks /opt/dockge
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p /opt/stacks /opt/dockge
 </span></span><span style="display:flex;"><span>cd /opt/dockge
-</span></span><span style="display:flex;"><span>curl <span style="color:#e6db74">&#34;https://dockge.kuma.pet/compose.yaml?port=5001&amp;stacksPath=%2Fopt%2Fstacks&#34;</span> --output compose.yaml
+</span></span><span style="display:flex;"><span>curl <span style="color:#1bc5e0">&#34;https://dockge.kuma.pet/compose.yaml?port=5001&amp;stacksPath=%2Fopt%2Fstacks&#34;</span> --output compose.yaml
 </span></span><span style="display:flex;"><span>docker compose up -d
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># V1版本或Podman启动命令</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># V1版本或Podman启动命令</span>
 </span></span><span style="display:flex;"><span>docker-compose up -d
-</span></span></code></pre></div><p>{% note info flat %}
-如果想要更改端口以及安装文件夹，可以在官网手动下载 <code>docker-compose</code> 文件，<a href="https://dockge.kuma.pet/">官网</a>可以在 <code>UI</code> 修改并直接下载。
-{% endnote %}</p>
+</span></span></code></pre></div><blockquote>
+<p><strong>注意</strong>：如果想要更改端口以及安装文件夹，可以在官网手动下载 <code>docker-compose</code> 文件，<a href="https://dockge.kuma.pet/">官网</a>可以在 <code>UI</code> 修改并直接下载。</p>
+</blockquote>
 
                     
                     <HR width="100%" id="EOF">
@@ -354,17 +354,17 @@
 
 
 <script src="https://giscus.app/client.js"
-        data-repo="username/repo"
-        data-repo-id="**************************"
-        data-category="General"
-        data-category-id="*********************"
+        data-repo="tom2almighty/giscus"
+        data-repo-id="R_kgDOMhXXdQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMhXXdc4Chgn1"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
         data-theme="preferred_color_scheme"
-        data-lang="en"
+        data-lang="zh-CN"
         crossorigin="anonymous"
         async>
 </script>
@@ -400,7 +400,7 @@
             
             
             <a class="a-block nav-link-item active" href="/posts">
-                归档 | Archive
+                归档
             </a>
             
         
@@ -410,7 +410,7 @@
             
             
             <a class="a-block nav-link-item false" href="/categories">
-                分类 | Categories
+                分类
             </a>
             
         
@@ -420,7 +420,7 @@
             
             
             <a class="a-block nav-link-item false" href="/tags">
-                标签 | Tags
+                标签
             </a>
             
         
@@ -430,7 +430,7 @@
             
             
             <a class="a-block nav-link-item false" href="/index.xml">
-                RSS Feed
+                聚合
             </a>
             
         

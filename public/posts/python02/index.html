@@ -45,7 +45,7 @@
 
 
 
-<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -53,7 +53,7 @@
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.3ff4589617589a2f28f0f5b8d71dc2fdc6c9ee7e5a224c13c2cf0d276305ca38.css" integrity="sha256-P/RYlhdYmi8o8PW41x3C/cbJ7n5aIkwTws8NJ2MFyjg=" media="screen">
 
 
 <link rel="stylesheet"
@@ -95,7 +95,7 @@
                 
                 
                 <a class="a-block drawer-menu-item active" href="/posts">
-                    归档 | Archive
+                    归档
                 </a>
                 
             
@@ -105,7 +105,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/categories">
-                    分类 | Categories
+                    分类
                 </a>
                 
             
@@ -115,7 +115,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/tags">
-                    标签 | Tags
+                    标签
                 </a>
                 
             
@@ -125,7 +125,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/index.xml">
-                    RSS Feed
+                    聚合
                 </a>
                 
             
@@ -1030,11 +1030,11 @@
 </tbody>
 </table>
 <h4 id="定义简单的类只包含方法">定义简单的类（只包含方法）</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">类名</span><span style="color:#960050;background-color:#1e0010">：</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">方法1</span>(self, 参数列表):
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">pass</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">方法2</span>(self, 参数列表):
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">pass</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#c2ffdf">class</span> <span style="color:#ceb1ff">类名</span><span style="color:#960050;background-color:#1e0010">：</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c2ffdf">def</span> <span style="color:#ceb1ff">方法1</span>(<span style="color:#80cbc4">self</span>, 参数列表):
+</span></span><span style="display:flex;"><span>            <span style="color:#c2ffdf">pass</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c2ffdf">def</span> <span style="color:#ceb1ff">方法2</span>(<span style="color:#80cbc4">self</span>, 参数列表):
+</span></span><span style="display:flex;"><span>            <span style="color:#c2ffdf">pass</span>
 </span></span></code></pre></div><ul>
 <li>方法的定义格式和函数几乎一样
 <ul>
@@ -1046,7 +1046,7 @@
 <ul>
 <li>当一个类定义完成后，要使用这个类创建对象</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>对象变量 <span style="color:#f92672">=</span> 类名()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>对象变量 <span style="color:#ffb8d1">=</span> 类名()
 </span></span></code></pre></div><p><strong>引用的概念</strong></p>
 <p>面向对象中<strong>引用</strong>同样适用</p>
 <ul>
@@ -1072,8 +1072,8 @@
 </li>
 </ul>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>tom<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Tom&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 利用赋值语句，给 tom 对象设置 name 属性为Tom</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>tom<span style="color:#ffb8d1">.</span>name <span style="color:#ffb8d1">=</span> <span style="color:#1bc5e0">&#34;Tom&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 利用赋值语句，给 tom 对象设置 name 属性为Tom</span>
 </span></span></code></pre></div><ul>
 <li>在类封装的方法内部，<code>self</code> 表示当前调用方法的对象自己
 <ul>
@@ -1101,15 +1101,15 @@
 <blockquote>
 <p><code>__init__</code> 方法是<strong>专门</strong>用来定义一个类<strong>具有哪些属性</strong>的方法</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cat</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self):
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;初始化方法&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#c2ffdf">class</span> <span style="color:#ceb1ff">Cat</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> __init__(<span style="color:#80cbc4">self</span>):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#1bc5e0">&#34;初始化方法&#34;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 使用 类名() 创建对象的时候，会自动调用初始化方法 __init__</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 使用 类名() 创建对象的时候，会自动调用初始化方法 __init__</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>tom <span style="color:#f92672">=</span> Cat()
+</span></span><span style="display:flex;"><span>tom <span style="color:#ffb8d1">=</span> Cat()
 </span></span></code></pre></div><h4 id="在初始化方法内部定义属性">在初始化方法内部定义属性</h4>
 <ul>
 <li>
@@ -1122,21 +1122,21 @@
 <p>创建对象时，使用 <code>类名(属性1, 属性2...)</code> 调用</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cat</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, new_name):
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;初始化方法&#34;</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># self.name = &#34;Tom&#34;</span>
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> new_name
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#c2ffdf">class</span> <span style="color:#ceb1ff">Cat</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> __init__(<span style="color:#80cbc4">self</span>, new_name):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#1bc5e0">&#34;初始化方法&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#b0bec5"># self.name = &#34;Tom&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>name <span style="color:#ffb8d1">=</span> new_name
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">eat</span>(self):
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">爱吃鱼&#34;</span> <span style="color:#f92672">%</span> self<span style="color:#f92672">.</span>name)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 使用 类名() 创建对象的时候，会自动调用初始化方法 __init__</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> <span style="color:#ceb1ff">eat</span>(<span style="color:#80cbc4">self</span>):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#1bc5e0">&#34;</span><span style="color:#1bc5e0">%s</span><span style="color:#1bc5e0">爱吃鱼&#34;</span> <span style="color:#ffb8d1">%</span> <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>name)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>tom <span style="color:#f92672">=</span> Cat(<span style="color:#e6db74">&#34;Tom&#34;</span>)
-</span></span><span style="display:flex;"><span>print(tom<span style="color:#f92672">.</span>name)
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 使用 类名() 创建对象的时候，会自动调用初始化方法 __init__</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tom <span style="color:#ffb8d1">=</span> Cat(<span style="color:#1bc5e0">&#34;Tom&#34;</span>)
+</span></span><span style="display:flex;"><span>print(tom<span style="color:#ffb8d1">.</span>name)
 </span></span></code></pre></div><h3 id="14-案例">1.4 案例</h3>
 <h4 id="小明爱跑步">小明爱跑步</h4>
 <p><strong>需求</strong></p>
@@ -1145,30 +1145,30 @@
 <li>小明每次跑步会减肥 0.5 公斤</li>
 <li>小明每次吃东西体重增加 1 公斤</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, name, weight):
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># self.属性 = 形参</span>
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>weight <span style="color:#f92672">=</span> weight
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#c2ffdf">class</span> <span style="color:#ceb1ff">Person</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> __init__(<span style="color:#80cbc4">self</span>, name, weight):
+</span></span><span style="display:flex;"><span>        <span style="color:#b0bec5"># self.属性 = 形参</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>name <span style="color:#ffb8d1">=</span> name
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>weight <span style="color:#ffb8d1">=</span> weight
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __str__(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> __str__(<span style="color:#80cbc4">self</span>):
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;我的名字是 </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">,体重是 </span><span style="color:#e6db74">%d</span><span style="color:#e6db74">.2 公斤&#34;</span> <span style="color:#f92672">%</span> (self<span style="color:#f92672">.</span>name, self<span style="color:#f92672">.</span>weight)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">爱跑步，跑步锻炼身体&#34;</span> <span style="color:#f92672">%</span> self<span style="color:#f92672">.</span>name)
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>weight <span style="color:#f92672">-=</span> <span style="color:#ae81ff">0.5</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c2ffdf">return</span> <span style="color:#1bc5e0">&#34;我的名字是 </span><span style="color:#1bc5e0">%s</span><span style="color:#1bc5e0">,体重是 </span><span style="color:#1bc5e0">%d</span><span style="color:#1bc5e0">.2 公斤&#34;</span> <span style="color:#ffb8d1">%</span> (<span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>name, <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>weight)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">eat</span>(self):
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">是吃货，吃完东西再减肥&#34;</span> <span style="color:#f92672">%</span> self<span style="color:#f92672">.</span>name)
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>weight <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1.0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> <span style="color:#ceb1ff">run</span>(<span style="color:#80cbc4">self</span>):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#1bc5e0">&#34;</span><span style="color:#1bc5e0">%s</span><span style="color:#1bc5e0">爱跑步，跑步锻炼身体&#34;</span> <span style="color:#ffb8d1">%</span> <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>name)
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>weight <span style="color:#ffb8d1">-=</span> <span style="color:#c5a3ff">0.5</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>xiaoming <span style="color:#f92672">=</span> Person(<span style="color:#e6db74">&#34;小明&#34;</span>,<span style="color:#ae81ff">75.0</span> )
-</span></span><span style="display:flex;"><span>xiaoming<span style="color:#f92672">.</span>run()
-</span></span><span style="display:flex;"><span>xiaoming<span style="color:#f92672">.</span>eat()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> <span style="color:#ceb1ff">eat</span>(<span style="color:#80cbc4">self</span>):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#1bc5e0">&#34;</span><span style="color:#1bc5e0">%s</span><span style="color:#1bc5e0">是吃货，吃完东西再减肥&#34;</span> <span style="color:#ffb8d1">%</span> <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>name)
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>weight <span style="color:#ffb8d1">+=</span> <span style="color:#c5a3ff">1.0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>xiaoming <span style="color:#ffb8d1">=</span> Person(<span style="color:#1bc5e0">&#34;小明&#34;</span>,<span style="color:#c5a3ff">75.0</span> )
+</span></span><span style="display:flex;"><span>xiaoming<span style="color:#ffb8d1">.</span>run()
+</span></span><span style="display:flex;"><span>xiaoming<span style="color:#ffb8d1">.</span>eat()
 </span></span><span style="display:flex;"><span>print(xiaoming)
 </span></span></code></pre></div><blockquote>
 <ul>
@@ -1200,57 +1200,57 @@
 </ul>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HouseItem</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#c2ffdf">class</span> <span style="color:#ceb1ff">HouseItem</span>:
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, name, area):
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>area <span style="color:#f92672">=</span> area
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> __init__(<span style="color:#80cbc4">self</span>, name, area):
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>name <span style="color:#ffb8d1">=</span> name
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>area <span style="color:#ffb8d1">=</span> area
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __str__(self):
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">占地 </span><span style="color:#e6db74">%.2f</span><span style="color:#e6db74"> 平米&#34;</span> <span style="color:#f92672">%</span> (self<span style="color:#f92672">.</span>name, self<span style="color:#f92672">.</span>area)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">House</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, house_type, area):
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>house_type <span style="color:#f92672">=</span> house_type
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>area <span style="color:#f92672">=</span> area
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 剩余面积，初始值等于总面积</span>
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>free_area <span style="color:#f92672">=</span> area
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 家具名称列表</span>
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>item_list <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __str__(self):
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> (<span style="color:#e6db74">&#34;户型：</span><span style="color:#e6db74">%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">总面积：</span><span style="color:#e6db74">%.2f</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">剩余面积：</span><span style="color:#e6db74">%.2f</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">家具：</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">%</span> (self<span style="color:#f92672">.</span>house_type, self<span style="color:#f92672">.</span>area,
-</span></span><span style="display:flex;"><span>                   self<span style="color:#f92672">.</span>free_area, self<span style="color:#f92672">.</span>item_list))
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_item</span>(self, item):
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;要添加 </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> item)
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 1. 判断家具的面积</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> item<span style="color:#f92672">.</span>area <span style="color:#f92672">&gt;</span> self<span style="color:#f92672">.</span>free_area:
-</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">面积太大，无法添加&#34;</span> <span style="color:#f92672">%</span> item<span style="color:#f92672">.</span>name)
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 2. 将家具的名称添加到列表</span>
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>item_list<span style="color:#f92672">.</span>append(item<span style="color:#f92672">.</span>name)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 3. 计算剩余面积</span>
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>free_area <span style="color:#f92672">-=</span> item<span style="color:#f92672">.</span>area
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> __str__(<span style="color:#80cbc4">self</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#c2ffdf">return</span> <span style="color:#1bc5e0">&#34;</span><span style="color:#1bc5e0">%s</span><span style="color:#1bc5e0">占地 </span><span style="color:#1bc5e0">%.2f</span><span style="color:#1bc5e0"> 平米&#34;</span> <span style="color:#ffb8d1">%</span> (<span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>name, <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>area)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 1. 创建家具</span>
-</span></span><span style="display:flex;"><span>bed <span style="color:#f92672">=</span> HouseItem(<span style="color:#e6db74">&#34;席梦思&#34;</span>, <span style="color:#ae81ff">4</span>)
-</span></span><span style="display:flex;"><span>chest <span style="color:#f92672">=</span> HouseItem(<span style="color:#e6db74">&#34;衣柜&#34;</span>, <span style="color:#ae81ff">2</span>)
-</span></span><span style="display:flex;"><span>table <span style="color:#f92672">=</span> HouseItem(<span style="color:#e6db74">&#34;餐桌&#34;</span>, <span style="color:#ae81ff">1.5</span>)
+</span></span><span style="display:flex;"><span><span style="color:#c2ffdf">class</span> <span style="color:#ceb1ff">House</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> __init__(<span style="color:#80cbc4">self</span>, house_type, area):
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>house_type <span style="color:#ffb8d1">=</span> house_type
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>area <span style="color:#ffb8d1">=</span> area
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#b0bec5"># 剩余面积，初始值等于总面积</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>free_area <span style="color:#ffb8d1">=</span> area
+</span></span><span style="display:flex;"><span>        <span style="color:#b0bec5"># 家具名称列表</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>item_list <span style="color:#ffb8d1">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> __str__(<span style="color:#80cbc4">self</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#c2ffdf">return</span> (<span style="color:#1bc5e0">&#34;户型：</span><span style="color:#1bc5e0">%s</span><span style="color:#1bc5e0">\n</span><span style="color:#1bc5e0">总面积：</span><span style="color:#1bc5e0">%.2f</span><span style="color:#1bc5e0">\n</span><span style="color:#1bc5e0">剩余面积：</span><span style="color:#1bc5e0">%.2f</span><span style="color:#1bc5e0">\n</span><span style="color:#1bc5e0">家具：</span><span style="color:#1bc5e0">%s</span><span style="color:#1bc5e0">&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ffb8d1">%</span> (<span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>house_type, <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>area,
+</span></span><span style="display:flex;"><span>                   <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>free_area, <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>item_list))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> <span style="color:#ceb1ff">add_item</span>(<span style="color:#80cbc4">self</span>, item):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#1bc5e0">&#34;要添加 </span><span style="color:#1bc5e0">%s</span><span style="color:#1bc5e0">&#34;</span> <span style="color:#ffb8d1">%</span> item)
+</span></span><span style="display:flex;"><span>        <span style="color:#b0bec5"># 1. 判断家具的面积</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c2ffdf">if</span> item<span style="color:#ffb8d1">.</span>area <span style="color:#ffb8d1">&gt;</span> <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>free_area:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#1bc5e0">&#34;</span><span style="color:#1bc5e0">%s</span><span style="color:#1bc5e0">面积太大，无法添加&#34;</span> <span style="color:#ffb8d1">%</span> item<span style="color:#ffb8d1">.</span>name)
+</span></span><span style="display:flex;"><span>            <span style="color:#c2ffdf">return</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#b0bec5"># 2. 将家具的名称添加到列表</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>item_list<span style="color:#ffb8d1">.</span>append(item<span style="color:#ffb8d1">.</span>name)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#b0bec5"># 3. 计算剩余面积</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>free_area <span style="color:#ffb8d1">-=</span> item<span style="color:#ffb8d1">.</span>area
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 1. 创建家具</span>
+</span></span><span style="display:flex;"><span>bed <span style="color:#ffb8d1">=</span> HouseItem(<span style="color:#1bc5e0">&#34;席梦思&#34;</span>, <span style="color:#c5a3ff">4</span>)
+</span></span><span style="display:flex;"><span>chest <span style="color:#ffb8d1">=</span> HouseItem(<span style="color:#1bc5e0">&#34;衣柜&#34;</span>, <span style="color:#c5a3ff">2</span>)
+</span></span><span style="display:flex;"><span>table <span style="color:#ffb8d1">=</span> HouseItem(<span style="color:#1bc5e0">&#34;餐桌&#34;</span>, <span style="color:#c5a3ff">1.5</span>)
 </span></span><span style="display:flex;"><span>print(bed, chest, table)
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. 创建房子变量</span>
-</span></span><span style="display:flex;"><span>my_home <span style="color:#f92672">=</span> House(<span style="color:#e6db74">&#34;两室一厅&#34;</span>, <span style="color:#ae81ff">60</span>)
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 2. 创建房子变量</span>
+</span></span><span style="display:flex;"><span>my_home <span style="color:#ffb8d1">=</span> House(<span style="color:#1bc5e0">&#34;两室一厅&#34;</span>, <span style="color:#c5a3ff">60</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>my_home<span style="color:#f92672">.</span>add_item(bed)
-</span></span><span style="display:flex;"><span>my_home<span style="color:#f92672">.</span>add_item(chest)
-</span></span><span style="display:flex;"><span>my_home<span style="color:#f92672">.</span>add_item(table)
+</span></span><span style="display:flex;"><span>my_home<span style="color:#ffb8d1">.</span>add_item(bed)
+</span></span><span style="display:flex;"><span>my_home<span style="color:#ffb8d1">.</span>add_item(chest)
+</span></span><span style="display:flex;"><span>my_home<span style="color:#ffb8d1">.</span>add_item(table)
 </span></span><span style="display:flex;"><span>print(my_home)
 </span></span></code></pre></div><h4 id="封装案例">封装案例</h4>
 <p><strong>封装</strong></p>
@@ -1277,56 +1277,56 @@
 <li>表示一个空对象，没有方法和属性，是一个特殊的常量</li>
 <li>可以将 <code>None</code> 赋值给任何一个变量</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Gun</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, model):
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 1. 枪的型号</span>
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>model <span style="color:#f92672">=</span> model
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 2. 子弹的数量</span>
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>bullet_count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#c2ffdf">class</span> <span style="color:#ceb1ff">Gun</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> __init__(<span style="color:#80cbc4">self</span>, model):
+</span></span><span style="display:flex;"><span>        <span style="color:#b0bec5"># 1. 枪的型号</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>model <span style="color:#ffb8d1">=</span> model
+</span></span><span style="display:flex;"><span>        <span style="color:#b0bec5"># 2. 子弹的数量</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>bullet_count <span style="color:#ffb8d1">=</span> <span style="color:#c5a3ff">0</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_bullet</span>(self, count):
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>bullet_count <span style="color:#f92672">+=</span> count
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> <span style="color:#ceb1ff">add_bullet</span>(<span style="color:#80cbc4">self</span>, count):
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>bullet_count <span style="color:#ffb8d1">+=</span> count
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">shoot</span>(self):
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 1. 判断子弹数量</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>bullet_count <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">1</span>:
-</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;[</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">]没有子弹了&#34;</span> <span style="color:#f92672">%</span> self<span style="color:#f92672">.</span>model)
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 2. 发射子弹 -1</span>
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>bullet_count <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 3. 提示发射信息</span>
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;[</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">] 突突突...[</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">]&#34;</span> <span style="color:#f92672">%</span> (self<span style="color:#f92672">.</span>model, self<span style="color:#f92672">.</span>bullet_count))
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> <span style="color:#ceb1ff">shoot</span>(<span style="color:#80cbc4">self</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#b0bec5"># 1. 判断子弹数量</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c2ffdf">if</span> <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>bullet_count <span style="color:#ffb8d1">&lt;=</span> <span style="color:#c5a3ff">1</span>:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#1bc5e0">&#34;[</span><span style="color:#1bc5e0">%s</span><span style="color:#1bc5e0">]没有子弹了&#34;</span> <span style="color:#ffb8d1">%</span> <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>model)
+</span></span><span style="display:flex;"><span>            <span style="color:#c2ffdf">return</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#b0bec5"># 2. 发射子弹 -1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>bullet_count <span style="color:#ffb8d1">-=</span> <span style="color:#c5a3ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#b0bec5"># 3. 提示发射信息</span>
+</span></span><span style="display:flex;"><span>        print(<span style="color:#1bc5e0">&#34;[</span><span style="color:#1bc5e0">%s</span><span style="color:#1bc5e0">] 突突突...[</span><span style="color:#1bc5e0">%d</span><span style="color:#1bc5e0">]&#34;</span> <span style="color:#ffb8d1">%</span> (<span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>model, <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>bullet_count))
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Soldier</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, name):
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 1. 新兵的姓名</span>
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 2. 枪 新兵没有枪</span>
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>gun <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span><span style="color:#c2ffdf">class</span> <span style="color:#ceb1ff">Soldier</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> __init__(<span style="color:#80cbc4">self</span>, name):
+</span></span><span style="display:flex;"><span>        <span style="color:#b0bec5"># 1. 新兵的姓名</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>name <span style="color:#ffb8d1">=</span> name
+</span></span><span style="display:flex;"><span>        <span style="color:#b0bec5"># 2. 枪 新兵没有枪</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>gun <span style="color:#ffb8d1">=</span> <span style="color:#c2ffdf">None</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fire</span>(self):
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 1. 判断士兵是否有枪</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>gun <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
-</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;[</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">] 还没有枪&#34;</span> <span style="color:#f92672">%</span> self<span style="color:#f92672">.</span>name)
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> <span style="color:#ceb1ff">fire</span>(<span style="color:#80cbc4">self</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#b0bec5"># 1. 判断士兵是否有枪</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c2ffdf">if</span> <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>gun <span style="color:#ffb8d1">is</span> <span style="color:#c2ffdf">None</span>:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#1bc5e0">&#34;[</span><span style="color:#1bc5e0">%s</span><span style="color:#1bc5e0">] 还没有枪&#34;</span> <span style="color:#ffb8d1">%</span> <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>name)
+</span></span><span style="display:flex;"><span>            <span style="color:#c2ffdf">return</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 2. 高喊口号</span>
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;冲啊[</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">]&#34;</span> <span style="color:#f92672">%</span> self<span style="color:#f92672">.</span>name)
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 3. 装填子弹</span>
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>gun<span style="color:#f92672">.</span>add_bullet(<span style="color:#ae81ff">50</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 4. 发射子弹</span>
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>gun<span style="color:#f92672">.</span>shoot()
+</span></span><span style="display:flex;"><span>        <span style="color:#b0bec5"># 2. 高喊口号</span>
+</span></span><span style="display:flex;"><span>        print(<span style="color:#1bc5e0">&#34;冲啊[</span><span style="color:#1bc5e0">%s</span><span style="color:#1bc5e0">]&#34;</span> <span style="color:#ffb8d1">%</span> <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>name)
+</span></span><span style="display:flex;"><span>        <span style="color:#b0bec5"># 3. 装填子弹</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>gun<span style="color:#ffb8d1">.</span>add_bullet(<span style="color:#c5a3ff">50</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#b0bec5"># 4. 发射子弹</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>gun<span style="color:#ffb8d1">.</span>shoot()
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 1. 创建枪对象</span>
-</span></span><span style="display:flex;"><span>ak47 <span style="color:#f92672">=</span> Gun(<span style="color:#e6db74">&#34;AK47&#34;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. 创建许三多</span>
-</span></span><span style="display:flex;"><span>xusanduo <span style="color:#f92672">=</span> Soldier(<span style="color:#e6db74">&#34;许三多&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 1. 创建枪对象</span>
+</span></span><span style="display:flex;"><span>ak47 <span style="color:#ffb8d1">=</span> Gun(<span style="color:#1bc5e0">&#34;AK47&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 2. 创建许三多</span>
+</span></span><span style="display:flex;"><span>xusanduo <span style="color:#ffb8d1">=</span> Soldier(<span style="color:#1bc5e0">&#34;许三多&#34;</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>xusanduo<span style="color:#f92672">.</span>gun <span style="color:#f92672">=</span> ak47
-</span></span><span style="display:flex;"><span>xusanduo<span style="color:#f92672">.</span>fire()
-</span></span><span style="display:flex;"><span>print(xusanduo<span style="color:#f92672">.</span>gun)
+</span></span><span style="display:flex;"><span>xusanduo<span style="color:#ffb8d1">.</span>gun <span style="color:#ffb8d1">=</span> ak47
+</span></span><span style="display:flex;"><span>xusanduo<span style="color:#ffb8d1">.</span>fire()
+</span></span><span style="display:flex;"><span>print(xusanduo<span style="color:#ffb8d1">.</span>gun)
 </span></span></code></pre></div><p><strong>身份运算符</strong></p>
 <ul>
 <li>身份运算符是用于比较两个对象的内存地址是否一致&ndash;是否是对同一个对象的引用</li>
@@ -1388,8 +1388,8 @@
 <li>子类针对自己特有的需求,编写特定代码</li>
 </ul>
 <p><strong>语法:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">类名</span>(父类名):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#c2ffdf">class</span> <span style="color:#ceb1ff">类名</span>(父类名):
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">pass</span>
 </span></span></code></pre></div><ul>
 <li>
 <p>类似<strong>层次网络模型</strong></p>
@@ -1447,8 +1447,8 @@
 <li>如果父类之间存在<strong>同名</strong>的属性和方法, 应尽量<strong>避免使用多继承</strong></li>
 </ul>
 <p><strong>语法:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">子类名</span>(父类名1, 父类名2,<span style="color:#f92672">...</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#c2ffdf">class</span> <span style="color:#ceb1ff">子类名</span>(父类名1, 父类名2,<span style="color:#ffb8d1">...</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">pass</span>
 </span></span></code></pre></div><blockquote>
 <p>Python 中的<code>MRO</code>&ndash;方法搜索顺序</p>
 <ul>
@@ -1472,39 +1472,39 @@
 <li>是调用方法的技巧, 不会影响类的内部设计</li>
 </ul>
 <p><strong>案例:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dog</span>(object):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#c2ffdf">class</span> <span style="color:#ceb1ff">Dog</span>(object):
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, name):
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> __init__(<span style="color:#80cbc4">self</span>, name):
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>name <span style="color:#ffb8d1">=</span> name
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">game</span>(self):
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74"> 蹦蹦跳跳的玩耍&#34;</span> <span style="color:#f92672">%</span> self<span style="color:#f92672">.</span>name)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">XiaoTianQuan</span>(Dog):
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">game</span>(self):
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74"> 飞到天上玩耍...&#34;</span> <span style="color:#f92672">%</span> self<span style="color:#f92672">.</span>name)
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> <span style="color:#ceb1ff">game</span>(<span style="color:#80cbc4">self</span>):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#1bc5e0">&#34;</span><span style="color:#1bc5e0">%s</span><span style="color:#1bc5e0"> 蹦蹦跳跳的玩耍&#34;</span> <span style="color:#ffb8d1">%</span> <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>name)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span>(object):
+</span></span><span style="display:flex;"><span><span style="color:#c2ffdf">class</span> <span style="color:#ceb1ff">XiaoTianQuan</span>(Dog):
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, name):
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">game_with_dog</span>(self, dog):
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74"> 和 </span><span style="color:#e6db74">%s</span><span style="color:#e6db74"> 快乐的玩耍&#34;</span> <span style="color:#f92672">%</span> (self<span style="color:#f92672">.</span>name, dog<span style="color:#f92672">.</span>name))
-</span></span><span style="display:flex;"><span>        dog<span style="color:#f92672">.</span>game()
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> <span style="color:#ceb1ff">game</span>(<span style="color:#80cbc4">self</span>):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#1bc5e0">&#34;</span><span style="color:#1bc5e0">%s</span><span style="color:#1bc5e0"> 飞到天上玩耍...&#34;</span> <span style="color:#ffb8d1">%</span> <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>name)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 1. 创建狗对象</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># wangcai = Dog(&#34;旺财&#34;)</span>
-</span></span><span style="display:flex;"><span>wangcai <span style="color:#f92672">=</span> XiaoTianQuan(<span style="color:#e6db74">&#34;飞天旺财&#34;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. 创建小明对象</span>
-</span></span><span style="display:flex;"><span>xiaoming <span style="color:#f92672">=</span> Person(<span style="color:#e6db74">&#34;小明&#34;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. 让小明和狗玩耍</span>
-</span></span><span style="display:flex;"><span>xiaoming<span style="color:#f92672">.</span>game_with_dog(wangcai)
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 传入不同的狗参数即可</span>
+</span></span><span style="display:flex;"><span><span style="color:#c2ffdf">class</span> <span style="color:#ceb1ff">Person</span>(object):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> __init__(<span style="color:#80cbc4">self</span>, name):
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>name <span style="color:#ffb8d1">=</span> name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> <span style="color:#ceb1ff">game_with_dog</span>(<span style="color:#80cbc4">self</span>, dog):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#1bc5e0">&#34;</span><span style="color:#1bc5e0">%s</span><span style="color:#1bc5e0"> 和 </span><span style="color:#1bc5e0">%s</span><span style="color:#1bc5e0"> 快乐的玩耍&#34;</span> <span style="color:#ffb8d1">%</span> (<span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>name, dog<span style="color:#ffb8d1">.</span>name))
+</span></span><span style="display:flex;"><span>        dog<span style="color:#ffb8d1">.</span>game()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 1. 创建狗对象</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># wangcai = Dog(&#34;旺财&#34;)</span>
+</span></span><span style="display:flex;"><span>wangcai <span style="color:#ffb8d1">=</span> XiaoTianQuan(<span style="color:#1bc5e0">&#34;飞天旺财&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 2. 创建小明对象</span>
+</span></span><span style="display:flex;"><span>xiaoming <span style="color:#ffb8d1">=</span> Person(<span style="color:#1bc5e0">&#34;小明&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 3. 让小明和狗玩耍</span>
+</span></span><span style="display:flex;"><span>xiaoming<span style="color:#ffb8d1">.</span>game_with_dog(wangcai)
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 传入不同的狗参数即可</span>
 </span></span></code></pre></div><hr>
 <h2 id="3-类属性">3. 类属性</h2>
 <h3 id="31-类的结构">3.1 类的结构</h3>
@@ -1526,18 +1526,18 @@
 <li>记录与类相关的特征</li>
 <li>类属性不会用于记录具体对象的的特征</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Tool</span>(object):
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 使用赋值语句即可定义类属性</span>
-</span></span><span style="display:flex;"><span>    count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, name):
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
-</span></span><span style="display:flex;"><span>        Tool<span style="color:#f92672">.</span>count <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#c2ffdf">class</span> <span style="color:#ceb1ff">Tool</span>(object):
+</span></span><span style="display:flex;"><span>    <span style="color:#b0bec5"># 使用赋值语句即可定义类属性</span>
+</span></span><span style="display:flex;"><span>    count <span style="color:#ffb8d1">=</span> <span style="color:#c5a3ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">def</span> __init__(<span style="color:#80cbc4">self</span>, name):
+</span></span><span style="display:flex;"><span>        <span style="color:#80cbc4">self</span><span style="color:#ffb8d1">.</span>name <span style="color:#ffb8d1">=</span> name
+</span></span><span style="display:flex;"><span>        Tool<span style="color:#ffb8d1">.</span>count <span style="color:#ffb8d1">+=</span> <span style="color:#c5a3ff">1</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>tool1 <span style="color:#f92672">=</span> Tool(<span style="color:#e6db74">&#34;斧头&#34;</span>)
-</span></span><span style="display:flex;"><span>tool2 <span style="color:#f92672">=</span> Tool(<span style="color:#e6db74">&#34;榔头&#34;</span>)
+</span></span><span style="display:flex;"><span>tool1 <span style="color:#ffb8d1">=</span> Tool(<span style="color:#1bc5e0">&#34;斧头&#34;</span>)
+</span></span><span style="display:flex;"><span>tool2 <span style="color:#ffb8d1">=</span> Tool(<span style="color:#1bc5e0">&#34;榔头&#34;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print(Tool<span style="color:#f92672">.</span>count)
+</span></span><span style="display:flex;"><span>print(Tool<span style="color:#ffb8d1">.</span>count)
 </span></span></code></pre></div><h3 id="33-类方法和静态方法">3.3 类方法和静态方法</h3>
 <h4 id="类方法">类方法</h4>
 <p>类属性</p>
@@ -1559,9 +1559,9 @@
 </li>
 </ul>
 <p>语法如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@classmethod</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">类方法名</span>(cls):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ceb1ff">@classmethod</span>
+</span></span><span style="display:flex;"><span><span style="color:#c2ffdf">def</span> <span style="color:#ceb1ff">类方法名</span>(<span style="color:#80cbc4">cls</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">pass</span>
 </span></span></code></pre></div><ul>
 <li>需要用修饰器<code>@classmethod</code>标识，告诉解释器这是一个类方法</li>
 <li>类方法第一个参数应该是 <code>cls</code>
@@ -1577,9 +1577,9 @@
 <li>也不需要访问类属性或者调用类方法</li>
 </ul>
 <p>语法：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@staticmethod</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">静态方法名</span>():
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ceb1ff">@staticmethod</span>
+</span></span><span style="display:flex;"><span><span style="color:#c2ffdf">def</span> <span style="color:#ceb1ff">静态方法名</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">pass</span>
 </span></span></code></pre></div><ul>
 <li>通过<code>类名.</code>调用静态方法</li>
 </ul>
@@ -1665,17 +1665,17 @@
 
 
 <script src="https://giscus.app/client.js"
-        data-repo="username/repo"
-        data-repo-id="**************************"
-        data-category="General"
-        data-category-id="*********************"
+        data-repo="tom2almighty/giscus"
+        data-repo-id="R_kgDOMhXXdQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMhXXdc4Chgn1"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
         data-theme="preferred_color_scheme"
-        data-lang="en"
+        data-lang="zh-CN"
         crossorigin="anonymous"
         async>
 </script>
@@ -1711,7 +1711,7 @@
             
             
             <a class="a-block nav-link-item active" href="/posts">
-                归档 | Archive
+                归档
             </a>
             
         
@@ -1721,7 +1721,7 @@
             
             
             <a class="a-block nav-link-item false" href="/categories">
-                分类 | Categories
+                分类
             </a>
             
         
@@ -1731,7 +1731,7 @@
             
             
             <a class="a-block nav-link-item false" href="/tags">
-                标签 | Tags
+                标签
             </a>
             
         
@@ -1741,7 +1741,7 @@
             
             
             <a class="a-block nav-link-item false" href="/index.xml">
-                RSS Feed
+                聚合
             </a>
             
         

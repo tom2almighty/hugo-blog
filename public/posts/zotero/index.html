@@ -45,7 +45,7 @@
 
 
 
-<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -53,7 +53,7 @@
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.3ff4589617589a2f28f0f5b8d71dc2fdc6c9ee7e5a224c13c2cf0d276305ca38.css" integrity="sha256-P/RYlhdYmi8o8PW41x3C/cbJ7n5aIkwTws8NJ2MFyjg=" media="screen">
 
 
 <link rel="stylesheet"
@@ -95,7 +95,7 @@
                 
                 
                 <a class="a-block drawer-menu-item active" href="/posts">
-                    归档 | Archive
+                    归档
                 </a>
                 
             
@@ -105,7 +105,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/categories">
-                    分类 | Categories
+                    分类
                 </a>
                 
             
@@ -115,7 +115,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/tags">
-                    标签 | Tags
+                    标签
                 </a>
                 
             
@@ -125,7 +125,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/index.xml">
-                    RSS Feed
+                    聚合
                 </a>
                 
             
@@ -631,16 +631,16 @@
 <p>由于版权的限制，可能部分条目找不到可用的 PDF，这里可以将 Zotero 的下载解析改为 <code>sci-hub</code>突破限制。</p>
 <p>按照如下路径寻找：</p>
 <p>点击上方菜单栏 <code>编辑-首选项-高级</code> ，最下方 <code>高级设置-设置编辑器</code>，点击风险通知后进入配置，在上方搜索：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>extensions.zotero.findPDFs.resolvers
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>extensions.zotero.findPDFs.resolvers
 </span></span></code></pre></div><p>然后双击条目，将以下内容复制进框中后保存退出。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Sci-Hub&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;GET&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;https://sci-hub.se/{doi}&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;mode&#34;</span>: <span style="color:#e6db74">&#34;html&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;selector&#34;</span>: <span style="color:#e6db74">&#34;#pdf&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;attribute&#34;</span>: <span style="color:#e6db74">&#34;src&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;automatic&#34;</span>: <span style="color:#66d9ef">true</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#ffb8d1">&#34;name&#34;</span>: <span style="color:#1bc5e0">&#34;Sci-Hub&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ffb8d1">&#34;method&#34;</span>: <span style="color:#1bc5e0">&#34;GET&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ffb8d1">&#34;url&#34;</span>: <span style="color:#1bc5e0">&#34;https://sci-hub.se/{doi}&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ffb8d1">&#34;mode&#34;</span>: <span style="color:#1bc5e0">&#34;html&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ffb8d1">&#34;selector&#34;</span>: <span style="color:#1bc5e0">&#34;#pdf&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ffb8d1">&#34;attribute&#34;</span>: <span style="color:#1bc5e0">&#34;src&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ffb8d1">&#34;automatic&#34;</span>: <span style="color:#c2ffdf">true</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><img src="https://pic.imgdb.cn/item/6321549616f2c2beb174c8d0.png" alt="https://pic.imgdb.cn/item/6321549616f2c2beb174c8d0.png"></p>
 <p>Zotero 支持的功能很多，可用的插件也很多，更多实用的功能可自行探索。</p>
@@ -664,8 +664,8 @@
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="/posts/windows-network/">
-			下回<br>Windows解除网络限制
+                <a class="newer-posts" href="/posts/bitwarden/">
+			下回<br>宝塔面板部署Bitwarden密码管理
                 </a>
                 
                 
@@ -690,17 +690,17 @@
 
 
 <script src="https://giscus.app/client.js"
-        data-repo="username/repo"
-        data-repo-id="**************************"
-        data-category="General"
-        data-category-id="*********************"
+        data-repo="tom2almighty/giscus"
+        data-repo-id="R_kgDOMhXXdQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMhXXdc4Chgn1"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
         data-theme="preferred_color_scheme"
-        data-lang="en"
+        data-lang="zh-CN"
         crossorigin="anonymous"
         async>
 </script>
@@ -736,7 +736,7 @@
             
             
             <a class="a-block nav-link-item active" href="/posts">
-                归档 | Archive
+                归档
             </a>
             
         
@@ -746,7 +746,7 @@
             
             
             <a class="a-block nav-link-item false" href="/categories">
-                分类 | Categories
+                分类
             </a>
             
         
@@ -756,7 +756,7 @@
             
             
             <a class="a-block nav-link-item false" href="/tags">
-                标签 | Tags
+                标签
             </a>
             
         
@@ -766,7 +766,7 @@
             
             
             <a class="a-block nav-link-item false" href="/index.xml">
-                RSS Feed
+                聚合
             </a>
             
         

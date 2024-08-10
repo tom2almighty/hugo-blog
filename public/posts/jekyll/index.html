@@ -45,7 +45,7 @@
 
 
 
-<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -53,7 +53,7 @@
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.3ff4589617589a2f28f0f5b8d71dc2fdc6c9ee7e5a224c13c2cf0d276305ca38.css" integrity="sha256-P/RYlhdYmi8o8PW41x3C/cbJ7n5aIkwTws8NJ2MFyjg=" media="screen">
 
 
 <link rel="stylesheet"
@@ -95,7 +95,7 @@
                 
                 
                 <a class="a-block drawer-menu-item active" href="/posts">
-                    归档 | Archive
+                    归档
                 </a>
                 
             
@@ -105,7 +105,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/categories">
-                    分类 | Categories
+                    分类
                 </a>
                 
             
@@ -115,7 +115,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/tags">
-                    标签 | Tags
+                    标签
                 </a>
                 
             
@@ -125,7 +125,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/index.xml">
-                    RSS Feed
+                    聚合
                 </a>
                 
             
@@ -497,108 +497,108 @@
 <p>这里直接使用的是 <a href="https://github.com/cotes2020">Chirpy</a> 主题的方法，文档链接：<a href="https://chirpy.cotes.page/posts/getting-started/">点此</a></p>
 <p>首先使用 <code>chirpy-starter</code> 的模板新建一个仓库，我不使用 <code>GitHub Pages</code> 所以仓库名称就随便填写了。</p>
 <p>将仓库拉到本地，然后在仓库跟目录执行下面的命令安装依赖：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bundle
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bundle
 </span></span></code></pre></div><p>然后可以使用命令预览一下是否成功：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bundle exec jekyll s
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bundle exec jekyll s
 </span></span></code></pre></div><h2 id="修改配置">修改配置</h2>
 <p>在 <code>_config.yml</code> 中修改对应的配置，社交媒体配置对应的文件为 <code>_data/contact.yml</code></p>
 <h3 id="依赖错误tzinfo"><strong>依赖错误：<code>tzinfo</code></strong></h3>
 <p><code>Windows</code> 下部署时，使用 <code>bundle</code> 安装依赖后不会安装 <code>tzinfo</code>，如果设置了时区，会报错，因此手动安装下面两个依赖：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>gem install tzinfo
-</span></span><span style="display:flex;"><span>gem install tzinfo<span style="color:#f92672">-</span>data
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>gem install tzinfo
+</span></span><span style="display:flex;"><span>gem install tzinfo<span style="color:#ffb8d1">-</span>data
 </span></span></code></pre></div><p>然后在 <code>Gemfile</code> 文件中添加下面两行：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>gem <span style="color:#e6db74">&#39;tzinfo&#39;</span>
-</span></span><span style="display:flex;"><span>gem <span style="color:#e6db74">&#34;tzinfo-data&#34;</span>, <span style="color:#e6db74">platforms</span>: <span style="color:#f92672">[</span><span style="color:#e6db74">:mingw</span>, <span style="color:#e6db74">:mswin</span>, <span style="color:#e6db74">:x64_mingw</span>, <span style="color:#e6db74">:jruby</span><span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>gem <span style="color:#1bc5e0">&#39;tzinfo&#39;</span>
+</span></span><span style="display:flex;"><span>gem <span style="color:#1bc5e0">&#34;tzinfo-data&#34;</span>, <span style="color:#1bc5e0">platforms</span>: <span style="color:#ffb8d1">[</span><span style="color:#1bc5e0">:mingw</span>, <span style="color:#1bc5e0">:mswin</span>, <span style="color:#1bc5e0">:x64_mingw</span>, <span style="color:#1bc5e0">:jruby</span><span style="color:#ffb8d1">]</span>
 </span></span></code></pre></div><h3 id="修改-favicon">修改 favicon</h3>
 <p>在 <code>~/assets/img</code> 下新建 <code>favicons</code> 文件夹，放入自己的 <code>favicons</code> 文件，可以在 <a href="https://favicon.io/">favicon.io</a></p>
 <p>创建自己的图标，下载解压后将所有文件放入对应文件夹，删除下面两个文件：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>about.txt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>about.txt
 </span></span><span style="display:flex;"><span>site.webmanifest
 </span></span></code></pre></div><h2 id="新建文章">新建文章</h2>
 <p>文章的 <code>Front Matter</code> 信息如下,详细的设置可以参考 <a href="https://jekyllrb.com/docs/front-matter/">Jekyll</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span><span style="color:#f92672">title</span>: <span style="color:#ae81ff">TITLE</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">date</span>: <span style="color:#ae81ff">YYYY-MM-DD HH:MM:SS +/-TTTT</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">categories</span>: [<span style="color:#ae81ff">TOP_CATEGORIE, SUB_CATEGORIE]</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">tags</span>: [<span style="color:#ae81ff">TAG]    </span> <span style="color:#75715e"># TAG names should always be lowercase</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">permalink</span>: 
-</span></span><span style="display:flex;"><span>---
-</span></span></code></pre></div><p>新建文章需要将其命名为 <code>YYYY-MM-DD-TITLE.md</code> 或 <code>YYYY-MM-DD-TITLE.markdown</code> 格式，如果想方便地新建，可以使用插件 <a href="https://github.com/jekyll/jekyll-compose">Jekyll-Compose</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b"></span><span style="color:#ffb8d1">title</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">TITLE</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b"></span><span style="color:#ffb8d1">date</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">YYYY-MM-DD HH:MM:SS +/-TTTT</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b"></span><span style="color:#ffb8d1">categories</span>:<span style="color:#a8757b"> </span>[<span style="color:#ae81ff">TOP_CATEGORIE, SUB_CATEGORIE]</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b"></span><span style="color:#ffb8d1">tags</span>:<span style="color:#a8757b"> </span>[<span style="color:#ae81ff">TAG]    </span><span style="color:#a8757b"> </span><span style="color:#b0bec5"># TAG names should always be lowercase</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b"></span><span style="color:#ffb8d1">permalink</span>:<span style="color:#a8757b"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b"></span>---<span style="color:#a8757b">
+</span></span></span></code></pre></div><p>新建文章需要将其命名为 <code>YYYY-MM-DD-TITLE.md</code> 或 <code>YYYY-MM-DD-TITLE.markdown</code> 格式，如果想方便地新建，可以使用插件 <a href="https://github.com/jekyll/jekyll-compose">Jekyll-Compose</a></p>
 <p>在 <code>Gemfile</code> 文件添加一行内容：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>gem <span style="color:#e6db74">&#39;jekyll-compose&#39;</span>, <span style="color:#e6db74">group</span>: <span style="color:#f92672">[</span><span style="color:#e6db74">:jekyll_plugins</span><span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>gem <span style="color:#1bc5e0">&#39;jekyll-compose&#39;</span>, <span style="color:#1bc5e0">group</span>: <span style="color:#ffb8d1">[</span><span style="color:#1bc5e0">:jekyll_plugins</span><span style="color:#ffb8d1">]</span>
 </span></span></code></pre></div><p>然后执行：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>bundle
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>bundle
 </span></span></code></pre></div><p>输入 <code>bundle exec jekyll help </code>可以查看帮助，一些常用命令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>  draft      <span style="color:#75715e"># Creates a new draft post with the given NAME</span>
-</span></span><span style="display:flex;"><span>  post       <span style="color:#75715e"># Creates a new post with the given NAME</span>
-</span></span><span style="display:flex;"><span>  publish    <span style="color:#75715e"># Moves a draft into the _posts directory and sets the date</span>
-</span></span><span style="display:flex;"><span>  unpublish  <span style="color:#75715e"># Moves a post back into the _drafts directory</span>
-</span></span><span style="display:flex;"><span>  page       <span style="color:#75715e"># Creates a new page with the given NAME</span>
-</span></span><span style="display:flex;"><span>  rename     <span style="color:#75715e"># Moves a draft to a given NAME and sets the title</span>
-</span></span><span style="display:flex;"><span>  compose    <span style="color:#75715e"># Creates a new file with the given NAME</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>  draft      <span style="color:#b0bec5"># Creates a new draft post with the given NAME</span>
+</span></span><span style="display:flex;"><span>  post       <span style="color:#b0bec5"># Creates a new post with the given NAME</span>
+</span></span><span style="display:flex;"><span>  publish    <span style="color:#b0bec5"># Moves a draft into the _posts directory and sets the date</span>
+</span></span><span style="display:flex;"><span>  unpublish  <span style="color:#b0bec5"># Moves a post back into the _drafts directory</span>
+</span></span><span style="display:flex;"><span>  page       <span style="color:#b0bec5"># Creates a new page with the given NAME</span>
+</span></span><span style="display:flex;"><span>  rename     <span style="color:#b0bec5"># Moves a draft to a given NAME and sets the title</span>
+</span></span><span style="display:flex;"><span>  compose    <span style="color:#b0bec5"># Creates a new file with the given NAME</span>
 </span></span></code></pre></div><blockquote>
 <p>这些是二级命令，具体的命令格式为 <code>jekyll post 第一篇博客</code> ，这样就会在 <code>_post/</code> 文件夹下新建一个名为 <code>第一篇博客.md</code> 的文件。</p>
 </blockquote>
 <p>如果想自定义 <code>Front Matter</code>，可以在 <code>_config.yml</code> 中添加配置：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">jekyll_compose</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">default_front_matter</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">drafts</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">description</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">image</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">category</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">tags</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">permalink</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">posts</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">description</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">image</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">category</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">tags</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">permalink</span>:
-</span></span></code></pre></div><p>这个配置同样会添加 <code>time</code> 和 <code>title</code> 行，具体可以自己设置。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ffb8d1">jekyll_compose</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">  </span><span style="color:#ffb8d1">default_front_matter</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">drafts</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">description</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">image</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">category</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">tags</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">permalink</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">posts</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">description</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">image</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">category</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">tags</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">permalink</span>:<span style="color:#a8757b">
+</span></span></span></code></pre></div><p>这个配置同样会添加 <code>time</code> 和 <code>title</code> 行，具体可以自己设置。</p>
 <h2 id="迁移文章">迁移文章</h2>
 <p><code>Jekyll</code> 要求文章名字中要有日期，但是 <code>Hexo</code> 和 <code>Hugo</code> 不要求，这给迁移造成了一定的困难，因此使用 <code>Python</code> 将 <code>.md</code> 文件重命名，选择 <code>Front Matter</code> 信息中 <code>date</code> 值前 10 个字符和 <code>title</code> 值作为新的名字，并将二者用 <code>-</code> 拼接，下面是代码：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> re
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> yaml
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ffb8d1">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">import</span> re
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">import</span> yaml
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extract_frontmatter</span>(content):
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;从文件内容中提取 YAML frontmatter&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">match</span> <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>search(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;(?s)^---.*?---&#39;</span>, content)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">match</span>:
-</span></span><span style="display:flex;"><span>        frontmatter_str <span style="color:#f92672">=</span> <span style="color:#66d9ef">match</span><span style="color:#f92672">.</span>group()
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> yaml<span style="color:#f92672">.</span>safe_load(frontmatter_str[<span style="color:#ae81ff">3</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>])
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {}
+</span></span><span style="display:flex;"><span><span style="color:#c2ffdf">def</span> <span style="color:#ceb1ff">extract_frontmatter</span>(content):
+</span></span><span style="display:flex;"><span>    <span style="color:#1bc5e0">&#34;&#34;&#34;从文件内容中提取 YAML frontmatter&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">match</span> <span style="color:#ffb8d1">=</span> re<span style="color:#ffb8d1">.</span>search(<span style="color:#1bc5e0">r</span><span style="color:#1bc5e0">&#39;(?s)^---.*?---&#39;</span>, content)
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">if</span> <span style="color:#c2ffdf">match</span>:
+</span></span><span style="display:flex;"><span>        frontmatter_str <span style="color:#ffb8d1">=</span> <span style="color:#c2ffdf">match</span><span style="color:#ffb8d1">.</span>group()
+</span></span><span style="display:flex;"><span>        <span style="color:#c2ffdf">return</span> yaml<span style="color:#ffb8d1">.</span>safe_load(frontmatter_str[<span style="color:#c5a3ff">3</span>:<span style="color:#ffb8d1">-</span><span style="color:#c5a3ff">3</span>])
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">return</span> {}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">rename_files_based_on_frontmatter</span>(folder_path):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> root, dirs, files <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>walk(folder_path):
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> file <span style="color:#f92672">in</span> files:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> file<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;.md&#39;</span>):
-</span></span><span style="display:flex;"><span>                file_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(root, file)
+</span></span><span style="display:flex;"><span><span style="color:#c2ffdf">def</span> <span style="color:#ceb1ff">rename_files_based_on_frontmatter</span>(folder_path):
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">for</span> root, dirs, files <span style="color:#ffb8d1">in</span> os<span style="color:#ffb8d1">.</span>walk(folder_path):
+</span></span><span style="display:flex;"><span>        <span style="color:#c2ffdf">for</span> file <span style="color:#ffb8d1">in</span> files:
+</span></span><span style="display:flex;"><span>            <span style="color:#c2ffdf">if</span> file<span style="color:#ffb8d1">.</span>endswith(<span style="color:#1bc5e0">&#39;.md&#39;</span>):
+</span></span><span style="display:flex;"><span>                file_path <span style="color:#ffb8d1">=</span> os<span style="color:#ffb8d1">.</span>path<span style="color:#ffb8d1">.</span>join(root, file)
 </span></span><span style="display:flex;"><span>                
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">with</span> open(file_path, <span style="color:#e6db74">&#39;r&#39;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utf8&#39;</span>) <span style="color:#66d9ef">as</span> f:
-</span></span><span style="display:flex;"><span>                    content <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span>                <span style="color:#c2ffdf">with</span> open(file_path, <span style="color:#1bc5e0">&#39;r&#39;</span>, encoding<span style="color:#ffb8d1">=</span><span style="color:#1bc5e0">&#39;utf8&#39;</span>) <span style="color:#c2ffdf">as</span> f:
+</span></span><span style="display:flex;"><span>                    content <span style="color:#ffb8d1">=</span> f<span style="color:#ffb8d1">.</span>read()
 </span></span><span style="display:flex;"><span>                
-</span></span><span style="display:flex;"><span>                frontmatter <span style="color:#f92672">=</span> extract_frontmatter(content)
+</span></span><span style="display:flex;"><span>                frontmatter <span style="color:#ffb8d1">=</span> extract_frontmatter(content)
 </span></span><span style="display:flex;"><span>                
-</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># 提取 date 和 title 字段</span>
-</span></span><span style="display:flex;"><span>                date <span style="color:#f92672">=</span> str(frontmatter<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;date&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>))  <span style="color:#75715e"># 确保 date 是字符串</span>
-</span></span><span style="display:flex;"><span>                title <span style="color:#f92672">=</span> str(frontmatter<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;title&#39;</span>, <span style="color:#e6db74">&#39;untitled&#39;</span>))<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#e6db74">&#39;-&#39;</span>)<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74">&#39;-&#39;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#b0bec5"># 提取 date 和 title 字段</span>
+</span></span><span style="display:flex;"><span>                date <span style="color:#ffb8d1">=</span> str(frontmatter<span style="color:#ffb8d1">.</span>get(<span style="color:#1bc5e0">&#39;date&#39;</span>, <span style="color:#1bc5e0">&#39;&#39;</span>))  <span style="color:#b0bec5"># 确保 date 是字符串</span>
+</span></span><span style="display:flex;"><span>                title <span style="color:#ffb8d1">=</span> str(frontmatter<span style="color:#ffb8d1">.</span>get(<span style="color:#1bc5e0">&#39;title&#39;</span>, <span style="color:#1bc5e0">&#39;untitled&#39;</span>))<span style="color:#ffb8d1">.</span>replace(<span style="color:#1bc5e0">&#39;/&#39;</span>, <span style="color:#1bc5e0">&#39;-&#39;</span>)<span style="color:#ffb8d1">.</span>replace(<span style="color:#1bc5e0">&#39;</span><span style="color:#1bc5e0">\\</span><span style="color:#1bc5e0">&#39;</span>, <span style="color:#1bc5e0">&#39;-&#39;</span>)
 </span></span><span style="display:flex;"><span>                
-</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># 处理 date 字段</span>
-</span></span><span style="display:flex;"><span>                date <span style="color:#f92672">=</span> date<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;:&#39;</span>, <span style="color:#e6db74">&#39;-&#39;</span>)[:<span style="color:#ae81ff">10</span>]  <span style="color:#75715e"># 用 - 替换 : 并截取前 10 个字符</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#b0bec5"># 处理 date 字段</span>
+</span></span><span style="display:flex;"><span>                date <span style="color:#ffb8d1">=</span> date<span style="color:#ffb8d1">.</span>replace(<span style="color:#1bc5e0">&#39;:&#39;</span>, <span style="color:#1bc5e0">&#39;-&#39;</span>)[:<span style="color:#c5a3ff">10</span>]  <span style="color:#b0bec5"># 用 - 替换 : 并截取前 10 个字符</span>
 </span></span><span style="display:flex;"><span>                
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> date <span style="color:#f92672">and</span> title:
-</span></span><span style="display:flex;"><span>                    new_file_name <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>date<span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">{</span>title<span style="color:#e6db74">}</span><span style="color:#e6db74">.md&#34;</span>
-</span></span><span style="display:flex;"><span>                    new_file_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(root, new_file_name)
+</span></span><span style="display:flex;"><span>                <span style="color:#c2ffdf">if</span> date <span style="color:#ffb8d1">and</span> title:
+</span></span><span style="display:flex;"><span>                    new_file_name <span style="color:#ffb8d1">=</span> <span style="color:#1bc5e0">f</span><span style="color:#1bc5e0">&#34;</span><span style="color:#1bc5e0">{</span>date<span style="color:#1bc5e0">}</span><span style="color:#1bc5e0">-</span><span style="color:#1bc5e0">{</span>title<span style="color:#1bc5e0">}</span><span style="color:#1bc5e0">.md&#34;</span>
+</span></span><span style="display:flex;"><span>                    new_file_path <span style="color:#ffb8d1">=</span> os<span style="color:#ffb8d1">.</span>path<span style="color:#ffb8d1">.</span>join(root, new_file_name)
 </span></span><span style="display:flex;"><span>                    
-</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> file_path <span style="color:#f92672">!=</span> new_file_path:
-</span></span><span style="display:flex;"><span>                        os<span style="color:#f92672">.</span>rename(file_path, new_file_path)
-</span></span><span style="display:flex;"><span>                        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Renamed: </span><span style="color:#e6db74">{</span>file_path<span style="color:#e6db74">}</span><span style="color:#e6db74"> -&gt; </span><span style="color:#e6db74">{</span>new_file_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>                    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Skipping file </span><span style="color:#e6db74">{</span>file_path<span style="color:#e6db74">}</span><span style="color:#e6db74">: Invalid date or title&#34;</span>)
+</span></span><span style="display:flex;"><span>                    <span style="color:#c2ffdf">if</span> file_path <span style="color:#ffb8d1">!=</span> new_file_path:
+</span></span><span style="display:flex;"><span>                        os<span style="color:#ffb8d1">.</span>rename(file_path, new_file_path)
+</span></span><span style="display:flex;"><span>                        print(<span style="color:#1bc5e0">f</span><span style="color:#1bc5e0">&#34;Renamed: </span><span style="color:#1bc5e0">{</span>file_path<span style="color:#1bc5e0">}</span><span style="color:#1bc5e0"> -&gt; </span><span style="color:#1bc5e0">{</span>new_file_path<span style="color:#1bc5e0">}</span><span style="color:#1bc5e0">&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#c2ffdf">else</span>:
+</span></span><span style="display:flex;"><span>                    print(<span style="color:#1bc5e0">f</span><span style="color:#1bc5e0">&#34;Skipping file </span><span style="color:#1bc5e0">{</span>file_path<span style="color:#1bc5e0">}</span><span style="color:#1bc5e0">: Invalid date or title&#34;</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 修改文件夹路径</span>
-</span></span><span style="display:flex;"><span>folder_path <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;D:\GitHub\hexo-blog\source\_posts&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 修改文件夹路径</span>
+</span></span><span style="display:flex;"><span>folder_path <span style="color:#ffb8d1">=</span> <span style="color:#1bc5e0">r</span><span style="color:#1bc5e0">&#34;D:\GitHub\hexo-blog\source\_posts&#34;</span>
 </span></span><span style="display:flex;"><span>rename_files_based_on_frontmatter(folder_path)
 </span></span></code></pre></div><p>而文件中 <code>Front Matter</code> 的 <code>Name</code> 的修改可以参考之前的文章：<a href="https://blog.grew.cc/posts/993cff99/">Hugo 文章转 Hexo</a></p>
 <h2 id="部署网站">部署网站</h2>
@@ -609,7 +609,7 @@
 <p>Jekyll 会把部分代码块内的代码解析，导致出现问题，所以放弃使用。</p>
 </blockquote>
 <h2 id="卸载">卸载</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gem install jekyll
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gem install jekyll
 </span></span></code></pre></div><p>完成后软件里卸载 <code>Ruby</code> 即可</p>
 <h2 id="参考">参考</h2>
 <ul>
@@ -658,17 +658,17 @@
 
 
 <script src="https://giscus.app/client.js"
-        data-repo="username/repo"
-        data-repo-id="**************************"
-        data-category="General"
-        data-category-id="*********************"
+        data-repo="tom2almighty/giscus"
+        data-repo-id="R_kgDOMhXXdQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMhXXdc4Chgn1"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
         data-theme="preferred_color_scheme"
-        data-lang="en"
+        data-lang="zh-CN"
         crossorigin="anonymous"
         async>
 </script>
@@ -704,7 +704,7 @@
             
             
             <a class="a-block nav-link-item active" href="/posts">
-                归档 | Archive
+                归档
             </a>
             
         
@@ -714,7 +714,7 @@
             
             
             <a class="a-block nav-link-item false" href="/categories">
-                分类 | Categories
+                分类
             </a>
             
         
@@ -724,7 +724,7 @@
             
             
             <a class="a-block nav-link-item false" href="/tags">
-                标签 | Tags
+                标签
             </a>
             
         
@@ -734,7 +734,7 @@
             
             
             <a class="a-block nav-link-item false" href="/index.xml">
-                RSS Feed
+                聚合
             </a>
             
         

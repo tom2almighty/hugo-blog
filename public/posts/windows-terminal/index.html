@@ -46,7 +46,7 @@
 
 
 
-<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -54,7 +54,7 @@
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.3ff4589617589a2f28f0f5b8d71dc2fdc6c9ee7e5a224c13c2cf0d276305ca38.css" integrity="sha256-P/RYlhdYmi8o8PW41x3C/cbJ7n5aIkwTws8NJ2MFyjg=" media="screen">
 
 
 <link rel="stylesheet"
@@ -96,7 +96,7 @@
                 
                 
                 <a class="a-block drawer-menu-item active" href="/posts">
-                    归档 | Archive
+                    归档
                 </a>
                 
             
@@ -106,7 +106,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/categories">
-                    分类 | Categories
+                    分类
                 </a>
                 
             
@@ -116,7 +116,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/tags">
-                    标签 | Tags
+                    标签
                 </a>
                 
             
@@ -126,7 +126,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/index.xml">
-                    RSS Feed
+                    聚合
                 </a>
                 
             
@@ -444,14 +444,14 @@
 <p>因此如果直接安装很可能出现无法运行脚本的错误。</p>
 <h3 id="查看当前策略">查看当前策略</h3>
 <p>打开 <code>PowerShell</code> 然后输入:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>get-executionpolicy
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>get-executionpolicy
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>PS C:\WINDOWS\system32&gt; get-executionpolicy
 </span></span><span style="display:flex;"><span>Restricted
 </span></span></code></pre></div><h3 id="修改策略">修改策略</h3>
 <p>以管理员身份打开 <code>Windows Posershell</code>，执行下列命令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>set-executionpolicy remotesigned
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 运行后输入 Y</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>set-executionpolicy remotesigned
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 运行后输入 Y</span>
 </span></span></code></pre></div><h2 id="安装">安装</h2>
 <ol>
 <li>
@@ -462,14 +462,14 @@
 </li>
 <li>
 <p>设置字体。打开 <code>Windows Terminal</code>，按 <code>Ctrl + Shift + 逗号</code>打开设置文件，然后在第 <code>41</code> 行 <code>profiles</code> 下 <code>default</code> 中添加字体设置，在第 <code>43</code> 行回车，然后添加如下代码后保存。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;font&#34;</span><span style="color:#960050;background-color:#1e0010">:</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#1bc5e0">&#34;font&#34;</span><span style="color:#960050;background-color:#1e0010">:</span>
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;face&#34;</span>: <span style="color:#e6db74">&#34;MesloLGM NF&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ffb8d1">&#34;face&#34;</span>: <span style="color:#1bc5e0">&#34;MesloLGM NF&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></li>
 <li>
 <p>加载 <code>oh-my-posh</code> 设置，在 <code>Windows Terminal</code> 中输入下面第一行命令创建新配置文件，创建后输入第二行命令，然后将第三条命令保存：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (!(Test-Path -Path $PROFILE )) { New-Item -Type File -Path $PROFILE -Force }
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#c2ffdf">if</span> (!(Test-Path -Path $PROFILE )) { New-Item -Type File -Path $PROFILE -Force }
 </span></span><span style="display:flex;"><span>notepad $profile
 </span></span><span style="display:flex;"><span>oh-my-posh init pwsh | Invoke-Expression
 </span></span></code></pre></div><p>这样 <code>oh-my-posh</code> 就安装完成了，接下来可以自己选择主题。</p>
@@ -479,47 +479,47 @@
 <p><code>oh-my-posh</code> 有很多主题，可以在官方文档页面预览，地址如下：</p>
 <p><a href="https://ohmyposh.dev/docs/themes">主题预览</a></p>
 <p>选择好自己的主题后，在终端输入下面的命令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-PoshThemes
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Get-PoshThemes
 </span></span></code></pre></div><p>然后终端会出现所有的主题预览，最后会出现主题文件所在地址，打开即可看到所有的主题文件，再次输入 <code>notepad $profile</code>，然后将配置修改为以下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>oh-my-posh init pwsh --config $env:POSH_THEMES_PATH/cloud-native-azure.omp.json | Invoke-Expression
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>oh-my-posh init pwsh --config $env:POSH_THEMES_PATH/cloud-native-azure.omp.json | Invoke-Expression
 </span></span></code></pre></div><p>可以将主题名称修改为自己想要的主题，保存后即可完成。</p>
 <h2 id="配置自动补全">配置自动补全</h2>
 <p>自动补全插件为 <a href="https://github.com/PowerShell/PSReadLine">PSReadLine</a></p>
 <p>在终端安装模块：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Install-Module -Name PowerShellGet -Force -Scope CurrentUser
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Install-Module -Name PowerShellGet -Force -Scope CurrentUser
 </span></span><span style="display:flex;"><span>Install-Module PSReadLine -Scope CurrentUser
 </span></span></code></pre></div><blockquote>
 <p>或者可以使用管理员打开终端，这样命令后就不需要加 <code>-Scope CurrentUser</code></p>
 </blockquote>
 <p>安装好模块后输入 <code>notepad $profile</code>打开配置文件，添加下列命令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Import-Module PSReadLine
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Import-Module PSReadLine
 </span></span><span style="display:flex;"><span>Set-PSReadlineKeyHandler -Key Tab -Function Complete
 </span></span></code></pre></div><p>或者可以直接在配置文件中添加官方示例的代码，地址<a href="https://raw.githubusercontent.com/PowerShell/PSReadLine/master/PSReadLine/SamplePSReadLineProfile.ps1">点击这里</a>，需要注意的是，下面两行代码需要放到最开头，同时在 <code>Import-Module PSReadLine</code> 下一行添加 <code>Set-PSReadlineKeyHandler -Key Tab -Function Complete</code>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># 放到开头</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#b0bec5"># 放到开头</span>
 </span></span><span style="display:flex;"><span>using namespace System.Management.Automation
 </span></span><span style="display:flex;"><span>using namespace System.Management.Automation.Language
 </span></span><span style="display:flex;"><span>...
 </span></span><span style="display:flex;"><span>Import-Module PSReadLine
 </span></span><span style="display:flex;"><span>Set-PSReadlineKeyHandler -Key Tab -Function Complete
 </span></span></code></pre></div><h2 id="个人配置">个人配置</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># 初始化配置及主题</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#b0bec5"># 初始化配置及主题</span>
 </span></span><span style="display:flex;"><span>oh-my-posh init pwsh --config $env:POSH_THEMES_PATH/cloud-native-azure.omp.json | Invoke-Expression
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 导入模块</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 导入模块</span>
 </span></span><span style="display:flex;"><span>Import-Module PSReadLine
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置 TAB 键补全</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 设置 TAB 键补全</span>
 </span></span><span style="display:flex;"><span>Set-PSReadlineKeyHandler -Key Tab -Function Complete
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置 Ctrl+z 为撤销</span>
-</span></span><span style="display:flex;"><span>Set-PSReadLineKeyHandler -Key <span style="color:#e6db74">&#34;Ctrl+z&#34;</span> -Function Undo
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置向上键为后向搜索历史记录</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 设置 Ctrl+z 为撤销</span>
+</span></span><span style="display:flex;"><span>Set-PSReadLineKeyHandler -Key <span style="color:#1bc5e0">&#34;Ctrl+z&#34;</span> -Function Undo
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 设置向上键为后向搜索历史记录</span>
 </span></span><span style="display:flex;"><span>Set-PSReadLineKeyHandler -Key UpArrow -ScriptBlock {
-</span></span><span style="display:flex;"><span>  [<span style="color:#66d9ef">Microsoft.PowerShell.PSConsoleReadLine</span>]::HistorySearchBackward()
-</span></span><span style="display:flex;"><span>  [<span style="color:#66d9ef">Microsoft.PowerShell.PSConsoleReadLine</span>]::EndOfLine()
+</span></span><span style="display:flex;"><span>  [<span style="color:#c5a3ff">Microsoft.PowerShell.PSConsoleReadLine</span>]::HistorySearchBackward()
+</span></span><span style="display:flex;"><span>  [<span style="color:#c5a3ff">Microsoft.PowerShell.PSConsoleReadLine</span>]::EndOfLine()
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置向下键为前向搜索历史纪录</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 设置向下键为前向搜索历史纪录</span>
 </span></span><span style="display:flex;"><span>Set-PSReadLineKeyHandler -Key DownArrow -ScriptBlock {
-</span></span><span style="display:flex;"><span>  [<span style="color:#66d9ef">Microsoft.PowerShell.PSConsoleReadLine</span>]::HistorySearchForward()
-</span></span><span style="display:flex;"><span>  [<span style="color:#66d9ef">Microsoft.PowerShell.PSConsoleReadLine</span>]::EndOfLine()
+</span></span><span style="display:flex;"><span>  [<span style="color:#c5a3ff">Microsoft.PowerShell.PSConsoleReadLine</span>]::HistorySearchForward()
+</span></span><span style="display:flex;"><span>  [<span style="color:#c5a3ff">Microsoft.PowerShell.PSConsoleReadLine</span>]::EndOfLine()
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="参考">参考</h2>
 <ul>
@@ -577,17 +577,17 @@
 
 
 <script src="https://giscus.app/client.js"
-        data-repo="username/repo"
-        data-repo-id="**************************"
-        data-category="General"
-        data-category-id="*********************"
+        data-repo="tom2almighty/giscus"
+        data-repo-id="R_kgDOMhXXdQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMhXXdc4Chgn1"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
         data-theme="preferred_color_scheme"
-        data-lang="en"
+        data-lang="zh-CN"
         crossorigin="anonymous"
         async>
 </script>
@@ -623,7 +623,7 @@
             
             
             <a class="a-block nav-link-item active" href="/posts">
-                归档 | Archive
+                归档
             </a>
             
         
@@ -633,7 +633,7 @@
             
             
             <a class="a-block nav-link-item false" href="/categories">
-                分类 | Categories
+                分类
             </a>
             
         
@@ -643,7 +643,7 @@
             
             
             <a class="a-block nav-link-item false" href="/tags">
-                标签 | Tags
+                标签
             </a>
             
         
@@ -653,7 +653,7 @@
             
             
             <a class="a-block nav-link-item false" href="/index.xml">
-                RSS Feed
+                聚合
             </a>
             
         

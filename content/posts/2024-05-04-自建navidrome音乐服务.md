@@ -15,9 +15,9 @@ title: 自建navidrome音乐服务
 最开始用网易云音乐，但很多歌曲没了版权，后来用了 `Apple Music` 学生会员，之后一直在使用 `Spotify`，体验很好，无意发现这个开源项目，因此试着体验并记录一下。
 
 本次所使用的项目：
-{% ghcard navidrome/navidrome, theme=onedark %} 
-{% ghcard gitbobobo/StreamMusic, theme=onedark %}
-{% ghcard spotDL/spotify-downloader, theme=onedark %}
+- [navidrome]https://github.com/navidrome/navidrome)
+- [StreamMusic]https://github.com/gitbobobo/StreamMusic)
+- [spotify-downloader]https://github.com/spotDL/spotify-downloader)
 
 
 ## Navidrome 部署
@@ -70,17 +70,16 @@ services:
 | HiFiNi 音乐磁场 | [https://www.hifini.com/](https://www.hifini.com/)                                         |
 | 音乐搜索器      | [https://music.haom.ren/](https://music.haom.ren/)                                         |
 | 洛雪音乐助手    | [https://github.com/lyswhut/lx-music-desktop](https://github.com/lyswhut/lx-music-desktop) |
-{% note info flat %}
-目前洛雪音乐助手已经不自带音源，可以使用六音的[自定义音源](https://www.sixyin.com/8498.html)
-{% endnote %}
+
+> 目前洛雪音乐助手已经不自带音源，可以使用六音的[自定义音源](https://www.sixyin.com/8498.html)
+
 
 ### Spotify 音乐下载
 由于我的音乐都在 Spotify，所以寻找了下载 Spotify 歌曲的办法，首先如果音乐不多，可以使用 [SpotifyDown](https://spotifydown.com/) 在线下载，比较方便。如果列表较多，可以使用下面的工具。
 
 spotify-downloader 是一个命令行工具，在 YouTube 匹配 Spotify 播放列表和歌曲以及专辑封面和元数据并下载。
 
-安装和使用非常简单，前提是需要设置终端代理可以参考之前的文章：
-{% link 终端设置代理, https://blog.grew.cc/posts/61ca2491.html, /img/link.png %}
+安装和使用非常简单，前提是需要设置终端代理可以参考之前的文章：[终端设置代理](https://blog.grew.cc/posts/61ca2491.html)
 
 ```python
 # 安装
@@ -92,10 +91,10 @@ spotdl --download-ffmpeg
 ```bash
 spotdl --output "/path/to/your/directory/{title}" "spotify_playlist_url"
 ```
-{% note info flat %}
+
 `{title}` 是一个模板变量，它会被替换为每首歌曲的标题。你可以使用其他模板变量来自定义文件名，例如 `{artist}`、`{album}` 等。
-可以在 `--output` 参数的帮助信息中找到所有可用的模板变量。可以使用 `spodtl -h` 查看所有帮助信息
-{% endnote %}
+可以在 `--output` 参数的帮助信息中找到所有可用的模板变量，可以使用 `spodtl -h` 查看所有帮助信息。
+
 
 ## 音乐软件
 音乐软件推荐使用`音流`，软件地址如下：

@@ -14,7 +14,7 @@ title: Nginx Proxy Manager：替代宝塔的又一选择
 由于低版本的宝塔面板存在漏洞，高版本需要绑定手机，且占用较高，加上自己的服务大多是 `Docker` 部署，因此直接使用反向代理的面板更加方便。
 `Nginx Proxy Manager` 是一个 `Nginx` 的代理管理器，简单方便，并且支持一键申请证书、自动续期。
 项目地址如下：
-{% ghcard NginxProxyManager/nginx-proxy-manager, theme=onedark%}
+[nginx-proxy-manager](https://github.com/NginxProxyManager/nginx-proxy-manager
 ## 部署
 使用 `Docker` 部署，命令如下：
 ```bash
@@ -44,12 +44,14 @@ Password: changeme
 ### 添加网站
 主界面点击 `Proxy Host`- `Add Proxy Host`
 ![proxy-host](https://nginxproxymanager.com/screenshots/proxy-hosts-add.png)
-{% note success flat %}
+
+
 三个选项可以自己选择是否开启
 - `Cache Assets`: 缓存
 - `Block Common Exploits`: 屏蔽常见漏洞
 - `Websockets Support`: `Websockets` 支持
-{% endnote %}
+
+
 `Forward Hostname / IP` 处填写反向代理的网站，如果服务部署在本机，可以使用如下命令获取 `docker` 的网络接口的 `IP`，一般为 `172.17.0.1`
 ```bash
 ip addr show docker0

@@ -14,7 +14,7 @@
       <link>http://localhost:1313/posts/cogpt/</link>
       <pubDate>Thu, 07 Mar 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/cogpt/</guid>
-      <description>前言 ChatGPT 官网使用不便，并且访问速度不佳，因此部署自己的 web 页面，通过 API 使用成为了主流选择，本文通过 ChatGPTNextWeb 部署页面，并通过 copilot 项目白嫖 GPT4 的 API。 前提：&#xA;copilot 访问权限（Github 学生包可以白嫖） vercel 账号 本文用到的项目地址如下：&#xA;CoGPT NextChat 💡 cogpt 可以把 OpenAI API 格式的请求转发到 GitHub Copilot 服务端，从而免费使用 gpt-4。&#xA;警告（来自作者博客） 这个项目仅适合个人使用。并不适合访问量巨大的盈利项目。&#xA;最佳实践方式：&#xA;本机部署，仅自己使用（推荐） 部署在个人服务器上，仅自己使用，或和几个朋友共同使用（不公开） 不建议的方式：&#xA;提供公共服务 在一个 ip 上使用了很多 token 容易被判定为异常行为 使用 Serverless 服务 由于 Serverless 服务的 ip 不固定，所以很容易被判定为异常行为 用于盈利项目 请求量过大，容易被判定为异常行为 请不要尝试上述任何一种不建议的方式，否则可能会导致 GitHub Copilot 账号，甚至 GitHub 账号被封禁。&#xA;部署服务 可以部署到本地电脑，也可以部署到 vps，这里以 vps 为例。&#xA;mkdir -p /opt/cogpt &amp;amp;&amp;amp; cd /opt/cogpt &amp;amp;&amp;amp; vim docker-compose.</description>
+      <description>前言 ChatGPT 官网使用不便，并且访问速度不佳，因此部署自己的 web 页面，通过 API 使用成为了主流选择，本文通过 ChatGPTNextWeb 部署页面，并通过 copilot 项目白嫖 GPT4 的 API。 前提：</description>
     </item>
   </channel>
 </rss>

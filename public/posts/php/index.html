@@ -45,7 +45,7 @@
 
 
 
-<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -53,7 +53,7 @@
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.3ff4589617589a2f28f0f5b8d71dc2fdc6c9ee7e5a224c13c2cf0d276305ca38.css" integrity="sha256-P/RYlhdYmi8o8PW41x3C/cbJ7n5aIkwTws8NJ2MFyjg=" media="screen">
 
 
 <link rel="stylesheet"
@@ -95,7 +95,7 @@
                 
                 
                 <a class="a-block drawer-menu-item active" href="/posts">
-                    归档 | Archive
+                    归档
                 </a>
                 
             
@@ -105,7 +105,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/categories">
-                    分类 | Categories
+                    分类
                 </a>
                 
             
@@ -115,7 +115,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/tags">
-                    标签 | Tags
+                    标签
                 </a>
                 
             
@@ -125,7 +125,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/index.xml">
-                    RSS Feed
+                    聚合
                 </a>
                 
             
@@ -314,7 +314,7 @@
                     <h2 id="问题">问题</h2>
 <p>在部署一个站点时，在安装了 <code>PHP 7.4</code> 的情况下安装 <code>PHP 8.2</code>，然而安装完成后启动报错。</p>
 <p>具体报错内容如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">/</span><span style="color:#a6e22e">www</span><span style="color:#f92672">/</span><span style="color:#a6e22e">server</span><span style="color:#f92672">/</span><span style="color:#a6e22e">php</span><span style="color:#f92672">/</span><span style="color:#ae81ff">82</span><span style="color:#f92672">/</span><span style="color:#a6e22e">sbin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">php</span><span style="color:#f92672">-</span><span style="color:#a6e22e">fpm</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">symbol</span> <span style="color:#a6e22e">lookup</span> <span style="color:#a6e22e">error</span><span style="color:#f92672">:</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">www</span><span style="color:#f92672">/</span><span style="color:#a6e22e">server</span><span style="color:#f92672">/</span><span style="color:#a6e22e">php</span><span style="color:#f92672">/</span><span style="color:#ae81ff">82</span><span style="color:#f92672">/</span><span style="color:#a6e22e">sbin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">php</span><span style="color:#f92672">-</span><span style="color:#a6e22e">fpm</span><span style="color:#f92672">:</span><span style="color:#a6e22e">undefined</span> <span style="color:#a6e22e">symbol</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">crypto_pwhash_scryptsalsa208sha256_opslimit_interactive</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ffb8d1">/</span>www<span style="color:#ffb8d1">/</span>server<span style="color:#ffb8d1">/</span>php<span style="color:#ffb8d1">/</span><span style="color:#c5a3ff">82</span><span style="color:#ffb8d1">/</span>sbin<span style="color:#ffb8d1">/</span>php<span style="color:#ffb8d1">-</span>fpm<span style="color:#ffb8d1">:</span> symbol lookup error<span style="color:#ffb8d1">:</span> <span style="color:#ffb8d1">/</span>www<span style="color:#ffb8d1">/</span>server<span style="color:#ffb8d1">/</span>php<span style="color:#ffb8d1">/</span><span style="color:#c5a3ff">82</span><span style="color:#ffb8d1">/</span>sbin<span style="color:#ffb8d1">/</span>php<span style="color:#ffb8d1">-</span>fpm<span style="color:#ffb8d1">:</span>undefined symbol<span style="color:#ffb8d1">:</span> crypto_pwhash_scryptsalsa208sha256_opslimit_interactive
 </span></span></code></pre></div><h2 id="解决">解决</h2>
 <p>直接谷歌搜索报错内容，发现宝塔面板论坛有相关问题：<a href="https://www.bt.cn/bbs/forum.php?mod=viewthread&amp;tid=65378">php无法启动的N种常见错误解决教程</a> 情况七，给出的解决办法是重新编译安装，然而编译安装后仍未解决（也有成功的，可以先试试）。<code>CSDN</code> 也有相关问题，并在 <code>Serverfault</code>找到了解决方法，来源在文末。</p>
 <p><strong>方法就是重新编译安装 <code>libsodium</code></strong></p>
@@ -323,15 +323,15 @@
 <li>删除 <code>usr/local/lib</code>目录下相关 <code>libsodium</code>文件</li>
 <li>下载 <code>tar</code> 包，并解压</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget &lt;https://download.libsodium.org/libsodium/releases/libsodium-1.0.19-stable.tar.gz&gt;
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 建议稳定版 &lt;https://download.libsodium.org/libsodium/releases/&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget &lt;https://download.libsodium.org/libsodium/releases/libsodium-1.0.19-stable.tar.gz&gt;
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 建议稳定版 &lt;https://download.libsodium.org/libsodium/releases/&gt;</span>
 </span></span><span style="display:flex;"><span>tar -zxvf libsodium-1.0.19-stable.tar.gz
 </span></span></code></pre></div><ol>
 <li>编译安装</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ./libsodium-stable
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ./libsodium-stable
 </span></span><span style="display:flex;"><span>./configure
-</span></span><span style="display:flex;"><span>make <span style="color:#f92672">&amp;&amp;</span> make check
+</span></span><span style="display:flex;"><span>make <span style="color:#ffb8d1">&amp;&amp;</span> make check
 </span></span><span style="display:flex;"><span>sudo make install
 </span></span></code></pre></div><p>完成后即可成功启动。</p>
 <h2 id="参考">参考</h2>
@@ -379,17 +379,17 @@
 
 
 <script src="https://giscus.app/client.js"
-        data-repo="username/repo"
-        data-repo-id="**************************"
-        data-category="General"
-        data-category-id="*********************"
+        data-repo="tom2almighty/giscus"
+        data-repo-id="R_kgDOMhXXdQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMhXXdc4Chgn1"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
         data-theme="preferred_color_scheme"
-        data-lang="en"
+        data-lang="zh-CN"
         crossorigin="anonymous"
         async>
 </script>
@@ -425,7 +425,7 @@
             
             
             <a class="a-block nav-link-item active" href="/posts">
-                归档 | Archive
+                归档
             </a>
             
         
@@ -435,7 +435,7 @@
             
             
             <a class="a-block nav-link-item false" href="/categories">
-                分类 | Categories
+                分类
             </a>
             
         
@@ -445,7 +445,7 @@
             
             
             <a class="a-block nav-link-item false" href="/tags">
-                标签 | Tags
+                标签
             </a>
             
         
@@ -455,7 +455,7 @@
             
             
             <a class="a-block nav-link-item false" href="/index.xml">
-                RSS Feed
+                聚合
             </a>
             
         

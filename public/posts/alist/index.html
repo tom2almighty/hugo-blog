@@ -45,7 +45,7 @@
 
 
 
-<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -53,7 +53,7 @@
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.3ff4589617589a2f28f0f5b8d71dc2fdc6c9ee7e5a224c13c2cf0d276305ca38.css" integrity="sha256-P/RYlhdYmi8o8PW41x3C/cbJ7n5aIkwTws8NJ2MFyjg=" media="screen">
 
 
 <link rel="stylesheet"
@@ -95,7 +95,7 @@
                 
                 
                 <a class="a-block drawer-menu-item active" href="/posts">
-                    归档 | Archive
+                    归档
                 </a>
                 
             
@@ -105,7 +105,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/categories">
-                    分类 | Categories
+                    分类
                 </a>
                 
             
@@ -115,7 +115,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/tags">
-                    标签 | Tags
+                    标签
                 </a>
                 
             
@@ -125,7 +125,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/index.xml">
-                    RSS Feed
+                    聚合
                 </a>
                 
             
@@ -431,26 +431,26 @@
 <h2 id="一官方-alist">一、官方 Alist</h2>
 <h3 id="1-安装">1. 安装</h3>
 <p>安装非常简单，直接使用官方的一键脚本</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 安装</span>
-</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#e6db74">&#34;https://alist.nn.ci/v3.sh&#34;</span> | bash -s install
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 更新</span>
-</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#e6db74">&#34;https://alist.nn.ci/v3.sh&#34;</span> | bash -s update
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 卸载</span>
-</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#e6db74">&#34;https://alist.nn.ci/v3.sh&#34;</span> | bash -s uninstall
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># 安装</span>
+</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#1bc5e0">&#34;https://alist.nn.ci/v3.sh&#34;</span> | bash -s install
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 更新</span>
+</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#1bc5e0">&#34;https://alist.nn.ci/v3.sh&#34;</span> | bash -s update
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 卸载</span>
+</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#1bc5e0">&#34;https://alist.nn.ci/v3.sh&#34;</span> | bash -s uninstall
 </span></span></code></pre></div><blockquote>
 <p>默认安装在 <code>/opt/alist</code> 中。自定义安装路径，将安装路径作为第二个参数添加，必须是绝对路径（如果路径以 alist 结尾，则直接安装到给定路径，否则会安装在给定路径 alist 目录下），如 安装到 <code>/root</code>：</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install</span>
-</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#e6db74">&#34;https://alist.nn.ci/v3.sh&#34;</span> | bash -s install /root
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># update</span>
-</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#e6db74">&#34;https://alist.nn.ci/v3.sh&#34;</span> | bash -s update /root
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Uninstall</span>
-</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#e6db74">&#34;https://alist.nn.ci/v3.sh&#34;</span> | bash -s uninstall /root
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># Install</span>
+</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#1bc5e0">&#34;https://alist.nn.ci/v3.sh&#34;</span> | bash -s install /root
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># update</span>
+</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#1bc5e0">&#34;https://alist.nn.ci/v3.sh&#34;</span> | bash -s update /root
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># Uninstall</span>
+</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#1bc5e0">&#34;https://alist.nn.ci/v3.sh&#34;</span> | bash -s uninstall /root
 </span></span></code></pre></div><h3 id="2-获取密码">2. 获取密码</h3>
 <p>随机生成一个密码</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./alist admin random
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./alist admin random
 </span></span></code></pre></div><p>手动设置一个密码,<code>NEW_PASSWORD</code>是指你需要设置的密码</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./alist admin set NEW_PASSWORD
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./alist admin set NEW_PASSWORD
 </span></span></code></pre></div><p>部署的 Alist可以挂载自己的阿里云盘、Onedrive 等，官方文档都有详细介绍，上述安装也都来自官方文档，如果想美化以下界面，可以参考另一篇<a href="https://www.notion.so/Alist-f50ef25f1c1a4fdebd5f3b53fa830adb?pvs=21">文章</a>。</p>
 <p>如果想瞬间拥有很多资源，我们可以部署别人整理好的 Alist 镜像。</p>
 <h2 id="二小雅-alist">二、小雅 Alist</h2>
@@ -462,13 +462,13 @@
 <p>💡 接下来的教程来自官方文档，部署在 VPS 上，由于家里并没有 NAS 和软路由，也不用电视看，因此记录仅限于电脑手机端观看，如果后续设备变化再更新记录。</p>
 </blockquote>
 <h3 id="1-安装-dokcer">1. 安装 Dokcer</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 卸载旧版本</span>
-</span></span><span style="display:flex;"><span>sudo apt-get remove docker <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>             docker-engine <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>             <span style="color:#f92672">[</span>docker.io<span style="color:#f92672">](</span>http://docker.io/<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 安装</span>
-</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#f92672">[</span>get.docker.com<span style="color:#f92672">](</span>http://get.docker.com/<span style="color:#f92672">)</span> -o <span style="color:#f92672">[</span>get-docker.sh<span style="color:#f92672">](</span>http://get-docker.sh/<span style="color:#f92672">)</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 启动并设置开机自启</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># 卸载旧版本</span>
+</span></span><span style="display:flex;"><span>sudo apt-get remove docker <span style="color:#1bc5e0">\
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0"></span>             docker-engine <span style="color:#1bc5e0">\
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0"></span>             <span style="color:#ffb8d1">[</span>docker.io<span style="color:#ffb8d1">](</span>http://docker.io/<span style="color:#ffb8d1">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 安装</span>
+</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#ffb8d1">[</span>get.docker.com<span style="color:#ffb8d1">](</span>http://get.docker.com/<span style="color:#ffb8d1">)</span> -o <span style="color:#ffb8d1">[</span>get-docker.sh<span style="color:#ffb8d1">](</span>http://get-docker.sh/<span style="color:#ffb8d1">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># 启动并设置开机自启</span>
 </span></span><span style="display:flex;"><span>sudo systemctl enable docker
 </span></span><span style="display:flex;"><span>sudo systemctl start docker
 </span></span></code></pre></div><h3 id="2-安装小雅-alist">2. 安装小雅 Alist</h3>
@@ -531,12 +531,12 @@
 <p>💡 获取到前三个参数就可以，如果不想别人蹭你的网盘观看，就可以设置必须登录观看，登录的账号是 <code>dav</code> ，密码就是设置的密码。</p>
 </blockquote>
 <p>接下来安装，使用一键脚本：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>**bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl http://docker.xiaoya.pro/update_new.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># host 模式**</span>
-</span></span><span style="display:flex;"><span>bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl <span style="color:#f92672">[</span>http://docker.xiaoya.pro/update_new.sh<span style="color:#f92672">](</span>http://docker.xiaoya.pro/update_new.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">)&#34;</span> -s host
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>**bash -c <span style="color:#1bc5e0">&#34;</span><span style="color:#c2ffdf">$(</span>curl http://docker.xiaoya.pro/update_new.sh<span style="color:#c2ffdf">)</span><span style="color:#1bc5e0">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># host 模式**</span>
+</span></span><span style="display:flex;"><span>bash -c <span style="color:#1bc5e0">&#34;</span><span style="color:#c2ffdf">$(</span>curl <span style="color:#ffb8d1">[</span>http://docker.xiaoya.pro/update_new.sh<span style="color:#ffb8d1">](</span>http://docker.xiaoya.pro/update_new.sh<span style="color:#c2ffdf">)</span><span style="color:#1bc5e0">)&#34;</span> -s host
 </span></span></code></pre></div><p>安装过程中填写三个参数，等待完成就可以了，服务器记得放行 5678 端口，后续如果需要反向代理也是这个端口。完成后可以通过 <a href="http://ip:5678">http://ip:5678</a> 进入，第一次进入会比较慢，如果很久没加载到存储，可以手动重启一下容器：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker restart xiaoya
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 更新也是这个命令，所以可以将这个命令设置定时任务，每天定时重启</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker restart xiaoya
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 更新也是这个命令，所以可以将这个命令设置定时任务，每天定时重启</span>
 </span></span></code></pre></div><blockquote>
 <p>💡 <strong>不建议使用 infuse 等挂载扫描，可能会触发风控。</strong></p>
 </blockquote>
@@ -545,19 +545,19 @@
 <ul>
 <li><strong>模式0</strong>：每天自动清理一次。如果系统重启需要手动重新运行或把命令加入系统启动。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -s https://xiaoyahelper.zengge99.eu.org/aliyun_clear.sh | tail -n +2<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -s <span style="color:#ae81ff">0</span> -tg
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash -c <span style="color:#1bc5e0">&#34;</span><span style="color:#c2ffdf">$(</span>curl -s https://xiaoyahelper.zengge99.eu.org/aliyun_clear.sh | tail -n +2<span style="color:#c2ffdf">)</span><span style="color:#1bc5e0">&#34;</span> -s <span style="color:#c5a3ff">0</span> -tg
 </span></span></code></pre></div><ul>
 <li><strong>模式1</strong>：一次性清理，一般用于测试效果。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -s https://xiaoyahelper.zengge99.eu.org/aliyun_clear.sh | tail -n +2<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -s <span style="color:#ae81ff">1</span> -tg
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash -c <span style="color:#1bc5e0">&#34;</span><span style="color:#c2ffdf">$(</span>curl -s https://xiaoyahelper.zengge99.eu.org/aliyun_clear.sh | tail -n +2<span style="color:#c2ffdf">)</span><span style="color:#1bc5e0">&#34;</span> -s <span style="color:#c5a3ff">1</span> -tg
 </span></span></code></pre></div><ul>
 <li><strong>模式3：<strong>创建一个名为 xiaoyakeeper 的docker</strong>定时运行小雅转存清理</strong>并升级小雅镜像</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -s https://xiaoyahelper.zengge99.eu.org/aliyun_clear.sh | tail -n +2<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -s <span style="color:#ae81ff">3</span> -tg
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash -c <span style="color:#1bc5e0">&#34;</span><span style="color:#c2ffdf">$(</span>curl -s https://xiaoyahelper.zengge99.eu.org/aliyun_clear.sh | tail -n +2<span style="color:#c2ffdf">)</span><span style="color:#1bc5e0">&#34;</span> -s <span style="color:#c5a3ff">3</span> -tg
 </span></span></code></pre></div><ul>
 <li>**模式5：**与模式3的区别是实时清理，<strong>只要产生了播放缓存一分钟内立即清理</strong>。签到和定时升级同模式3</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -s https://xiaoyahelper.zengge99.eu.org/aliyun_clear.sh | tail -n +2<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -s <span style="color:#ae81ff">5</span> -tg
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash -c <span style="color:#1bc5e0">&#34;</span><span style="color:#c2ffdf">$(</span>curl -s https://xiaoyahelper.zengge99.eu.org/aliyun_clear.sh | tail -n +2<span style="color:#c2ffdf">)</span><span style="color:#1bc5e0">&#34;</span> -s <span style="color:#c5a3ff">5</span> -tg
 </span></span></code></pre></div><p>以上所有模式加上 <strong><code>-tg</code></strong> 功能均可绑定消息推送的TG账号，只有第一次运行需要加上 <strong><code>-tg</code></strong> 参数，<strong>可以不加tg参数</strong></p>
 <h2 id="-参考文章">📎 参考文章</h2>
 <ul>
@@ -602,17 +602,17 @@
 
 
 <script src="https://giscus.app/client.js"
-        data-repo="username/repo"
-        data-repo-id="**************************"
-        data-category="General"
-        data-category-id="*********************"
+        data-repo="tom2almighty/giscus"
+        data-repo-id="R_kgDOMhXXdQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMhXXdc4Chgn1"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
         data-theme="preferred_color_scheme"
-        data-lang="en"
+        data-lang="zh-CN"
         crossorigin="anonymous"
         async>
 </script>
@@ -648,7 +648,7 @@
             
             
             <a class="a-block nav-link-item active" href="/posts">
-                归档 | Archive
+                归档
             </a>
             
         
@@ -658,7 +658,7 @@
             
             
             <a class="a-block nav-link-item false" href="/categories">
-                分类 | Categories
+                分类
             </a>
             
         
@@ -668,7 +668,7 @@
             
             
             <a class="a-block nav-link-item false" href="/tags">
-                标签 | Tags
+                标签
             </a>
             
         
@@ -678,7 +678,7 @@
             
             
             <a class="a-block nav-link-item false" href="/index.xml">
-                RSS Feed
+                聚合
             </a>
             
         

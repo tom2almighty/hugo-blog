@@ -46,7 +46,7 @@
 
 
 
-<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -54,7 +54,7 @@
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.3ff4589617589a2f28f0f5b8d71dc2fdc6c9ee7e5a224c13c2cf0d276305ca38.css" integrity="sha256-P/RYlhdYmi8o8PW41x3C/cbJ7n5aIkwTws8NJ2MFyjg=" media="screen">
 
 
 <link rel="stylesheet"
@@ -96,7 +96,7 @@
                 
                 
                 <a class="a-block drawer-menu-item active" href="/posts">
-                    归档 | Archive
+                    归档
                 </a>
                 
             
@@ -106,7 +106,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/categories">
-                    分类 | Categories
+                    分类
                 </a>
                 
             
@@ -116,7 +116,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/tags">
-                    标签 | Tags
+                    标签
                 </a>
                 
             
@@ -126,7 +126,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/index.xml">
-                    RSS Feed
+                    聚合
                 </a>
                 
             
@@ -333,7 +333,7 @@
                             
                             3 min
                             
-                            13 s.
+                            9 s.
                         
                     </div>
                 </div>
@@ -347,48 +347,48 @@
 <p>自建一个 <code>API</code> 获取随机图片可以用于博客 <code>cover</code>，网上找到一篇文章，本文仅记录，所有代码都来自 <a href="https://yjk.im.sb/get-bing-daily-images/">这篇文章</a>。</p>
 <h2 id="部署">部署</h2>
 <p>新建一个名为 <code>bing.php</code> 的文件，写入下面代码：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 判断是否随机调用
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$gettimebase <span style="color:#f92672">=</span> <span style="color:#a6e22e">isset</span>($_GET[<span style="color:#e6db74">&#39;day&#39;</span>]) <span style="color:#f92672">?</span> $_GET[<span style="color:#e6db74">&#39;day&#39;</span>] <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($_GET[<span style="color:#e6db74">&#39;rand&#39;</span>]) <span style="color:#f92672">&amp;&amp;</span> $_GET[<span style="color:#e6db74">&#39;rand&#39;</span>] <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;false&#39;</span>) {
-</span></span><span style="display:flex;"><span>    $gettime <span style="color:#f92672">=</span> <span style="color:#66d9ef">empty</span>($gettimebase) <span style="color:#f92672">?</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">:</span> $gettimebase;
-</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 若不为随机调用则判断是否指定日期
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    $gettime <span style="color:#f92672">=</span> <span style="color:#66d9ef">empty</span>($gettimebase) <span style="color:#f92672">?</span> <span style="color:#a6e22e">rand</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">7</span>) <span style="color:#f92672">:</span> $gettimebase;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ffb8d1">&lt;?</span>php
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5">// 判断是否随机调用
+</span></span></span><span style="display:flex;"><span><span style="color:#b0bec5"></span>$gettimebase <span style="color:#ffb8d1">=</span> isset($_GET[<span style="color:#1bc5e0">&#39;day&#39;</span>]) <span style="color:#ffb8d1">?</span> $_GET[<span style="color:#1bc5e0">&#39;day&#39;</span>] <span style="color:#ffb8d1">:</span> <span style="color:#1bc5e0">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#c2ffdf">if</span> (isset($_GET[<span style="color:#1bc5e0">&#39;rand&#39;</span>]) <span style="color:#ffb8d1">&amp;&amp;</span> $_GET[<span style="color:#1bc5e0">&#39;rand&#39;</span>] <span style="color:#ffb8d1">===</span> <span style="color:#1bc5e0">&#39;false&#39;</span>) {
+</span></span><span style="display:flex;"><span>    $gettime <span style="color:#ffb8d1">=</span> <span style="color:#c2ffdf">empty</span>($gettimebase) <span style="color:#ffb8d1">?</span> <span style="color:#c5a3ff">0</span> <span style="color:#ffb8d1">:</span> $gettimebase;
+</span></span><span style="display:flex;"><span>} <span style="color:#c2ffdf">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#b0bec5">// 若不为随机调用则判断是否指定日期
+</span></span></span><span style="display:flex;"><span><span style="color:#b0bec5"></span>    $gettime <span style="color:#ffb8d1">=</span> <span style="color:#c2ffdf">empty</span>($gettimebase) <span style="color:#ffb8d1">?</span> rand(<span style="color:#ffb8d1">-</span><span style="color:#c5a3ff">1</span>, <span style="color:#c5a3ff">7</span>) <span style="color:#ffb8d1">:</span> $gettimebase;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 获取 Bing Json 信息
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$mkt <span style="color:#f92672">=</span> <span style="color:#a6e22e">isset</span>($_GET[<span style="color:#e6db74">&#39;cn&#39;</span>]) <span style="color:#f92672">&amp;&amp;</span> $_GET[<span style="color:#e6db74">&#39;cn&#39;</span>] <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;zh-CN&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;en-US&#39;</span>;
-</span></span><span style="display:flex;"><span>$json_string <span style="color:#f92672">=</span> <span style="color:#a6e22e">file_get_contents</span>(<span style="color:#e6db74">&#34;https://www.bing.com/HPImageArchive.aspx?format=js&amp;idx=</span><span style="color:#e6db74">$gettime</span><span style="color:#e6db74">&amp;n=1&amp;mkt=</span><span style="color:#e6db74">$mkt</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5">// 获取 Bing Json 信息
+</span></span></span><span style="display:flex;"><span><span style="color:#b0bec5"></span>$mkt <span style="color:#ffb8d1">=</span> isset($_GET[<span style="color:#1bc5e0">&#39;cn&#39;</span>]) <span style="color:#ffb8d1">&amp;&amp;</span> $_GET[<span style="color:#1bc5e0">&#39;cn&#39;</span>] <span style="color:#ffb8d1">===</span> <span style="color:#1bc5e0">&#39;true&#39;</span> <span style="color:#ffb8d1">?</span> <span style="color:#1bc5e0">&#39;zh-CN&#39;</span> <span style="color:#ffb8d1">:</span> <span style="color:#1bc5e0">&#39;en-US&#39;</span>;
+</span></span><span style="display:flex;"><span>$json_string <span style="color:#ffb8d1">=</span> file_get_contents(<span style="color:#1bc5e0">&#34;https://www.bing.com/HPImageArchive.aspx?format=js&amp;idx=</span><span style="color:#1bc5e0">$gettime</span><span style="color:#1bc5e0">&amp;n=1&amp;mkt=</span><span style="color:#1bc5e0">$mkt</span><span style="color:#1bc5e0">&#34;</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 转换为 PHP 数组
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$data <span style="color:#f92672">=</span> <span style="color:#a6e22e">json_decode</span>($json_string);
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5">// 转换为 PHP 数组
+</span></span></span><span style="display:flex;"><span><span style="color:#b0bec5"></span>$data <span style="color:#ffb8d1">=</span> json_decode($json_string);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 提取基础 URL
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$imgurlbase <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://www4.bing.com</span><span style="color:#e6db74">{</span>$data<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">images</span>[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">urlbase</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5">// 提取基础 URL
+</span></span></span><span style="display:flex;"><span><span style="color:#b0bec5"></span>$imgurlbase <span style="color:#ffb8d1">=</span> <span style="color:#1bc5e0">&#34;https://www4.bing.com</span><span style="color:#1bc5e0">{</span>$data<span style="color:#ffb8d1">-&gt;</span><span style="color:#ceb1ff">images</span>[<span style="color:#c5a3ff">0</span>]<span style="color:#ffb8d1">-&gt;</span><span style="color:#ceb1ff">urlbase</span><span style="color:#1bc5e0">}</span><span style="color:#1bc5e0">&#34;</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 判断是否指定图片大小
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$imgsizebase <span style="color:#f92672">=</span> <span style="color:#a6e22e">isset</span>($_GET[<span style="color:#e6db74">&#39;size&#39;</span>]) <span style="color:#f92672">?</span> $_GET[<span style="color:#e6db74">&#39;size&#39;</span>] <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>;
-</span></span><span style="display:flex;"><span>$imgsize <span style="color:#f92672">=</span> <span style="color:#66d9ef">empty</span>($imgsizebase) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;1920x1080&#34;</span> <span style="color:#f92672">:</span> $imgsizebase;
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5">// 判断是否指定图片大小
+</span></span></span><span style="display:flex;"><span><span style="color:#b0bec5"></span>$imgsizebase <span style="color:#ffb8d1">=</span> isset($_GET[<span style="color:#1bc5e0">&#39;size&#39;</span>]) <span style="color:#ffb8d1">?</span> $_GET[<span style="color:#1bc5e0">&#39;size&#39;</span>] <span style="color:#ffb8d1">:</span> <span style="color:#1bc5e0">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>$imgsize <span style="color:#ffb8d1">=</span> <span style="color:#c2ffdf">empty</span>($imgsizebase) <span style="color:#ffb8d1">?</span> <span style="color:#1bc5e0">&#34;1920x1080&#34;</span> <span style="color:#ffb8d1">:</span> $imgsizebase;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 建立完整 URL
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$imgurl <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>$imgurlbase<span style="color:#e6db74">}</span><span style="color:#e6db74">_</span><span style="color:#e6db74">{</span>$imgsize<span style="color:#e6db74">}</span><span style="color:#e6db74">.jpg&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5">// 建立完整 URL
+</span></span></span><span style="display:flex;"><span><span style="color:#b0bec5"></span>$imgurl <span style="color:#ffb8d1">=</span> <span style="color:#1bc5e0">&#34;</span><span style="color:#1bc5e0">{</span>$imgurlbase<span style="color:#1bc5e0">}</span><span style="color:#1bc5e0">_</span><span style="color:#1bc5e0">{</span>$imgsize<span style="color:#1bc5e0">}</span><span style="color:#1bc5e0">.jpg&#34;</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 获取其他信息
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$imgtime <span style="color:#f92672">=</span> $data<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">images</span>[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">startdate</span>;
-</span></span><span style="display:flex;"><span>$imgtitle <span style="color:#f92672">=</span> $data<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">images</span>[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">title</span>;
-</span></span><span style="display:flex;"><span>$imglink <span style="color:#f92672">=</span> $data<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">images</span>[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">copyrightlink</span>;
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5">// 获取其他信息
+</span></span></span><span style="display:flex;"><span><span style="color:#b0bec5"></span>$imgtime <span style="color:#ffb8d1">=</span> $data<span style="color:#ffb8d1">-&gt;</span><span style="color:#ceb1ff">images</span>[<span style="color:#c5a3ff">0</span>]<span style="color:#ffb8d1">-&gt;</span><span style="color:#ceb1ff">startdate</span>;
+</span></span><span style="display:flex;"><span>$imgtitle <span style="color:#ffb8d1">=</span> $data<span style="color:#ffb8d1">-&gt;</span><span style="color:#ceb1ff">images</span>[<span style="color:#c5a3ff">0</span>]<span style="color:#ffb8d1">-&gt;</span><span style="color:#ceb1ff">title</span>;
+</span></span><span style="display:flex;"><span>$imglink <span style="color:#ffb8d1">=</span> $data<span style="color:#ffb8d1">-&gt;</span><span style="color:#ceb1ff">images</span>[<span style="color:#c5a3ff">0</span>]<span style="color:#ffb8d1">-&gt;</span><span style="color:#ceb1ff">copyrightlink</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 判断是否只获取图片信息
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($_GET[<span style="color:#e6db74">&#39;info&#39;</span>]) <span style="color:#f92672">&amp;&amp;</span> $_GET[<span style="color:#e6db74">&#39;info&#39;</span>] <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;true&#39;</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;{title:</span><span style="color:#e6db74">$imgtitle</span><span style="color:#e6db74">,url:</span><span style="color:#e6db74">$imgurl</span><span style="color:#e6db74">,link:</span><span style="color:#e6db74">$imglink</span><span style="color:#e6db74">,time:</span><span style="color:#e6db74">$imgtime</span><span style="color:#e6db74">}&#34;</span>;
-</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 若不是则跳转 URL
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">ob_start</span>();
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#34;Location: </span><span style="color:#e6db74">$imgurl</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ob_end_flush</span>();
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5">// 判断是否只获取图片信息
+</span></span></span><span style="display:flex;"><span><span style="color:#b0bec5"></span><span style="color:#c2ffdf">if</span> (isset($_GET[<span style="color:#1bc5e0">&#39;info&#39;</span>]) <span style="color:#ffb8d1">&amp;&amp;</span> $_GET[<span style="color:#1bc5e0">&#39;info&#39;</span>] <span style="color:#ffb8d1">===</span> <span style="color:#1bc5e0">&#39;true&#39;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#c2ffdf">echo</span> <span style="color:#1bc5e0">&#34;{title:</span><span style="color:#1bc5e0">$imgtitle</span><span style="color:#1bc5e0">,url:</span><span style="color:#1bc5e0">$imgurl</span><span style="color:#1bc5e0">,link:</span><span style="color:#1bc5e0">$imglink</span><span style="color:#1bc5e0">,time:</span><span style="color:#1bc5e0">$imgtime</span><span style="color:#1bc5e0">}&#34;</span>;
+</span></span><span style="display:flex;"><span>} <span style="color:#c2ffdf">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#b0bec5">// 若不是则跳转 URL
+</span></span></span><span style="display:flex;"><span><span style="color:#b0bec5"></span>    ob_start();
+</span></span><span style="display:flex;"><span>    header(<span style="color:#1bc5e0">&#34;Location: </span><span style="color:#1bc5e0">$imgurl</span><span style="color:#1bc5e0">&#34;</span>);
+</span></span><span style="display:flex;"><span>    ob_end_flush();
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5">?&gt;</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span></code></pre></div><p>新建一个网站，将 <code>bing.php</code>放入网站目录下，访问 <code>yourdomain.com/bing.php</code> 即可，可选的参数如下：</p>
 <table>
 <thead>
@@ -426,33 +426,30 @@
 </tr>
 </tbody>
 </table>
-<p>{% note info modern %}
-以上所有参数均非必要，默认为：<code>rand=true, day=0, size=1920x1080, info=false, cn=false</code>
-{% endnote %}
-例如，随机获取大小 320x240 的图片则可以引用：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yourdomain.com/bing.php?rand<span style="color:#f92672">=</span>true&amp;size<span style="color:#f92672">=</span>320x240
+<blockquote>
+<p>以上所有参数均非必要，默认为：<code>rand=true, day=0, size=1920x1080, info=false, cn=false</code></p>
+</blockquote>
+<p>例如，随机获取大小 320x240 的图片则可以引用：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yourdomain.com/bing.php?rand<span style="color:#ffb8d1">=</span>true&amp;size<span style="color:#ffb8d1">=</span>320x240
 </span></span></code></pre></div><h3 id="部署到-vercel">部署到 Vercel</h3>
 <p>将 <code>bing.php</code> 存入 <code>api</code> 文件夹，并新建 <code>vercel.json</code>，写入如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;functions&#34;</span>: {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;api/*.php&#34;</span>: {
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;runtime&#34;</span>: <span style="color:#e6db74">&#34;vercel-php@0.6.0&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ffb8d1">&#34;functions&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ffb8d1">&#34;api/*.php&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ffb8d1">&#34;runtime&#34;</span>: <span style="color:#1bc5e0">&#34;vercel-php@0.6.0&#34;</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>  },
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;routes&#34;</span>: [
-</span></span><span style="display:flex;"><span>  	{ <span style="color:#f92672">&#34;src&#34;</span>: <span style="color:#e6db74">&#34;/bing/api(.*)&#34;</span>,<span style="color:#f92672">&#34;dest&#34;</span>: <span style="color:#e6db74">&#34;api/bing.php&#34;</span>, <span style="color:#f92672">&#34;headers&#34;</span>: { <span style="color:#f92672">&#34;Access-Control-Allow-Origin&#34;</span>: <span style="color:#e6db74">&#34;*&#34;</span> }}
+</span></span><span style="display:flex;"><span>  <span style="color:#ffb8d1">&#34;routes&#34;</span>: [
+</span></span><span style="display:flex;"><span>  	{ <span style="color:#ffb8d1">&#34;src&#34;</span>: <span style="color:#1bc5e0">&#34;/bing/api(.*)&#34;</span>,<span style="color:#ffb8d1">&#34;dest&#34;</span>: <span style="color:#1bc5e0">&#34;api/bing.php&#34;</span>, <span style="color:#ffb8d1">&#34;headers&#34;</span>: { <span style="color:#ffb8d1">&#34;Access-Control-Allow-Origin&#34;</span>: <span style="color:#1bc5e0">&#34;*&#34;</span> }}
 </span></span><span style="display:flex;"><span>  ]
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>整体目录如下：</p>
-<pre tabindex="0"><code>- 项目文件夹
-  - api
-    - bing.php
-  - vercel.json
-  - index.html //可选
-</code></pre><p>{% note success flat %}
-部署过程中如果出现错误，将 <code>Nodejs</code> 版本更改为 <code>18.x</code> 重新部署即可成功。
-{% endnote %}
-访问 <code>random.vercel.app/bing/api</code> 即可</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>- 项目文件夹
+</span></span><span style="display:flex;"><span>  - api
+</span></span><span style="display:flex;"><span>    - bing.php
+</span></span><span style="display:flex;"><span>  - vercel.json
+</span></span><span style="display:flex;"><span>  - index.html //可选
+</span></span></code></pre></div><p>访问 <code>random.vercel.app/bing/api</code> 即可，部署过程中如果出现错误，将 <code>Nodejs</code> 版本更改为 <code>18.x</code> 重新部署即可成功。</p>
 <h2 id="参考">参考</h2>
 <ul>
 <li><a href="https://yjk.im.sb/get-bing-daily-images/#">单 PHP 文件获取 Bing 每日图片</a></li>
@@ -495,17 +492,17 @@
 
 
 <script src="https://giscus.app/client.js"
-        data-repo="username/repo"
-        data-repo-id="**************************"
-        data-category="General"
-        data-category-id="*********************"
+        data-repo="tom2almighty/giscus"
+        data-repo-id="R_kgDOMhXXdQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMhXXdc4Chgn1"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
         data-theme="preferred_color_scheme"
-        data-lang="en"
+        data-lang="zh-CN"
         crossorigin="anonymous"
         async>
 </script>
@@ -541,7 +538,7 @@
             
             
             <a class="a-block nav-link-item active" href="/posts">
-                归档 | Archive
+                归档
             </a>
             
         
@@ -551,7 +548,7 @@
             
             
             <a class="a-block nav-link-item false" href="/categories">
-                分类 | Categories
+                分类
             </a>
             
         
@@ -561,7 +558,7 @@
             
             
             <a class="a-block nav-link-item false" href="/tags">
-                标签 | Tags
+                标签
             </a>
             
         
@@ -571,7 +568,7 @@
             
             
             <a class="a-block nav-link-item false" href="/index.xml">
-                RSS Feed
+                聚合
             </a>
             
         

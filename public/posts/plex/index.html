@@ -47,7 +47,7 @@
 
 
 
-<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -55,7 +55,7 @@
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.3ff4589617589a2f28f0f5b8d71dc2fdc6c9ee7e5a224c13c2cf0d276305ca38.css" integrity="sha256-P/RYlhdYmi8o8PW41x3C/cbJ7n5aIkwTws8NJ2MFyjg=" media="screen">
 
 
 <link rel="stylesheet"
@@ -97,7 +97,7 @@
                 
                 
                 <a class="a-block drawer-menu-item active" href="/posts">
-                    归档 | Archive
+                    归档
                 </a>
                 
             
@@ -107,7 +107,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/categories">
-                    分类 | Categories
+                    分类
                 </a>
                 
             
@@ -117,7 +117,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/tags">
-                    标签 | Tags
+                    标签
                 </a>
                 
             
@@ -127,7 +127,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/index.xml">
-                    RSS Feed
+                    聚合
                 </a>
                 
             
@@ -582,203 +582,203 @@
 <h3 id="1-部署-plex">1. 部署 Plex</h3>
 <p>部署可以通过可执行程序，也可以通过 <code>docker</code> ，如果想挂载 alist ，记得和 <code>alist</code> 程序安装在同一台服务器。</p>
 <p>部署程序</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># centos</span>
-</span></span><span style="display:flex;"><span>yum -y update <span style="color:#f92672">&amp;&amp;</span> yum -y install
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># centos</span>
+</span></span><span style="display:flex;"><span>yum -y update <span style="color:#ffb8d1">&amp;&amp;</span> yum -y install
 </span></span><span style="display:flex;"><span>wget https://downloads.plex.tv/plex-media-server-new/1.32.8.7639-fb6452ebf/redhat/plexmediaserver-1.32.8.7639-fb6452ebf.x86_64.rpm
 </span></span><span style="display:flex;"><span>yum install plexmediaserver*.rpm
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Debian/Ubuntu系统</span>
-</span></span><span style="display:flex;"><span>apt-get -y update <span style="color:#f92672">&amp;&amp;</span> apt-get -y upgrade
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># Debian/Ubuntu系统</span>
+</span></span><span style="display:flex;"><span>apt-get -y update <span style="color:#ffb8d1">&amp;&amp;</span> apt-get -y upgrade
 </span></span><span style="display:flex;"><span>wget https://downloads.plex.tv/plex-media-server-new/1.32.8.7639-fb6452ebf/debian/plexmediaserver_1.32.8.7639-fb6452ebf_amd64.deb
 </span></span><span style="display:flex;"><span>dpkg -i plexmediaserver*.deb
 </span></span></code></pre></div><p>设置开机自启</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl enable plexmediaserver.service
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl enable plexmediaserver.service
 </span></span><span style="display:flex;"><span>systemctl start plexmediaserver.service
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 状态查询</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 状态查询</span>
 </span></span><span style="display:flex;"><span>systemctl status plexmediaserver.service
 </span></span></code></pre></div><p>安装完成可以通过 <a href="http://ip%E5%9C%B0%E5%9D%80:32400">http://ip地址:32400</a> 进入后台管理，如果运行正常却无法打开，可能是防火墙问题，命令如下，也可以宝塔面板直接放行。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#CentOS 7</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5">#CentOS 7</span>
 </span></span><span style="display:flex;"><span>systemctl stop firewalld.service
 </span></span><span style="display:flex;"><span>systemctl disable firewalld.service
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#其它系统</span>
-</span></span><span style="display:flex;"><span>iptables -I INPUT -p tcp --dport <span style="color:#ae81ff">32400</span> -j ACCEPT
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5">#其它系统</span>
+</span></span><span style="display:flex;"><span>iptables -I INPUT -p tcp --dport <span style="color:#c5a3ff">32400</span> -j ACCEPT
 </span></span><span style="display:flex;"><span>service iptables save                              
 </span></span><span style="display:flex;"><span>service iptables restart
 </span></span></code></pre></div><h3 id="2-后台设置">2. 后台设置</h3>
 <p>安装完成后进入后台会发现无法找到服务器，这是因为 <code>Plex</code> 安全策略，第一次登录只允许本地 <code>IP</code> 可以通过端口转发或隧道转发解决。</p>
 <h4 id="端口转发">端口转发</h4>
 <p>Windows 打开 <code>Power shell</code>，然后通过下列命令连接服务器：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh root@服务器IP -L 8888:localhost:32400
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh root@服务器IP -L 8888:localhost:32400
 </span></span></code></pre></div><p>浏览器打开：<code>http://localhost:8888/web</code> 就可以正常设置。</p>
 <h4 id="隧道转发">隧道转发</h4>
 <p>这里以 <code>FinalShell</code> 为例，ssh 连接设置中添加如下隧道</p>
 <p><img src="https://pic.imgdb.cn/item/65f012c79f345e8d03f8c367.webp" alt="隧道示例"></p>
 <p>连接服务器，浏览器打开 <code>http://localhost:8888/web</code> 即可。</p>
 <h3 id="3-卸载">3. 卸载</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># centos</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># centos</span>
 </span></span><span style="display:flex;"><span>rpm -e plexmediaserver
 </span></span><span style="display:flex;"><span>rm -rf/var/lib/plexmediaserver/
 </span></span><span style="display:flex;"><span>userdel plex
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># ubuntu/debian</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># ubuntu/debian</span>
 </span></span><span style="display:flex;"><span>dpkg -r plexmediaserver
 </span></span><span style="display:flex;"><span>rm -rf /var/lib/plexmediaserver/Library/Application Support/Plex Media Server/
 </span></span></code></pre></div><h2 id="二docker-部署">二、Docker 部署</h2>
 <h3 id="1-安装-docker-和-docker-compose">1. 安装 docker 和 docker-compose</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 卸载旧版本</span>
-</span></span><span style="display:flex;"><span>sudo apt-get remove docker <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>             docker-engine <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>             docker.io
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># 卸载旧版本</span>
+</span></span><span style="display:flex;"><span>sudo apt-get remove docker <span style="color:#1bc5e0">\
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0"></span>             docker-engine <span style="color:#1bc5e0">\
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0"></span>             docker.io
 </span></span><span style="display:flex;"><span>curl -fsSL get.docker.com -o get-docker.sh
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 启动并设置开机自启</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 启动并设置开机自启</span>
 </span></span><span style="display:flex;"><span>sudo systemctl enable docker
 </span></span><span style="display:flex;"><span>sudo systemctl start docker
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 安装 docker-compose</span>
-</span></span><span style="display:flex;"><span>sudo curl -L <span style="color:#e6db74">&#34;https://github.com/docker/compose/releases/download/1.29.1/docker-compose-</span><span style="color:#66d9ef">$(</span>uname -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">-</span><span style="color:#66d9ef">$(</span>uname -m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -o /usr/local/bin/docker-compose
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 安装 docker-compose</span>
+</span></span><span style="display:flex;"><span>sudo curl -L <span style="color:#1bc5e0">&#34;https://github.com/docker/compose/releases/download/1.29.1/docker-compose-</span><span style="color:#c2ffdf">$(</span>uname -s<span style="color:#c2ffdf">)</span><span style="color:#1bc5e0">-</span><span style="color:#c2ffdf">$(</span>uname -m<span style="color:#c2ffdf">)</span><span style="color:#1bc5e0">&#34;</span> -o /usr/local/bin/docker-compose
 </span></span><span style="display:flex;"><span>sudo chmod +x /usr/local/bin/docker-compose
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 可用以下命令测试安装</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 可用以下命令测试安装</span>
 </span></span><span style="display:flex;"><span>docker-compose --version
 </span></span></code></pre></div><h3 id="2-创建目录">2. 创建目录</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mkdir /plex
-</span></span><span style="display:flex;"><span>sudo mkdir /plex/<span style="color:#f92672">{</span>data,tv,movies<span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mkdir /plex
+</span></span><span style="display:flex;"><span>sudo mkdir /plex/<span style="color:#ffb8d1">{</span>data,tv,movies<span style="color:#ffb8d1">}</span>
 </span></span><span style="display:flex;"><span>cd /plex
 </span></span><span style="display:flex;"><span>vim ./docker-compose.yml
 </span></span></code></pre></div><p>粘贴下列命令</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">services</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">plex</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">lscr.io/linuxserver/plex:latest</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">plex</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">network_mode</span>: <span style="color:#ae81ff">host</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">PUID=1000</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">PGID=1000</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">TZ=Asia/Shanghai</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">VERSION=docker</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">PLEX_CLAIM=</span> <span style="color:#75715e">#optional</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/plex/data:/config </span> <span style="color:#75715e"># Library 目录，可能变得很大</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/plex/tv:/tv</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/plex/movies:/movies</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># - /CloudNAS:/CloudNAS    # 这是将 Clouddrive 的挂载目录映射到 plex 容器中，也可以更换            </span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">unless-stopped</span>
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ffb8d1">services</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">  </span><span style="color:#ffb8d1">plex</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">image</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">lscr.io/linuxserver/plex:latest</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">container_name</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">plex</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">network_mode</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">host</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">environment</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">PUID=1000</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">PGID=1000</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">TZ=Asia/Shanghai</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">VERSION=docker</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">PLEX_CLAIM=</span><span style="color:#a8757b"> </span><span style="color:#b0bec5">#optional</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">volumes</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">/plex/data:/config </span><span style="color:#a8757b"> </span><span style="color:#b0bec5"># Library 目录，可能变得很大</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">/plex/tv:/tv</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">/plex/movies:/movies</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#b0bec5"># - /CloudNAS:/CloudNAS    # 这是将 Clouddrive 的挂载目录映射到 plex 容器中，也可以更换            </span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">restart</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">unless-stopped</span><span style="color:#a8757b">
+</span></span></span></code></pre></div><ul>
 <li><code>PUID</code>和<code>PGID</code>用于配置容器内进程的<code>UID</code>和<code>GID</code>，全都设置为 <code>0</code> 表示以<code>root</code>用户运行，如果你这里不是很明白的话可以无脑设置为 <code>0</code> 以避免部分权限问题</li>
 <li><code>PLEX_CLAIM</code>环境变量用于认证自己的服务器，可以从 <strong><a href="https://www.plex.tv/claim/">这里</a></strong> 获取(注意需要可用的plex账号)， 另外 <code>claim</code> 的有效期一般只有 <strong>4</strong> 分钟 ，如果服务器网络不佳，建议先通过执行<code>docker-compose pull</code>拉取镜像之后再获取，防止过期(虽说过期后再重新 claim 也行)</li>
 </ul>
 <h3 id="3-启动容器">3. 启动容器</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up -d
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up -d
 </span></span></code></pre></div><p>浏览器打开 <code>http://IP地址:32400/web</code> 进入后台，出现无法找到服务器同样需要通过映射本地端口。</p>
 <h2 id="三挂载网盘">三、挂载网盘</h2>
 <p><strong>💡 挂载程序有很多，这里以 <code>rclone</code> 和 <code>cloudrive2</code>（推荐）为例。</strong></p>
 <h3 id="1-rclone">1. rclone</h3>
 <p>首先安装依赖和程序</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 安装依赖</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># 安装依赖</span>
 </span></span><span style="display:flex;"><span>apt-get install fuse3
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 安装 rclone</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 安装 rclone</span>
 </span></span><span style="display:flex;"><span>curl https://rclone.org/install.sh | sudo bash
 </span></span></code></pre></div><p>接下来设置 rclone，终端输入 <code>rclone config</code> ，随后输入 <code>n</code> 添加远程设备，这里接下来的代码直接参考别人的：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 选择新远程</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># 选择新远程</span>
 </span></span><span style="display:flex;"><span>No remotes found, make a new one?
-</span></span><span style="display:flex;"><span>n<span style="color:#f92672">)</span> New remote
-</span></span><span style="display:flex;"><span>s<span style="color:#f92672">)</span> Set configuration password
-</span></span><span style="display:flex;"><span>q<span style="color:#f92672">)</span> Quit config
-</span></span><span style="display:flex;"><span>n/s/q&gt; n <span style="color:#75715e">#这里选择n</span>
+</span></span><span style="display:flex;"><span>n<span style="color:#ffb8d1">)</span> New remote
+</span></span><span style="display:flex;"><span>s<span style="color:#ffb8d1">)</span> Set configuration password
+</span></span><span style="display:flex;"><span>q<span style="color:#ffb8d1">)</span> Quit config
+</span></span><span style="display:flex;"><span>n/s/q&gt; n <span style="color:#b0bec5">#这里选择n</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置名字</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 设置名字</span>
 </span></span><span style="display:flex;"><span>name&gt; remote
 </span></span><span style="display:flex;"><span>Type of storage to configure.
 </span></span><span style="display:flex;"><span>Choose a number from below, or type in your own value
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>snip<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">[</span>snip<span style="color:#ffb8d1">]</span>
 </span></span><span style="display:flex;"><span>XX / WebDAV
-</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">\ </span><span style="color:#e6db74">&#34;webdav&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>snip<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>Storage&gt; webdav <span style="color:#75715e">#这里输入远程的名字，之后就是你的远程名称</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#1bc5e0">\ </span><span style="color:#1bc5e0">&#34;webdav&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">[</span>snip<span style="color:#ffb8d1">]</span>
+</span></span><span style="display:flex;"><span>Storage&gt; webdav <span style="color:#b0bec5">#这里输入远程的名字，之后就是你的远程名称</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置远程地址url http://your_alist_ip:port/dav</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 设置远程地址url http://your_alist_ip:port/dav</span>
 </span></span><span style="display:flex;"><span>URL of http host to connect to
 </span></span><span style="display:flex;"><span>Choose a number from below, or type in your own value
-</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">1</span> / Connect to example.com
-</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">\ </span><span style="color:#e6db74">&#34;https://example.com&#34;</span>
-</span></span><span style="display:flex;"><span>url&gt; http://127.0.0.1:5244/dav <span style="color:#75715e">#这里设置alist的地址和端口，后面要带dav，这是alist要求的</span>
+</span></span><span style="display:flex;"><span> <span style="color:#c5a3ff">1</span> / Connect to example.com
+</span></span><span style="display:flex;"><span>   <span style="color:#1bc5e0">\ </span><span style="color:#1bc5e0">&#34;https://example.com&#34;</span>
+</span></span><span style="display:flex;"><span>url&gt; http://127.0.0.1:5244/dav <span style="color:#b0bec5">#这里设置alist的地址和端口，后面要带dav，这是alist要求的</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 这里选6就可以了，1-5都不是我们使用的</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 这里选6就可以了，1-5都不是我们使用的</span>
 </span></span><span style="display:flex;"><span>Name of the WebDAV site/service/software you are using
 </span></span><span style="display:flex;"><span>Choose a number from below, or type in your own value
-</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">1</span> / Fastmail Files
-</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">\ </span><span style="color:#f92672">(</span>fastmail<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">2</span> / Nextcloud
-</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">\ </span><span style="color:#f92672">(</span>nextcloud<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">3</span> / Owncloud
-</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">\ </span><span style="color:#f92672">(</span>owncloud<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">4</span> / Sharepoint Online, authenticated by Microsoft account
-</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">\ </span><span style="color:#f92672">(</span>sharepoint<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">5</span> / Sharepoint with NTLM authentication, usually self-hosted or on-premises
-</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">\ </span><span style="color:#f92672">(</span>sharepoint-ntlm<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">6</span> / Other site/service or software
-</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">\ </span><span style="color:#f92672">(</span>other<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>vendor&gt; <span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span> <span style="color:#c5a3ff">1</span> / Fastmail Files
+</span></span><span style="display:flex;"><span>   <span style="color:#1bc5e0">\ </span><span style="color:#ffb8d1">(</span>fastmail<span style="color:#ffb8d1">)</span>
+</span></span><span style="display:flex;"><span> <span style="color:#c5a3ff">2</span> / Nextcloud
+</span></span><span style="display:flex;"><span>   <span style="color:#1bc5e0">\ </span><span style="color:#ffb8d1">(</span>nextcloud<span style="color:#ffb8d1">)</span>
+</span></span><span style="display:flex;"><span> <span style="color:#c5a3ff">3</span> / Owncloud
+</span></span><span style="display:flex;"><span>   <span style="color:#1bc5e0">\ </span><span style="color:#ffb8d1">(</span>owncloud<span style="color:#ffb8d1">)</span>
+</span></span><span style="display:flex;"><span> <span style="color:#c5a3ff">4</span> / Sharepoint Online, authenticated by Microsoft account
+</span></span><span style="display:flex;"><span>   <span style="color:#1bc5e0">\ </span><span style="color:#ffb8d1">(</span>sharepoint<span style="color:#ffb8d1">)</span>
+</span></span><span style="display:flex;"><span> <span style="color:#c5a3ff">5</span> / Sharepoint with NTLM authentication, usually self-hosted or on-premises
+</span></span><span style="display:flex;"><span>   <span style="color:#1bc5e0">\ </span><span style="color:#ffb8d1">(</span>sharepoint-ntlm<span style="color:#ffb8d1">)</span>
+</span></span><span style="display:flex;"><span> <span style="color:#c5a3ff">6</span> / Other site/service or software
+</span></span><span style="display:flex;"><span>   <span style="color:#1bc5e0">\ </span><span style="color:#ffb8d1">(</span>other<span style="color:#ffb8d1">)</span>
+</span></span><span style="display:flex;"><span>vendor&gt; <span style="color:#c5a3ff">6</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置远程账号</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 设置远程账号</span>
 </span></span><span style="display:flex;"><span>User name
-</span></span><span style="display:flex;"><span>user&gt; admin <span style="color:#75715e">#这里是你alist的密码</span>
+</span></span><span style="display:flex;"><span>user&gt; admin <span style="color:#b0bec5">#这里是你alist的密码</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置远程密码</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 设置远程密码</span>
 </span></span><span style="display:flex;"><span>Password.
-</span></span><span style="display:flex;"><span>y<span style="color:#f92672">)</span> Yes type in my own password
-</span></span><span style="display:flex;"><span>g<span style="color:#f92672">)</span> Generate random password
-</span></span><span style="display:flex;"><span>n<span style="color:#f92672">)</span> No leave this optional password blank
-</span></span><span style="display:flex;"><span>y/g/n&gt; y <span style="color:#75715e">#这里输入y</span>
-</span></span><span style="display:flex;"><span>Enter the password: <span style="color:#75715e">#这输入你的密码，密码是看不到的</span>
+</span></span><span style="display:flex;"><span>y<span style="color:#ffb8d1">)</span> Yes type in my own password
+</span></span><span style="display:flex;"><span>g<span style="color:#ffb8d1">)</span> Generate random password
+</span></span><span style="display:flex;"><span>n<span style="color:#ffb8d1">)</span> No leave this optional password blank
+</span></span><span style="display:flex;"><span>y/g/n&gt; y <span style="color:#b0bec5">#这里输入y</span>
+</span></span><span style="display:flex;"><span>Enter the password: <span style="color:#b0bec5">#这输入你的密码，密码是看不到的</span>
 </span></span><span style="display:flex;"><span>password:
-</span></span><span style="display:flex;"><span>Confirm the password: <span style="color:#75715e">#再次输入你的密码</span>
+</span></span><span style="display:flex;"><span>Confirm the password: <span style="color:#b0bec5">#再次输入你的密码</span>
 </span></span><span style="display:flex;"><span>password:
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 这里直接回车即可</span>
-</span></span><span style="display:flex;"><span>Bearer token instead of user/pass <span style="color:#f92672">(</span>e.g. a Macaroon<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 这里直接回车即可</span>
+</span></span><span style="display:flex;"><span>Bearer token instead of user/pass <span style="color:#ffb8d1">(</span>e.g. a Macaroon<span style="color:#ffb8d1">)</span>
 </span></span><span style="display:flex;"><span>bearer_token&gt;
 </span></span><span style="display:flex;"><span>Remote config
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 这里可能会问你是默认还是高级，选择默认即可</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 这里可能会问你是默认还是高级，选择默认即可</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 你的远程信息</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 你的远程信息</span>
 </span></span><span style="display:flex;"><span>--------------------
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>remote<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>type <span style="color:#f92672">=</span> webdav
-</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> http://127.0.0.1:5244/dav
-</span></span><span style="display:flex;"><span>vendor <span style="color:#f92672">=</span> Other
-</span></span><span style="display:flex;"><span>user <span style="color:#f92672">=</span> admin
-</span></span><span style="display:flex;"><span>pass <span style="color:#f92672">=</span> *** ENCRYPTED ***
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">[</span>remote<span style="color:#ffb8d1">]</span>
+</span></span><span style="display:flex;"><span>type <span style="color:#ffb8d1">=</span> webdav
+</span></span><span style="display:flex;"><span>url <span style="color:#ffb8d1">=</span> http://127.0.0.1:5244/dav
+</span></span><span style="display:flex;"><span>vendor <span style="color:#ffb8d1">=</span> Other
+</span></span><span style="display:flex;"><span>user <span style="color:#ffb8d1">=</span> admin
+</span></span><span style="display:flex;"><span>pass <span style="color:#ffb8d1">=</span> *** ENCRYPTED ***
 </span></span><span style="display:flex;"><span>--------------------
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 确认</span>
-</span></span><span style="display:flex;"><span>y<span style="color:#f92672">)</span> Yes this is OK
-</span></span><span style="display:flex;"><span>e<span style="color:#f92672">)</span> Edit this remote
-</span></span><span style="display:flex;"><span>d<span style="color:#f92672">)</span> Delete this remote
-</span></span><span style="display:flex;"><span>y/e/d&gt; y <span style="color:#75715e">#输入y即可，</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 确认</span>
+</span></span><span style="display:flex;"><span>y<span style="color:#ffb8d1">)</span> Yes this is OK
+</span></span><span style="display:flex;"><span>e<span style="color:#ffb8d1">)</span> Edit this remote
+</span></span><span style="display:flex;"><span>d<span style="color:#ffb8d1">)</span> Delete this remote
+</span></span><span style="display:flex;"><span>y/e/d&gt; y <span style="color:#b0bec5">#输入y即可，</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 最后按q退出设置</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 最后按q退出设置</span>
 </span></span></code></pre></div><p>连接后需要挂载到本地，输入如下命令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 最后的 daemon 是后台挂载</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># 最后的 daemon 是后台挂载</span>
 </span></span><span style="display:flex;"><span>rclone mount 远程网盘名字:/ /本地挂载地址 --cache-dir /tmp --allow-other --vfs-cache-mode writes --allow-non-empty --daemon
 </span></span></code></pre></div><p>这样虽然后台挂载了，但是每次重启都需要重新运行，我们可以设置一个开机自启的文件：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#创建service文件</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5">#创建service文件</span>
 </span></span><span style="display:flex;"><span>vim /usr/lib/systemd/system/rclone.service
 </span></span></code></pre></div><p>输入如下内容：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>Unit<span style="color:#f92672">]</span> 
-</span></span><span style="display:flex;"><span>Description<span style="color:#f92672">=</span>rclone 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ffb8d1">[</span>Unit<span style="color:#ffb8d1">]</span> 
+</span></span><span style="display:flex;"><span>Description<span style="color:#ffb8d1">=</span>rclone 
 </span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Service<span style="color:#f92672">]</span> 
-</span></span><span style="display:flex;"><span>User<span style="color:#f92672">=</span>root 
-</span></span><span style="display:flex;"><span>ExecStart<span style="color:#f92672">=</span>/usr/bin/rclone mount 远程网盘名字:/ /本地挂载目录 --cache-dir /tmp --allow-other --vfs-cache-mode writes --allow-non-empty --daemon
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Install<span style="color:#f92672">]</span> 
-</span></span><span style="display:flex;"><span>WantedBy<span style="color:#f92672">=</span>multi-user.target
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">[</span>Service<span style="color:#ffb8d1">]</span> 
+</span></span><span style="display:flex;"><span>User<span style="color:#ffb8d1">=</span>root 
+</span></span><span style="display:flex;"><span>ExecStart<span style="color:#ffb8d1">=</span>/usr/bin/rclone mount 远程网盘名字:/ /本地挂载目录 --cache-dir /tmp --allow-other --vfs-cache-mode writes --allow-non-empty --daemon
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">[</span>Install<span style="color:#ffb8d1">]</span> 
+</span></span><span style="display:flex;"><span>WantedBy<span style="color:#ffb8d1">=</span>multi-user.target
 </span></span></code></pre></div><p>重载配置文件，并设置开机自启：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># reload守护进程</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># reload守护进程</span>
 </span></span><span style="display:flex;"><span>systemctl daemon-reload
 </span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置service文件自启</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 设置service文件自启</span>
 </span></span><span style="display:flex;"><span>systemctl enable rclone.service
 </span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 启动service文件</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 启动service文件</span>
 </span></span><span style="display:flex;"><span>systemctl start rclone.service
 </span></span></code></pre></div><h3 id="2-clouddrive2">2. Clouddrive2</h3>
 <p><code>rclone</code> 需要命令行操作，并且使用过程中出现了一些问题，这里推荐另一种有 <code>web</code> 界面的挂载方式 <code>clouddrive2</code>，官网地址如下：</p>
@@ -788,17 +788,17 @@
 <ol>
 <li><strong>安装命令</strong></li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 国内加速(推荐)</span>
-</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#e6db74">&#34;https://mirror.ghproxy.com/https://raw.githubusercontent.com/sublaim/clouddrive2/main/cd2.sh&#34;</span> | bash -s install mirror
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 代理</span>
-</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/sublaim/clouddrive2/main/cd2.sh&#34;</span> | bash -s install
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># 国内加速(推荐)</span>
+</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#1bc5e0">&#34;https://mirror.ghproxy.com/https://raw.githubusercontent.com/sublaim/clouddrive2/main/cd2.sh&#34;</span> | bash -s install mirror
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 代理</span>
+</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#1bc5e0">&#34;https://raw.githubusercontent.com/sublaim/clouddrive2/main/cd2.sh&#34;</span> | bash -s install
 </span></span></code></pre></div><ol start="2">
 <li><strong>卸载命令</strong></li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 国内加速(推荐)</span>
-</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#e6db74">&#34;https://mirror.ghproxy.com/https://raw.githubusercontent.com/sublaim/clouddrive2/main/cd2.sh&#34;</span> | bash -s uninstall mirror
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 代理</span>
-</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/sublaim/clouddrive2/main/cd2.sh&#34;</span> | bash -s uninstall
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># 国内加速(推荐)</span>
+</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#1bc5e0">&#34;https://mirror.ghproxy.com/https://raw.githubusercontent.com/sublaim/clouddrive2/main/cd2.sh&#34;</span> | bash -s uninstall mirror
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 代理</span>
+</span></span><span style="display:flex;"><span>curl -fsSL <span style="color:#1bc5e0">&#34;https://raw.githubusercontent.com/sublaim/clouddrive2/main/cd2.sh&#34;</span> | bash -s uninstall
 </span></span></code></pre></div><blockquote>
 <p>💡 <strong>注意：如果 <code>plex</code> 是通过 <code>docker</code> 安装的，需要添加 <code>-v</code> 参数，将 <code>clouddrive2</code> 映射的目录映射到 <code>plex</code> 中。</strong></p>
 </blockquote>
@@ -863,17 +863,17 @@
 
 
 <script src="https://giscus.app/client.js"
-        data-repo="username/repo"
-        data-repo-id="**************************"
-        data-category="General"
-        data-category-id="*********************"
+        data-repo="tom2almighty/giscus"
+        data-repo-id="R_kgDOMhXXdQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMhXXdc4Chgn1"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
         data-theme="preferred_color_scheme"
-        data-lang="en"
+        data-lang="zh-CN"
         crossorigin="anonymous"
         async>
 </script>
@@ -909,7 +909,7 @@
             
             
             <a class="a-block nav-link-item active" href="/posts">
-                归档 | Archive
+                归档
             </a>
             
         
@@ -919,7 +919,7 @@
             
             
             <a class="a-block nav-link-item false" href="/categories">
-                分类 | Categories
+                分类
             </a>
             
         
@@ -929,7 +929,7 @@
             
             
             <a class="a-block nav-link-item false" href="/tags">
-                标签 | Tags
+                标签
             </a>
             
         
@@ -939,7 +939,7 @@
             
             
             <a class="a-block nav-link-item false" href="/index.xml">
-                RSS Feed
+                聚合
             </a>
             
         

@@ -14,7 +14,7 @@
       <link>http://localhost:1313/posts/navidrome/</link>
       <pubDate>Sat, 04 May 2024 10:28:07 +0000</pubDate>
       <guid>http://localhost:1313/posts/navidrome/</guid>
-      <description>前言 最开始用网易云音乐，但很多歌曲没了版权，后来用了 Apple Music 学生会员，之后一直在使用 Spotify，体验很好，无意发现这个开源项目，因此试着体验并记录一下。&#xA;本次所使用的项目： {% ghcard navidrome/navidrome, theme=onedark %} {% ghcard gitbobobo/StreamMusic, theme=onedark %} {% ghcard spotDL/spotify-downloader, theme=onedark %}&#xA;Navidrome 部署 Navidrome 是一开源的音乐服务器，可以在任何设备随时收听音乐，就像个人版 Spotify。 特点如下：&#xA;几乎可以传输任何可用的音频格式 读取并使用所有元数据 对合辑（各种艺术家专辑）等支持 多用户，每个用户都有自己的播放次数、播放列表、收藏夹等&amp;hellip; 资源使用率极低 多平台，可在 macOS、Linux 和 Windows 上运行。还提供了 Docker 镜像。 适用于所有主要平台的现成二进制文件，包括 Raspberry Pi 自动监控库的更改、导入新文件并重新加载新元数据 基于 Material UI 的主题化、现代且响应式 Web 界面 与所有 Subsonic/Madsonic/Airsonic 客户端兼容 即时转码。可以为每个用户设置。支持 Opus 编码 翻译成多种语言 Docker 部署 推荐使用 Docker 部署，docker-compose.yaml 文件如下：&#xA;version: &amp;#34;3&amp;#34; services: navidrome: image: deluan/navidrome:latest user: 1000:1000 # should be owner of volumes ports: - &amp;#34;4533:4533&amp;#34; restart: unless-stopped environment: # Optional: put your config options customization here.</description>
+      <description>前言 最开始用网易云音乐，但很多歌曲没了版权，后来用了 Apple Music 学生会员，之后一直在使用 Spotify，体验很好，无意发现这个开源项目，因此试着体验</description>
     </item>
   </channel>
 </rss>

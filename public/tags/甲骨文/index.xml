@@ -14,7 +14,7 @@
       <link>http://localhost:1313/posts/oracle/</link>
       <pubDate>Tue, 27 Feb 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/oracle/</guid>
-      <description>前言 甲骨文没法直接重装系统，因此这里记录一下甲骨文相关问题。&#xA;开启 root 登录 vim /etc/ssh/sshd_config PermitRootLogin yes PasswordAuthentication yes systemctl restart sshd.service 卸载相关程序 pcbind systemctl stop rpcbind systemctl stop rpcbind.socket systemctl disable rpcbind systemctl disable rpcbind.socket oracle-cloud-agent systemctl stop oracle-cloud-agent systemctl disable oracle-cloud-agent systemctl stop oracle-cloud-agent-updater systemctl disable oracle-cloud-agent-updater 防火墙相关 停止 firewall 并禁止开机启动 systemctl stop firewalld.service systemctl disable firewalld.service ubuntu 开放所有端口&#xA;iptables -P INPUT ACCEPT iptables -P FORWARD ACCEPT iptables -P OUTPUT ACCEPT iptables -F 清除 iptables 规则</description>
+      <description>前言 甲骨文没法直接重装系统，因此这里记录一下甲骨文相关问题。 开启 root 登录 vim /etc/ssh/sshd_config PermitRootLogin yes PasswordAuthentication yes systemctl restart sshd.service 卸载相关程序 pcbind systemctl stop rpcbind systemctl stop rpcbind.socket systemctl disable rpcbind systemctl disable rpcbind.socket oracle-cloud-agent systemctl stop oracle-cloud-agent systemctl disable oracle-cloud-agent</description>
     </item>
   </channel>
 </rss>

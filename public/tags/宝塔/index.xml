@@ -14,7 +14,7 @@
       <link>http://localhost:1313/posts/npm/</link>
       <pubDate>Thu, 09 May 2024 12:14:50 +0000</pubDate>
       <guid>http://localhost:1313/posts/npm/</guid>
-      <description>前言 由于低版本的宝塔面板存在漏洞，高版本需要绑定手机，且占用较高，加上自己的服务大多是 Docker 部署，因此直接使用反向代理的面板更加方便。 Nginx Proxy Manager 是一个 Nginx 的代理管理器，简单方便，并且支持一键申请证书、自动续期。 项目地址如下： {% ghcard NginxProxyManager/nginx-proxy-manager, theme=onedark%}&#xA;部署 使用 Docker 部署，命令如下：&#xA;mkdir /opt/npm &amp;amp;&amp;amp; cd /opt/npm &amp;amp;&amp;amp; cat &amp;lt;&amp;lt; EOF &amp;gt; docker-compose.yml version: &amp;#39;3.8&amp;#39; services: app: image: &amp;#39;docker.io/jc21/nginx-proxy-manager:latest&amp;#39; restart: unless-stopped ports: - &amp;#39;80:80&amp;#39; - &amp;#39;81:81&amp;#39; - &amp;#39;443:443&amp;#39; volumes: - ./data:/data - ./letsencrypt:/etc/letsencrypt EOF docker compose up -d 安装完成后可以使用 http://IP:81 访问后台，默认的用户名密码如下：&#xA;Email: admin@example.com Password: changeme 修改后即可正常使用，建议给后台地址反向代理。&#xA;反向代理 添加网站 主界面点击 Proxy Host- Add Proxy Host {% note success flat %} 三个选项可以自己选择是否开启</description>
+      <description>前言 由于低版本的宝塔面板存在漏洞，高版本需要绑定手机，且占用较高，加上自己的服务大多是 Docker 部署，因此直接使用反向代理的面板更加方便。 Nginx Proxy Manager 是一</description>
     </item>
   </channel>
 </rss>

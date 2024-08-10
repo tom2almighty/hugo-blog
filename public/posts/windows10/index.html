@@ -45,7 +45,7 @@
 
 
 
-<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -53,7 +53,7 @@
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.3ff4589617589a2f28f0f5b8d71dc2fdc6c9ee7e5a224c13c2cf0d276305ca38.css" integrity="sha256-P/RYlhdYmi8o8PW41x3C/cbJ7n5aIkwTws8NJ2MFyjg=" media="screen">
 
 
 <link rel="stylesheet"
@@ -95,7 +95,7 @@
                 
                 
                 <a class="a-block drawer-menu-item active" href="/posts">
-                    归档 | Archive
+                    归档
                 </a>
                 
             
@@ -105,7 +105,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/categories">
-                    分类 | Categories
+                    分类
                 </a>
                 
             
@@ -115,7 +115,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/tags">
-                    标签 | Tags
+                    标签
                 </a>
                 
             
@@ -125,7 +125,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/index.xml">
-                    RSS Feed
+                    聚合
                 </a>
                 
             
@@ -475,47 +475,47 @@
                 
                     <h2 id="删除自带输入法"><strong>删除自带输入法</strong></h2>
 <p>删除以下注册表</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\CTF\\\\TIP
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\CTF\\\\TIP
 </span></span><span style="display:flex;"><span> 
 </span></span><span style="display:flex;"><span>{81d4e9c9-1d3b-41bc-9e6c-4b40bf79e35e}
 </span></span></code></pre></div><h2 id="linux--windows-双系统时间问题"><strong>Linux + Windows 双系统时间问题</strong></h2>
 <p>Windows 下以管理员身份打开命令行窗口</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Reg add HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Control\\\\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d <span style="color:#ae81ff">1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Reg add HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Control\\\\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d <span style="color:#c5a3ff">1</span>
 </span></span></code></pre></div><h2 id="解决部分图标加载不出来"><strong>解决部分图标加载不出来</strong></h2>
 <ol>
 <li>在桌面新建文本文档，复制以下代码</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rem 关闭Windows外壳程序explorer
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rem 关闭Windows外壳程序explorer
 </span></span><span style="display:flex;"><span> 
 </span></span><span style="display:flex;"><span>taskkill /f /im explorer.exe
 </span></span><span style="display:flex;"><span> 
 </span></span><span style="display:flex;"><span>rem 清理系统图标缓存数据库
 </span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>attrib -h -s -r <span style="color:#e6db74">&#34;%userprofile%\\\\AppData\\\\Local\\\\IconCache.db&#34;</span>
+</span></span><span style="display:flex;"><span>attrib -h -s -r <span style="color:#1bc5e0">&#34;%userprofile%\\\\AppData\\\\Local\\\\IconCache.db&#34;</span>
 </span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>del /f <span style="color:#e6db74">&#34;%userprofile%\\\\AppData\\\\Local\\\\IconCache.db&#34;</span>
+</span></span><span style="display:flex;"><span>del /f <span style="color:#1bc5e0">&#34;%userprofile%\\\\AppData\\\\Local\\\\IconCache.db&#34;</span>
 </span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>attrib /s /d -h -s -r <span style="color:#e6db74">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\*&#34;</span>
+</span></span><span style="display:flex;"><span>attrib /s /d -h -s -r <span style="color:#1bc5e0">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\*&#34;</span>
 </span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>del /f <span style="color:#e6db74">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_32.db&#34;</span>
+</span></span><span style="display:flex;"><span>del /f <span style="color:#1bc5e0">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_32.db&#34;</span>
 </span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>del /f <span style="color:#e6db74">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_96.db&#34;</span>
+</span></span><span style="display:flex;"><span>del /f <span style="color:#1bc5e0">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_96.db&#34;</span>
 </span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>del /f <span style="color:#e6db74">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_102.db&#34;</span>
+</span></span><span style="display:flex;"><span>del /f <span style="color:#1bc5e0">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_102.db&#34;</span>
 </span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>del /f <span style="color:#e6db74">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_256.db&#34;</span>
+</span></span><span style="display:flex;"><span>del /f <span style="color:#1bc5e0">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_256.db&#34;</span>
 </span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>del /f <span style="color:#e6db74">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_1024.db&#34;</span>
+</span></span><span style="display:flex;"><span>del /f <span style="color:#1bc5e0">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_1024.db&#34;</span>
 </span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>del /f <span style="color:#e6db74">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_idx.db&#34;</span>
+</span></span><span style="display:flex;"><span>del /f <span style="color:#1bc5e0">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_idx.db&#34;</span>
 </span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>del /f <span style="color:#e6db74">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_sr.db&#34;</span>
+</span></span><span style="display:flex;"><span>del /f <span style="color:#1bc5e0">&#34;%userprofile%\\\\AppData\\\\Local\\\\Microsoft\\\\Windows\\\\Explorer\\\\thumbcache_sr.db&#34;</span>
 </span></span><span style="display:flex;"><span> 
 </span></span><span style="display:flex;"><span>rem 清理 系统托盘记忆的图标
 </span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>echo y|reg delete <span style="color:#e6db74">&#34;HKEY_CLASSES_ROOT\\\\Local Settings\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\TrayNotify&#34;</span> /v IconStreams
+</span></span><span style="display:flex;"><span>echo y|reg delete <span style="color:#1bc5e0">&#34;HKEY_CLASSES_ROOT\\\\Local Settings\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\TrayNotify&#34;</span> /v IconStreams
 </span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>echo y|reg delete <span style="color:#e6db74">&#34;HKEY_CLASSES_ROOT\\\\Local Settings\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\TrayNotify&#34;</span> /v PastIconsStream
+</span></span><span style="display:flex;"><span>echo y|reg delete <span style="color:#1bc5e0">&#34;HKEY_CLASSES_ROOT\\\\Local Settings\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\TrayNotify&#34;</span> /v PastIconsStream
 </span></span><span style="display:flex;"><span> 
 </span></span><span style="display:flex;"><span>rem 重启Windows外壳程序explorer
 </span></span><span style="display:flex;"><span> 
@@ -539,7 +539,7 @@
 <h2 id="网络连接问题"><strong>网络连接问题</strong></h2>
 <p>win10 18362版本后连接WiFi后可能出现已连接网络但显示未连接的情况，虽然仍能正常访问网络，但部分情境下可能受限，解决方法如下：</p>
 <p>找到如下注册表：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ae81ff">\H</span>KEY_LOCAL_MACHINE<span style="color:#ae81ff">\S</span>YSTEM<span style="color:#ae81ff">\C</span>urrentControlSet<span style="color:#ae81ff">\S</span>ervices<span style="color:#ae81ff">\N</span>laSvc<span style="color:#ae81ff">\P</span>arameters<span style="color:#ae81ff">\I</span>nternet
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#1bc5e0">\H</span>KEY_LOCAL_MACHINE<span style="color:#1bc5e0">\S</span>YSTEM<span style="color:#1bc5e0">\C</span>urrentControlSet<span style="color:#1bc5e0">\S</span>ervices<span style="color:#1bc5e0">\N</span>laSvc<span style="color:#1bc5e0">\P</span>arameters<span style="color:#1bc5e0">\I</span>nternet
 </span></span></code></pre></div><p>修改如下项目值为右侧内容：</p>
 <pre tabindex="0"><code>ActiveWebProbeContent        →     Microsoft NCSI
 ActiveWebProbeContentV6      →     Microsoft NCSI
@@ -554,7 +554,7 @@ EnableActiveProbing          →     1
 <h2 id="安全中心"><strong>安全中心</strong></h2>
 <p><code>windows11</code>部分精简系统重启后任务栏会出现安全中心图标，删除方法如下：</p>
 <p>以管理员身份运行终端，粘贴如下内容回车：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>reg delete HKEY_LOCAL_MACHINE<span style="color:#ae81ff">\S</span>OFTWARE<span style="color:#ae81ff">\M</span>icrosoft<span style="color:#ae81ff">\W</span>indows<span style="color:#ae81ff">\C</span>urrentVersion<span style="color:#ae81ff">\R</span>un /v <span style="color:#e6db74">&#34;SecurityHealth&#34;</span> /f
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>reg delete HKEY_LOCAL_MACHINE<span style="color:#1bc5e0">\S</span>OFTWARE<span style="color:#1bc5e0">\M</span>icrosoft<span style="color:#1bc5e0">\W</span>indows<span style="color:#1bc5e0">\C</span>urrentVersion<span style="color:#1bc5e0">\R</span>un /v <span style="color:#1bc5e0">&#34;SecurityHealth&#34;</span> /f
 </span></span></code></pre></div><h2 id="hevc-插件地址"><strong>HEVC 插件地址</strong></h2>
 <p><a href="https://www.microsoft.com/store/productId/9N4WGH0Z6VHQ">HEVC</a></p>
 <h2 id="win11跳过开机联网"><strong>win11跳过开机联网</strong></h2>
@@ -563,19 +563,19 @@ EnableActiveProbing          →     1
 # 注意：不需要区分大小写
 </code></pre><h2 id="ltsc版本安装-microsoft-store"><strong>LTSC版本安装 Microsoft Store</strong></h2>
 <p>管理员身份运行 <code>cmd</code>，输入以下内容：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsreset -i
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wsreset -i
 </span></span></code></pre></div><blockquote>
 <p>适用于 LTSC2021 以及 LTSC2019，自行测试。</p>
 </blockquote>
 <h2 id="exe-病毒解决">EXE 病毒解决</h2>
 <p>创建两个文件依次执行：
 创建 <code>1.reg</code> 并执行</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Windows Registry Editor Version 5.00 
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>HKEY_LOCAL_ MACHINE <span style="color:#ae81ff">\S</span>OFTWARE<span style="color:#ae81ff">\M</span>icrosoft<span style="color:#ae81ff">\W</span>indows<span style="color:#ae81ff">\C</span>urrentVersion
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">\E</span>xplorer<span style="color:#ae81ff">\A</span>dvanced<span style="color:#ae81ff">\F</span>older<span style="color:#ae81ff">\H</span>idden
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">\S</span>HOWALL<span style="color:#f92672">]</span> <span style="color:#e6db74">&#34;CheckedValue&#34;</span><span style="color:#f92672">=</span>dword:00000001
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Windows Registry Editor Version 5.00 
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">[</span>HKEY_LOCAL_ MACHINE <span style="color:#1bc5e0">\S</span>OFTWARE<span style="color:#1bc5e0">\M</span>icrosoft<span style="color:#1bc5e0">\W</span>indows<span style="color:#1bc5e0">\C</span>urrentVersion
+</span></span><span style="display:flex;"><span><span style="color:#1bc5e0">\E</span>xplorer<span style="color:#1bc5e0">\A</span>dvanced<span style="color:#1bc5e0">\F</span>older<span style="color:#1bc5e0">\H</span>idden
+</span></span><span style="display:flex;"><span><span style="color:#1bc5e0">\S</span>HOWALL<span style="color:#ffb8d1">]</span> <span style="color:#1bc5e0">&#34;CheckedValue&#34;</span><span style="color:#ffb8d1">=</span>dword:00000001
 </span></span></code></pre></div><p>创建 <code>2.bat</code> 并执行</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> /f <span style="color:#e6db74">&#34;delims=&#34;</span> %%i in <span style="color:#f92672">(</span><span style="color:#e6db74">&#39;dir /ah /s/b&#39;</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">do</span> attrib <span style="color:#e6db74">&#34;%%i&#34;</span> -s -h
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#c2ffdf">for</span> /f <span style="color:#1bc5e0">&#34;delims=&#34;</span> %%i in <span style="color:#ffb8d1">(</span><span style="color:#1bc5e0">&#39;dir /ah /s/b&#39;</span><span style="color:#ffb8d1">)</span> <span style="color:#c2ffdf">do</span> attrib <span style="color:#1bc5e0">&#34;%%i&#34;</span> -s -h
 </span></span></code></pre></div><h2 id="参考"><strong>参考</strong></h2>
 <ul>
 <li>重启资源管理器：<a href="https://blog.csdn.net/win_turn/article/details/73612220">原文</a></li>
@@ -622,17 +622,17 @@ EnableActiveProbing          →     1
 
 
 <script src="https://giscus.app/client.js"
-        data-repo="username/repo"
-        data-repo-id="**************************"
-        data-category="General"
-        data-category-id="*********************"
+        data-repo="tom2almighty/giscus"
+        data-repo-id="R_kgDOMhXXdQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMhXXdc4Chgn1"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
         data-theme="preferred_color_scheme"
-        data-lang="en"
+        data-lang="zh-CN"
         crossorigin="anonymous"
         async>
 </script>
@@ -668,7 +668,7 @@ EnableActiveProbing          →     1
             
             
             <a class="a-block nav-link-item active" href="/posts">
-                归档 | Archive
+                归档
             </a>
             
         
@@ -678,7 +678,7 @@ EnableActiveProbing          →     1
             
             
             <a class="a-block nav-link-item false" href="/categories">
-                分类 | Categories
+                分类
             </a>
             
         
@@ -688,7 +688,7 @@ EnableActiveProbing          →     1
             
             
             <a class="a-block nav-link-item false" href="/tags">
-                标签 | Tags
+                标签
             </a>
             
         
@@ -698,7 +698,7 @@ EnableActiveProbing          →     1
             
             
             <a class="a-block nav-link-item false" href="/index.xml">
-                RSS Feed
+                聚合
             </a>
             
         

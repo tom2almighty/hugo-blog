@@ -14,7 +14,7 @@
       <link>http://localhost:1313/posts/umami/</link>
       <pubDate>Mon, 06 May 2024 10:01:11 +0000</pubDate>
       <guid>http://localhost:1313/posts/umami/</guid>
-      <description>前言 Umami 是一款开源的、注重隐私的网站流量统计分析工具，可以方便直观的观察到网站数据，并且不像谷歌统计过多地收集用户的隐私信息，而自建服务可以避免 Adblock 插件屏蔽导致统计不准的问题。 仓库地址如下： {% ghcard umami-software/umami, theme=onedark %} 部署所用工具：&#xA;Github Vercel Supabase 部署 Vercel 首先 Fork Umami 的仓库，然后在 Supabase 新建一个项目，记住数据库密码，待项目新建完毕后，进入项目，依次点击 Project Settings-Database，在 Connecting string 复制 URL。 接下来在 Vercel 新建一个项目，导入 Github Fork 的仓库，添加下面的环境变量：&#xA;NAME VALUE DATABASE_URL 复制的 URL TRACKER_SCRIPT_NAME 自定义脚本名称，如 myscript COLLECT_API_ENDPOINT 自定义 endpoint 路径，如 /api/mycol HASH_SALT 随机字符串 {% note info flat %} 将复制的 url 中 [YOUR-PASSWORD] 换位数据库的密码，并在 url 最后添加 ?pgbouncer=true，最终链接如下形式： postgres://postgres.xxxxxxxxxxxx:[YOUR-PASSWORD]@aws-0-us-east-1.pooler.supabase.com:5432/postgres?pgbouncer=true {% endnote %}&#xA;待部署完成后须添加自定义域名，否则 Vercel 域名被墙，会无法正常使用，打开部署的网站后，默认用户名为 admin，默认密码为 umami。 添加网站后在设置-网站-跟踪代码 处复制统计代码，添加到自己网站 &amp;lt;/body&amp;gt;前即可。 Docker docker-compose 文件如下：</description>
+      <description>前言 Umami 是一款开源的、注重隐私的网站流量统计分析工具，可以方便直观的观察到网站数据，并且不像谷歌统计过多地收集用户的隐私信息，而自建服务可以避</description>
     </item>
   </channel>
 </rss>

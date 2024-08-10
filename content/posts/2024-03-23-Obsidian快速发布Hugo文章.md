@@ -4,7 +4,7 @@ date: 2024-03-23 13:13:25+08:00
 description: 使用 `Obsidian` 配合 `Shell commands` 插件快速创建文章并预览发布
 featured_image: https://r2.grew.cc/2024/07/67bf37b865eb80925e38e747c0e355a5.webp
 lastmod: 2024-03-23 13:13:25+08:00
-slug: Obsidian快速发布hugo文章
+slug: obsidian-hugo
 tags:
 - Hugo
 - Obsidian

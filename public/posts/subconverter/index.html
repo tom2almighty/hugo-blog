@@ -48,7 +48,7 @@
 
 
 
-<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -56,7 +56,7 @@
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.3ff4589617589a2f28f0f5b8d71dc2fdc6c9ee7e5a224c13c2cf0d276305ca38.css" integrity="sha256-P/RYlhdYmi8o8PW41x3C/cbJ7n5aIkwTws8NJ2MFyjg=" media="screen">
 
 
 <link rel="stylesheet"
@@ -98,7 +98,7 @@
                 
                 
                 <a class="a-block drawer-menu-item active" href="/posts">
-                    归档 | Archive
+                    归档
                 </a>
                 
             
@@ -108,7 +108,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/categories">
-                    分类 | Categories
+                    分类
                 </a>
                 
             
@@ -118,7 +118,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/tags">
-                    标签 | Tags
+                    标签
                 </a>
                 
             
@@ -128,7 +128,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/index.xml">
-                    RSS Feed
+                    聚合
                 </a>
                 
             
@@ -666,10 +666,10 @@
 <p>后端：<a href="https://github.com/tindy2013/subconverter">subconverter</a></p>
 <h3 id="一键脚本安装">一键脚本安装</h3>
 <p>网上找到的一键脚本：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># ubuntu</span>
-</span></span><span style="display:flex;"><span>apt-get install -y wget <span style="color:#f92672">&amp;&amp;</span> wget -O install.sh https://cdn.mxlong.com/install/subweb/install.sh <span style="color:#f92672">&amp;&amp;</span> chmod +x ./install.sh <span style="color:#f92672">&amp;&amp;</span> ./install.sh
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># centos</span>
-</span></span><span style="display:flex;"><span>yum install -y wget <span style="color:#f92672">&amp;&amp;</span> wget -O install.sh https://cdn.mxlong.com/install/subweb/install.sh <span style="color:#f92672">&amp;&amp;</span> chmod +x ./install.sh <span style="color:#f92672">&amp;&amp;</span> ./install.sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># ubuntu</span>
+</span></span><span style="display:flex;"><span>apt-get install -y wget <span style="color:#ffb8d1">&amp;&amp;</span> wget -O install.sh https://cdn.mxlong.com/install/subweb/install.sh <span style="color:#ffb8d1">&amp;&amp;</span> chmod +x ./install.sh <span style="color:#ffb8d1">&amp;&amp;</span> ./install.sh
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># centos</span>
+</span></span><span style="display:flex;"><span>yum install -y wget <span style="color:#ffb8d1">&amp;&amp;</span> wget -O install.sh https://cdn.mxlong.com/install/subweb/install.sh <span style="color:#ffb8d1">&amp;&amp;</span> chmod +x ./install.sh <span style="color:#ffb8d1">&amp;&amp;</span> ./install.sh
 </span></span></code></pre></div><blockquote>
 <p>脚本中的后端并不是原作者的后端，如有需要可以自行更换脚本中的下载地址。</p>
 </blockquote>
@@ -677,11 +677,11 @@
 <h4 id="后端搭建">后端搭建</h4>
 <p>首先解析一个域名用作后端访问，这里以 <code>backend.domain.com</code> 为例，实际以自己的域名为准。</p>
 <p>连接VPS后，下载并解压后端程序，可以使用如下命令，也可以使用宝塔面板，下载程序后解压。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /opt <span style="color:#75715e"># 这里是程序安装目录，可以自行更换</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /opt <span style="color:#b0bec5"># 这里是程序安装目录，可以自行更换</span>
 </span></span><span style="display:flex;"><span>wget https://github.com/tindy2013/subconverter/releases/download/v0.9.0/subconverter_linux64.tar.gz
 </span></span><span style="display:flex;"><span>tar -zxvf subconverter_linux64.tar.gz
 </span></span></code></pre></div><p>完成以后在 <code>/opt</code> 文件夹下会出现 <code>subconverter</code>文件夹，出现如下结构：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> .
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> .
 </span></span><span style="display:flex;"><span> ├── subconverter
 </span></span><span style="display:flex;"><span> │   ├── base
 </span></span><span style="display:flex;"><span> │   ├── cache
@@ -699,8 +699,8 @@
 </span></span><span style="display:flex;"><span> └── subconverter_linux64.tar.gz
 </span></span><span style="display:flex;"><span> 
 </span></span></code></pre></div><p>修改相关配置参数，找到文件：<code>/opt/subconverter/pref.toml</code>，修改下面两个参数：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>api_access_token <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;密码可以随意更改，也不用记住&#34;</span>  <span style="color:#75715e"># 大概在第7行</span>
-</span></span><span style="display:flex;"><span>managed_config_prefix <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://backend.domain.com&#34;</span> <span style="color:#75715e"># 改成解析的后端域名，大概在第149行</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>api_access_token <span style="color:#ffb8d1">=</span> <span style="color:#1bc5e0">&#34;密码可以随意更改，也不用记住&#34;</span>  <span style="color:#b0bec5"># 大概在第7行</span>
+</span></span><span style="display:flex;"><span>managed_config_prefix <span style="color:#ffb8d1">=</span> <span style="color:#1bc5e0">&#34;https://backend.domain.com&#34;</span> <span style="color:#b0bec5"># 改成解析的后端域名，大概在第149行</span>
 </span></span></code></pre></div><p>这里需要注意以下两点：</p>
 <blockquote>
 <ul>
@@ -713,165 +713,165 @@
 </li>
 </ul>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat &gt; /etc/systemd/system/sub.service <span style="color:#e6db74">&lt;&lt;EOF
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[Unit]
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Description=Subconverter
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">After=network.target
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[Service]
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Type=simple
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">LimitAS=infinity
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">LimitRSS=infinity
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">LimitCORE=infinity
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">LimitNOFILE=65535
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ExecStart=/opt/subconverter/subconverter
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Restart=on-failure
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">RestartSec=10
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[Install]
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">WantedBy=multi-user.target
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat &gt; /etc/systemd/system/sub.service <span style="color:#1bc5e0">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">[Unit]
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">Description=Subconverter
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">After=network.target
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">[Service]
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">Type=simple
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">LimitAS=infinity
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">LimitRSS=infinity
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">LimitCORE=infinity
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">LimitNOFILE=65535
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">ExecStart=/opt/subconverter/subconverter
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">Restart=on-failure
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">RestartSec=10
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">[Install]
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">WantedBy=multi-user.target
+</span></span></span><span style="display:flex;"><span><span style="color:#1bc5e0">EOF</span>
 </span></span></code></pre></div><blockquote>
 <p>如果修改了后端的运行目录，上边命令中第 <code>12</code> 行运行位置也要相应更改。</p>
 </blockquote>
 <p>设置开机自启：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl enable sub <span style="color:#75715e"># 开机自启</span>
-</span></span><span style="display:flex;"><span>systemctl start sub <span style="color:#75715e"># 启动</span>
-</span></span><span style="display:flex;"><span>systemctl restart sub <span style="color:#75715e"># 重启</span>
-</span></span><span style="display:flex;"><span>systemctl status sub <span style="color:#75715e"># 查看运行状态</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl enable sub <span style="color:#b0bec5"># 开机自启</span>
+</span></span><span style="display:flex;"><span>systemctl start sub <span style="color:#b0bec5"># 启动</span>
+</span></span><span style="display:flex;"><span>systemctl restart sub <span style="color:#b0bec5"># 重启</span>
+</span></span><span style="display:flex;"><span>systemctl status sub <span style="color:#b0bec5"># 查看运行状态</span>
 </span></span></code></pre></div><p>到这里后端地址是 <code>http://127.0.0.1:25500/sub?</code>，由于上边修改了 <code>managed_config_prefix</code>，这时候我们需要反向代理。以后端域名新建一个站点，以宝塔为例，新建站点后打开设置，点击 <code>反向代理</code>，设置如下内容</p>
 <p><img src="https://pic.imgdb.cn/item/62f5bb0716f2c2beb1f69f76.png" alt="https://pic.imgdb.cn/item/62f5bb0716f2c2beb1f69f76.png"></p>
 <p>保存后添加 <code>SSL</code>访问，至此后端搭建完成。</p>
 <h4 id="前端搭建">前端搭建</h4>
 <p>首先新建一个前端站点目录，无需数据库，新建后配置好 <code>SSL</code>，这里以 <code>web.domain.com</code> 为例。</p>
 <p>前端项目需要用到 <code>Node</code> 和 <code>Yarn</code> ，因此首先安装：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt update <span style="color:#f92672">&amp;&amp;</span> apt upgrade
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt update <span style="color:#ffb8d1">&amp;&amp;</span> apt upgrade
 </span></span><span style="display:flex;"><span>apt install nodejs
 </span></span><span style="display:flex;"><span>apt install yarn
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 完成后使用如下命令查看是否安装成功</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 完成后使用如下命令查看是否安装成功</span>
 </span></span><span style="display:flex;"><span>node -v
 </span></span><span style="display:flex;"><span>yarn --version
 </span></span></code></pre></div><p>下载 <code>sub-web</code>。默认下载到当前目录<code>/root</code>，下载的位置可以自行选择，可以下载到前端站点目录中下（首先进入<code>/web.domain.com</code>后再执行如下命令）</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/CareyWang/sub-web.git
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/CareyWang/sub-web.git
 </span></span><span style="display:flex;"><span>cd sub-web
 </span></span></code></pre></div><p>安装依赖</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yarn install
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yarn install
 </span></span></code></pre></div><p>修改后端配置及策略组文件。找到<code>/root/sub-web/src/views/Subconverter.vue</code> 文件，打开后在258行找到如下内容并修改，即将本地地址修改为后端地址，也可以添加多个后端地址。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#f92672">- backendOptions: [{ value: &#34;http://127.0.0.1:25500/sub?&#34; }]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#f92672">- backendOptions: [{ value: &#34;http://127.0.0.1:25500/sub?&#34; }]
 </span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+ backendOptions: [{ value: &#34;https://backend.domain.com/sub?&#34; }]
 </span></span></span></code></pre></div><p>随后在下边的 <code>remoteConfig</code> 后修改策略组配置地址，可以根据文件的格式添加，这里给出 <code>ACL4SSR规则</code>配置，<code>remoteConfig[</code>后回车复制即可。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>             label: <span style="color:#e6db74">&#34;ACL4SSR&#34;</span>,
-</span></span><span style="display:flex;"><span>             options: <span style="color:#f92672">[</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online 默认版 分组比较全 (与Github同步)&#34;</span>,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>             label: <span style="color:#1bc5e0">&#34;ACL4SSR&#34;</span>,
+</span></span><span style="display:flex;"><span>             options: <span style="color:#ffb8d1">[</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR_Online 默认版 分组比较全 (与Github同步)&#34;</span>,
 </span></span><span style="display:flex;"><span>                 value:
-</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_AdblockPlus 更多去广告 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                   <span style="color:#1bc5e0">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR_Online_AdblockPlus 更多去广告 (与Github同步)&#34;</span>,
 </span></span><span style="display:flex;"><span>                 value:
-</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_AdblockPlus.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_NoAuto 无自动测速 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                   <span style="color:#1bc5e0">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_AdblockPlus.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR_Online_NoAuto 无自动测速 (与Github同步)&#34;</span>,
 </span></span><span style="display:flex;"><span>                 value:
-</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_NoAuto.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_NoReject 无广告拦截规则 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                   <span style="color:#1bc5e0">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_NoAuto.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR_Online_NoReject 无广告拦截规则 (与Github同步)&#34;</span>,
 </span></span><span style="display:flex;"><span>                 value:
-</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_NoReject.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_Mini 精简版 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                   <span style="color:#1bc5e0">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_NoReject.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR_Online_Mini 精简版 (与Github同步)&#34;</span>,
 </span></span><span style="display:flex;"><span>                 value:
-</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_Mini_AdblockPlus.ini 精简版 更多去广告 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                   <span style="color:#1bc5e0">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR_Online_Mini_AdblockPlus.ini 精简版 更多去广告 (与Github同步)&#34;</span>,
 </span></span><span style="display:flex;"><span>                 value:
-</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini_AdblockPlus.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_Mini_NoAuto.ini 精简版 不带自动测速 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                   <span style="color:#1bc5e0">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini_AdblockPlus.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR_Online_Mini_NoAuto.ini 精简版 不带自动测速 (与Github同步)&#34;</span>,
 </span></span><span style="display:flex;"><span>                 value:
-</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini_NoAuto.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_Mini_Fallback.ini 精简版 带故障转移 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                   <span style="color:#1bc5e0">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini_NoAuto.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR_Online_Mini_Fallback.ini 精简版 带故障转移 (与Github同步)&#34;</span>,
 </span></span><span style="display:flex;"><span>                 value:
-</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini_Fallback.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_Mini_MultiMode.ini 精简版 自动测速、故障转移、负载均衡 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                   <span style="color:#1bc5e0">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini_Fallback.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR_Online_Mini_MultiMode.ini 精简版 自动测速、故障转移、负载均衡 (与Github同步)&#34;</span>,
 </span></span><span style="display:flex;"><span>                 value:
-</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini_MultiMode.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_Full 全分组 重度用户使用 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                   <span style="color:#1bc5e0">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini_MultiMode.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR_Online_Full 全分组 重度用户使用 (与Github同步)&#34;</span>,
 </span></span><span style="display:flex;"><span>                 value:
-</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_Full_NoAuto.ini 全分组 无自动测速 重度用户使用 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                   <span style="color:#1bc5e0">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR_Online_Full_NoAuto.ini 全分组 无自动测速 重度用户使用 (与Github同步)&#34;</span>,
 </span></span><span style="display:flex;"><span>                 value:
-</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_NoAuto.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_Full_AdblockPlus 全分组 重度用户使用 更多去广告 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                   <span style="color:#1bc5e0">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_NoAuto.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR_Online_Full_AdblockPlus 全分组 重度用户使用 更多去广告 (与Github同步)&#34;</span>,
 </span></span><span style="display:flex;"><span>                 value:
-</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_AdblockPlus.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Online_Full_Netflix 全分组 重度用户使用 奈飞全量 (与Github同步)&#34;</span>,
+</span></span><span style="display:flex;"><span>                   <span style="color:#1bc5e0">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_AdblockPlus.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR_Online_Full_Netflix 全分组 重度用户使用 奈飞全量 (与Github同步)&#34;</span>,
 </span></span><span style="display:flex;"><span>                 value:
-</span></span><span style="display:flex;"><span>                   <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_Netflix.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR 本地 默认版 分组比较全&#34;</span>,
-</span></span><span style="display:flex;"><span>                 value: <span style="color:#e6db74">&#34;config/ACL4SSR.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Mini 本地 精简版&#34;</span>,
-</span></span><span style="display:flex;"><span>                 value: <span style="color:#e6db74">&#34;config/ACL4SSR_Mini.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Mini_NoAuto.ini 本地 精简版+无自动测速&#34;</span>,
-</span></span><span style="display:flex;"><span>                 value: <span style="color:#e6db74">&#34;config/ACL4SSR_Mini_NoAuto.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_Mini_Fallback.ini 本地 精简版+fallback&#34;</span>,
-</span></span><span style="display:flex;"><span>                 value: <span style="color:#e6db74">&#34;config/ACL4SSR_Mini_Fallback.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_BackCN 本地 回国&#34;</span>,
-</span></span><span style="display:flex;"><span>                 value: <span style="color:#e6db74">&#34;config/ACL4SSR_BackCN.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_NoApple 本地 无苹果分流&#34;</span>,
-</span></span><span style="display:flex;"><span>                 value: <span style="color:#e6db74">&#34;config/ACL4SSR_NoApple.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_NoAuto 本地 无自动测速 &#34;</span>,
-</span></span><span style="display:flex;"><span>                 value: <span style="color:#e6db74">&#34;config/ACL4SSR_NoAuto.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_NoAuto_NoApple 本地 无自动测速&amp;无苹果分流&#34;</span>,
-</span></span><span style="display:flex;"><span>                 value: <span style="color:#e6db74">&#34;config/ACL4SSR_NoAuto_NoApple.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_NoMicrosoft 本地 无微软分流&#34;</span>,
-</span></span><span style="display:flex;"><span>                 value: <span style="color:#e6db74">&#34;config/ACL4SSR_NoMicrosoft.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>                 label: <span style="color:#e6db74">&#34;ACL4SSR_WithGFW 本地 GFW列表&#34;</span>,
-</span></span><span style="display:flex;"><span>                 value: <span style="color:#e6db74">&#34;config/ACL4SSR_WithGFW.ini&#34;</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>             <span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>           <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>                   <span style="color:#1bc5e0">&#34;https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_Netflix.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR 本地 默认版 分组比较全&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value: <span style="color:#1bc5e0">&#34;config/ACL4SSR.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR_Mini 本地 精简版&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value: <span style="color:#1bc5e0">&#34;config/ACL4SSR_Mini.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR_Mini_NoAuto.ini 本地 精简版+无自动测速&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value: <span style="color:#1bc5e0">&#34;config/ACL4SSR_Mini_NoAuto.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR_Mini_Fallback.ini 本地 精简版+fallback&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value: <span style="color:#1bc5e0">&#34;config/ACL4SSR_Mini_Fallback.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR_BackCN 本地 回国&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value: <span style="color:#1bc5e0">&#34;config/ACL4SSR_BackCN.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR_NoApple 本地 无苹果分流&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value: <span style="color:#1bc5e0">&#34;config/ACL4SSR_NoApple.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR_NoAuto 本地 无自动测速 &#34;</span>,
+</span></span><span style="display:flex;"><span>                 value: <span style="color:#1bc5e0">&#34;config/ACL4SSR_NoAuto.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR_NoAuto_NoApple 本地 无自动测速&amp;无苹果分流&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value: <span style="color:#1bc5e0">&#34;config/ACL4SSR_NoAuto_NoApple.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR_NoMicrosoft 本地 无微软分流&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value: <span style="color:#1bc5e0">&#34;config/ACL4SSR_NoMicrosoft.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">{</span>
+</span></span><span style="display:flex;"><span>                 label: <span style="color:#1bc5e0">&#34;ACL4SSR_WithGFW 本地 GFW列表&#34;</span>,
+</span></span><span style="display:flex;"><span>                 value: <span style="color:#1bc5e0">&#34;config/ACL4SSR_WithGFW.ini&#34;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#ffb8d1">}</span>
+</span></span><span style="display:flex;"><span>             <span style="color:#ffb8d1">]</span>
+</span></span><span style="display:flex;"><span>           <span style="color:#ffb8d1">}</span>,
 </span></span></code></pre></div><p>最后执行如下命令可打包网站：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yarn build
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yarn build
 </span></span></code></pre></div><p>完成后会在 <code>/root/sub-web/</code>文件夹下生成一个 <code>dist</code>目录，这个目录就是网站的全部内容，可以将里面所有内容复制到前端站点的目录，如果是将前端下载到了站点目录而不是根目录，可以在宝塔面板中设置网站的运行目录，选择为 <code>/dist</code>即可。</p>
 <p><img src="https://pic.imgdb.cn/item/62f5c5af16f2c2beb1146e2d.png" alt="https://pic.imgdb.cn/item/62f5c5af16f2c2beb1146e2d.png"></p>
 <blockquote>
@@ -892,28 +892,28 @@
 <h3 id="部署">部署</h3>
 <p>同样部署两个网站，并配置好证书，一个用作短链，一个用作订阅转换前后端，如果不需要短链服务，一个二级域名即可。</p>
 <p>然后使用 <code>docker compose</code> 直接部署：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~ <span style="color:#f92672">&amp;&amp;</span> mkdir subconverter <span style="color:#f92672">&amp;&amp;</span> cd subconverter
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~ <span style="color:#ffb8d1">&amp;&amp;</span> mkdir subconverter <span style="color:#ffb8d1">&amp;&amp;</span> cd subconverter
 </span></span><span style="display:flex;"><span>wget https://raw.githubusercontent.com/stilleshan/dockerfiles/main/sub/docker-compose.yml
 </span></span></code></pre></div><p>将下载的 <code>compose</code>文件中第 <code>16</code> 行的域名改为自己的短链，然后运行：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /root/subconverter
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /root/subconverter
 </span></span><span style="display:flex;"><span>docker-compose up -d
 </span></span></code></pre></div><p>完成后文件夹下会多出两个文件夹，<code>/data &amp; /conf</code>，在 <code>conf/config.js</code>文件中修改对应的地址：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apiUrl: <span style="color:#e6db74">&#39;http://web.sub.com&#39;</span>, <span style="color:#75715e"># 订阅转换</span>
-</span></span><span style="display:flex;"><span>shortUrl: <span style="color:#e6db74">&#39;https://a.com&#39;</span>, <span style="color:#75715e"># 短链</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 13行的短链地址也要更换</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apiUrl: <span style="color:#1bc5e0">&#39;http://web.sub.com&#39;</span>, <span style="color:#b0bec5"># 订阅转换</span>
+</span></span><span style="display:flex;"><span>shortUrl: <span style="color:#1bc5e0">&#39;https://a.com&#39;</span>, <span style="color:#b0bec5"># 短链</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 13行的短链地址也要更换</span>
 </span></span></code></pre></div><blockquote>
 <p>💡  如果不需要短链服务，只需要在 <code>compose</code> 文件中删除第 <code>12-32</code> 行,将默认使用作者短链接，也可以修改 <code>conf/config.js</code> 使用其他短链接服务。</p>
 </blockquote>
 <h3 id="反向代理">反向代理</h3>
 <p>订阅转换前后端的反向代理目标 <code>url</code>：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 订阅转换前后端的目标url</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># 订阅转换前后端的目标url</span>
 </span></span><span style="display:flex;"><span>http://127.0.0.1:18080
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 短链反向代理配置(可直接添加到配置文件)：</span>
-</span></span><span style="display:flex;"><span>        location / <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 短链反向代理配置(可直接添加到配置文件)：</span>
+</span></span><span style="display:flex;"><span>        location / <span style="color:#ffb8d1">{</span>
 </span></span><span style="display:flex;"><span>        proxy_redirect off;
 </span></span><span style="display:flex;"><span>        proxy_pass http://127.0.0.1:8002;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        add_header <span style="color:#e6db74">&#39;Access-Control-Allow-Origin&#39;</span> <span style="color:#e6db74">&#39;*&#39;</span>;
+</span></span><span style="display:flex;"><span>        add_header <span style="color:#1bc5e0">&#39;Access-Control-Allow-Origin&#39;</span> <span style="color:#1bc5e0">&#39;*&#39;</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        proxy_set_header  Host                $http_host;
 </span></span><span style="display:flex;"><span>        proxy_set_header  X-Real-IP           $remote_addr;
@@ -924,7 +924,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        client_max_body_size        100m;
 </span></span><span style="display:flex;"><span>        client_body_buffer_size     128k;
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ffb8d1">}</span>
 </span></span></code></pre></div><h2 id="项目三sub2clash">项目三：sub2clash</h2>
 <p>这个项目主要是将其他格式转换成 <code>clash</code> 订阅，有如下特点：</p>
 <ul>
@@ -936,7 +936,7 @@
 <p><strong>项目地址：</strong></p>
 <p><a href="https://github.com/nitezs/sub2clash">sub2clash</a></p>
 <h3 id="部署-1">部署</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p /opt/sub2clash <span style="color:#f92672">&amp;&amp;</span> cd /opt/sub2clash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p /opt/sub2clash <span style="color:#ffb8d1">&amp;&amp;</span> cd /opt/sub2clash
 </span></span><span style="display:flex;"><span>wget https://raw.githubusercontent.com/nitezs/sub2clash/main/docker-compose.yml
 </span></span><span style="display:flex;"><span>docker-compose up -d
 </span></span></code></pre></div><p>可以自己修改 <code>docker compose</code> 的环境变量，可修改参数如下：</p>
@@ -1011,7 +1011,7 @@
 </li>
 </ul>
 <h3 id="部署-2">部署</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~ <span style="color:#f92672">&amp;&amp;</span> mkdir /opt/subconv <span style="color:#f92672">&amp;&amp;</span> cd /opt/subconv
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~ <span style="color:#ffb8d1">&amp;&amp;</span> mkdir /opt/subconv <span style="color:#ffb8d1">&amp;&amp;</span> cd /opt/subconv
 </span></span><span style="display:flex;"><span>wget https://raw.githubusercontent.com/SubConv/SubConv/main/docker-compose.yml
 </span></span><span style="display:flex;"><span>docker-compose up -d
 </span></span></code></pre></div><p>也可以使用 Vercel 部署，成本更低，并且部署也方便，Fork 原项目后在 Vercel 新建项目导入即可，如有需要可以修改配置文件 <code>config.yaml</code>。</p>
@@ -1021,7 +1021,7 @@
 <p><a href="https://github.com/jaaksii/sublink">sublink</a></p>
 <h3 id="部署-3">部署</h3>
 <p>同样使用 <code>docker-compose</code>，完成后再反向代理，地址为 <code>http://127.0.0.1:8000</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /opt <span style="color:#f92672">&amp;&amp;</span> mkdir sublink <span style="color:#f92672">&amp;&amp;</span> cd sublink
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /opt <span style="color:#ffb8d1">&amp;&amp;</span> mkdir sublink <span style="color:#ffb8d1">&amp;&amp;</span> cd sublink
 </span></span><span style="display:flex;"><span>wget https://raw.githubusercontent.com/jaaksii/sublink/master/docker-compose.yml
 </span></span><span style="display:flex;"><span>docker-compose up -d
 </span></span></code></pre></div><h2 id="参考">参考</h2>
@@ -1086,17 +1086,17 @@
 
 
 <script src="https://giscus.app/client.js"
-        data-repo="username/repo"
-        data-repo-id="**************************"
-        data-category="General"
-        data-category-id="*********************"
+        data-repo="tom2almighty/giscus"
+        data-repo-id="R_kgDOMhXXdQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMhXXdc4Chgn1"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
         data-theme="preferred_color_scheme"
-        data-lang="en"
+        data-lang="zh-CN"
         crossorigin="anonymous"
         async>
 </script>
@@ -1132,7 +1132,7 @@
             
             
             <a class="a-block nav-link-item active" href="/posts">
-                归档 | Archive
+                归档
             </a>
             
         
@@ -1142,7 +1142,7 @@
             
             
             <a class="a-block nav-link-item false" href="/categories">
-                分类 | Categories
+                分类
             </a>
             
         
@@ -1152,7 +1152,7 @@
             
             
             <a class="a-block nav-link-item false" href="/tags">
-                标签 | Tags
+                标签
             </a>
             
         
@@ -1162,7 +1162,7 @@
             
             
             <a class="a-block nav-link-item false" href="/index.xml">
-                RSS Feed
+                聚合
             </a>
             
         

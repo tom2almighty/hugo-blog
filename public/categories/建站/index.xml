@@ -14,105 +14,105 @@
       <link>http://localhost:1313/posts/jekyll/</link>
       <pubDate>Thu, 08 Aug 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/jekyll/</guid>
-      <description>前言 Hexo 的博客虽然外观精美，主题和插件都比较多，但实在是太复杂，更换主题或者更新插件都容易出现错误，所以决定将博客更换为其他框架，最开始决定使用 Hugo，毕竟之前使用过，文档齐全并且速度也够快，但是想用的 Stack 主题没有返回顶部按钮，一些细节不喜欢，文章 Feature 图还得重新做，所以决定使用 Jekyll Chirpy，也图个新鲜。&#xA;基础环境安装 首先根据官网教程安装基础环境，就像 Hugo 下载可执行文件一样，链接在此：RubyInstaller&#xA;下载后使用默认设置安装即可，完成后在终端输入 ruby -v 和 gem -v，出现版本号就代表环境安装成功了。&#xA;接下来安装 Jekyll，终端输入 gem install jekyll，等待安装完成。&#xA;输入 jekyll -v 检查是否安装成功。&#xA;新建站点 这里直接使用的是 Chirpy 主题的方法，文档链接：点此&#xA;首先使用 chirpy-starter 的模板新建一个仓库，我不使用 GitHub Pages 所以仓库名称就随便填写了。&#xA;将仓库拉到本地，然后在仓库跟目录执行下面的命令安装依赖：&#xA;bundle 然后可以使用命令预览一下是否成功：&#xA;bundle exec jekyll s 修改配置 在 _config.yml 中修改对应的配置，社交媒体配置对应的文件为 _data/contact.yml&#xA;依赖错误：tzinfo Windows 下部署时，使用 bundle 安装依赖后不会安装 tzinfo，如果设置了时区，会报错，因此手动安装下面两个依赖：&#xA;gem install tzinfo gem install tzinfo-data 然后在 Gemfile 文件中添加下面两行：&#xA;gem &amp;#39;tzinfo&amp;#39; gem &amp;#34;tzinfo-data&amp;#34;, platforms: [:mingw, :mswin, :x64_mingw, :jruby] 修改 favicon 在 ~/assets/img 下新建 favicons 文件夹，放入自己的 favicons 文件，可以在 favicon.</description>
+      <description>前言 Hexo 的博客虽然外观精美，主题和插件都比较多，但实在是太复杂，更换主题或者更新插件都容易出现错误，所以决定将博客更换为其他框架，最开始决定使</description>
     </item>
     <item>
       <title>Nginx Proxy Manager：替代宝塔的又一选择</title>
       <link>http://localhost:1313/posts/npm/</link>
       <pubDate>Thu, 09 May 2024 12:14:50 +0000</pubDate>
       <guid>http://localhost:1313/posts/npm/</guid>
-      <description>前言 由于低版本的宝塔面板存在漏洞，高版本需要绑定手机，且占用较高，加上自己的服务大多是 Docker 部署，因此直接使用反向代理的面板更加方便。 Nginx Proxy Manager 是一个 Nginx 的代理管理器，简单方便，并且支持一键申请证书、自动续期。 项目地址如下： {% ghcard NginxProxyManager/nginx-proxy-manager, theme=onedark%}&#xA;部署 使用 Docker 部署，命令如下：&#xA;mkdir /opt/npm &amp;amp;&amp;amp; cd /opt/npm &amp;amp;&amp;amp; cat &amp;lt;&amp;lt; EOF &amp;gt; docker-compose.yml version: &amp;#39;3.8&amp;#39; services: app: image: &amp;#39;docker.io/jc21/nginx-proxy-manager:latest&amp;#39; restart: unless-stopped ports: - &amp;#39;80:80&amp;#39; - &amp;#39;81:81&amp;#39; - &amp;#39;443:443&amp;#39; volumes: - ./data:/data - ./letsencrypt:/etc/letsencrypt EOF docker compose up -d 安装完成后可以使用 http://IP:81 访问后台，默认的用户名密码如下：&#xA;Email: admin@example.com Password: changeme 修改后即可正常使用，建议给后台地址反向代理。&#xA;反向代理 添加网站 主界面点击 Proxy Host- Add Proxy Host {% note success flat %} 三个选项可以自己选择是否开启</description>
+      <description>前言 由于低版本的宝塔面板存在漏洞，高版本需要绑定手机，且占用较高，加上自己的服务大多是 Docker 部署，因此直接使用反向代理的面板更加方便。 Nginx Proxy Manager 是一</description>
     </item>
     <item>
       <title>Hexo-Butterfly修改记录</title>
       <link>http://localhost:1313/posts/e1485cce/</link>
       <pubDate>Wed, 08 May 2024 08:46:52 +0000</pubDate>
       <guid>http://localhost:1313/posts/e1485cce/</guid>
-      <description>准备 在 [BlogRoot]\source 文件夹下新建一个文件夹 css，该文件夹用于存放自定义的 css 样式，再新建一个名为 custom.css，修改代码存于此处。&#xA;在主题配置文件 [BlogRoot]\_config.butterfly.yml 文件中的 inject 配置项的 head 子项加入以下代码，引入刚刚创建的 custom.css 文件（这是相对路径的写法）&#xA;inject: head: - &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;/css/custom.css&amp;#34; media=&amp;#34;defer&amp;#34; onload=&amp;#34;this.media=&amp;#39;all&amp;#39;&amp;#34;&amp;gt; 背景一图流 /* 页脚与头图透明 */ #footer { background: transparent !important; } #page-header { background: transparent !important; } /* 白天模式遮罩透明 */ #footer::before { background: transparent !important; } #page-header::before { background: transparent !important; } /* 夜间模式遮罩透明 */ [data-theme=&amp;#34;dark&amp;#34;] #footer::before { background: transparent !important; } [data-theme=&amp;#34;dark&amp;#34;] #page-header::before { background: transparent !</description>
+      <description>准备 在 [BlogRoot]\source 文件夹下新建一个文件夹 css，该文件夹用于存放自定义的 css 样式，再新建一个名为 custom.css，修改代码存于此处。 在主题配置文件 [BlogRoot]\_config.butterfly.yml</description>
     </item>
     <item>
       <title>PHP获取Bing每日壁纸</title>
       <link>http://localhost:1313/posts/php-bing-api/</link>
       <pubDate>Mon, 06 May 2024 10:40:45 +0000</pubDate>
       <guid>http://localhost:1313/posts/php-bing-api/</guid>
-      <description>前言 自建一个 API 获取随机图片可以用于博客 cover，网上找到一篇文章，本文仅记录，所有代码都来自 这篇文章。&#xA;部署 新建一个名为 bing.php 的文件，写入下面代码：&#xA;&amp;lt;?php // 判断是否随机调用 $gettimebase = isset($_GET[&amp;#39;day&amp;#39;]) ? $_GET[&amp;#39;day&amp;#39;] : &amp;#39;&amp;#39;; if (isset($_GET[&amp;#39;rand&amp;#39;]) &amp;amp;&amp;amp; $_GET[&amp;#39;rand&amp;#39;] === &amp;#39;false&amp;#39;) { $gettime = empty($gettimebase) ? 0 : $gettimebase; } else { // 若不为随机调用则判断是否指定日期 $gettime = empty($gettimebase) ? rand(-1, 7) : $gettimebase; } // 获取 Bing Json 信息 $mkt = isset($_GET[&amp;#39;cn&amp;#39;]) &amp;amp;&amp;amp; $_GET[&amp;#39;cn&amp;#39;] === &amp;#39;true&amp;#39; ? &amp;#39;zh-CN&amp;#39; : &amp;#39;en-US&amp;#39;; $json_string = file_get_contents(&amp;#34;https://www.bing.com/HPImageArchive.aspx?format=js&amp;amp;idx=$gettime&amp;amp;n=1&amp;amp;mkt=$mkt&amp;#34;); // 转换为 PHP 数组 $data = json_decode($json_string); // 提取基础 URL $imgurlbase = &amp;#34;https://www4.</description>
+      <description>前言 自建一个 API 获取随机图片可以用于博客 cover，网上找到一篇文章，本文仅记录，所有代码都来自 这篇文章。 部署 新建一个名为 bing.php 的文件，写入下面代</description>
     </item>
     <item>
       <title>自建umami网站统计</title>
       <link>http://localhost:1313/posts/umami/</link>
       <pubDate>Mon, 06 May 2024 10:01:11 +0000</pubDate>
       <guid>http://localhost:1313/posts/umami/</guid>
-      <description>前言 Umami 是一款开源的、注重隐私的网站流量统计分析工具，可以方便直观的观察到网站数据，并且不像谷歌统计过多地收集用户的隐私信息，而自建服务可以避免 Adblock 插件屏蔽导致统计不准的问题。 仓库地址如下： {% ghcard umami-software/umami, theme=onedark %} 部署所用工具：&#xA;Github Vercel Supabase 部署 Vercel 首先 Fork Umami 的仓库，然后在 Supabase 新建一个项目，记住数据库密码，待项目新建完毕后，进入项目，依次点击 Project Settings-Database，在 Connecting string 复制 URL。 接下来在 Vercel 新建一个项目，导入 Github Fork 的仓库，添加下面的环境变量：&#xA;NAME VALUE DATABASE_URL 复制的 URL TRACKER_SCRIPT_NAME 自定义脚本名称，如 myscript COLLECT_API_ENDPOINT 自定义 endpoint 路径，如 /api/mycol HASH_SALT 随机字符串 {% note info flat %} 将复制的 url 中 [YOUR-PASSWORD] 换位数据库的密码，并在 url 最后添加 ?pgbouncer=true，最终链接如下形式： postgres://postgres.xxxxxxxxxxxx:[YOUR-PASSWORD]@aws-0-us-east-1.pooler.supabase.com:5432/postgres?pgbouncer=true {% endnote %}&#xA;待部署完成后须添加自定义域名，否则 Vercel 域名被墙，会无法正常使用，打开部署的网站后，默认用户名为 admin，默认密码为 umami。 添加网站后在设置-网站-跟踪代码 处复制统计代码，添加到自己网站 &amp;lt;/body&amp;gt;前即可。 Docker docker-compose 文件如下：</description>
+      <description>前言 Umami 是一款开源的、注重隐私的网站流量统计分析工具，可以方便直观的观察到网站数据，并且不像谷歌统计过多地收集用户的隐私信息，而自建服务可以避</description>
     </item>
     <item>
       <title>使用Windows脚本快速创建文章</title>
       <link>http://localhost:1313/posts/bat-creat-post/</link>
       <pubDate>Tue, 23 Apr 2024 10:43:51 +0000</pubDate>
       <guid>http://localhost:1313/posts/bat-creat-post/</guid>
-      <description>前言 Hexo 每次新建文章都需要打开终端-切换目录-创建文章-打开笔记软件-打开新创建的文章。这一套流程不免步骤繁琐，因此尝试使用脚本简化流程。&#xA;代码 新建一个 .bat 文件，写入下面的代码：&#xA;@echo off :input set /p title=&amp;#34;请输入文章标题: &amp;#34; echo.%title%|findstr /r /c:&amp;#34;[&amp;amp;^&amp;lt;&amp;gt;|]&amp;#34; &amp;gt;nul &amp;amp;&amp;amp; ( echo 标题不能包含以下特殊字符: ^&amp;amp;^&amp;lt;^&amp;gt;^|^ goto input ) cd /D D:\GitHub\hexo-blog start /wait cmd /c hexo new post &amp;#34;%title%&amp;#34; set post_path=&amp;#34;D:\GitHub\hexo-blog\source\_posts\%title%.md&amp;#34; start &amp;#34;&amp;#34; &amp;#34;D:\Program\Typora\Typora.exe&amp;#34; %post_path% 将代码中的站点根目录和 Typora 的程序路径改为自己的路径。&#xA;{% note info flat %} 文件另存为 ANSI 编码，否则会乱码 {% endnote %}&#xA;排坑 过程中发现文章可以正常创建，但是并不能正常使用程序打开，排查下来发现执行完创建 post 命令后终端会直接关闭，因此代码中 start /wait cmd /c hexo new post &amp;quot;%title%&amp;quot; 命令会在新的命令提示符窗口中执行 hexo new post 命令，并且原来的批处理脚本会等待 hexo new post 命令执行完成后再继续执行。</description>
+      <description>前言 Hexo 每次新建文章都需要打开终端-切换目录-创建文章-打开笔记软件-打开新创建的文章。这一套流程不免步骤繁琐，因此尝试使用脚本简化流程。 代码</description>
     </item>
     <item>
       <title>为Hexo博客添加豆瓣观影信息</title>
       <link>http://localhost:1313/posts/hexo-douban/</link>
       <pubDate>Tue, 23 Apr 2024 10:38:35 +0000</pubDate>
       <guid>http://localhost:1313/posts/hexo-douban/</guid>
-      <description>前言 通过 hexo-douban 插件可以为自己的博客添加豆瓣观影和读书页面，项目地址如下：&#xA;{% ghcard mythsman/hexo-douban, theme=onedark%}&#xA;安装 首先在站点根目录安装插件：&#xA;npm install hexo-douban --save 配置 将下面的配置写入站点的配置文件 _config.yml 里 (不是主题的配置文件)&#xA;douban: id: 162448367 builtin: true item_per_page: 10 meta_max_line: 4 customize_layout: page book: path: books/index.html title: &amp;#39;This is my book title&amp;#39; quote: &amp;#39;This is my book quote&amp;#39; option: movie: path: movies/index.html title: &amp;#39;This is my movie title&amp;#39; quote: &amp;#39;This is my movie quote&amp;#39; option: game: path: games/index.html title: &amp;#39;This is my game title&amp;#39; quote: &amp;#39;This is my game quote&amp;#39; option: song: path: songs/index.</description>
+      <description>前言 通过 hexo-douban 插件可以为自己的博客添加豆瓣观影和读书页面，项目地址如下： {% ghcard mythsman/hexo-douban, theme=onedark%} 安装 首先在站点根目录安装插件： npm install hexo-douban --save 配置 将下面的配置写入站点的</description>
     </item>
     <item>
       <title>Hexo博客Fluid主题修改</title>
       <link>http://localhost:1313/posts/fluid-modify/</link>
       <pubDate>Sun, 21 Apr 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/fluid-modify/</guid>
-      <description>前言 记录对于 Hexo 主题 Fluid 的修改，来源于网络。&#xA;替换 Mac 风格代码块 在主题文件 themes\fluid\source\css 目录下新建样式文件，如 macpanel.styl，内容参考：&#xA;.highlight background: #21252b border-radius: 5px box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .4) padding-top: 30px &amp;amp;::before background: #fc625d border-radius: 50% box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b content: &amp;#39; &amp;#39; height: 12px left: 12px margin-top: -20px position: absolute width: 12px 修改主题配置文件_config.fluid.yml，找到 custom_css 配置项，引入刚刚新建的样式文件（此处引入.styl 文件无需加后缀）：&#xA;custom_css: - /css/macpanel 参考 Kevin&amp;rsquo;s Blog </description>
+      <description>前言 记录对于 Hexo 主题 Fluid 的修改，来源于网络。 替换 Mac 风格代码块 在主题文件 themes\fluid\source\css 目录下新建样式文件，如 macpanel.styl，内容参考： .highlight background: #21252b border-radius: 5px box-shadow:</description>
     </item>
     <item>
       <title>Hugo 文章转 Hexo</title>
       <link>http://localhost:1313/posts/993cff99/</link>
       <pubDate>Wed, 17 Apr 2024 10:58:55 +0000</pubDate>
       <guid>http://localhost:1313/posts/993cff99/</guid>
-      <description>前言 将博客换成了 Hexo，因此 Front Matter 信息需要修改，使用 ChatGPT 写了一个简单的 Python 更改脚本，修改的项目可以自己更改。&#xA;使用 新建一个 Python 文件，写入以下代码，将需要更改的文件放入一个文件夹，然后将文件夹路径填入代码对应位置，运行即可，需要提前安装 pyyaml 模块。&#xA;代码中将 cover 更改为 index_img，具体可以自己更改。&#xA;import os import re import yaml def modify_frontmatter(frontmatter, modifications): frontmatter = frontmatter.copy() for key, value in modifications.items(): if key == &amp;#39;_add&amp;#39;: frontmatter.update(value) # 添加键值对 elif key == &amp;#39;_delete&amp;#39;: for k in value: frontmatter.pop(k, None) # 删除键 elif key in frontmatter: if value[&amp;#39;new_key&amp;#39;] is not None: # 修改键名 frontmatter[value[&amp;#39;new_key&amp;#39;]] = frontmatter.pop(key) if value[&amp;#39;new_value&amp;#39;] is not None: # 修改键值 frontmatter[key if value[&amp;#39;new_key&amp;#39;] is None else value[&amp;#39;new_key&amp;#39;]] = value[&amp;#39;new_value&amp;#39;] return frontmatter def convert_frontmatter(folder_path, modifications): for root, dirs, files in os.</description>
+      <description>前言 将博客换成了 Hexo，因此 Front Matter 信息需要修改，使用 ChatGPT 写了一个简单的 Python 更改脚本，修改的项目可以自己更改。 使用 新建一个 Python 文件，写入以下代码，将</description>
     </item>
     <item>
       <title>推一下Vercel加速节点</title>
       <link>http://localhost:1313/posts/vercel-cdn/</link>
       <pubDate>Sun, 24 Mar 2024 18:09:38 +0800</pubDate>
       <guid>http://localhost:1313/posts/vercel-cdn/</guid>
-      <description>转载文章，文章来源：&#xA;杜老师说 Fgaoxing 博客 写在前面 Vercel 不仅可以部署 Hexo 博客，还能部署很多服务。 境内选择 Vercel 的站长很多，为了提升访问速度，自然选择了距离大陆最近的香港节点。 选的多了，节点压力自然就会增大，就算 Vercel 属于大平台，对陆带宽依旧有限，必然会出现互相影响的情况。 再加上滥用资源等问题出现，不少小伙伴反馈 Vercel 越来越慢。 今天为 Vercel 用户提供一个加速方案。&#xA;食用方法 将原来解析至 cname.vercel.com 改为 vercel.cdn.yt-blog.top&#xA;两个 CNAME 速度有差距，这个 CNAME 对应 https://vercel-cyfan.yt-blog.top/ ，这主要是由于 104.199.217.228 只有电信快，18.162.37.140 相对不稳定，但联通和移动快，大部分 Vercel 节点都是联通和移动快。vercel.cdn.cyfan.top 使用了更多的 IP 确保在一台出现问题后不会有太面积影响，但灵感来自 vercel.cdn.cyfan.top&#xA;可访问 Vercel CDN (vercel.cdn.yt-blog.top) 查看&#xA;加速原理 Vercel 在大陆周围还有很多节点，其中包含中国台湾、韩国、日本、新加坡等，这些节点的访问延迟在接受范围，且相对香港节点来说带宽更充足。&#xA;Vercel 的 Anycast 会自动将节点解析至距离最近的香港服务器，但如果手动解析则太过麻烦。&#xA;vercel.cdn.yt-blog.top 经过不断测速（大约消耗了 200 MB 流量）手动解析，并通过 D 监控检查状态，无法访问时会及时暂停节点。使用时自动解析至附近可用节点，尽可能的选择优质节点。&#xA;这更加类似于 CF 自选 IP，而不是真正的节点，节点 IP 基于 Cyfan 的 Vercel All IP (github.</description>
+      <description>转载文章，文章来源： 杜老师说 Fgaoxing 博客 写在前面 Vercel 不仅可以部署 Hexo 博客，还能部署很多服务。 境内选择 Vercel 的站长很多，为了提升访问速度，自然选择了距离大陆</description>
     </item>
     <item>
       <title>Hugo Stack主题修改</title>
       <link>http://localhost:1313/posts/stack/</link>
       <pubDate>Thu, 21 Mar 2024 17:13:54 +0800</pubDate>
       <guid>http://localhost:1313/posts/stack/</guid>
-      <description>前言 上一篇文章介绍了如何部署 Hugo 博客，这里针对 Stack 主题的修改做一些记录。&#xA;准备 首先在博客根目录下的 assets 下创建一个名为 scss 的文件夹，然后在 scss 文件夹里创建一个名为 custom.scss 的文件，最终效果为~blog/assets/scss/custom.scss，创建好文件后，对于主题的大部分样式魔改都将写进这个 custom.scss，其中有很多冗余的代码。&#xA;整体细节调整 // ~\blog\assets\scss\custom.scss // 页面基本配色 :root { // 全局顶部边距 --main-top-padding: 30px; // 全局卡片圆角 --card-border-radius: 12px; // 标签云卡片圆角 --tag-border-radius: 8px; // 卡片间距 --section-separation: 40px; // 全局字体大小 --article-font-size: 1.8rem; // 行内代码背景色 --code-background-color: #f8f8f8; // 行内代码前景色 --code-text-color: #e96900; // 暗色模式下样式 &amp;amp;[data-scheme=&amp;#34;dark&amp;#34;] { // 行内代码背景色 --code-background-color: #ff6d1b17; // 行内代码前景色 --code-text-color: #e96900; // 暗黑模式下背景色 --body-background: #0D0D0D; // 暗黑模式下卡片背景色 --card-background: #121212; // 代码块背景色 .</description>
+      <description>前言 上一篇文章介绍了如何部署 Hugo 博客，这里针对 Stack 主题的修改做一些记录。 准备 首先在博客根目录下的 assets 下创建一个名为 scss 的文件夹，然后在 scss 文件夹里创建</description>
     </item>
     <item>
       <title>使用Hugo搭建个人博客</title>
       <link>http://localhost:1313/posts/hugo-blog/</link>
       <pubDate>Thu, 21 Mar 2024 17:13:32 +0800</pubDate>
       <guid>http://localhost:1313/posts/hugo-blog/</guid>
-      <description>前言 博客的引擎选择一直是个问题。动态博客和静态博客各有优劣。动态博客 Wordpress、Typecho 等拥有精美的主题，后台管理也比较方便，但是需要服务器。静态博客如 Hexo、Hugo、Astro 等可以直接部署静态页面，但是相对写文章比较繁琐一点。今天再次记录一下之前折腾的 Hugo，之前使用的主题是 Loveit，后来觉得 Stack 不错，所以本次就拿这个主题记录一下。&#xA;前提：&#xA;部署静态博客需要的：&#xA;一个 Github 账号 一个 Vercel 账号（非必须） 一个域名（非必须，但是有比较好） 1. 下载 Hugo 和 Git 到本地 将 Hugo 下载到本地，最好下载 Extended 版本，下载地址：点此下载&#xA;下载后放到一个不会删掉的地方，然后在系统环境变量 Path 中添加 Hugo 程序 和 Git 所在目录，完成后重启电脑，之后可以在 Windows Terminal 可以检测一下是否添加成功。&#xA;2. 创建仓库 在本地一个目录当作 Hugo 的目录，在此打开 Windows Terminal，然后输入下面的命令：&#xA;hugo new site blog 输入完成后会在文件夹下出现一个 blog 文件夹。&#xA;3. 下载主题 git init git submodule add https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-theme-stack # 更新主题 git submodule update --remote 如果后续修改主题，最好可以 fork 主题仓库，然后将上述地址换成自己的仓库地址。</description>
+      <description>前言 博客的引擎选择一直是个问题。动态博客和静态博客各有优劣。动态博客 Wordpress、Typecho 等拥有精美的主题，后台管理也比较方便，</description>
     </item>
     <item>
       <title>Webstack Hugo导航</title>
       <link>http://localhost:1313/posts/webstack-hugo/</link>
       <pubDate>Thu, 21 Mar 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/webstack-hugo/</guid>
-      <description>前言 Webstack-Hugo 导航是基于纯静态的网址导航网站 webstack.cc 制作的 Hugo 主题，是一个基于 Hugo 的静态响应式网址导航主题。添加了天气及夜间模式，主要的配置信息都集成到了 config.toml，导航的各个信息都集成在 data/webstack.yml 文件中。&#xA;部署 首先下载 Hugo 到本地，同时添加系统环境变量。找到一个文件夹，然后在文件夹下打开 Windows Terminal 创建一个新的 Hugo 站点。 hugo new site webstack-hugo 下载 Webstack-Hugo 源码，并解压到 ~/webstack-hugo/themes 文件夹下，名称更改为 Webstack-Hugo，将 ~/webstack-hugo/themes/Webstack-Hugo/exampleSite 文件夹下所有内容复制到 Hugo 站点根目录，并删除站点根目录的 hugo.toml 文件。 修改网站配置。 配置信息在 config.toml 文件中 导航信息在 data/webstack.yml 文件中 新建一个 Github 仓库，将 Hugo 站点根目录下的文件推送到仓库，然后在 Vercel 创建新的项目并导入仓库。 网站 icon 获取 可以通过 API 获取网站的图标，地址如下：&#xA;https://api.iowen.cn/favicon/www.iowen.cn.png 将需要获取的网址替换到 favicon/ 后 .png 前，也可以通过在线工具箱：&#xA;https://tool.cccyun.cc/favicon 问题修复 部署好站点后会发现网站样式无法正常加载，但是本地部署正常，解决方法：将 layouts/partials 文件夹下文件中 relURL 更换为 absURL 即可。</description>
+      <description>前言 Webstack-Hugo 导航是基于纯静态的网址导航网站 webstack.cc 制作的 Hugo 主题，是一个基于 Hugo 的静态响应式网址导航主题。添加了天气及夜间模式，主要的配置信息都集成到了 co</description>
     </item>
     <item>
       <title>Typora配合PicList快速上传图片并加速 </title>
       <link>http://localhost:1313/posts/piclist/</link>
       <pubDate>Thu, 03 Aug 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/piclist/</guid>
-      <description>前言 在Typora写笔记时不免使用图片，这里使用GitHub作图床，配合PicList上传，并通过jsdelivr实现CDN加速。&#xA;一. 准备 首先在 GitHub 中创建一个新的公共仓库。接下来生成一个新的 Token，地址为https://github.com/settings/tokens， Token 权限需要勾选write:packages和read:packages&#xA;Token 只显示一次，忘记了需要重新生成，注意保存&#xA;二. 创建网站 在服务器上创建一个新的网站和数据库，将下面项目打包后放入网站根目录并解压。 autoPicCDN&#xA;将项目中的数据库文件pic.sql上传到数据库中并替换覆盖 三. 修改参数 在 up.php 中修改参数：&#xA;一般选择 GitHub USER 填写用户名 REPO 填写仓库名 TOKEN 填写第一步的TOKEN 数据库信息只需修改 dbname user pass，与第二步中一致 四. 配置 PicList 下载 PicList（PicGo基础上开发） 或者 Picgo，地址如下： PicList&#xA;PicGo&#xA;安装 web-uploader插件 配置上传参数，填好后确认 API 地址填写up.php路径，如www.pic.com/up.php POST 参数名填写 pic JSON 路径填写 data.url 五. 配置 Typora 依次打开文件-&amp;gt;偏好设置-&amp;gt;图像 插入图片时选择“上传图片” 在最下方上传服务设定选择对应的应用 PicList或者 PicGo 六. Themeable 主题添加 Mac 风格代码块 在主题文件夹下建立两个文件对应 light 和 dark 模式。</description>
+      <description>前言 在Typora写笔记时不免使用图片，这里使用GitHub作图床，配合PicList上传，并通过jsdelivr实现CDN加速。 一. 准备 首</description>
     </item>
     <item>
       <title>Typecho博客Handsome主题美化</title>
       <link>http://localhost:1313/posts/handsome/</link>
       <pubDate>Fri, 18 Sep 2020 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/handsome/</guid>
-      <description>前言 Handsome 是一款精美的 Typecho 主题，后台功能强大，这里记录一下自己从网上找到的对主题的一些美化。&#xA;底部版权信息美化 底部左侧信息 在主题后台设置-开发者设置-博客底部左侧信息添加如下代码：&#xA;&amp;lt;div class=&amp;#34;github-badge&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;./&amp;#34; title=&amp;#34;©2021 XXX&amp;#34;&amp;gt; &amp;lt;span class=&amp;#34;badge-subject&amp;#34;&amp;gt;Copyright&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;badge-value bg-blue&amp;#34;&amp;gt;©2021 XXX&amp;lt;/span&amp;gt; &amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; | &amp;lt;div class=&amp;#34;github-badge&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;http://www.beian.gov.cn/&amp;#34; target=&amp;#34;_blank&amp;#34; title=&amp;#34;XICP备 XXXXXXXXXX号&amp;#34;), pointer;&amp;#34;&amp;gt; &amp;lt;span class=&amp;#34;badge-subject&amp;#34;&amp;gt;晋ICP备&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;badge-value bg-green&amp;#34;&amp;gt;XXXXXXXXXX号&amp;lt;/span&amp;gt; &amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; 删除对应代码&#xA;# 在 `handsome\component\footer.php` 文件中删除如下代码 by &amp;lt;a target=&amp;#34;blank&amp;#34; href=&amp;#34;https://www.ihewro.com/archives/489/&amp;#34;&amp;gt;handsome&amp;lt;/a&amp;gt; © &amp;lt;?php echo date(&amp;#34;Y&amp;#34;);?&amp;gt; Copyright 底部右侧信息 在主题后台设置-开发者设置-博客底部右侧信息添加如下代码：&#xA;&amp;lt;div class=&amp;#34;github-badge&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;http://www.typecho.org&amp;#34; target=&amp;#34;_blank&amp;#34; title=&amp;#34;由 Typecho 强力驱动&amp;#34;&amp;gt; &amp;lt;span class=&amp;#34;badge-subject&amp;#34;&amp;gt;Powered&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;#34;badge-value bg-blue&amp;#34;&amp;gt;Typecho&amp;lt;/span&amp;gt; &amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; | &amp;lt;div class=&amp;#34;github-badge&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;https://www.</description>
+      <description>前言 Handsome 是一款精美的 Typecho 主题，后台功能强大，这里记录一下自己从网上找到的对主题的一些美化。 底部版权信息美化 底部左侧信息 在主题后台设置-开发者设置</description>
     </item>
   </channel>
 </rss>

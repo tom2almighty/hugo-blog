@@ -47,7 +47,7 @@
 
 
 
-<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -55,7 +55,7 @@
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.3ff4589617589a2f28f0f5b8d71dc2fdc6c9ee7e5a224c13c2cf0d276305ca38.css" integrity="sha256-P/RYlhdYmi8o8PW41x3C/cbJ7n5aIkwTws8NJ2MFyjg=" media="screen">
 
 
 <link rel="stylesheet"
@@ -97,7 +97,7 @@
                 
                 
                 <a class="a-block drawer-menu-item active" href="/posts">
-                    归档 | Archive
+                    归档
                 </a>
                 
             
@@ -107,7 +107,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/categories">
-                    分类 | Categories
+                    分类
                 </a>
                 
             
@@ -117,7 +117,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/tags">
-                    标签 | Tags
+                    标签
                 </a>
                 
             
@@ -127,7 +127,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/index.xml">
-                    RSS Feed
+                    聚合
                 </a>
                 
             
@@ -437,7 +437,7 @@
                             
                             8 min
                             
-                            22 s.
+                            18 s.
                         
                     </div>
                 </div>
@@ -454,51 +454,51 @@
 <p>虽然 <code>RSS</code> 服务对用户要求较高，逐渐被各种各样的平台替代，但其信息来源灵活，对有一定动手能力的用户的来说利大于弊。因此本文记录自建 <code>RSS</code> 源获取、管理工具的流程，免得后续忘记需要重新翻找文档。</p>
 <h2 id="rsshub">RSSHub</h2>
 <p>首先是 <code>RSS</code> 订阅获取，这里推荐著名的 <code>RSSHub</code>，<code>GitHub</code> 地址如下：</p>
-<p>{% ghcard DIYgod/RSSHub, theme=onedark %}</p>
+<p><a href="https://github.com/DIYgod/RSSHub">RSSHub</a></p>
 <p>详细的说明可以在<a href="https://docs.rsshub.app/zh/">项目文档</a>找到，下面是服务器部署的方式：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#34;3.9&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">rsshub</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># two ways to enable puppeteer:</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># * comment out marked lines, then use this image instead: diygod/rsshub:chromium-bundled</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># * (consumes more disk space and memory) leave everything unchanged</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">diygod/rsshub</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">1200</span>:<span style="color:#ae81ff">1200</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">NODE_ENV</span>: <span style="color:#ae81ff">production</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">CACHE_TYPE</span>: <span style="color:#ae81ff">redis</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">REDIS_URL</span>: <span style="color:#ae81ff">redis://redis:6379/</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">PUPPETEER_WS_ENDPOINT</span>: <span style="color:#ae81ff">ws://browserless:3000</span> <span style="color:#75715e"># marked</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># ACCESS_KEY: password # 访问限制密钥</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">depends_on</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">redis</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">browserless</span> <span style="color:#75715e"># marked</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">browserless</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># marked</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">browserless/chrome</span> <span style="color:#75715e"># marked</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span> <span style="color:#75715e"># marked</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ulimits</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># marked</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">core</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># marked</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">hard</span>: <span style="color:#ae81ff">0</span> <span style="color:#75715e"># marked</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">soft</span>: <span style="color:#ae81ff">0</span> <span style="color:#75715e"># marked</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">redis</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">redis:alpine</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">redis-data:/data</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">volumes</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">redis-data</span>: <span style="color:#66d9ef">null</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">networks</span>: {}
-</span></span></code></pre></div><p>个人建议在配置中写入访问限制设置，以免别人盗用你的地址，将 <code>ACCESS_KEY</code> 后替换为自己的密码即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ffb8d1">version</span>:<span style="color:#a8757b"> </span><span style="color:#1bc5e0">&#34;3.9&#34;</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b"></span><span style="color:#ffb8d1">services</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">  </span><span style="color:#ffb8d1">rsshub</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#b0bec5"># two ways to enable puppeteer:</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#b0bec5"># * comment out marked lines, then use this image instead: diygod/rsshub:chromium-bundled</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#b0bec5"># * (consumes more disk space and memory) leave everything unchanged</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">image</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">diygod/rsshub</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">restart</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">always</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">ports</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#c5a3ff">1200</span>:<span style="color:#c5a3ff">1200</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">environment</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">NODE_ENV</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">production</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">CACHE_TYPE</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">redis</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">REDIS_URL</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">redis://redis:6379/</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">PUPPETEER_WS_ENDPOINT</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">ws://browserless:3000</span><span style="color:#a8757b"> </span><span style="color:#b0bec5"># marked</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#b0bec5"># ACCESS_KEY: password # 访问限制密钥</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">depends_on</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">redis</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">browserless</span><span style="color:#a8757b"> </span><span style="color:#b0bec5"># marked</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">  </span><span style="color:#ffb8d1">browserless</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#b0bec5"># marked</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">image</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">browserless/chrome</span><span style="color:#a8757b"> </span><span style="color:#b0bec5"># marked</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">restart</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">always</span><span style="color:#a8757b"> </span><span style="color:#b0bec5"># marked</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">ulimits</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#b0bec5"># marked</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">core</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">        </span><span style="color:#b0bec5"># marked</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">        </span><span style="color:#ffb8d1">hard</span>:<span style="color:#a8757b"> </span><span style="color:#c5a3ff">0</span><span style="color:#a8757b"> </span><span style="color:#b0bec5"># marked</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">        </span><span style="color:#ffb8d1">soft</span>:<span style="color:#a8757b"> </span><span style="color:#c5a3ff">0</span><span style="color:#a8757b"> </span><span style="color:#b0bec5"># marked</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">  </span><span style="color:#ffb8d1">redis</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">image</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">redis:alpine</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">restart</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">always</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">volumes</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">redis-data:/data</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b"></span><span style="color:#ffb8d1">volumes</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">  </span><span style="color:#ffb8d1">redis-data</span>:<span style="color:#a8757b"> </span><span style="color:#c2ffdf">null</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b"></span><span style="color:#ffb8d1">networks</span>:<span style="color:#a8757b"> </span>{}<span style="color:#a8757b">
+</span></span></span></code></pre></div><p>个人建议在配置中写入访问限制设置，以免别人盗用你的地址，将 <code>ACCESS_KEY</code> 后替换为自己的密码即可。</p>
 <p>配置好后访问密钥 <code>key</code> 可直接访问所有路由，例如：<code>https://rsshub.app/qdaily/column/59?key=ILoveRSSHub</code></p>
 <p>也可以通过 <code>md5</code> 生成访问码访问，官方的文档说明如下：<a href="https://docs.rsshub.app/zh/deploy/config#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E9%85%8D%E7%BD%AE">访问控制配置</a></p>
-<p>{% note info flat %}
-之前可以部署到 <code>Vercel</code> 平台，但是新版本部署出现问题，只能部署以前的分支，不过目前开发者在重写项目，可以等项目重构后再部署到 <code>Vercel</code> 等。
-{% endnote %}</p>
+<blockquote>
+<p>之前可以部署到 <code>Vercel</code> 平台，但是新版本部署出现问题，只能部署以前的分支，不过目前开发者在重写项目，可以等项目重构后再部署到 <code>Vercel</code> 等。</p>
+</blockquote>
 <h3 id="rsshub-radar">RSSHub Radar</h3>
 <p>除了项目支持的链接外，你也可以通过 <code>RSSHub Radar</code> 工具来显示当前页面的订阅，如下图：</p>
 <p><img src="https://pic.imgdb.cn/item/66a9b268d9c307b7e9d1386b.webp" alt="e46843b9ef968d8f84d07990c11fe4f2"></p>
@@ -522,73 +522,73 @@
 <h3 id="freshrss">FreshRSS</h3>
 <p><code>FreshRSS</code> 是一个轻量、自托管的 <code>Feed</code> 聚合器，支持插件系统，部分应用如 <code>Reeder</code></p>
 <p>就支持直接添加 <code>FreshRSS</code> 账户，项目地址如下：</p>
-<p>{% ghcard FreshRSS/FreshRSS, theme=onedark%}</p>
+<p><a href="https://github.com/FreshRSS/FreshRSS">FreshRSS</a></p>
 <p><img src="https://freshrss.org/images/screenshot.webp" alt="FreshRSS"></p>
 <p><strong>部署如下</strong>：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#34;3&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">freshrss</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">freshrss/freshrss:latest</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">freshrss</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">hostname</span>: <span style="color:#ae81ff">freshrss-app</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#39;8010:80&#39;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./data:/var/www/FreshRSS/data</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./extensions:/var/www/FreshRSS/extensions</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">CRON_MIN</span>: <span style="color:#e6db74">&#39;*/20&#39;</span> <span style="color:#75715e"># 刷新频率</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">TZ</span>: <span style="color:#ae81ff">Asia/Shanghai</span>
-</span></span></code></pre></div><p>后续如果需要在 <code>APP</code> 使用，需要在首先在 <code>账户管理</code>页面的 <code>API 管理中</code>设置一个 <code>API</code> 密码，随后在<code>账户设置-管理-认证</code>中打开<code>允许 API 访问</code> 开关。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ffb8d1">version</span>:<span style="color:#a8757b"> </span><span style="color:#1bc5e0">&#34;3&#34;</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b"></span><span style="color:#ffb8d1">services</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">  </span><span style="color:#ffb8d1">freshrss</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">image</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">freshrss/freshrss:latest</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">container_name</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">freshrss</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">hostname</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">freshrss-app</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">restart</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">always</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">ports</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#1bc5e0">&#39;8010:80&#39;</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">volumes</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">./data:/var/www/FreshRSS/data</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">./extensions:/var/www/FreshRSS/extensions</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">environment</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">CRON_MIN</span>:<span style="color:#a8757b"> </span><span style="color:#1bc5e0">&#39;*/20&#39;</span><span style="color:#a8757b"> </span><span style="color:#b0bec5"># 刷新频率</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">TZ</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">Asia/Shanghai</span><span style="color:#a8757b">
+</span></span></span></code></pre></div><p>后续如果需要在 <code>APP</code> 使用，需要在首先在 <code>账户管理</code>页面的 <code>API 管理中</code>设置一个 <code>API</code> 密码，随后在<code>账户设置-管理-认证</code>中打开<code>允许 API 访问</code> 开关。</p>
 <h3 id="minuflux">Minuflux</h3>
 <p><code>Miniflux</code> 相比 <code>FreshRSS</code> 更加轻量，使用 <code>Postgresql</code> 数据库，同时也支持图片代理，项目地址如下：</p>
-<p>{% ghcard miniflux/v2, theme=onedark%}</p>
+<p><a href="https://github.com/miniflux/v2">miniflux</a></p>
 <p><img src="https://miniflux.app/images/overview.png" alt="miniflux"></p>
 <p><strong>部署如下：</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3.4&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">miniflux</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">${MINIFLUX_IMAGE:-miniflux/miniflux:latest}</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">miniflux</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">depends_on</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">db</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">DATABASE_URL=postgres://miniflux:secret@db/miniflux?sslmode=disable</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">RUN_MIGRATIONS=1</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">FETCH_YOUTUBE_WATCH_TIME=1</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">CREATE_ADMIN=1</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">ADMIN_USERNAME=admin </span> <span style="color:#75715e">#登录用户名</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">ADMIN_PASSWORD=adminpassword </span> <span style="color:#75715e">#登录密码</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">BASE_URL=https://rss.example.com </span> <span style="color:#75715e">#阅读器的域名</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">POLLING_FREQUENCY=10 </span> <span style="color:#75715e">#每个 feed 的刷新间隔</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">POLLING_PARSING_ERROR_LIMIT=0</span> <span style="color:#75715e">#拉取出错后不会停止拉去，还是会按计划继续拉</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">BATCH_SIZE=100 </span> <span style="color:#75715e">#每次拉取的 feed 数量</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">POLLING_SCHEDULER=entry_frequency</span> <span style="color:#75715e">#拉取类型，根据上周的平均更新周期来拉取</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">SCHEDULER_ENTRY_FREQUENCY_MAX_INTERVAL=30</span> <span style="color:#75715e">#接上条，但也不会大于 30 分钟，建议和 POLLING_FREQUENCY 参数一起来看</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">MEDIA_PROXY_MODE=all</span> <span style="color:#75715e">#图片代理功能，Miniflux 先把源端的图片缓存到服务器上来，后续就不用客户端去源服务器拉了</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">MEDIA_PROXY_PRIVATE_KEY=password</span> <span style="color:#75715e"># 使用客户端缓存过文章，然后某个时间重启了 docker 实例，那么会导致图片无法显示的情况，这是因为每次重启会随机生成 PROXY_PRIVATE_KEY,所以可以增加参数 PROXY_PRIVATE_KEY 固化 key ，便于解决更新、重启等场景下的图片显示问题。 </span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">DATABASE_MAX_CONNS=50</span> <span style="color:#75715e">#增加数据库连接数，对于多图片的 feed 非常有效，可以大幅提升加载和访问速度</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">DATABASE_MIN_CONNS=5 </span> <span style="color:#75715e"># 同上 </span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">WORKER_POOL_SIZE=10 </span> <span style="color:#75715e">#默认，或适当加大</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">unless-stopped</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;6800:8080&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">db</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">postgres:15</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">postgres</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">POSTGRES_USER=miniflux</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">POSTGRES_PASSWORD=secret</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./miniflux-db:/var/lib/postgresql/data</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">healthcheck</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">test</span>: [<span style="color:#e6db74">&#34;CMD&#34;</span>, <span style="color:#e6db74">&#34;pg_isready&#34;</span>, <span style="color:#e6db74">&#34;-U&#34;</span>, <span style="color:#e6db74">&#34;miniflux&#34;</span>]
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">interval</span>: <span style="color:#ae81ff">10s</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">start_period</span>: <span style="color:#ae81ff">30s</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">unless-stopped</span>
-</span></span></code></pre></div><p>在客户端使用同样需要打开 <code>API</code>开关并设置密码，推荐使用 <code>Google Reader API</code>，<code>Fever API</code> 后续可能会不支持。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ffb8d1">version</span>:<span style="color:#a8757b"> </span><span style="color:#1bc5e0">&#39;3.4&#39;</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b"></span><span style="color:#ffb8d1">services</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">  </span><span style="color:#ffb8d1">miniflux</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">image</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">${MINIFLUX_IMAGE:-miniflux/miniflux:latest}</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">container_name</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">miniflux</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">depends_on</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">db</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">environment</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">DATABASE_URL=postgres://miniflux:secret@db/miniflux?sslmode=disable</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">RUN_MIGRATIONS=1</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">FETCH_YOUTUBE_WATCH_TIME=1</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">CREATE_ADMIN=1</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">ADMIN_USERNAME=admin </span><span style="color:#a8757b"> </span><span style="color:#b0bec5">#登录用户名</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">ADMIN_PASSWORD=adminpassword </span><span style="color:#a8757b"> </span><span style="color:#b0bec5">#登录密码</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">BASE_URL=https://rss.example.com </span><span style="color:#a8757b"> </span><span style="color:#b0bec5">#阅读器的域名</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">POLLING_FREQUENCY=10 </span><span style="color:#a8757b"> </span><span style="color:#b0bec5">#每个 feed 的刷新间隔</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">POLLING_PARSING_ERROR_LIMIT=0</span><span style="color:#a8757b"> </span><span style="color:#b0bec5">#拉取出错后不会停止拉去，还是会按计划继续拉</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">BATCH_SIZE=100 </span><span style="color:#a8757b"> </span><span style="color:#b0bec5">#每次拉取的 feed 数量</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">POLLING_SCHEDULER=entry_frequency</span><span style="color:#a8757b"> </span><span style="color:#b0bec5">#拉取类型，根据上周的平均更新周期来拉取</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">SCHEDULER_ENTRY_FREQUENCY_MAX_INTERVAL=30</span><span style="color:#a8757b"> </span><span style="color:#b0bec5">#接上条，但也不会大于 30 分钟，建议和 POLLING_FREQUENCY 参数一起来看</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">MEDIA_PROXY_MODE=all</span><span style="color:#a8757b"> </span><span style="color:#b0bec5">#图片代理功能，Miniflux 先把源端的图片缓存到服务器上来，后续就不用客户端去源服务器拉了</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">MEDIA_PROXY_PRIVATE_KEY=password</span><span style="color:#a8757b"> </span><span style="color:#b0bec5"># 使用客户端缓存过文章，然后某个时间重启了 docker 实例，那么会导致图片无法显示的情况，这是因为每次重启会随机生成 PROXY_PRIVATE_KEY,所以可以增加参数 PROXY_PRIVATE_KEY 固化 key ，便于解决更新、重启等场景下的图片显示问题。 </span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">DATABASE_MAX_CONNS=50</span><span style="color:#a8757b"> </span><span style="color:#b0bec5">#增加数据库连接数，对于多图片的 feed 非常有效，可以大幅提升加载和访问速度</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">DATABASE_MIN_CONNS=5 </span><span style="color:#a8757b"> </span><span style="color:#b0bec5"># 同上 </span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">WORKER_POOL_SIZE=10 </span><span style="color:#a8757b"> </span><span style="color:#b0bec5">#默认，或适当加大</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">restart</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">unless-stopped</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">ports</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#1bc5e0">&#34;6800:8080&#34;</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">  </span><span style="color:#ffb8d1">db</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">image</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">postgres:15</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">container_name</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">postgres</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">environment</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">POSTGRES_USER=miniflux</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">POSTGRES_PASSWORD=secret</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">volumes</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span>- <span style="color:#ae81ff">./miniflux-db:/var/lib/postgresql/data</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">healthcheck</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">test</span>:<span style="color:#a8757b"> </span>[<span style="color:#1bc5e0">&#34;CMD&#34;</span>,<span style="color:#a8757b"> </span><span style="color:#1bc5e0">&#34;pg_isready&#34;</span>,<span style="color:#a8757b"> </span><span style="color:#1bc5e0">&#34;-U&#34;</span>,<span style="color:#a8757b"> </span><span style="color:#1bc5e0">&#34;miniflux&#34;</span>]<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">interval</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">10s</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">      </span><span style="color:#ffb8d1">start_period</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">30s</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span><span style="color:#ffb8d1">restart</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">unless-stopped</span><span style="color:#a8757b">
+</span></span></span></code></pre></div><p>在客户端使用同样需要打开 <code>API</code>开关并设置密码，推荐使用 <code>Google Reader API</code>，<code>Fever API</code> 后续可能会不支持。</p>
 <h2 id="客户端">客户端</h2>
 <p>iOS 端推荐使用 <a href="https://reederapp.com/">Reeder</a>，体验良好，缺点是收费且不支持中文，免费的话可以使用 <a href="https://netnewswire.com/">NetNewsWire</a></p>
 <h2 id="防盗链设置">防盗链设置</h2>
@@ -601,7 +601,7 @@
 <p>同样提供了解决方法可以通过一些油猴脚本解决网页观看问题，<a href="https://greasyfork.org/scripts/376884">脚本1</a> <a href="https://greasyfork.org/scripts/463461-fix-image-error-at-inoreader">脚本2</a>，或者使用代理解决:<a href="https://docs.rsshub.app/zh/guide/parameters#%E5%A4%9A%E5%AA%92%E4%BD%93%E5%A4%84%E7%90%86">多媒体处理</a>，不过我用不明白，好在在另一篇<a href="https://sspai.com/post/85475">文章</a>中得到灵感，可以直接用 <code>Surge</code> 修改 <code>Header</code> 中的 <code>referer</code>，方便快捷。</p>
 <p>这是我自用的 Surge 模块，可以跳过少数派的防盗链，你可以参考适应自己的需求，如果是网页端，可以使用上面提到的<a href="https://sspai.com/post/85475">文章</a>的方法。</p>
 <ul>
-<li><a href="https://raw.githubusercontent.com/tom2almighty/files/master/rss-img-fix.sgmodule">RSS防盗链修复</a></li>
+<li><a href="https://raw.githubusercontent.com/tom2almighty/files/master/module/fix-rss-img.sgmodule">RSS防盗链修复</a></li>
 </ul>
 <h2 id="参考文献">参考文献</h2>
 <ul>
@@ -653,17 +653,17 @@
 
 
 <script src="https://giscus.app/client.js"
-        data-repo="username/repo"
-        data-repo-id="**************************"
-        data-category="General"
-        data-category-id="*********************"
+        data-repo="tom2almighty/giscus"
+        data-repo-id="R_kgDOMhXXdQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMhXXdc4Chgn1"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
         data-theme="preferred_color_scheme"
-        data-lang="en"
+        data-lang="zh-CN"
         crossorigin="anonymous"
         async>
 </script>
@@ -699,7 +699,7 @@
             
             
             <a class="a-block nav-link-item active" href="/posts">
-                归档 | Archive
+                归档
             </a>
             
         
@@ -709,7 +709,7 @@
             
             
             <a class="a-block nav-link-item false" href="/categories">
-                分类 | Categories
+                分类
             </a>
             
         
@@ -719,7 +719,7 @@
             
             
             <a class="a-block nav-link-item false" href="/tags">
-                标签 | Tags
+                标签
             </a>
             
         
@@ -729,7 +729,7 @@
             
             
             <a class="a-block nav-link-item false" href="/index.xml">
-                RSS Feed
+                聚合
             </a>
             
         

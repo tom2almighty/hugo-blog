@@ -14,7 +14,7 @@
       <link>http://localhost:1313/posts/webstack-hugo/</link>
       <pubDate>Thu, 21 Mar 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/webstack-hugo/</guid>
-      <description>前言 Webstack-Hugo 导航是基于纯静态的网址导航网站 webstack.cc 制作的 Hugo 主题，是一个基于 Hugo 的静态响应式网址导航主题。添加了天气及夜间模式，主要的配置信息都集成到了 config.toml，导航的各个信息都集成在 data/webstack.yml 文件中。&#xA;部署 首先下载 Hugo 到本地，同时添加系统环境变量。找到一个文件夹，然后在文件夹下打开 Windows Terminal 创建一个新的 Hugo 站点。 hugo new site webstack-hugo 下载 Webstack-Hugo 源码，并解压到 ~/webstack-hugo/themes 文件夹下，名称更改为 Webstack-Hugo，将 ~/webstack-hugo/themes/Webstack-Hugo/exampleSite 文件夹下所有内容复制到 Hugo 站点根目录，并删除站点根目录的 hugo.toml 文件。 修改网站配置。 配置信息在 config.toml 文件中 导航信息在 data/webstack.yml 文件中 新建一个 Github 仓库，将 Hugo 站点根目录下的文件推送到仓库，然后在 Vercel 创建新的项目并导入仓库。 网站 icon 获取 可以通过 API 获取网站的图标，地址如下：&#xA;https://api.iowen.cn/favicon/www.iowen.cn.png 将需要获取的网址替换到 favicon/ 后 .png 前，也可以通过在线工具箱：&#xA;https://tool.cccyun.cc/favicon 问题修复 部署好站点后会发现网站样式无法正常加载，但是本地部署正常，解决方法：将 layouts/partials 文件夹下文件中 relURL 更换为 absURL 即可。</description>
+      <description>前言 Webstack-Hugo 导航是基于纯静态的网址导航网站 webstack.cc 制作的 Hugo 主题，是一个基于 Hugo 的静态响应式网址导航主题。添加了天气及夜间模式，主要的配置信息都集成到了 co</description>
     </item>
   </channel>
 </rss>

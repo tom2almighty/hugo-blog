@@ -14,7 +14,7 @@
       <link>http://localhost:1313/posts/rss-tutorial/</link>
       <pubDate>Wed, 31 Jul 2024 11:01:43 +0000</pubDate>
       <guid>http://localhost:1313/posts/rss-tutorial/</guid>
-      <description>前言 Google Reader 在 2013 年的下线似乎标志着 RSS 黄金时代的结束。在那之后，虽然陆续出现过很多替代品，但 RSS 的地位已经被无限刷新的信息流、算法推荐等新技术逐渐取代了(来自少数派文章)。&#xA;虽然 RSS 服务对用户要求较高，逐渐被各种各样的平台替代，但其信息来源灵活，对有一定动手能力的用户的来说利大于弊。因此本文记录自建 RSS 源获取、管理工具的流程，免得后续忘记需要重新翻找文档。&#xA;RSSHub 首先是 RSS 订阅获取，这里推荐著名的 RSSHub，GitHub 地址如下：&#xA;{% ghcard DIYgod/RSSHub, theme=onedark %}&#xA;详细的说明可以在项目文档找到，下面是服务器部署的方式：&#xA;version: &amp;#34;3.9&amp;#34; services: rsshub: # two ways to enable puppeteer: # * comment out marked lines, then use this image instead: diygod/rsshub:chromium-bundled # * (consumes more disk space and memory) leave everything unchanged image: diygod/rsshub restart: always ports: - 1200:1200 environment: NODE_ENV: production CACHE_TYPE: redis REDIS_URL: redis://redis:6379/ PUPPETEER_WS_ENDPOINT: ws://browserless:3000 # marked # ACCESS_KEY: password # 访问限制密钥 depends_on: - redis - browserless # marked browserless: # marked image: browserless/chrome # marked restart: always # marked ulimits: # marked core: # marked hard: 0 # marked soft: 0 # marked redis: image: redis:alpine restart: always volumes: - redis-data:/data volumes: redis-data: null networks: {} 个人建议在配置中写入访问限制设置，以免别人盗用你的地址，将 ACCESS_KEY 后替换为自己的密码即可。</description>
+      <description>前言 Google Reader 在 2013 年的下线似乎标志着 RSS 黄金时代的结束。在那之后，虽然陆续出现过很多替代品，但 RSS 的地位已经被无限刷新的信息流、算法推荐等新技术逐渐取</description>
     </item>
   </channel>
 </rss>

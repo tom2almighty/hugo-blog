@@ -46,7 +46,7 @@
 
 
 
-<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -54,7 +54,7 @@
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.3ff4589617589a2f28f0f5b8d71dc2fdc6c9ee7e5a224c13c2cf0d276305ca38.css" integrity="sha256-P/RYlhdYmi8o8PW41x3C/cbJ7n5aIkwTws8NJ2MFyjg=" media="screen">
 
 
 <link rel="stylesheet"
@@ -96,7 +96,7 @@
                 
                 
                 <a class="a-block drawer-menu-item active" href="/posts">
-                    归档 | Archive
+                    归档
                 </a>
                 
             
@@ -106,7 +106,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/categories">
-                    分类 | Categories
+                    分类
                 </a>
                 
             
@@ -116,7 +116,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/tags">
-                    标签 | Tags
+                    标签
                 </a>
                 
             
@@ -126,7 +126,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/index.xml">
-                    RSS Feed
+                    聚合
                 </a>
                 
             
@@ -360,161 +360,161 @@
 <p>在主题配置文件 <code>[BlogRoot]\_config.butterfly.yml</code> 文件中的 <code>inject</code> 配置项的 <code>head</code> 子项加入以下代码，引入刚刚创建的 <code>custom.css</code> 文件（这是相对路径的写法）</p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">inject</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">head</span>:
-</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">&lt;link rel=&#34;stylesheet&#34; href=&#34;/css/custom.css&#34; media=&#34;defer&#34; onload=&#34;this.media=&#39;all&#39;&#34;&gt;</span>
-</span></span></code></pre></div><h2 id="背景一图流">背景一图流</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#75715e">/* 页脚与头图透明 */</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ffb8d1">inject</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">  </span><span style="color:#ffb8d1">head</span>:<span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b">    </span>- <span style="color:#ae81ff">&lt;link rel=&#34;stylesheet&#34; href=&#34;/css/custom.css&#34; media=&#34;defer&#34; onload=&#34;this.media=&#39;all&#39;&#34;&gt;</span><span style="color:#a8757b">
+</span></span></span></code></pre></div><h2 id="背景一图流">背景一图流</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#b0bec5">/* 页脚与头图透明 */</span>
 </span></span><span style="display:flex;"><span>#footer {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">transparent</span> <span style="color:#75715e">!important</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">background</span>: <span style="color:#c2ffdf">transparent</span> <span style="color:#b0bec5">!important</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>#page-header {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">transparent</span> <span style="color:#75715e">!important</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">background</span>: <span style="color:#c2ffdf">transparent</span> <span style="color:#b0bec5">!important</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/* 白天模式遮罩透明 */</span>
-</span></span><span style="display:flex;"><span>#footer::<span style="color:#a6e22e">before</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">transparent</span> <span style="color:#75715e">!important</span>;
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5">/* 白天模式遮罩透明 */</span>
+</span></span><span style="display:flex;"><span>#footer::<span style="color:#ceb1ff">before</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">background</span>: <span style="color:#c2ffdf">transparent</span> <span style="color:#b0bec5">!important</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>#page-header::<span style="color:#a6e22e">before</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">transparent</span> <span style="color:#75715e">!important</span>;
+</span></span><span style="display:flex;"><span>#page-header::<span style="color:#ceb1ff">before</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">background</span>: <span style="color:#c2ffdf">transparent</span> <span style="color:#b0bec5">!important</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/* 夜间模式遮罩透明 */</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span><span style="color:#f92672">data-theme</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dark&#34;</span><span style="color:#f92672">]</span> #footer::<span style="color:#a6e22e">before</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">transparent</span> <span style="color:#75715e">!important</span>;
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5">/* 夜间模式遮罩透明 */</span>
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">[</span><span style="color:#ffb8d1">data-theme</span><span style="color:#ffb8d1">=</span><span style="color:#1bc5e0">&#34;dark&#34;</span><span style="color:#ffb8d1">]</span> #footer::<span style="color:#ceb1ff">before</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">background</span>: <span style="color:#c2ffdf">transparent</span> <span style="color:#b0bec5">!important</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span><span style="color:#f92672">data-theme</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dark&#34;</span><span style="color:#f92672">]</span> #page-header::<span style="color:#a6e22e">before</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">transparent</span> <span style="color:#75715e">!important</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">[</span><span style="color:#ffb8d1">data-theme</span><span style="color:#ffb8d1">=</span><span style="color:#1bc5e0">&#34;dark&#34;</span><span style="color:#ffb8d1">]</span> #page-header::<span style="color:#ceb1ff">before</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">background</span>: <span style="color:#c2ffdf">transparent</span> <span style="color:#b0bec5">!important</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>编辑主题设置 <code>index_img</code>、<code>background</code>、<code>footer_bg</code> 选项。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">index_img</span>: 
-</span></span><span style="display:flex;"><span><span style="color:#f92672">background</span>: <span style="color:#ae81ff">url(https://example.com/img/background.jpg)</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">footer_bg</span>: <span style="color:#66d9ef">false</span>
-</span></span></code></pre></div><h2 id="文章目录模糊效果">文章目录模糊效果</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/* 文章目录 */</span>
-</span></span><span style="display:flex;"><span>#aside-content #card-toc .<span style="color:#a6e22e">toc-content</span> .<span style="color:#a6e22e">toc-link</span>.<span style="color:#a6e22e">active</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">1.2</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">12</span><span style="color:#66d9ef">px</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-left-color</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>heo<span style="color:#f92672">-</span>hovertext);
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-color</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>heo<span style="color:#f92672">-</span>card<span style="color:#f92672">-</span>bg);
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>heo<span style="color:#f92672">-</span>lighttext);
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-weight</span>: <span style="color:#66d9ef">bold</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ffb8d1">index_img</span>:<span style="color:#a8757b"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b"></span><span style="color:#ffb8d1">background</span>:<span style="color:#a8757b"> </span><span style="color:#ae81ff">url(https://example.com/img/background.jpg)</span><span style="color:#a8757b">
+</span></span></span><span style="display:flex;"><span><span style="color:#a8757b"></span><span style="color:#ffb8d1">footer_bg</span>:<span style="color:#a8757b"> </span><span style="color:#c2ffdf">false</span><span style="color:#a8757b">
+</span></span></span></code></pre></div><h2 id="文章目录模糊效果">文章目录模糊效果</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5">/* 文章目录 */</span>
+</span></span><span style="display:flex;"><span>#aside-content #card-toc .<span style="color:#ceb1ff">toc-content</span> .<span style="color:#ceb1ff">toc-link</span>.<span style="color:#ceb1ff">active</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">line-height</span>: <span style="color:#c5a3ff">1.2</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">border-radius</span>: <span style="color:#c5a3ff">12</span><span style="color:#c2ffdf">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">border-left-color</span>: <span style="color:#ceb1ff">var</span>(<span style="color:#ffb8d1">--</span>heo<span style="color:#ffb8d1">-</span>hovertext);
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">background-color</span>: <span style="color:#ceb1ff">var</span>(<span style="color:#ffb8d1">--</span>heo<span style="color:#ffb8d1">-</span>card<span style="color:#ffb8d1">-</span>bg);
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">color</span>: <span style="color:#ceb1ff">var</span>(<span style="color:#ffb8d1">--</span>heo<span style="color:#ffb8d1">-</span>lighttext);
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">font-weight</span>: <span style="color:#c2ffdf">bold</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">font-size</span>: <span style="color:#c5a3ff">20</span><span style="color:#c2ffdf">px</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span><span style="color:#f92672">data-theme</span><span style="color:#f92672">=</span><span style="color:#f92672">dark</span><span style="color:#f92672">]</span>.<span style="color:#a6e22e">toc</span> .<span style="color:#a6e22e">toc-item</span>.<span style="color:#a6e22e">active</span> .<span style="color:#a6e22e">toc-link</span> .<span style="color:#a6e22e">toc-text</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>heo<span style="color:#f92672">-</span><span style="color:#66d9ef">white</span>);
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">[</span><span style="color:#ffb8d1">data-theme</span><span style="color:#ffb8d1">=</span><span style="color:#ffb8d1">dark</span><span style="color:#ffb8d1">]</span>.<span style="color:#ceb1ff">toc</span> .<span style="color:#ceb1ff">toc-item</span>.<span style="color:#ceb1ff">active</span> .<span style="color:#ceb1ff">toc-link</span> .<span style="color:#ceb1ff">toc-text</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">color</span>: <span style="color:#ceb1ff">var</span>(<span style="color:#ffb8d1">--</span>heo<span style="color:#ffb8d1">-</span><span style="color:#c2ffdf">white</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>#aside-content #card-toc .<span style="color:#a6e22e">toc-content</span> .<span style="color:#a6e22e">toc-item</span>.<span style="color:#a6e22e">active</span> .<span style="color:#a6e22e">toc-link</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">8</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>#aside-content #card-toc .<span style="color:#ceb1ff">toc-content</span> .<span style="color:#ceb1ff">toc-item</span>.<span style="color:#ceb1ff">active</span> .<span style="color:#ceb1ff">toc-link</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">opacity</span>: <span style="color:#c5a3ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">border-radius</span>: <span style="color:#c5a3ff">8</span><span style="color:#c2ffdf">px</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>#aside-content #card-toc .<span style="color:#a6e22e">toc-content</span> .<span style="color:#a6e22e">toc-link</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">1.2</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">8</span><span style="color:#66d9ef">px</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-left</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">transparent</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">12</span><span style="color:#66d9ef">px</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>heo<span style="color:#f92672">-</span>secondtext);
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">default</span>;
+</span></span><span style="display:flex;"><span>#aside-content #card-toc .<span style="color:#ceb1ff">toc-content</span> .<span style="color:#ceb1ff">toc-link</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">line-height</span>: <span style="color:#c5a3ff">1.2</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">padding</span>: <span style="color:#c5a3ff">8</span><span style="color:#c2ffdf">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">border-left</span>: <span style="color:#c5a3ff">0</span><span style="color:#c2ffdf">px</span> <span style="color:#c2ffdf">solid</span> <span style="color:#c2ffdf">transparent</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">border-radius</span>: <span style="color:#c5a3ff">12</span><span style="color:#c2ffdf">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">color</span>: <span style="color:#ceb1ff">var</span>(<span style="color:#ffb8d1">--</span>heo<span style="color:#ffb8d1">-</span>secondtext);
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">cursor</span>: <span style="color:#c2ffdf">default</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>#aside-content #card-toc .<span style="color:#a6e22e">toc-content</span> .<span style="color:#a6e22e">toc-link</span>:<span style="color:#a6e22e">not</span><span style="color:#f92672">(</span>.<span style="color:#a6e22e">active</span><span style="color:#f92672">)</span> <span style="color:#f92672">span</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0.6</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">pointer</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">filter</span>: blur(<span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">transition</span>: <span style="color:#ae81ff">0.3</span><span style="color:#66d9ef">s</span>;
+</span></span><span style="display:flex;"><span>#aside-content #card-toc .<span style="color:#ceb1ff">toc-content</span> .<span style="color:#ceb1ff">toc-link</span>:<span style="color:#ceb1ff">not</span><span style="color:#ffb8d1">(</span>.<span style="color:#ceb1ff">active</span><span style="color:#ffb8d1">)</span> <span style="color:#ffb8d1">span</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">opacity</span>: <span style="color:#c5a3ff">0.6</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">cursor</span>: <span style="color:#c2ffdf">pointer</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">filter</span>: blur(<span style="color:#c5a3ff">1</span><span style="color:#c2ffdf">px</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">transition</span>: <span style="color:#c5a3ff">0.3</span><span style="color:#c2ffdf">s</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>#aside-content #card-toc:<span style="color:#a6e22e">hover</span> .<span style="color:#a6e22e">toc-content</span> .<span style="color:#a6e22e">toc-link</span>:<span style="color:#a6e22e">not</span><span style="color:#f92672">(</span>.<span style="color:#a6e22e">active</span><span style="color:#f92672">)</span> <span style="color:#f92672">span</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">filter</span>: blur(<span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>#aside-content #card-toc:<span style="color:#ceb1ff">hover</span> .<span style="color:#ceb1ff">toc-content</span> .<span style="color:#ceb1ff">toc-link</span>:<span style="color:#ceb1ff">not</span><span style="color:#ffb8d1">(</span>.<span style="color:#ceb1ff">active</span><span style="color:#ffb8d1">)</span> <span style="color:#ffb8d1">span</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">filter</span>: blur(<span style="color:#c5a3ff">0</span><span style="color:#c2ffdf">px</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">opacity</span>: <span style="color:#c5a3ff">1</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>#aside-content #card-toc .<span style="color:#a6e22e">toc-content</span> .<span style="color:#a6e22e">toc-link</span>:<span style="color:#a6e22e">not</span><span style="color:#f92672">(</span>.<span style="color:#a6e22e">active</span><span style="color:#f92672">)</span> <span style="color:#f92672">span</span>:<span style="color:#a6e22e">hover</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>heo<span style="color:#f92672">-</span>lighttext);
+</span></span><span style="display:flex;"><span>#aside-content #card-toc .<span style="color:#ceb1ff">toc-content</span> .<span style="color:#ceb1ff">toc-link</span>:<span style="color:#ceb1ff">not</span><span style="color:#ffb8d1">(</span>.<span style="color:#ceb1ff">active</span><span style="color:#ffb8d1">)</span> <span style="color:#ffb8d1">span</span>:<span style="color:#ceb1ff">hover</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">color</span>: <span style="color:#ceb1ff">var</span>(<span style="color:#ffb8d1">--</span>heo<span style="color:#ffb8d1">-</span>lighttext);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="页面透明度">页面透明度</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>:<span style="color:#a6e22e">root</span> {
-</span></span><span style="display:flex;"><span>  --trans-light: rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.88</span>);
-</span></span><span style="display:flex;"><span>  --trans-dark: rgba(<span style="color:#ae81ff">25</span>, <span style="color:#ae81ff">25</span>, <span style="color:#ae81ff">25</span>, <span style="color:#ae81ff">0.88</span>);
-</span></span><span style="display:flex;"><span>  --border-style: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> rgb(<span style="color:#ae81ff">169</span>, <span style="color:#ae81ff">169</span>, <span style="color:#ae81ff">169</span>);
-</span></span><span style="display:flex;"><span>  --backdrop-filter: blur(<span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>) saturate(<span style="color:#ae81ff">150</span><span style="color:#66d9ef">%</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>:<span style="color:#ceb1ff">root</span> {
+</span></span><span style="display:flex;"><span>  --trans-light: rgba(<span style="color:#c5a3ff">255</span>, <span style="color:#c5a3ff">255</span>, <span style="color:#c5a3ff">255</span>, <span style="color:#c5a3ff">0.88</span>);
+</span></span><span style="display:flex;"><span>  --trans-dark: rgba(<span style="color:#c5a3ff">25</span>, <span style="color:#c5a3ff">25</span>, <span style="color:#c5a3ff">25</span>, <span style="color:#c5a3ff">0.88</span>);
+</span></span><span style="display:flex;"><span>  --border-style: <span style="color:#c5a3ff">1</span><span style="color:#c2ffdf">px</span> <span style="color:#c2ffdf">solid</span> rgb(<span style="color:#c5a3ff">169</span>, <span style="color:#c5a3ff">169</span>, <span style="color:#c5a3ff">169</span>);
+</span></span><span style="display:flex;"><span>  --backdrop-filter: blur(<span style="color:#c5a3ff">5</span><span style="color:#c2ffdf">px</span>) saturate(<span style="color:#c5a3ff">150</span><span style="color:#c2ffdf">%</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/* 首页文章卡片 */</span>
-</span></span><span style="display:flex;"><span>#recent-posts <span style="color:#f92672">&gt;</span> .<span style="color:#a6e22e">recent-post-item</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>trans<span style="color:#f92672">-</span>light);
-</span></span><span style="display:flex;"><span>  backdrop-filter: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>backdrop<span style="color:#f92672">-</span>filter);
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">25</span><span style="color:#66d9ef">px</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>border<span style="color:#f92672">-</span><span style="color:#66d9ef">style</span>);
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5">/* 首页文章卡片 */</span>
+</span></span><span style="display:flex;"><span>#recent-posts <span style="color:#ffb8d1">&gt;</span> .<span style="color:#ceb1ff">recent-post-item</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">background</span>: <span style="color:#ceb1ff">var</span>(<span style="color:#ffb8d1">--</span>trans<span style="color:#ffb8d1">-</span>light);
+</span></span><span style="display:flex;"><span>  backdrop-filter: <span style="color:#ceb1ff">var</span>(<span style="color:#ffb8d1">--</span>backdrop<span style="color:#ffb8d1">-</span>filter);
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">border-radius</span>: <span style="color:#c5a3ff">25</span><span style="color:#c2ffdf">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">border</span>: <span style="color:#ceb1ff">var</span>(<span style="color:#ffb8d1">--</span>border<span style="color:#ffb8d1">-</span><span style="color:#c2ffdf">style</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/* 首页侧栏卡片 */</span>
-</span></span><span style="display:flex;"><span>#aside-content .<span style="color:#a6e22e">card-widget</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>trans<span style="color:#f92672">-</span>light);
-</span></span><span style="display:flex;"><span>  backdrop-filter: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>backdrop<span style="color:#f92672">-</span>filter);
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">18</span><span style="color:#66d9ef">px</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>border<span style="color:#f92672">-</span><span style="color:#66d9ef">style</span>);
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5">/* 首页侧栏卡片 */</span>
+</span></span><span style="display:flex;"><span>#aside-content .<span style="color:#ceb1ff">card-widget</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">background</span>: <span style="color:#ceb1ff">var</span>(<span style="color:#ffb8d1">--</span>trans<span style="color:#ffb8d1">-</span>light);
+</span></span><span style="display:flex;"><span>  backdrop-filter: <span style="color:#ceb1ff">var</span>(<span style="color:#ffb8d1">--</span>backdrop<span style="color:#ffb8d1">-</span>filter);
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">border-radius</span>: <span style="color:#c5a3ff">18</span><span style="color:#c2ffdf">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">border</span>: <span style="color:#ceb1ff">var</span>(<span style="color:#ffb8d1">--</span>border<span style="color:#ffb8d1">-</span><span style="color:#c2ffdf">style</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/* 文章页、归档页、普通页面 */</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">div</span>#post<span style="color:#f92672">,</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">div</span>#page<span style="color:#f92672">,</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">div</span>#archive {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>trans<span style="color:#f92672">-</span>light);
-</span></span><span style="display:flex;"><span>  backdrop-filter: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>backdrop<span style="color:#f92672">-</span>filter);
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>border<span style="color:#f92672">-</span><span style="color:#66d9ef">style</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5">/* 文章页、归档页、普通页面 */</span>
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">div</span>#post<span style="color:#ffb8d1">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">div</span>#page<span style="color:#ffb8d1">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">div</span>#archive {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">background</span>: <span style="color:#ceb1ff">var</span>(<span style="color:#ffb8d1">--</span>trans<span style="color:#ffb8d1">-</span>light);
+</span></span><span style="display:flex;"><span>  backdrop-filter: <span style="color:#ceb1ff">var</span>(<span style="color:#ffb8d1">--</span>backdrop<span style="color:#ffb8d1">-</span>filter);
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">border</span>: <span style="color:#ceb1ff">var</span>(<span style="color:#ffb8d1">--</span>border<span style="color:#ffb8d1">-</span><span style="color:#c2ffdf">style</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">border-radius</span>: <span style="color:#c5a3ff">20</span><span style="color:#c2ffdf">px</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/* 导航栏 */</span>
-</span></span><span style="display:flex;"><span>#page-header.<span style="color:#a6e22e">nav-fixed</span> #nav {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.75</span>);
-</span></span><span style="display:flex;"><span>  backdrop-filter: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>backdrop<span style="color:#f92672">-</span>filter);
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5">/* 导航栏 */</span>
+</span></span><span style="display:flex;"><span>#page-header.<span style="color:#ceb1ff">nav-fixed</span> #nav {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">background</span>: rgba(<span style="color:#c5a3ff">255</span>, <span style="color:#c5a3ff">255</span>, <span style="color:#c5a3ff">255</span>, <span style="color:#c5a3ff">0.75</span>);
+</span></span><span style="display:flex;"><span>  backdrop-filter: <span style="color:#ceb1ff">var</span>(<span style="color:#ffb8d1">--</span>backdrop<span style="color:#ffb8d1">-</span>filter);
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span><span style="color:#f92672">data-theme</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dark&#34;</span><span style="color:#f92672">]</span> #page-header.<span style="color:#a6e22e">nav-fixed</span> #nav {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: rgba(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.7</span>) <span style="color:#75715e">!important</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">[</span><span style="color:#ffb8d1">data-theme</span><span style="color:#ffb8d1">=</span><span style="color:#1bc5e0">&#34;dark&#34;</span><span style="color:#ffb8d1">]</span> #page-header.<span style="color:#ceb1ff">nav-fixed</span> #nav {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">background</span>: rgba(<span style="color:#c5a3ff">0</span>, <span style="color:#c5a3ff">0</span>, <span style="color:#c5a3ff">0</span>, <span style="color:#c5a3ff">0.7</span>) <span style="color:#b0bec5">!important</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/* 夜间模式遮罩 */</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span><span style="color:#f92672">data-theme</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dark&#34;</span><span style="color:#f92672">]</span> #recent-posts <span style="color:#f92672">&gt;</span> .<span style="color:#a6e22e">recent-post-item</span><span style="color:#f92672">,</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span><span style="color:#f92672">data-theme</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dark&#34;</span><span style="color:#f92672">]</span> #aside-content .<span style="color:#a6e22e">card-widget</span><span style="color:#f92672">,</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span><span style="color:#f92672">data-theme</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dark&#34;</span><span style="color:#f92672">]</span> <span style="color:#f92672">div</span>#post<span style="color:#f92672">,</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span><span style="color:#f92672">data-theme</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dark&#34;</span><span style="color:#f92672">]</span> <span style="color:#f92672">div</span>#archive<span style="color:#f92672">,</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span><span style="color:#f92672">data-theme</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dark&#34;</span><span style="color:#f92672">]</span> <span style="color:#f92672">div</span>#page {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>trans<span style="color:#f92672">-</span>dark);
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5">/* 夜间模式遮罩 */</span>
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">[</span><span style="color:#ffb8d1">data-theme</span><span style="color:#ffb8d1">=</span><span style="color:#1bc5e0">&#34;dark&#34;</span><span style="color:#ffb8d1">]</span> #recent-posts <span style="color:#ffb8d1">&gt;</span> .<span style="color:#ceb1ff">recent-post-item</span><span style="color:#ffb8d1">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">[</span><span style="color:#ffb8d1">data-theme</span><span style="color:#ffb8d1">=</span><span style="color:#1bc5e0">&#34;dark&#34;</span><span style="color:#ffb8d1">]</span> #aside-content .<span style="color:#ceb1ff">card-widget</span><span style="color:#ffb8d1">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">[</span><span style="color:#ffb8d1">data-theme</span><span style="color:#ffb8d1">=</span><span style="color:#1bc5e0">&#34;dark&#34;</span><span style="color:#ffb8d1">]</span> <span style="color:#ffb8d1">div</span>#post<span style="color:#ffb8d1">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">[</span><span style="color:#ffb8d1">data-theme</span><span style="color:#ffb8d1">=</span><span style="color:#1bc5e0">&#34;dark&#34;</span><span style="color:#ffb8d1">]</span> <span style="color:#ffb8d1">div</span>#archive<span style="color:#ffb8d1">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">[</span><span style="color:#ffb8d1">data-theme</span><span style="color:#ffb8d1">=</span><span style="color:#1bc5e0">&#34;dark&#34;</span><span style="color:#ffb8d1">]</span> <span style="color:#ffb8d1">div</span>#page {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">background</span>: <span style="color:#ceb1ff">var</span>(<span style="color:#ffb8d1">--</span>trans<span style="color:#ffb8d1">-</span>dark);
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/* 夜间模式页脚页头遮罩透明 */</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span><span style="color:#f92672">data-theme</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dark&#34;</span><span style="color:#f92672">]</span> #footer::<span style="color:#a6e22e">before</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">transparent</span> <span style="color:#75715e">!important</span>;
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5">/* 夜间模式页脚页头遮罩透明 */</span>
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">[</span><span style="color:#ffb8d1">data-theme</span><span style="color:#ffb8d1">=</span><span style="color:#1bc5e0">&#34;dark&#34;</span><span style="color:#ffb8d1">]</span> #footer::<span style="color:#ceb1ff">before</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">background</span>: <span style="color:#c2ffdf">transparent</span> <span style="color:#b0bec5">!important</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span><span style="color:#f92672">data-theme</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dark&#34;</span><span style="color:#f92672">]</span> #page-header::<span style="color:#a6e22e">before</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">transparent</span> <span style="color:#75715e">!important</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/* 阅读模式 */</span>
-</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">read-mode</span> #aside-content .<span style="color:#a6e22e">card-widget</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: rgba(<span style="color:#ae81ff">158</span>, <span style="color:#ae81ff">204</span>, <span style="color:#ae81ff">171</span>, <span style="color:#ae81ff">0.5</span>) <span style="color:#75715e">!important</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">read-mode</span> <span style="color:#f92672">div</span>#post {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: rgba(<span style="color:#ae81ff">158</span>, <span style="color:#ae81ff">204</span>, <span style="color:#ae81ff">171</span>, <span style="color:#ae81ff">0.5</span>) <span style="color:#75715e">!important</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">[</span><span style="color:#ffb8d1">data-theme</span><span style="color:#ffb8d1">=</span><span style="color:#1bc5e0">&#34;dark&#34;</span><span style="color:#ffb8d1">]</span> #page-header::<span style="color:#ceb1ff">before</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">background</span>: <span style="color:#c2ffdf">transparent</span> <span style="color:#b0bec5">!important</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">/* 夜间模式下的阅读模式 */</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span><span style="color:#f92672">data-theme</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dark&#34;</span><span style="color:#f92672">]</span> .<span style="color:#a6e22e">read-mode</span> #aside-content .<span style="color:#a6e22e">card-widget</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: rgba(<span style="color:#ae81ff">25</span>, <span style="color:#ae81ff">25</span>, <span style="color:#ae81ff">25</span>, <span style="color:#ae81ff">0.9</span>) <span style="color:#75715e">!important</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#ffffff</span>;
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5">/* 阅读模式 */</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#ceb1ff">read-mode</span> #aside-content .<span style="color:#ceb1ff">card-widget</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">background</span>: rgba(<span style="color:#c5a3ff">158</span>, <span style="color:#c5a3ff">204</span>, <span style="color:#c5a3ff">171</span>, <span style="color:#c5a3ff">0.5</span>) <span style="color:#b0bec5">!important</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span><span style="color:#f92672">data-theme</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dark&#34;</span><span style="color:#f92672">]</span> .<span style="color:#a6e22e">read-mode</span> <span style="color:#f92672">div</span>#post {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: rgba(<span style="color:#ae81ff">25</span>, <span style="color:#ae81ff">25</span>, <span style="color:#ae81ff">25</span>, <span style="color:#ae81ff">0.9</span>) <span style="color:#75715e">!important</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#ffffff</span>;
+</span></span><span style="display:flex;"><span>.<span style="color:#ceb1ff">read-mode</span> <span style="color:#ffb8d1">div</span>#post {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">background</span>: rgba(<span style="color:#c5a3ff">158</span>, <span style="color:#c5a3ff">204</span>, <span style="color:#c5a3ff">171</span>, <span style="color:#c5a3ff">0.5</span>) <span style="color:#b0bec5">!important</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5">/* 夜间模式下的阅读模式 */</span>
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">[</span><span style="color:#ffb8d1">data-theme</span><span style="color:#ffb8d1">=</span><span style="color:#1bc5e0">&#34;dark&#34;</span><span style="color:#ffb8d1">]</span> .<span style="color:#ceb1ff">read-mode</span> #aside-content .<span style="color:#ceb1ff">card-widget</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">background</span>: rgba(<span style="color:#c5a3ff">25</span>, <span style="color:#c5a3ff">25</span>, <span style="color:#c5a3ff">25</span>, <span style="color:#c5a3ff">0.9</span>) <span style="color:#b0bec5">!important</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">color</span>: <span style="color:#c5a3ff">#ffffff</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#ffb8d1">[</span><span style="color:#ffb8d1">data-theme</span><span style="color:#ffb8d1">=</span><span style="color:#1bc5e0">&#34;dark&#34;</span><span style="color:#ffb8d1">]</span> .<span style="color:#ceb1ff">read-mode</span> <span style="color:#ffb8d1">div</span>#post {
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">background</span>: rgba(<span style="color:#c5a3ff">25</span>, <span style="color:#c5a3ff">25</span>, <span style="color:#c5a3ff">25</span>, <span style="color:#c5a3ff">0.9</span>) <span style="color:#b0bec5">!important</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#c2ffdf">color</span>: <span style="color:#c5a3ff">#ffffff</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><ul>
 <li><code>--trans-light</code>：白天模式带透明度的背景色，如 <code>rgba(255, 255, 255, 0.88)</code> 底色是纯白色，其中 <code>0.88</code> 就透明度，在 <code>0-1</code> 之间调节，值越大越不透明；</li>
@@ -565,17 +565,17 @@
 
 
 <script src="https://giscus.app/client.js"
-        data-repo="username/repo"
-        data-repo-id="**************************"
-        data-category="General"
-        data-category-id="*********************"
+        data-repo="tom2almighty/giscus"
+        data-repo-id="R_kgDOMhXXdQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMhXXdc4Chgn1"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
         data-theme="preferred_color_scheme"
-        data-lang="en"
+        data-lang="zh-CN"
         crossorigin="anonymous"
         async>
 </script>
@@ -611,7 +611,7 @@
             
             
             <a class="a-block nav-link-item active" href="/posts">
-                归档 | Archive
+                归档
             </a>
             
         
@@ -621,7 +621,7 @@
             
             
             <a class="a-block nav-link-item false" href="/categories">
-                分类 | Categories
+                分类
             </a>
             
         
@@ -631,7 +631,7 @@
             
             
             <a class="a-block nav-link-item false" href="/tags">
-                标签 | Tags
+                标签
             </a>
             
         
@@ -641,7 +641,7 @@
             
             
             <a class="a-block nav-link-item false" href="/index.xml">
-                RSS Feed
+                聚合
             </a>
             
         

@@ -45,7 +45,7 @@
 
 
 
-<link rel="icon" href="http://localhost:1313/assets/favicon/favicon.ico">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -53,7 +53,7 @@
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.3ff4589617589a2f28f0f5b8d71dc2fdc6c9ee7e5a224c13c2cf0d276305ca38.css" integrity="sha256-P/RYlhdYmi8o8PW41x3C/cbJ7n5aIkwTws8NJ2MFyjg=" media="screen">
 
 
 <link rel="stylesheet"
@@ -95,7 +95,7 @@
                 
                 
                 <a class="a-block drawer-menu-item active" href="/posts">
-                    归档 | Archive
+                    归档
                 </a>
                 
             
@@ -105,7 +105,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/categories">
-                    分类 | Categories
+                    分类
                 </a>
                 
             
@@ -115,7 +115,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/tags">
-                    标签 | Tags
+                    标签
                 </a>
                 
             
@@ -125,7 +125,7 @@
                 
                 
                 <a class="a-block drawer-menu-item false" href="/index.xml">
-                    RSS Feed
+                    聚合
                 </a>
                 
             
@@ -474,96 +474,96 @@
                 <div class="post-body" v-pre>
                 
                     <h2 id="宝塔面板"><strong>宝塔面板</strong></h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># centos</span>
-</span></span><span style="display:flex;"><span>yum install -y wget <span style="color:#f92672">&amp;&amp;</span> wget -O install.sh http://download.bt.cn/install/install_6.0.sh <span style="color:#f92672">&amp;&amp;</span> sh install.sh
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># ubuntu/deepin</span>
-</span></span><span style="display:flex;"><span>wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh <span style="color:#f92672">&amp;&amp;</span> sudo bash install.sh
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># debian</span>
-</span></span><span style="display:flex;"><span>wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh <span style="color:#f92672">&amp;&amp;</span> bash install.sh
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># fedora</span>
-</span></span><span style="display:flex;"><span>wget -O install.sh http://download.bt.cn/install/install_6.0.sh <span style="color:#f92672">&amp;&amp;</span> bash install.sh
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 更新</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># centos</span>
+</span></span><span style="display:flex;"><span>yum install -y wget <span style="color:#ffb8d1">&amp;&amp;</span> wget -O install.sh http://download.bt.cn/install/install_6.0.sh <span style="color:#ffb8d1">&amp;&amp;</span> sh install.sh
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># ubuntu/deepin</span>
+</span></span><span style="display:flex;"><span>wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh <span style="color:#ffb8d1">&amp;&amp;</span> sudo bash install.sh
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># debian</span>
+</span></span><span style="display:flex;"><span>wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh <span style="color:#ffb8d1">&amp;&amp;</span> bash install.sh
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># fedora</span>
+</span></span><span style="display:flex;"><span>wget -O install.sh http://download.bt.cn/install/install_6.0.sh <span style="color:#ffb8d1">&amp;&amp;</span> bash install.sh
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 更新</span>
 </span></span><span style="display:flex;"><span>curl http://download.bt.cn/install/update6.sh|bash
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 删除登录验证(适用于 7.8.0 以前版本)</span>
-</span></span><span style="display:flex;"><span>sed -i <span style="color:#e6db74">&#34;s|if (bind_user == &#39;True&#39;) {|if (bind_user == &#39;REMOVED&#39;) {|g&#34;</span> /www/server/panel/BTPanel/static/js/index.js
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 删除登录验证(适用于 7.8.0 以前版本)</span>
+</span></span><span style="display:flex;"><span>sed -i <span style="color:#1bc5e0">&#34;s|if (bind_user == &#39;True&#39;) {|if (bind_user == &#39;REMOVED&#39;) {|g&#34;</span> /www/server/panel/BTPanel/static/js/index.js
 </span></span><span style="display:flex;"><span>rm -rf /www/server/panel/data/bind.pl
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 还原绑定</span>
-</span></span><span style="display:flex;"><span>sed -i <span style="color:#e6db74">&#34;s|if (bind_user == &#39;REMOVED&#39;) {|if (bind_user == &#39;True&#39;) {|g&#34;</span> /www/server/panel/BTPanel/static/js/index.js
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 开心版</span>
-</span></span><span style="display:flex;"><span>wget -O install.sh http://download.bt.sy/ltd/install/install-ubuntu_6.0.sh <span style="color:#f92672">&amp;&amp;</span> sudo bash install.sh
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 还原绑定</span>
+</span></span><span style="display:flex;"><span>sed -i <span style="color:#1bc5e0">&#34;s|if (bind_user == &#39;REMOVED&#39;) {|if (bind_user == &#39;True&#39;) {|g&#34;</span> /www/server/panel/BTPanel/static/js/index.js
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 开心版</span>
+</span></span><span style="display:flex;"><span>wget -O install.sh http://download.bt.sy/ltd/install/install-ubuntu_6.0.sh <span style="color:#ffb8d1">&amp;&amp;</span> sudo bash install.sh
 </span></span></code></pre></div><h2 id="bbr-加速"><strong>BBR 加速</strong></h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 国内版</span>
-</span></span><span style="display:flex;"><span>wget <span style="color:#e6db74">&#34;https://dt.yixiagege.cn/shell/TCP-CN.sh&#34;</span> <span style="color:#f92672">&amp;&amp;</span> chmod +x TCP-CN.sh <span style="color:#f92672">&amp;&amp;</span> ./TCP-CN.sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># 国内版</span>
+</span></span><span style="display:flex;"><span>wget <span style="color:#1bc5e0">&#34;https://dt.yixiagege.cn/shell/TCP-CN.sh&#34;</span> <span style="color:#ffb8d1">&amp;&amp;</span> chmod +x TCP-CN.sh <span style="color:#ffb8d1">&amp;&amp;</span> ./TCP-CN.sh
 </span></span></code></pre></div><h2 id="测速"><strong>测速</strong></h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># SuperSpeed</span>
-</span></span><span style="display:flex;"><span>bash &lt;<span style="color:#f92672">(</span>curl -Lso- https://git.io/J1SEh<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># LemonBench</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># SuperSpeed</span>
+</span></span><span style="display:flex;"><span>bash &lt;<span style="color:#ffb8d1">(</span>curl -Lso- https://git.io/J1SEh<span style="color:#ffb8d1">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># LemonBench</span>
 </span></span><span style="display:flex;"><span>curl -fsL https://ilemonra.in/LemonBenchIntl | bash -s fast
 </span></span></code></pre></div><h2 id="更改-ssh-端口"><strong>更改 SSH 端口</strong></h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 备份</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># 备份</span>
 </span></span><span style="display:flex;"><span>cp /etc/ssh/sshd_config /etc/ssh/sshd_config.backup
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 更改端口</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 更改端口</span>
 </span></span><span style="display:flex;"><span>vim /etc/ssh/sshd_config
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 重启服务</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 重启服务</span>
 </span></span><span style="display:flex;"><span>systemctl restart sshd
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置防火墙</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># firewall</span>
-</span></span><span style="display:flex;"><span>firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>xxxx/tcp
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 设置防火墙</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># firewall</span>
+</span></span><span style="display:flex;"><span>firewall-cmd --permanent --zone<span style="color:#ffb8d1">=</span>public --add-port<span style="color:#ffb8d1">=</span>xxxx/tcp
 </span></span><span style="display:flex;"><span>firewall-cmd --reload
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># iptables</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># iptables</span>
 </span></span><span style="display:flex;"><span>iptables -A INPUT -p tcp --dport xxxx -j ACCEPT
 </span></span><span style="display:flex;"><span>service iptables save
 </span></span><span style="display:flex;"><span>systemctl enable iptables
 </span></span></code></pre></div><h2 id="一键安装-file2ban"><strong>一键安装 File2Ban</strong></h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> <span style="color:#75715e"># 安装</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> <span style="color:#b0bec5"># 安装</span>
 </span></span><span style="display:flex;"><span>wget https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/fail2ban.sh
 </span></span><span style="display:flex;"><span>bash fail2ban.sh
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 卸载</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 卸载</span>
 </span></span><span style="display:flex;"><span>wget https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/uninstall.sh
 </span></span><span style="display:flex;"><span>bash uninstall.sh
 </span></span></code></pre></div><h2 id="brook-中转"><strong>Brook 中转</strong></h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -N --no-check-certificate https://zhujiget.com/wp-content/uploads/2020/brook-pf.sh <span style="color:#f92672">&amp;&amp;</span> chmod +x brook-pf.sh <span style="color:#f92672">&amp;&amp;</span> ./brook-pf.sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -N --no-check-certificate https://zhujiget.com/wp-content/uploads/2020/brook-pf.sh <span style="color:#ffb8d1">&amp;&amp;</span> chmod +x brook-pf.sh <span style="color:#ffb8d1">&amp;&amp;</span> ./brook-pf.sh
 </span></span></code></pre></div><h2 id="添加-swap-分区"><strong>添加 Swap 分区</strong></h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://www.moerats.com/usr/shell/swap.sh <span style="color:#f92672">&amp;&amp;</span> bash swap.sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://www.moerats.com/usr/shell/swap.sh <span style="color:#ffb8d1">&amp;&amp;</span> bash swap.sh
 </span></span></code></pre></div><h2 id="buyvm-挂载存储块"><strong>buyvm 挂载存储块</strong></h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 查询存储块ID</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># 查询存储块ID</span>
 </span></span><span style="display:flex;"><span>ls /dev/disk/by-id/
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 格式化硬盘</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 格式化硬盘</span>
 </span></span><span style="display:flex;"><span>mkfs.ext4 -F /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-xxxxx
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 创建挂载点</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 创建挂载点</span>
 </span></span><span style="display:flex;"><span>mkdir /mnt/pan
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 挂载硬盘</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 挂载硬盘</span>
 </span></span><span style="display:flex;"><span>mount -o discard,defaults /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-xxxxx /mnt/pan
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 开机自动挂载</span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;/dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-xxxxx /mnt/pan ext4 defaults,nofail,discard 0 0&#39;</span> | sudo tee -a /etc/fstab
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 开机自动挂载</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#1bc5e0">&#39;/dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-xxxxx /mnt/pan ext4 defaults,nofail,discard 0 0&#39;</span> | sudo tee -a /etc/fstab
 </span></span></code></pre></div><h2 id="流媒体解锁查询">流媒体解锁查询</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 原版</span>
-</span></span><span style="display:flex;"><span>bash &lt;<span style="color:#f92672">(</span>curl -L -s check.unlock.media<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 添加解锁方式查询</span>
-</span></span><span style="display:flex;"><span>bash &lt;<span style="color:#f92672">(</span>curl -L -s media.ispvps.com<span style="color:#f92672">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># 原版</span>
+</span></span><span style="display:flex;"><span>bash &lt;<span style="color:#ffb8d1">(</span>curl -L -s check.unlock.media<span style="color:#ffb8d1">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># 添加解锁方式查询</span>
+</span></span><span style="display:flex;"><span>bash &lt;<span style="color:#ffb8d1">(</span>curl -L -s media.ispvps.com<span style="color:#ffb8d1">)</span>
 </span></span></code></pre></div><h2 id="azure-使用-root-登录"><strong>Azure 使用 root 登录</strong></h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo root:你的密码 |sudo chpasswd root
-</span></span><span style="display:flex;"><span>sudo sed -i <span style="color:#e6db74">&#39;s/^.*PermitRootLogin.*/PermitRootLogin yes/g&#39;</span> /etc/ssh/sshd_config;
-</span></span><span style="display:flex;"><span>sudo sed -i <span style="color:#e6db74">&#39;s/^.*PasswordAuthentication.*/PasswordAuthentication yes/g&#39;</span> /etc/ssh/sshd_config;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo root:你的密码 |sudo chpasswd root
+</span></span><span style="display:flex;"><span>sudo sed -i <span style="color:#1bc5e0">&#39;s/^.*PermitRootLogin.*/PermitRootLogin yes/g&#39;</span> /etc/ssh/sshd_config;
+</span></span><span style="display:flex;"><span>sudo sed -i <span style="color:#1bc5e0">&#39;s/^.*PasswordAuthentication.*/PasswordAuthentication yes/g&#39;</span> /etc/ssh/sshd_config;
 </span></span><span style="display:flex;"><span>sudo service sshd restart
 </span></span></code></pre></div><h2 id="工具箱">工具箱</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 科技 Lion</span>
-</span></span><span style="display:flex;"><span>curl -sS -O https://raw.githubusercontent.com/kejilion/sh/main/kejilion.sh <span style="color:#f92672">&amp;&amp;</span> chmod +x kejilion.sh <span style="color:#f92672">&amp;&amp;</span> ./kejilion.sh
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Bluesky</span>
-</span></span><span style="display:flex;"><span>wget -O box.sh https://raw.githubusercontent.com/BlueSkyXN/SKY-BOX/main/box.sh <span style="color:#f92672">&amp;&amp;</span> chmod +x box.sh <span style="color:#f92672">&amp;&amp;</span> clear <span style="color:#f92672">&amp;&amp;</span> ./box.sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#b0bec5"># 科技 Lion</span>
+</span></span><span style="display:flex;"><span>curl -sS -O https://raw.githubusercontent.com/kejilion/sh/main/kejilion.sh <span style="color:#ffb8d1">&amp;&amp;</span> chmod +x kejilion.sh <span style="color:#ffb8d1">&amp;&amp;</span> ./kejilion.sh
+</span></span><span style="display:flex;"><span><span style="color:#b0bec5"># Bluesky</span>
+</span></span><span style="display:flex;"><span>wget -O box.sh https://raw.githubusercontent.com/BlueSkyXN/SKY-BOX/main/box.sh <span style="color:#ffb8d1">&amp;&amp;</span> chmod +x box.sh <span style="color:#ffb8d1">&amp;&amp;</span> clear <span style="color:#ffb8d1">&amp;&amp;</span> ./box.sh
 </span></span></code></pre></div><h2 id="dokcer常用命令">Dokcer常用命令</h2>
 <p><strong>Docker 安装</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -sSL https://get.docker.com | bash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -sSL https://get.docker.com | bash
 </span></span><span style="display:flex;"><span>systemctl enable docker
 </span></span><span style="display:flex;"><span>systemctl start docker
 </span></span></code></pre></div><p><strong>Docker-compose 安装</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo curl -L <span style="color:#e6db74">&#34;https://github.com/docker/compose/releases/download/1.29.1/docker-compose-</span><span style="color:#66d9ef">$(</span>uname -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">-</span><span style="color:#66d9ef">$(</span>uname -m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -o /usr/local/bin/docker-compose
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo curl -L <span style="color:#1bc5e0">&#34;https://github.com/docker/compose/releases/download/1.29.1/docker-compose-</span><span style="color:#c2ffdf">$(</span>uname -s<span style="color:#c2ffdf">)</span><span style="color:#1bc5e0">-</span><span style="color:#c2ffdf">$(</span>uname -m<span style="color:#c2ffdf">)</span><span style="color:#1bc5e0">&#34;</span> -o /usr/local/bin/docker-compose
 </span></span><span style="display:flex;"><span>sudo chmod +x /usr/local/bin/docker-compose
 </span></span></code></pre></div><p><strong>常用命令</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker ps --format <span style="color:#e6db74">&#34;table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}&#34;</span> <span style="color:#75715e"># 表格形式列出所有容器</span>
-</span></span><span style="display:flex;"><span>docker kill <span style="color:#66d9ef">$(</span>docker ps -a -q<span style="color:#66d9ef">)</span> <span style="color:#75715e"># 停用全部运行中的容器</span>
-</span></span><span style="display:flex;"><span>docker rm <span style="color:#66d9ef">$(</span>docker ps -aq<span style="color:#66d9ef">)</span>	<span style="color:#75715e"># 删除全部容器</span>
-</span></span><span style="display:flex;"><span>docker rmi <span style="color:#e6db74">`</span>docker images -q<span style="color:#e6db74">`</span> 	<span style="color:#75715e"># 删除所有镜像</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#433e56;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker ps --format <span style="color:#1bc5e0">&#34;table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}&#34;</span> <span style="color:#b0bec5"># 表格形式列出所有容器</span>
+</span></span><span style="display:flex;"><span>docker kill <span style="color:#c2ffdf">$(</span>docker ps -a -q<span style="color:#c2ffdf">)</span> <span style="color:#b0bec5"># 停用全部运行中的容器</span>
+</span></span><span style="display:flex;"><span>docker rm <span style="color:#c2ffdf">$(</span>docker ps -aq<span style="color:#c2ffdf">)</span>	<span style="color:#b0bec5"># 删除全部容器</span>
+</span></span><span style="display:flex;"><span>docker rmi <span style="color:#1bc5e0">`</span>docker images -q<span style="color:#1bc5e0">`</span> 	<span style="color:#b0bec5"># 删除所有镜像</span>
 </span></span></code></pre></div>
                     
                     <HR width="100%" id="EOF">
@@ -602,17 +602,17 @@
 
 
 <script src="https://giscus.app/client.js"
-        data-repo="username/repo"
-        data-repo-id="**************************"
-        data-category="General"
-        data-category-id="*********************"
+        data-repo="tom2almighty/giscus"
+        data-repo-id="R_kgDOMhXXdQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMhXXdc4Chgn1"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
         data-theme="preferred_color_scheme"
-        data-lang="en"
+        data-lang="zh-CN"
         crossorigin="anonymous"
         async>
 </script>
@@ -648,7 +648,7 @@
             
             
             <a class="a-block nav-link-item active" href="/posts">
-                归档 | Archive
+                归档
             </a>
             
         
@@ -658,7 +658,7 @@
             
             
             <a class="a-block nav-link-item false" href="/categories">
-                分类 | Categories
+                分类
             </a>
             
         
@@ -668,7 +668,7 @@
             
             
             <a class="a-block nav-link-item false" href="/tags">
-                标签 | Tags
+                标签
             </a>
             
         
@@ -678,7 +678,7 @@
             
             
             <a class="a-block nav-link-item false" href="/index.xml">
-                RSS Feed
+                聚合
             </a>
             
         
