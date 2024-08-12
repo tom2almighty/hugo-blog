@@ -13,7 +13,7 @@ slug: hugo-diary-modify
 
 记录 `Hugo Diary` 主题的修改。
 
-将 `/~/themes/diary/assets/scss/`目录下的`journal.scss`文件复制到站点根目录下 `~/assets/scss` 中。
+将 `~/themes/diary/assets/scss/`目录下的`journal.scss`文件复制到站点根目录下 `~/assets/scss` 中。
 
 ## Mac 风格代码块
 
@@ -40,6 +40,7 @@ slug: hugo-diary-modify
   }
 }
 ```
+
 
 `background` 值可以修改为和 `highlight` 方案同样的背景色，或者也可以将 `pre{}` 代码块下这两行代码注释取消掉：
 
