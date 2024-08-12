@@ -1,7 +1,7 @@
 ---
 title = 'Hugo Diary主题修改记录'
 date = 2024-08-12T12:07:12+08:00
-description: "Hugo Diary 主题修改记录。"
+description: Hugo Diary 主题修改记录。
 featured_image: ""
 tags: ["Hugo"]
 categories: [建站]
