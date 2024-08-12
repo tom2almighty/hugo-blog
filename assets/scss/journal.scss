@@ -1001,10 +1001,10 @@ a {
     font-size: $toc-size;
   }
   ul {
-    list-style: none;
+    list-style: decimal;
     padding: 0 0 0 20px;
     margin: 0;
-    line-height: 1.7em;
+    line-height: 2.0em;
   }
   .toc-content {
     padding: 20px;
