@@ -4,7 +4,7 @@ date = {{ .Date }}
 description: ""
 featured_image: ""
 tags: []
-categories: []
+categories:
 slug:
 
 ---
