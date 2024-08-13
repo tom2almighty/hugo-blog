@@ -140,15 +140,12 @@ code {
 }
 
 pre {
-  background: rgba(46,46,46, 1) !important;
-  color: rgba(255,255,255, 1);
+  //background: rgba(46,46,46, 1) !important;
+  //color: rgba(255,255,255, 1);
   background: rgba($color-accent, 0.07);
-  padding: 10px;
-  border-radius: 0px;
+  padding: 12px 15px;
+  border-radius: 5px;
   font-family: $mono-font-list;
-  border-top: 1px solid #474747;
-  border-left: 1px solid #474747;
-  margin-bottom: 0rem;
   * {
     background: none;
     font-family: $mono-font-list !important;
@@ -160,29 +157,30 @@ pre {
     }
   }
 }
+
 // mac风格代码块
-.highlight {
-  background: #2E2E2E;
-  border-radius: 5px;
-  //box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4);
-  padding-top: 30px;
-  padding-inline-end: 0px;
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  &::before {
-    background: #fc625d;
-    border-radius: 50%;
-    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
-    content: ' ';
-    height: 12px;
-    margin-top: -20px;
-    position: absolute;
-    width: 12px;
-    left: 12px;
-  }
-}
+// .highlight {
+//   background: #2E2E2E;
+//   border-radius: 5px;
+//   //box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4);
+//   padding-top: 30px;
+//   padding-inline-end: 0px;
+//   position: relative;
+//   display: flex;
+//   align-items: flex-start;
+//   justify-content: flex-start;
+//   &::before {
+//     background: #fc625d;
+//     border-radius: 50%;
+//     box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+//     content: ' ';
+//     height: 12px;
+//     margin-top: -20px;
+//     position: absolute;
+//     width: 12px;
+//     left: 12px;
+//   }
+// }
 
 blockquote {
   padding: 10px 20px;
