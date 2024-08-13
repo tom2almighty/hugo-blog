@@ -5,8 +5,7 @@ $front-container-background: #ffffff;
 $default-font-list: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
   "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
   "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$mono-font-list: "Cousine", "Fira Mono", Monaco, Menlo, "Source Code Pro",
-  monospace;
+$mono-font-list: "Fira Mono", "Cousine", Monaco, Menlo, "Source Code Pro", monospace;
 //$sans-preferred-font-list: "Montserrat", "Roboto", "Source Sans Pro", "Helvetica", $default-font-list;
 $sans-preferred-font-list: $default-font-list;
 
@@ -137,20 +136,22 @@ code {
   background: rgba($color-accent, 0.07);
   padding: 2px 5px;
   border-radius: 3px;
-  font-family: "Cousine";
+  font-family: $mono-font-list;
 }
 
 pre {
   background: rgba(46,46,46, 1) !important;
   color: rgba(255,255,255, 1);
   background: rgba($color-accent, 0.07);
-  padding: 12px 15px;
-  margin-bottom: 0rem;
-  border-radius: 5px;
+  padding: 10px;
+  border-radius: 0px;
   font-family: $mono-font-list;
+  border-top: 1px solid #474747;
+  border-left: 1px solid #474747;
+  margin-bottom: 0rem;
   * {
     background: none;
-    font-family: "Cousine";
+    font-family: $mono-font-list !important;
   }
   code {
     padding: 0;
