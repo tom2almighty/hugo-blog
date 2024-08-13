@@ -11,22 +11,89 @@ slug: hugo-diary-modify
 
 ## 前言
 
-记录 `Hugo Diary` 主题的修改。
+ `Hugo Diary` 主题简约美观，但是一些细节不符合自己的要求，因此稍作调整并加以记录。
+
+主题貌似没有 `custom.scss` 文件，新建文件在其中修改貌似会出现一些问题，所以直接将主题目录下的样式复制到根目录下，然后在其中做自己的修改，具体如下：
 
 将 `~/themes/diary/assets/scss/`目录下的`journal.scss`文件复制到站点根目录下 `~/assets/scss` 中。
 
-## Mac 风格代码块
+## 滚动条优化
+
+添加下面的代码：
 
 ```scss
+// 全局自定义滚动条样式
+* {
+  &::-webkit-scrollbar {
+    width: 8px; // 滚动条宽度
+    height: 8px; // 滚动条高度
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent; // 滚动条轨道背景色
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba($color-accent, 0.1); // 滚动条滑块颜色
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba($color-accent, 0.5); // 滚动条滑块悬停颜色
+  }
+}
+```
+
+> 上述代码 `background` 的值是主题内置变量强调色的值，如果要应用于其他主题，可以将对应的值修改一下。
+
+## 代码块优化
+
+### 细节调整
+
+找到 `pre{}` 部分将其中的代码替换如下：
+
+```scss
+pre {
+  background: rgba(46,46,46, 1) !important;
+  color: rgba(255,255,255, 1);
+  background: rgba($color-accent, 0.07);
+  padding: 12px 15px;
+  border-radius: 0;
+  font-family: $mono-font-list;
+  border-top: 1px solid #474747;
+  border-left: 1px solid #474747;
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 0;
+  * {
+    background: none;
+    font-family: $mono-font-list !important;
+  }
+  code {
+    padding: 0;
+    * {
+      color: inherit;
+    }
+  }
+}
+```
+### 添加 Mac 风格标志
+
+添加下面的代码：
+
+```scss
+// mac风格代码块
 .highlight {
   background: #2E2E2E;
   border-radius: 5px;
-  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.2);
   padding-top: 30px;
+  padding-inline-end: 0px;
   position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  display: block;
+  margin-bottom: 15px;
+  overflow-x: auto;
   &::before {
     background: #fc625d;
     border-radius: 50%;
@@ -41,8 +108,7 @@ slug: hugo-diary-modify
 }
 ```
 
-
-`background` 值可以修改为和 `highlight` 方案同样的背景色，或者也可以将 `pre{}` 代码块下这两行代码注释取消掉：
+`background` 值可以修改为和 `highlight` 方案同样的背景色，或者 `pre{}` 代码块下这两行代码注释取消掉：
 
 ```scss
   background: rgba(46,46,46, 1) !important;
@@ -195,7 +261,7 @@ slug: hugo-diary-modify
 {\{< douban "https://movie.douban.com/subject/35267208/">}\}
 ```
 
-
+样式预览：
 
 {{< douban "https://book.douban.com/subject/35496106/">}}
 {{< douban "https://movie.douban.com/subject/35267208/">}}
