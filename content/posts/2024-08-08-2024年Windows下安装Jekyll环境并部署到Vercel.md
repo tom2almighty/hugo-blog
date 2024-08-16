@@ -3,7 +3,8 @@ categories: 建站
 date: 2024-08-08
 description: Windows 下安装 Jekyll 环境，将博客部署到 Vercel。
 slug: jekyll
-tags: ["Jekyll"]
+tags:
+- Jekyll
 title: 2024年Windows下安装Jekyll环境并部署到Vercel
 ---
 

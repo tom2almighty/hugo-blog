@@ -15,9 +15,9 @@ title: 自建navidrome音乐服务
 最开始用网易云音乐，但很多歌曲没了版权，后来用了 `Apple Music` 学生会员，之后一直在使用 `Spotify`，体验很好，无意发现这个开源项目，因此试着体验并记录一下。
 
 本次所使用的项目：
-- [navidrome]https://github.com/navidrome/navidrome)
-- [StreamMusic]https://github.com/gitbobobo/StreamMusic)
-- [spotify-downloader]https://github.com/spotDL/spotify-downloader)
+- [navidrome](https://github.com/navidrome/navidrome)
+- [StreamMusic](https://github.com/gitbobobo/StreamMusic)
+- [spotify-downloader](https://github.com/spotDL/spotify-downloader)
 
 
 ## Navidrome 部署

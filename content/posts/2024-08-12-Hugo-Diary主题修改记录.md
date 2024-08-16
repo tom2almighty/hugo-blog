@@ -1,12 +1,12 @@
 ---
-title: 'Hugo Diary主题修改记录'
-date: 2024-08-12T12:07:12+08:00
-description: Hugo Diary 主题修改记录。
-featured_image: ""
-tags: ["Hugo"]
 categories: 建站
+date: 2024-08-12 12:07:12+08:00
+description: Hugo Diary 主题修改记录。
+featured_image: ''
 slug: hugo-diary-modify
-
+tags:
+- Hugo
+title: Hugo Diary主题修改记录
 ---
 
 ## 前言
@@ -115,6 +115,98 @@ pre {
   color: rgba(255,255,255, 1);
 ```
 
+### 添加复制按钮
+
+1. 将 `~\themes\diary\layouts\partials\copyright.html` 复制到站点根目录同名文件夹下，并在最后一行加入：
+
+```html
+<script src="{{"/js/clipboard.js" | relURL}}"></script>
+```
+
+2. 在 `~\static\js\` 文件夹下新建 `clipboard.js` 文件，写入：
+
+```js
+(function() {
+  'use strict';
+
+  if(!document.queryCommandSupported('copy')) {
+    return;
+  }
+
+  function flashCopyMessage(el, msg) {
+    el.textContent = msg;
+    setTimeout(function() {
+      el.textContent = "Copy";
+    }, 1000);
+  }
+
+  function selectText(node) {
+    var selection = window.getSelection();
+    var range = document.createRange();
+    range.selectNodeContents(node);
+    selection.removeAllRanges();
+    selection.addRange(range);
+    return selection;
+  }
+
+  function addCopyButton(containerEl) {
+    var copyBtn = document.createElement("button");
+    copyBtn.className = "highlight-copy-btn";
+    copyBtn.textContent = "Copy";
+
+    var codeEl = containerEl.firstElementChild;
+    copyBtn.addEventListener('click', function() {
+      try {
+        var selection = selectText(codeEl);
+        document.execCommand('copy');
+        selection.removeAllRanges();
+
+        flashCopyMessage(copyBtn, 'Copied!')
+      } catch(e) {
+        console && console.log(e);
+        flashCopyMessage(copyBtn, 'Failed :\'(')
+      }
+    });
+
+    containerEl.appendChild(copyBtn);
+  }
+
+  // Add copy button to code blocks
+  var highlightBlocks = document.getElementsByClassName('highlight');
+  Array.prototype.forEach.call(highlightBlocks, addCopyButton);
+})();
+```
+
+3. 在 `~/assets/scss/journal.scss` 中添加样式代码：
+
+```scss
+.highlight {
+  position: relative;
+}
+.highlight-copy-btn {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  border: 0;
+  border-radius: 4px;
+  padding: 1px;
+  font-size: 0.8em;
+  line-height: 1.8;
+  color: #fff;
+  background-color: lighten($color-accent,15%);
+  min-width: 55px;
+  text-align: center;
+}
+
+.highlight-copy-btn:hover {
+  background-color: #666;
+}
+```
+
+> 1. `copyright.html` 文件是 `diary` 主题的 `footer` 模板，如果是其他主题，请添加到 `footer.html` 中
+> 2. `journal.scss` 同样是主题的样式文件，如果是其他主题，请添加到自定义 `css` 文件中，并在主题的配置文件引入。
+> 3. 样式代码的第 `14` 行代码 `background-color: lighten($color-accent,15%);` 中，背景颜色是主题的变量强调色，如果是其他主题需要更改颜色。
+
 ## 添加豆瓣条目短代码
 
 首先将下面的代码放入 `~/layouts/shortcodes/douban.html` 中，没有就新建文件：
@@ -184,7 +276,7 @@ pre {
 .db-card-abstract,
 .db-card-comment {
   font-size: 14px;
-  overflow: hidden;
+  overflow: auto;
   max-height: 3rem;
 }
 
@@ -284,3 +376,5 @@ body.night{
 - [Hugo 豆瓣短代码](https://immmmm.com/hugo-shortcodes-douban/)
 
 - [豆瓣书影音同步 GitHub Action](https://imnerd.org/doumark.html)
+
+- [黄忠德的博客](https://huangzhongde.cn/post/2020-02-21-hugo-code-copy-to-clipboard/)

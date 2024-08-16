@@ -11,9 +11,7 @@ title: Dockge：面向堆栈的docker-compose文件管理器
 
 ## 前言
 
-目前习惯使用 `Docker` 自建应用，而 `compose` 更是十分方便，本次使用的 `dockge` 是一个精美的、易于使用的、响应式的面向堆栈的自托管 `docker-compose.yaml` 管理器，项目地址如下：
-
-[dockge](https://github.com/louislam/dockge
+目前习惯使用 `Docker` 自建应用，而 `compose` 更是十分方便，本次使用的 `dockge` 是一个精美的、易于使用的、响应式的面向堆栈的自托管 `docker-compose.yaml` 管理器，项目地址如下：[dockge](https://github.com/louislam/dockge)。
 
 项目特点如下：
 
@@ -40,5 +38,4 @@ docker-compose up -d
 ```
 
 > **注意**：如果想要更改端口以及安装文件夹，可以在官网手动下载 `docker-compose` 文件，[官网](https://dockge.kuma.pet/)可以在 `UI` 修改并直接下载。
-
 
