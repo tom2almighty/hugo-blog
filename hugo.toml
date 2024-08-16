@@ -20,12 +20,13 @@ hasCJKLanguage = true
 
 [params]
 subtitle = "Life is a Battle!"
-enableGitalk = false
-enableGiscus = true
 favicon = "/favicon.ico"
 enableReadingTime=true
 enableAutoDarkMode=true
-
+# 评论系统
+enableGitalk = false
+enableGiscus = false
+walineServer = "https://waline.grew.cc"
 # Microsoft Clarity (https://clarity.microsoft.com/) is a free user behavior recording and analytics tool
 clarity = ""
 
