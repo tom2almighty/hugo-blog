@@ -1,4 +1,55 @@
 // 自定义 scss
+// 调整正文部分的行间距
+p, li, body {
+  line-height: 1.8;  // 根据需求调整此值
+}
+
+// 表格样式美化
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5em;
+  color: #E6E6E6;  // 直接使用你指定的文本颜色
+
+  // 表头和单元格样式
+  th, td {
+      padding: 0.75em;
+      border: 1px solid lighten(#E6E6E6, 30%);  // 使用文本颜色的浅色作为边框颜色
+      text-align: left;
+      width: calc(100% / 5);  // 默认5列时的宽度，如需动态调整，可改为 JS 实现
+  }
+
+  // 表头背景和文本颜色
+  th {
+      background-color: #E24820;  // 使用强调色作为表头背景
+      color: #fff;  // 表头文本颜色为白色
+  }
+
+  // 偶数行背景颜色调整
+  tr:nth-child(even) {
+      background-color: lighten(#282828, 10%);  // 偶数行的背景颜色略亮
+  }
+}
+
+// 暗色模式下的表格样式
+body.night table {
+  color: #E6E6E6;  // 暗色模式下的文本颜色
+
+  th, td {
+      border-color: lighten(#E6E6E6, 40%);  // 使用浅化后的文本颜色作为边框
+  }
+
+  th {
+      background-color: #E24820;  // 表头使用强调色
+      color: #fff;  // 表头文本颜色为白色
+  }
+
+  tr:nth-child(even) {
+      background-color: lighten(#282828, 15%);  // 调整偶数行背景颜色
+  }
+}
+
+
 // 复制按钮
 .highlight {
     position: relative;
