@@ -1,0 +1,25 @@
+{{- $date := .Get "date" -}} {{- $title := .Get "title" -}} {{- $description := .Get "description" -}} {{- $tags := .Get "tags" -}}{{- $url := .Get "url" -}}
+
+<div class="timeline__row">
+    <div class="timeline__time">
+        <div class="timeline__time">{{ $date }}</div>
+        <div class="timeline__split-line"></div>
+    </div>
+    <div class="timeline__content">
+        <div class="timeline__tags">
+            {{- with split $tags ", " -}} {{- range . }}{{- if eq . "样式" }}
+            <span class="timeline__tag timeline__tag-style">{{ . }}</span> {{- else if eq . "文章" }}
+            <span class="timeline__tag timeline__tag-article">{{ . }}</span> {{- else if eq . "页面" }}
+            <span class="timeline__tag timeline__tag-page">{{ . }}</span> {{- else }}
+            <span class="timeline__tag">{{ . }}</span> {{- end }} {{- end }} {{- end }}
+        </div>
+        <a href="{{ $url }}">
+            <div class="timeline__title">{{ $title }}</div>
+        </a>
+        <!-- title 可点击，默认就是跳转时间轴所在页 -->
+        <div class="timeline__description">
+            {{ $description }}
+        </div>
+    </div>
+</div>
+

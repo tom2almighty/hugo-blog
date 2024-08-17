@@ -1,0 +1,40 @@
+{{ define "main" }}
+
+<div class="post-list-container post-list-container-shadow">
+  <a class="a-block">
+    <div class="post-item-wrapper post-item-wrapper-no-hover">
+      <div class="post-item post-item-no-gaps">
+        <div class="post-item-info-wrapper">
+          <div class="post-item-title post-item-title-small">
+            {{.Title}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+<!-- search.html 模板 -->
+<!-- 搜索表单组件 -->
+<form class="search-form" data-json="/index.json">
+    <input type="text" placeholder="Search..." aria-label="Search" />
+</form>
+<div class="search-result--title">Results</div>
+<ul class="search-result--list">
+    <article>
+        <a href="your-link">
+            <div class="article-details">
+                <h2 class="article-title"><a href="your-link">Article Title</a></h2>
+                <section class="article-preview">This is a preview of the content with <mark>highlighted</mark> text.</section>
+            </div>
+        </a>
+    </article>
+</ul>
+
+
+
+
+<script src="{{ "js/search.js" | relURL }}"></script>
+<script>
+    window.searchResultTitleTemplate = 'Found #PAGES_COUNT results in #TIME_SECONDS seconds';
+</script>
+
+{{ end }}

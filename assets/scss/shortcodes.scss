@@ -1,0 +1,402 @@
+// notice 短代码
+.notice {
+    position:relative;
+    padding: 1em 1em 1em 2.5em;
+    margin-bottom: 1em;
+    border-radius: 4px;
+    p:last-child {
+        margin-bottom: 0;
+    }
+    .notice-title {
+        position: absolute;
+        left: 0.8em;
+        .notice-icon {
+            width: 1.2em;
+            height: 1.2em;
+        }
+    }
+    &.notice-warning {
+        background: hsla(0, 65%, 65%, 0.15);
+        border-left: 5px solid hsl(0, 65%, 65%);
+        .notice-title {
+            color: hsl(0, 65%, 65%);
+        }
+    }
+    &.notice-info {
+        background: hsla(30, 80%, 70%, 0.15);
+        border-left: 5px solid hsl(30, 80%, 70%);
+        .notice-title {
+            color: hsl(30, 80%, 70%);
+        }
+    }
+    &.notice-note {
+        background: hsla(200, 65%, 65%, 0.15);
+        border-left: 5px solid hsl(200, 65%, 65%);
+        .notice-title {
+            color: hsl(200, 65%, 65%);
+        }
+    }
+    &.notice-tip {
+        background: hsla(140, 65%, 65%, 0.15);
+        border-left: 5px solid hsl(140, 65%, 65%);
+        .notice-title {
+            color: hsl(140, 65%, 65%);
+        }
+    }
+}
+body.night{
+    .notice {
+        &.notice-warning {
+            background: hsla(0, 25%, 25%, 0.15);
+            border-left: 5px solid hsl(0, 25%, 35%);
+            .notice-title {
+                color: hsl(0, 25%, 35%);
+            }
+        }
+        &.notice-info {
+            background: hsla(30, 25%, 35%, 0.15);
+            border-left: 5px solid hsl(30, 25%, 35%);
+            .notice-title {
+                color: hsl(30, 25%, 35%);
+            }
+        }
+        &.notice-note {
+            background: hsla(200, 25%, 35%, 0.15);
+            border-left: 5px solid hsl(200, 25%, 35%);
+            .notice-title {
+                color: hsl(200, 25%, 35%);
+            }
+        }
+        &.notice-tip {
+            background: hsla(140, 25%, 35%, 0.15);
+            border-left: 5px solid hsl(140, 25%, 35%);
+            .notice-title {
+                color: hsl(140, 25%, 35%);
+            }
+        }
+    }
+}
+
+
+// timeline
+.timeline {
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline__row {
+    display: flex;
+    padding-left: 4%;
+    height: 90px;
+}
+
+.timeline__time {
+    flex: 0 0 110px;
+    color: #030100;
+    font-size: 17px;
+    text-transform: uppercase;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.timeline__time-text {
+    margin: 0;
+}
+
+.timeline__split-line {
+    position: absolute;
+    top: 0.5rem;
+    right: -20px;
+    height: 100%;
+    width: 2px;
+    background-color: $color-accent;
+    z-index: 0;
+}
+
+.timeline__split-line:before {
+    content: "";
+    position: absolute;
+    top: 24%;
+    right: -4px;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: $color-accent;
+    box-shadow: 0 0 0 4px var(--theme);
+    border-radius: 50%;
+    border: 0px solid #84c4e2;
+    z-index: -1;
+}
+
+.timeline__content {
+    flex: 1;
+    margin-left: 4.5rem;
+    padding: 0.5rem 0 1.2rem 0;
+}
+
+.timeline__title {
+    margin: 0;
+    margin-bottom: 2px;
+    padding-top: 3px;
+    margin-left: 0.5rem;
+    color: var(--content);
+    font-family: var(--font-family-teshu);
+    font-size: 19px;
+    font-weight: 600;
+    width: fit-content;
+    display: inline-block;
+    vertical-align: middle;
+    /* 垂直居中对齐 */
+}
+
+.timeline__tags {
+    display: inline-block;
+    padding: 0;
+    margin-left: 0.3rem;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.timeline__tag {
+    display: inline-block;
+    color: var(--secondary);
+    background-color: lighten($color-accent, 25%);
+    border: 1.5px solid $color-accent;
+    border-radius: 999px;
+    padding: 0rem 0.5rem;
+    font-size: 12px;
+    white-space: nowrap;
+    line-height: 1.4rem;
+    opacity: 0.8;
+    vertical-align: middle;
+    /* 垂直居中对齐 */
+}
+
+.timeline__description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #030100;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0.5rem 0 0.4rem 1.5rem;
+    /* 添加 1.5rem 的左侧内边距 */
+}
+body.night{
+    .timeline__time, .timeline__description{
+        color: #E6E6E6;
+    }
+}
+@media screen and (max-width: 768px) {
+    .timeline__time {
+        font-size: 14px;
+        /* 在小屏幕上使用较小的字体大小 */
+    }
+    .timeline__title {
+        font-size: 16px;
+        /* 在小屏幕上使用较小的字体大小 */
+    }
+    .timeline__description {
+        font-size: 14px;
+        /* 在小屏幕上使用较小的字体大小 */
+    }
+}
+/* 为类名为 "timeline__tag-style" 的标签定义颜色 */
+
+// .timeline__tag-style {
+//     background-color: #c581da;
+//     /* 替换为你希望的颜色 */
+//     border-color: #c581da;
+//     /* 与背景色相同或不同，根据需要自定义 */
+//     color: #FFFFFF;
+//     /* 根据需要选择文本颜色 */
+// }
+// /* 为类名为 "timeline__tag-article" 的标签定义颜色 */
+
+// .timeline__tag-article {
+//     background-color: #92d392;
+//     /* 替换为你希望的颜色 */
+//     border-color: #92d392;
+//     /* 与背景色相同或不同，根据需要自定义 */
+//     color: #000000;
+//     /* 根据需要选择文本颜色 */
+// }
+// /* 为类名为 "timeline__tag-page" 的标签定义颜色 */
+
+// .timeline__tag-page {
+//     background-color: #707070;
+//     /* 替换为你希望的颜色 */
+//     border-color: #707070;
+//     /* 与背景色相同或不同，根据需要自定义 */
+//     color: #FFFFFF;
+//     /* 根据需要选择文本颜色 */
+// }
+
+
+
+// 友链
+// 头像边框颜色
+$avatar-border-color: lighten($color-accent, 25%);
+$avatar-border-color-dark: #C0C0C0;
+
+// style-card 背景色
+$friend-link-background-color: lighten($color-accent, 43%);
+$friend-link-background-color-dark: #69697141;
+
+// 友链 name 原始色
+$friend-link-color: #11a1a2;
+$friend-link-color-dark: #ffffff;
+
+// 友链 name 气泡响应对比色
+$friend-link-hover-color: #ea4e2f;
+$friend-link-hover-color-dark: rgb(241, 213, 159);
+
+// bio 简介上下文
+$context-color: #404040;
+$context-color-dark: #c0c0c0;
+
+// 友链头像及头像边框的样式
+.friend-avatar {
+    width: 56px;
+    height: 56px;
+    padding: 2px;
+    margin-top: 14px;
+    margin-left: 14px;
+    border-radius: 40px !important; 
+    border: 3.0px inset $avatar-border-color;
+
+    body.night & {
+        border: 3.6px inset $avatar-border-color-dark;
+    }
+}
+
+.friend-link-div {
+    // 实现卡片双栏排列效果
+    height: auto;
+    margin-top: auto;
+    margin-inline-start: 4.5%;
+    width: 43%;
+    display: inline-block !important;
+
+    // 控制上下连续排列的卡片之间的行距
+    margin-bottom: 11px;
+
+    // 卡片圆角
+    border-radius: 7px 7px 7px 7px;
+
+    // 卡片阴影
+    -webkit-box-shadow: 0px 14px 32px 0px rgba(231, 224, 224, 0.15);
+    -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0.7px 1px 6px 0px rgba(0, 0, 0, 0.16);
+
+    // 卡片背景色
+    background: $friend-link-background-color;
+
+    body.night & {
+        background: $friend-link-background-color-dark;
+    }
+
+    // 卡牌气泡响应动画
+    -webkit-transition: transform 0.4s ease;
+    -moz-transition: transform 0.4s ease;
+    -o-transition: transform 0.4s ease;
+    transition: transform 0.15s ease;
+
+    &:hover {
+        transform: scale(1.03);
+    }
+}
+
+
+.friend-link-avatar {
+    width: 92px;
+    float: left;
+    margin-right: 2px;
+
+}
+
+// name 特效样式， hover 气泡效果,友链 name 变色
+.friend-link-info {
+    margin-top: 13px;
+    margin-right: 18px;
+    color: $friend-link-color;
+
+    body.night & {
+        color: $friend-link-color-dark;
+    }
+
+    &:hover {
+        color: $friend-link-hover-color;
+
+        body.night & {
+            color: $friend-link-hover-color-dark;
+        }
+    }
+}
+
+// name 文字样式
+.friend-name {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-style: normal;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 16px;
+    body.night & {
+        color: $friend-link-color-dark;
+    }
+}
+
+// bio 文字样式
+.friend-bio {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: auto;
+
+    // font: 12px/1 Tahoma,Helvetica,Arial,"\5b8b\4f53",sans-serif;
+    font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+    font-size: 14px;
+
+    color: $context-color;
+
+    body.night & {
+        color: $context-color-dark;
+    }
+
+}
+
+// 响应式页面，允许根据不同的尺寸调整样式
+@media screen and (max-width: 720px) {
+    .friend-link-div {
+        width: 92%;
+        margin-right: auto;
+    }
+
+    .friend-bio {
+        margin: auto;
+        align-content: center;
+        justify-content: left;
+    }
+
+    .friend-link-avatar {
+        width: 84px;
+        margin: auto;
+    }
+
+    .friend-link-info {
+        height: 100%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+    }
+
+    .friend-name {
+        font-size: 14px;
+        font-style: normal;
+        font-family: 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+    }
+}
