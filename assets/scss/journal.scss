@@ -1008,15 +1008,10 @@ a {
     font-size: $toc-size;
   }
   ul {
-    list-style: decimal;
+    list-style: none;
     padding: 0 0 0 20px;
     margin: 0;
     line-height: 2.0em;
-    ul {
-      list-style: circle;
-      padding: 0 0 0 20px;
-      margin: 0;
-    }
   }
   .toc-content {
     padding: 20px;

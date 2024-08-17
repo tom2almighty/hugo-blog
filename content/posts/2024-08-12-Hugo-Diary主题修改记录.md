@@ -40,6 +40,49 @@ title: Hugo Diary主题修改记录
 
 
 ## 样式更改
+### 细节调整
+整体细节调整如下：
+- 正文的行间距稍微扩大
+- 优化表格显示
+- 不同目录层级使用不同的列表标记
+在 `custom.scss` 添加下面的代码：
+```scss
+// 调整正文部分的行间距
+p, li, body {
+  line-height: 1.8;  // 根据需求调整此值
+}
+// 表格优化
+table{
+  display: table;
+  width: 100%;
+  empty-cells: show;
+}
+table th{
+  border: 1px solid #eee;
+  padding: 6px 12px;
+  background-color: lighten($color-accent, 35%);
+  body.night & {
+    background-color: lighten($color-accent, 10%);
+  }
+  width: 400px;
+}
+table td{
+  border: 1px solid #eee;
+  padding: 6px 12px;
+  width: 400px;
+}
+// 不同目录层级使用不同的列表标记
+.toc ul ul {
+  list-style-type: decimal;
+}
+.toc ul ul ul {
+  list-style-type: disc;
+}
+.toc ul ul ul ul {
+  list-style-type: circle;
+}
+```
+
 ### 滚动条美化
 
 将滚动条滑块颜色改成主题强调色，并更改透明度，在 `custom.scss` 添加下面的代码：
