@@ -1,11 +1,14 @@
 ---
 title: 关于
 disableToC: true
+layout: "posts"
 ---
 
 ## 🤸‍♂️ 本人
 
-呃呃呃呃呃 
+呃呃呃呃呃
+
+本人联系方式：[邮箱](mailto:bboyc80@gmail.com)
 
 ## 🏠 本站
 
@@ -17,6 +20,7 @@ disableToC: true
 - 博客图片：[聚合图床](https://superbed.cn)
 - 评论系统：[Waline](https://waline.js.org/)
 ## ⌛ 时间线
+{{< timeline date="2024-08-17" title="页面添加" description="添加搜索页面" tags="主题" url="https://blog.grew.cc/search" >}}
 {{< timeline date="2024-08-10" title="更换主题" description="更换主题为 Diary" tags="主题" url="" >}}
 {{< timeline date="2024-08-01" title="更换框架" description="更换框架为 Hugo" tags="框架" url="" >}}
 {{< timeline date="2024-04-24" title="插件添加" description="添加外挂标签插件" tags="插件" url="https://github.com/Akilarlxh/hexo-butterfly-tag-plugins-plus" >}}
@@ -28,11 +32,3 @@ disableToC: true
 {{< timeline date="2023-04-10" title="更换框架" description="更换框架为 Hugo" tags="框架" url="" >}}
 {{< timeline date="2021-03-20" title="更换框架和主题" description="更换框架为 WordPress，主题为 Argon" tags="框架" url="" >}}
 {{< timeline date="2020-09-10" title="博客上线" description="博客上线，采用 Typecho Hansome 主题" tags="上线" url="" >}}
-
-
-
-| 测试 | 测试 | 测试 |
-| :--: | ---- | ---- |
-|  1   | 1    | 1    |
-|  1   | 1    | 1    |
-|  1   | 1    | 1    |
