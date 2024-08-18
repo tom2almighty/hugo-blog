@@ -2,10 +2,8 @@ $color-accent: #E24820;
 $back-container-background: #fcfcfc;
 $front-container-background: #ffffff;
 
-$default-font-list: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-  "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$mono-font-list: "Segoe UI", "Fira Mono", "Cousine", Monaco, Menlo, "Source Code Pro", monospace;
+$default-font-list: -apple-system, BlinkMacSystemFont, "LXGW WenKai Screen","Segoe UI", Roboto, "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$mono-font-list: "LXGW WenKai Screen", "Segoe UI", "Fira Mono", "Cousine", Monaco, Menlo, "Source Code Pro", monospace;
 //$sans-preferred-font-list: "Montserrat", "Roboto", "Source Sans Pro", "Helvetica", $default-font-list;
 $sans-preferred-font-list: $default-font-list;
 

@@ -290,3 +290,12 @@ input{
   margin-bottom: 16px;
   color: #555;
 }
+// 移动端字体缩小
+@media screen and (max-width: 768px) {
+  .article-title {
+    font-size: 1.25rem;
+  }
+  .article-preview {
+    font-size: 0.875rem;
+  }
+}
