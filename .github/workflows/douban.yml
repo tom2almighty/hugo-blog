@@ -9,6 +9,8 @@ jobs:
   douban:
     name: Douban mark data sync
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
     steps:
     - name: Checkout
       uses: actions/checkout@v2
