@@ -1,6 +1,7 @@
 {{ $dbUrl := .Get 0 }}
-{{ $dbApiUrl := "https://neodb.social/api/catalog/fetch?url=" }}
-{{ $dbFetch := getJSON $dbApiUrl $dbUrl }}
+{{ $dbApiUrl := printf "https://neodb.social/api/catalog/fetch?url=%s" $dbUrl }}
+
+{{ $dbFetch := (resources.GetRemote $dbApiUrl) | transform.Unmarshal }}
 
 {{ if $dbFetch }}
     {{ $itemRating := 0 }}{{ with $dbFetch.rating }}{{ $itemRating = . }}{{ end }}
