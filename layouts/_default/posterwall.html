@@ -1,0 +1,70 @@
+{{ define "main" }}
+<div class="post-list-container post-list-container-shadow">
+<div class="post-item-wrapper post-item-wrapper-no-hover">
+    <div class="post-item post-item-no-gaps">
+    <div class="post-item-info-wrapper">
+        <div class="post-item-title post-item-title-small">
+        {{.Title}}
+        <div class="posterwall-description">
+            {{ .Params.description | markdownify }}
+        </div>
+        <div class="movie-wall">
+            {{ $items := getCSV "," "doubanSync/douban/movie.csv" }}
+            {{ range $idx, $item := $items }}
+                {{ if ne $idx 0 }}
+                {{ $rating := float (index $item 6) }}
+                <div class="movie-item" style="display: none;">
+                    <div class="movie-cover">
+                    <img src="{{ index $item 3 }}" alt="{{ index $item 1 }}" loading="lazy" width="200" referrer-policy="no-referrer">
+                    <div class="movie-info">
+                        <div class="movie-title"><a rel="noreferrer" href="{{ index $item 5 }}" target="_blank">{{ index $item 1 }}</a></div>
+                        <div class="movie-rating">
+                            <div class="rating">
+                                <span class="allstardark">
+                                    <span class="allstarlight" style="width:{{ mul 10 $rating }}%"></span>
+                                </span>
+                                <span class="rating_nums">{{ index $item 6 }}</span>
+                            </div>
+                        </div>
+
+
+                        <div class="movie-card">{{ index $item 12 }}</div>
+                        <div class="movie-comment">{{ index $item 9 }}</div>
+                    </div>
+                    </div>
+                </div>
+                {{ end }}
+            {{ end }}
+            </div>
+            
+            <button id="loadMore">加载更多</button>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+
+
+<script>
+  let visibleMovies = 18;
+  const movieItems = document.querySelectorAll('.movie-item');
+  const loadMoreButton = document.getElementById('loadMore');
+
+  function updateVisibility() {
+    movieItems.forEach((movie, idx) => {
+      movie.style.display = idx < visibleMovies ? 'block' : 'none';
+    });
+
+    if (visibleMovies >= movieItems.length) {
+      loadMoreButton.style.display = 'none';
+    }
+  }
+
+  loadMoreButton.addEventListener('click', () => {
+    visibleMovies += 18;
+    updateVisibility();
+  });
+
+  updateVisibility();
+</script>
+{{ end }}

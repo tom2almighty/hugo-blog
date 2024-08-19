@@ -101,6 +101,11 @@ name = "🔍 搜索"
 weight = 6
 
 [[menu.main]]
+url = "/posterwall"
+name = "🎬 观影"
+weight = 7
+
+[[menu.main]]
 url = "/index.xml"
-name = "📌 聚合"
+name = "🔔 订阅"
 weight = 99

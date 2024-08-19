@@ -34,6 +34,6 @@ layout: "posts"
 {{< timeline date="2020-09-10" title="博客上线" description="博客上线，采用 Typecho Hansome 主题" tags="上线" url="" >}}
 
 ## 🎞 近期观影
-{{< movies 2 >}}
-
-{{< books 2 >}}
+{{< recent-douban type="movies" >}}
+## 📚 近期阅读
+{{< recent-douban type="books" >}}

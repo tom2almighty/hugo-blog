@@ -401,3 +401,12 @@ $context-color-dark: #c0c0c0;
     }
 }
 // 豆瓣近期观影阅读短代码
+.recent-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 15px;
+}
+.recent-items .recent-item, .recent-items .recent-item img {
+    margin-bottom: 10px;
+}
