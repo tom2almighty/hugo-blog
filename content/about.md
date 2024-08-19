@@ -10,6 +10,8 @@ layout: "posts"
 
 本人联系方式：[邮箱](mailto:bboyc80@gmail.com)
 
+订阅本站：[RSS](https://blog.grew.cc/index.xml)
+
 ## 🏠 本站
 
 - 博客框架：[Hugo](https://gohugo.io)
