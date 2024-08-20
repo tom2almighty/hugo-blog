@@ -1,5 +1,5 @@
 {{ $baseURL := .Site.Params.githubStatsBaseURL | default "https://github-readme-stats.vercel.app" }}
-{{ $theme := .Get "theme" | default "default_repocard" }}
+{{ $theme := .Get "theme" | default "noctis_minimus" }}
 <div class="ghcard">
   <a href="https://github.com/{{ .Get "username"}}/{{ .Get "repo" }}" style="transition: none;background-image: none;border-bottom: none; display: block;">
     <img align="center" src="{{ $baseURL }}/api/pin/?username={{ .Get "username" }}&amp;repo={{ .Get "repo" }}&amp;theme={{ .Get "theme" }}" alt="{{ .Get "repo" }}" style="width: 100%;" />
