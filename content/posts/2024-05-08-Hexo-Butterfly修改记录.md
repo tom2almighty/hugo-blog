@@ -2,11 +2,11 @@
 categories: 建站
 date: 2024-05-08 08:46:52
 description: Hexo Butterfly 修改记录。
-featured_image: https://image.dooo.ng/c/2024/05/08/663b66a436b41.webp
+featured_image: https://pic.imgdb.cn/item/66c434c3d9c307b7e9486462.webp
 slug: e1485cce
 tags:
-- Hexo
-- Butterfly
+  - Hexo
+  - Butterfly
 title: Hexo-Butterfly修改记录
 ---
 

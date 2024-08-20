@@ -2,11 +2,11 @@
 categories: 教程
 date: 2024-05-04 10:28:07
 description: 自建音乐服务 navidrome，搭配音流软件，优化听歌体验。
-featured_image: https://image.dooo.ng/c/2024/05/04/6635ac86b444b.webp
+featured_image: https://pic.imgdb.cn/item/66c4350ad9c307b7e948a5bb.webp
 slug: navidrome
 tags:
-- 音乐
-- Docker
+  - 音乐
+  - Docker
 title: 自建navidrome音乐服务
 ---
 

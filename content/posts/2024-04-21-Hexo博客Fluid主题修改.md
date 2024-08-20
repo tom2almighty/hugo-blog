@@ -2,11 +2,11 @@
 categories: 建站
 date: 2024-04-21
 description: Hexo 博客 Fluid 主题的修改记录。
-featured_image: https://image.dooo.ng/i/2024/04/21/66247a735f3a7.webp
+featured_image: https://pic.imgdb.cn/item/66c43646d9c307b7e94a2344.webp
 slug: fluid-modify
 tags:
-- Hexo
-- Dokcer
+  - Hexo
+  - Dokcer
 title: Hexo博客Fluid主题修改
 ---
 

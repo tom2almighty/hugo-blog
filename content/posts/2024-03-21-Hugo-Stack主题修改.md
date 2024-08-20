@@ -2,10 +2,10 @@
 categories: 建站
 date: 2024-03-21 17:13:54+08:00
 description: Stack 主题修改记录。
-featured_image: https://image.dooo.ng/i/2024/04/14/661b4ccc75308.webp
+featured_image: https://pic.imgdb.cn/item/66c436e8d9c307b7e94b3e88.webp
 slug: stack
 tags:
-- Hugo
+  - Hugo
 title: Hugo Stack主题修改
 ---
 

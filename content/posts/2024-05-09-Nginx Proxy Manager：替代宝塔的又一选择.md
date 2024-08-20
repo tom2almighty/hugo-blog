@@ -2,11 +2,11 @@
 categories: 建站
 date: 2024-05-09 12:14:50
 description: 简洁美观的反向代理面板，快速反向代理并申请证书。
-featured_image: https://image.dooo.ng/c/2024/05/09/663c62cc6cd93.webp
+featured_image: https://pic.imgdb.cn/item/66c43486d9c307b7e9482eb0.webp
 slug: npm
 tags:
-- 宝塔
-- Docker
+  - 宝塔
+  - Docker
 title: Nginx Proxy Manager：替代宝塔的又一选择
 ---
 

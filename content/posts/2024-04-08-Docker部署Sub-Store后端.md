@@ -2,12 +2,12 @@
 categories: 上网
 date: 2024-04-08 10:58:03+08:00
 description: 使用Docker部署Sub-Store，全平台管理订阅。
-featured_image: https://image.dooo.ng/i/2024/04/18/6620f113329c2.webp
+featured_image: https://pic.imgdb.cn/item/66c436aed9c307b7e94acc51.webp
 slug: sub-store
 tags:
-- Docker
-- sub-store
-- 订阅转换
+  - Docker
+  - sub-store
+  - 订阅转换
 title: Docker部署Sub-Store后端
 ---
 ## 前言

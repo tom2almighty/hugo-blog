@@ -2,10 +2,10 @@
 categories: 教程
 date: 2024-05-09 11:57:11
 description: 自建面向堆栈的 docker-compose 文件管理器。
-featured_image: https://image.dooo.ng/c/2024/05/09/663c62be7b40a.webp
+featured_image: https://pic.imgdb.cn/item/66c434acd9c307b7e9485128.webp
 slug: dockge
 tags:
-- Docker
+  - Docker
 title: Dockge：面向堆栈的docker-compose文件管理器
 ---
 

@@ -2,11 +2,11 @@
 categories: 教程
 date: 2024-05-09 16:36:57
 description: 使用 Docker 部署自己的 PDF 工具箱。
-featured_image: https://image.dooo.ng/c/2024/05/09/663c921d7a786.webp
+featured_image: https://pic.imgdb.cn/item/66c433e2d9c307b7e94744d8.webp
 slug: stirling-pdf
 tags:
-- Docker
-- PDF
+  - Docker
+  - PDF
 title: Stirling-PDF：强大的PDF工具箱
 ---
 
