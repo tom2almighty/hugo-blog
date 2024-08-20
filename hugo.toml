@@ -33,6 +33,8 @@ enableGiscus = false
 walineServer = "https://waline.grew.cc"
 # Microsoft Clarity (https://clarity.microsoft.com/) is a free user behavior recording and analytics tool
 clarity = ""
+# 自定义 GitHub Stats Card URL
+githubStatsBaseURL = "https://gh-card.grew.cc"
 
 # Twitter Card and Open Graph settings
 enableOpenGraph = true
