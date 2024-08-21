@@ -35,7 +35,7 @@ walineServer = "https://waline.grew.cc"
 clarity = ""
 # 自定义 GitHub Stats Card URL
 githubStatsBaseURL = "https://gh-card.grew.cc"
-
+fancybox = true
 # Twitter Card and Open Graph settings
 enableOpenGraph = true
 enableTwitterCards = false
