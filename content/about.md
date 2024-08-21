@@ -5,12 +5,17 @@ layout: "posts"
 ---
 
 ## 🤸‍♂️ 本人
-
-呃呃呃呃呃
+没什么好描述的。
 
 本人联系方式：[邮箱](mailto:bboyc80@gmail.com)
 
 订阅本站：[RSS](https://blog.grew.cc/index.xml)
+
+## 👦 本人链接
+{{< friend name="个人主页" url="https://www.grew.cc" avatar="https://pic.imgdb.cn/item/65ef12699f345e8d0335d08b.png" bio="个人主页" >}}
+{{< friend name="个人导航" url="https://nav.grew.cc" avatar="https://api.iowen.cn/favicon/www.grew.cc.png" bio="个人导航站" >}}
+{{< friend name="个人网盘" url="https://pan.grew.cc" avatar="https://api.iowen.cn/favicon/pan.grew.cc.png" bio="Alist 网盘" >}}
+{{< friend name="网页AI" url="https://chat.grew.cc" avatar="https://api.iowen.cn/favicon/chat.grew.cc.png" bio="NextChat 私人ChatGPT" >}}
 
 ## 🏠 本站
 
@@ -21,6 +26,7 @@ layout: "posts"
 - 博客加速：[BlogCDN](https://blog.tanglu.me/blogcdn/)
 - 博客图片：[聚合图床](https://superbed.cn)
 - 评论系统：[Waline](https://waline.js.org/)
+
 ## ⌛ 时间线
 {{< timeline date="2024-08-17" title="页面添加" description="添加搜索页面" tags="主题" url="https://blog.grew.cc/search" >}}
 {{< timeline date="2024-08-10" title="更换主题" description="更换主题为 Diary" tags="主题" url="" >}}
@@ -39,3 +45,14 @@ layout: "posts"
 {{< recent-douban type="movies" >}}
 ## 📚 近期阅读
 {{< recent-douban type="books" >}}
+
+## 👊 友链申请
+
+{{< notice notice-note >}}
+**申请格式：**
+- 名字：Tom Almighty
+- 地址： https://blog.grew.cc
+- 简介：个人博客
+- 头像： https://pic.imgdb.cn/item/65ef12699f345e8d0335d08b.png
+{{< /notice >}}
+

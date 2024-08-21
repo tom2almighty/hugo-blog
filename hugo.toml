@@ -89,20 +89,16 @@ name = "🏷 标签"
 weight = 3
 
 [[menu.main]]
-url = "/links"
-name = "🔗 链接"
-weight = 4
-[[menu.main]]
 url = "/about"
 name = "🎯 关于"
-weight = 5
+weight = 4
 
 [[menu.main]]
 url = "/search"
 name = "🔍 搜索"
-weight = 6
+weight = 5
 
 [[menu.main]]
 url = "/posterwall"
 name = "🎬 观影"
-weight = 7
+weight = 6
