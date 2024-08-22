@@ -207,8 +207,11 @@ pre {
     copyBtn.className = "highlight-copy-btn";
     copyBtn.textContent = "Copy";
 
-    var codeEl = containerEl.firstElementChild;
-    copyBtn.addEventListener('click', function() {
+    var codeEl = containerEl.querySelector('code');
+    if (!codeEl) return;
+
+    copyBtn.addEventListener('click', function(e) {
+      e.stopPropagation();  // 防止点击事件冒泡到父元素
       try {
         var selection = selectText(codeEl);
         document.execCommand('copy');
@@ -233,33 +236,34 @@ pre {
 3. 在 `~/assets/scss/custom.scss` 中添加样式代码：
 
 ```scss
+// 复制按钮
 .highlight {
   position: relative;
 }
 .highlight-copy-btn {
   position: absolute;
-  top: 3px;
-  right: 3px;
+  top: 0;
+  right: 0;
   border: 0;
-  border-radius: 4px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 0px;
   padding: 1px;
+  height: 30px;
   font-size: 0.8em;
   line-height: 1.8;
   color: #fff;
-  background-color: lighten($color-accent,15%);
-  min-width: 55px;
+  background-color: #444343;
+  min-width: 70px;
   text-align: center;
-}
-
-.highlight-copy-btn:hover {
-  background-color: #666;
+  opacity: 0;  /* 默认不可见 */
+  transition: opacity 0.3s;  /* 添加过渡效果 */
 }
 ```
 {{< notice notice-tip >}}
 以下几点需要注意：
 1. `copyright.html` 文件是 `diary` 主题的 `footer` 模板，如果是其他主题，请添加到 `footer.html` 中
 2. 样式代码的第 `14` 行代码 `background-color: lighten($color-accent,15%);` 中，背景颜色是主题的变量强调色，如果是其他主题需要更改颜色。
-  {{< /notice >}}
+    {{< /notice >}}
 
 ## 更改字体
 

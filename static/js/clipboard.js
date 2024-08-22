@@ -26,8 +26,11 @@
     copyBtn.className = "highlight-copy-btn";
     copyBtn.textContent = "Copy";
 
-    var codeEl = containerEl.firstElementChild;
-    copyBtn.addEventListener('click', function() {
+    var codeEl = containerEl.querySelector('code');
+    if (!codeEl) return;
+
+    copyBtn.addEventListener('click', function(e) {
+      e.stopPropagation();  // 防止点击事件冒泡到父元素
       try {
         var selection = selectText(codeEl);
         document.execCommand('copy');

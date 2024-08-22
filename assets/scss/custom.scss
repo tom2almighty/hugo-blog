@@ -50,26 +50,34 @@ table td{
 
 // 复制按钮
 .highlight {
-    position: relative;
-  }
-  .highlight-copy-btn {
-    position: absolute;
-    top: 3px;
-    right: 3px;
-    border: 0;
-    border-radius: 4px;
-    padding: 1px;
-    font-size: 0.8em;
-    line-height: 1.8;
-    color: #fff;
-    background-color: #666;
-    min-width: 55px;
-    text-align: center;
-  }
-  
-  .highlight-copy-btn:hover {
-    background-color: lighten($color-accent,15%);
-  }
+  position: relative;
+}
+.highlight-copy-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 0px;
+  padding: 1px;
+  height: 30px;
+  font-size: 0.8em;
+  line-height: 1.8;
+  color: #fff;
+  background-color: #444343;
+  min-width: 70px;
+  text-align: center;
+  opacity: 0;  /* 默认不可见 */
+  transition: opacity 0.3s;  /* 添加过渡效果 */
+}
+
+.highlight:hover .highlight-copy-btn {
+  opacity: 1;  /* 鼠标悬浮时可见 */
+}
+
+.highlight-copy-btn:hover {
+  background-color: lighten($color-accent,15%);
+}
   ////////////////////////////////
 /* db-card -------- start */
 .db-card {
