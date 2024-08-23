@@ -1,0 +1,12 @@
+<a class="custom-button"
+  {{ with .Get "link" }}href="{{ . }}"{{ end }}
+  {{ if eq (.Get "target") "_self" }}
+    target="_self"
+  {{ else }}
+    target="_blank" rel="noopener noreferrer"
+  {{ end }}
+  {{ with .Get "download" }}download="{{ . }}"{{ end }}
+  role="button"
+>
+  {{ .Inner }}
+</a>
