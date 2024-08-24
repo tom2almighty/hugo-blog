@@ -414,22 +414,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ## 更改字体
 
-霞鹜文楷字体显示效果不错，字体的地址如下：
+这里给出两个字体样式，一个是霞鹜文楷，一个是鸿蒙字体。
+字体的地址如下：
 
-- [GitHub 仓库](https://github.com/lxgw/LxgwWenKai)
-- [浏览器使用的 WebFont](https://github.com/chawyehsu/lxgw-wenkai-webfont)
+- [霞鹜文楷 GitHub 仓库](https://github.com/lxgw/LxgwWenKai)
+- [霞骛文楷浏览器使用的 WebFont](https://github.com/chawyehsu/lxgw-wenkai-webfont)
+- [鸿蒙字体 WebFont](https://github.com/IKKI2000/harmonyos-fonts) 
 
-首先引入字体 CSS 样式，需要在其他 CSS 样式前引用，所以直接将主题目录下的 `~/themes/diary/layouts/partials/head.html` 复制到主题根目录同名文件夹下，然后在 `<head>` 下引用，直接放到开头：
+首先引入字体 CSS 样式，需要在其他 CSS 样式前引用，所以直接将主题目录下的 `~/themes/diary/layouts/partials/head.html` 复制到主题根目录同名文件夹下，然后在 `<head>` 下引用，二选一直接放到开头：
 
 ```html
+// 霞鹜文楷
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css" />
+// 鸿蒙字体
+<link rel="stylesheet" href="https://s1.hdslb.com/bfs/static/jinkela/long/font/regular.css" />
 ```
 
-在 `journal.scss` 中更改字体设置：
+在 `journal.scss` 中更改字体设置，选择对应的字体替换：
 
 ```scss
-$default-font-list: -apple-system, BlinkMacSystemFont, "LXGW WenKai Screen","Segoe UI", Roboto, "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$mono-font-list: "LXGW WenKai Screen", "Segoe UI", "Fira Mono", "Cousine", Monaco, Menlo, "Source Code Pro", monospace;
+$default-font-list: HarmonyOS_Regular, -apple-system, BlinkMacSystemFont,"Segoe UI", Roboto, "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$default-font-list: "LXGW WenKai Screen", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 ```
 
 ## 调整首页文章列表布局
