@@ -64,10 +64,93 @@ table td{
     }
   }
 }
-// 复制按钮
+
+// 代码块折叠
 .highlight {
-  position: relative;
+  max-height: 300px; // 设置最大高度，可以根据需要调整
+  overflow-y: hidden; // 隐藏超出部分
+  transition: max-height 0.3s ease-out; // 添加过渡效果
+
+  &.expanded {
+    max-height: none; // 展开时取消最大高度限制
+  }
+
+  // 添加展开/折叠按钮样式
+  .expand-btn {
+    position: absolute;
+    bottom: 10px; // 稍微往上移动一点
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(70, 70, 70, 0.9);
+    color: #fff;
+    border: none;
+    border-radius: 20px; // 圆角按钮
+    padding: 6px 15px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      content: '▼'; // 下箭头
+      margin-right: 5px;
+      font-size: 10px;
+    }
+
+    &::after {
+      content: '展开代码';
+    }
+
+    &:hover {
+      background-color: rgba(80, 80, 80, 0.95);
+      box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &.expanded .expand-btn {
+    &::before {
+      content: '▲'; // 上箭头
+    }
+
+    &::after {
+      content: '收起代码';
+    }
+  }
+
+  &:hover .expand-btn {
+    opacity: 1;
+  }
 }
+
+// 当代码块内容超过最大高度时显示渐变效果
+.highlight:not(.expanded)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px; // 增加渐变高度
+  background: linear-gradient(to bottom, rgba(46,46,46,0), rgba(46,46,46,1));
+  pointer-events: none;
+}
+
+// 当代码块内容超过最大高度时显示渐变效果
+.highlight:not(.expanded)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: linear-gradient(to bottom, rgba(46,46,46,0), rgba(46,46,46,1));
+  pointer-events: none;
+}
+// 复制按钮
 .highlight-copy-btn {
   position: absolute;
   top: 0;
@@ -94,7 +177,7 @@ table td{
 .highlight-copy-btn:hover {
   background-color: lighten($color-accent,15%);
 }
-  ////////////////////////////////
+
 /* db-card -------- start */
 .db-card {
     margin: 2rem 3rem;

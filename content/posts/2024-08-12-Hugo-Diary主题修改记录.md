@@ -311,7 +311,158 @@ $default-font-list: -apple-system, BlinkMacSystemFont, "LXGW WenKai Screen","Seg
 $mono-font-list: "LXGW WenKai Screen", "Segoe UI", "Fira Mono", "Cousine", Monaco, Menlo, "Source Code Pro", monospace;
 ```
 
+## 调整首页文章列表布局
+将首页文章列表布局调整为卡片样式，并且根据奇偶数交错显示文章封面图，移动设备仍然将封面图显示在文章信息上方，样式参考 `Hexo Butterfly` ，在 `custom.scsss` 中添加如下代码：
+```scss
+// 首页文章列表布局调整
+.stream-container {
+  .post-list-container {
+    padding: 20px;
 
+    > * {
+      .post-item-wrapper {
+        margin: 0 auto 20px;
+        width: 95%;
+        max-width: 800px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: #fff;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .post-item {
+          margin: 0;
+          padding: 0;
+          display: flex;
+          align-items: stretch;
+          border-bottom: none;
+
+          .post-item-image-wrapper {
+            flex: 0 0 35%;
+            max-width: 280px;
+            margin: 0;
+            overflow: hidden;
+
+            .post-item-image {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              transition: transform 0.3s ease;
+            }
+          }
+
+          &:hover {
+            .post-item-image {
+              transform: scale(1.05);
+            }
+          }
+
+          .post-item-info-wrapper {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .post-item-title {
+              margin-bottom: 10px;
+              font-size: 1.3em;
+            }
+
+            .post-item-summary {
+              margin-bottom: 15px;
+              display: -webkit-box;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+            }
+          }
+        }
+      }
+
+      // 奇数项文章，图片在左边（默认情况）
+      &:nth-child(odd) {
+        .post-item-wrapper .post-item {
+          flex-direction: row;
+        }
+      }
+
+      // 偶数项文章，图片在右边
+      &:nth-child(even) {
+        .post-item-wrapper .post-item {
+          flex-direction: row-reverse;
+
+          .post-item-image-wrapper {
+            margin-left: 0;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 暗色模式调整
+body.night {
+  .stream-container {
+    .post-list-container > * {
+      .post-item-wrapper {
+        background-color: #2d2d2d;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+
+        &:hover {
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .post-item {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+// 针对移动设备的调整
+@media screen and (max-width: $single-column-max-width) {
+  .stream-container {
+    .post-list-container {
+      padding: 10px;
+
+      > * {
+        .post-item-wrapper {
+          width: 100%;
+          margin-bottom: 15px;
+
+          .post-item {
+            flex-direction: column !important; // 强制垂直布局
+
+            .post-item-image-wrapper {
+              flex: none;
+              max-width: none;
+              width: 100%;
+              height: 200px;
+              order: -1; // 确保图片始终在上方
+            }
+
+            .post-item-info-wrapper {
+              padding: 15px;
+
+              .post-item-title {
+                font-size: 1.2em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
 
 
 ## 参考
