@@ -291,6 +291,127 @@ pre {
 2. 样式代码的第 `14` 行代码 `background-color: lighten($color-accent,15%);` 中，背景颜色是主题的变量强调色，如果是其他主题需要更改颜色。
     {{< /notice >}}
 
+### 添加代码折叠功能
+给代码块添加折叠功能，首先新建 `~/static/js/codeblock.js` 文件，写入代码：
+
+```javascript
+document.addEventListener('DOMContentLoaded', function() {
+  const highlights = document.querySelectorAll('.highlight');
+  
+  highlights.forEach(highlight => {
+    const pre = highlight.querySelector('pre');
+    if (pre.offsetHeight > 300) { // 300px 是我们设置的最大高度
+      const expandBtn = document.createElement('button');
+      expandBtn.className = 'expand-btn';
+      highlight.appendChild(expandBtn);
+      
+      expandBtn.addEventListener('click', function() {
+        highlight.classList.toggle('expanded');
+      });
+    }
+  });
+});
+```
+
+{{< notice notice-info >}}
+代码中第 `6` 行可以设置代码块的最大高度
+{{< /notice >}}
+
+完成后需要引入 `js` 文件，这里添加到 `extended_head.html` 中，添加一行：
+
+```html
+<script src="{{"/js/codeblock.js" | relURL}}"></script>
+```
+
+然后在 `custom.scss` 中添加样式代码：
+```scss
+// 代码块折叠
+.highlight {
+  max-height: 300px; // 设置最大高度，可以根据需要调整
+  overflow-y: hidden; // 隐藏超出部分
+  transition: max-height 0.3s ease-out; // 添加过渡效果
+
+  &.expanded {
+    max-height: none; // 展开时取消最大高度限制
+  }
+
+  // 添加展开/折叠按钮样式
+  .expand-btn {
+    position: absolute;
+    bottom: 10px; // 稍微往上移动一点
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(70, 70, 70, 0.9);
+    color: #fff;
+    border: none;
+    border-radius: 20px; // 圆角按钮
+    padding: 6px 15px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      content: '▼'; // 下箭头
+      margin-right: 5px;
+      font-size: 10px;
+    }
+
+    &::after {
+      content: '展开代码';
+    }
+
+    &:hover {
+      background-color: rgba(80, 80, 80, 0.95);
+      box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &.expanded .expand-btn {
+    &::before {
+      content: '▲'; // 上箭头
+    }
+
+    &::after {
+      content: '收起代码';
+    }
+  }
+
+  &:hover .expand-btn {
+    opacity: 1;
+  }
+}
+
+// 当代码块内容超过最大高度时显示渐变效果
+.highlight:not(.expanded)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px; // 增加渐变高度
+  background: linear-gradient(to bottom, rgba(46,46,46,0), rgba(46,46,46,1));
+  pointer-events: none;
+}
+
+// 当代码块内容超过最大高度时显示渐变效果
+.highlight:not(.expanded)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: linear-gradient(to bottom, rgba(46,46,46,0), rgba(46,46,46,1));
+  pointer-events: none;
+}
+```
+
 ## 更改字体
 
 霞鹜文楷字体显示效果不错，字体的地址如下：
