@@ -44,6 +44,7 @@ title: Hugo Diary主题修改记录
 - 优化表格显示
 - 不同目录层级使用不同的列表标记
 在 `custom.scss` 添加下面的代码：
+
 ```scss
 // 调整正文部分的行间距
 p, li, body {
@@ -111,6 +112,31 @@ table td{
 {{< notice notice-tip >}}
 上述代码 `background` 的值是主题内置变量强调色的值，如果要应用于其他主题，可以将对应的值修改一下。
 {{< /notice >}}
+
+## 标签微调
+分类页和标签页标签微调，缩小圆角大小，更改背景色，并去除边线。
+在 `custom.scss` 中添加下面的代码：
+
+```scss
+// 标签样式更改
+.rounded-pill{
+  background: lighten($color-accent, 35%);
+  border-radius: 10px !important;
+  border: none;
+  color: #000;
+  &:hover{
+    background: lighten($color-accent, 20%);
+  }
+  body.night & {
+    background: #555;
+    color: black;
+    &:hover{
+      background: lighten($color-accent, 20%);
+    }
+  }
+}
+```
+
 ## 代码块优化
 
 ### 细节调整

@@ -47,7 +47,23 @@ table td{
 .toc ul ul ul ul {
   list-style-type: none;
 }
-
+// 标签样式更改
+.rounded-pill{
+  background: lighten($color-accent, 35%);
+  border-radius: 10px !important;
+  border: none;
+  color: #000;
+  &:hover{
+    background: lighten($color-accent, 20%);
+  }
+  body.night & {
+    background: #555;
+    color: black;
+    &:hover{
+      background: lighten($color-accent, 20%);
+    }
+  }
+}
 // 复制按钮
 .highlight {
   position: relative;
