@@ -55,3 +55,21 @@ layout: "posts"
 - 简介：个人博客
 - 头像： https://pic.imgdb.cn/item/65ef12699f345e8d0335d08b.png
 {{< /notice >}}
+
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+
+> [!TIP]
+> Helpful advice for doing things better or more easily.
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
+
+> 引用样式
+
