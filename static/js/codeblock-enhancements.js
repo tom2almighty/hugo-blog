@@ -14,27 +14,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 检测语言
     let language = '';
-    const highlightClasses = highlight.className.split(' ');
-    const languageClass = highlightClasses.find(cls => cls.startsWith('language-'));
-    if (languageClass) {
-      language = languageClass.replace('language-', '');
-    }
+    const possibleElements = [
+      highlight,
+      highlight.querySelector('code'),
+      highlight.querySelector('pre > code'),
+      highlight.querySelector('pre'),
+      highlight.querySelector('td:nth-child(2) code')
+    ];
 
-    // 如果在highlight元素中没有找到语言，尝试在其他元素中查找
-    if (!language) {
-      const possibleElements = [
-        highlight.querySelector('code'),
-        highlight.querySelector('table'),
-        highlight.querySelector('pre')
-      ];
-
-      for (const element of possibleElements) {
-        if (element && element.className) {
-          const elementLanguageClass = element.className.split(' ').find(cls => cls.startsWith('language-'));
-          if (elementLanguageClass) {
-            language = elementLanguageClass.replace('language-', '');
-            break;
-          }
+    for (const element of possibleElements) {
+      if (element && element.className) {
+        const elementLanguageClass = element.className.split(' ').find(cls => cls.startsWith('language-'));
+        if (elementLanguageClass) {
+          language = elementLanguageClass.replace('language-', '');
+          break;
         }
       }
     }

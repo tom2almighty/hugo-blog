@@ -13,9 +13,9 @@ hasCJKLanguage = true
     hl_Lines = ""
     lineNoStart = 1
     lineNos = true
-    lineNumbersInTable = true
+    lineNumbersInTable = false
     noClasses = true
-    style = "witchhazel"
+    style = "onedark"
     tabWidth = 4
 [markup.goldmark.renderer]
     unsafe = true
