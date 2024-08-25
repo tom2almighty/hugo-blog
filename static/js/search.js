@@ -146,20 +146,31 @@ Search.prototype.getData = async function () {
 
 Search.prototype.bindSearchForm = function () {
   let lastSearch = '';
-  const eventHandler = (e) => {
-      e.preventDefault();
-      const keywords = this.input.value.trim();
-      Search.updateQueryString(keywords, true);
-      if (keywords === '') {
-          lastSearch = '';
-          return this.clear();
-      }
-      if (lastSearch === keywords) return;
-      lastSearch = keywords;
-      this.doSearch(keywords.split(' '));
+  
+  const performSearch = () => {
+    const keywords = this.input.value.trim();
+    Search.updateQueryString(keywords, true);
+    if (keywords === '') {
+      lastSearch = '';
+      return this.clear();
+    }
+    if (lastSearch === keywords) return;
+    lastSearch = keywords;
+    this.doSearch(keywords.split(' '));
   };
-  this.input.addEventListener('input', eventHandler);
-  this.input.addEventListener('compositionend', eventHandler);
+
+  // 监听表单提交事件
+  this.form.addEventListener('submit', (e) => {
+    e.preventDefault(); // 阻止表单默认提交行为
+    performSearch();
+  });
+
+  // 保留原有的输入事件监听
+  const inputHandler = () => {
+    performSearch();
+  };
+  this.input.addEventListener('input', inputHandler);
+  this.input.addEventListener('compositionend', inputHandler);
 };
 
 Search.prototype.clear = function () {
