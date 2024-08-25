@@ -22,10 +22,11 @@ title: Hugo Diary主题修改记录
  - 表格显示优化
  - 目录优化
  - 滚动条美化
- - 代码块背景色修改
- - 代码块添加 Mac 红绿灯色块
+ - 代码块添加 `Mac` 红绿灯色块
  - 代码块添加复制按钮
+ - 代码块添加语言显示
  - 字体修改
+ - 首页文章列表布局调整
 
 ## 准备工作
 
@@ -43,6 +44,7 @@ title: Hugo Diary主题修改记录
 - 正文的行间距稍微扩大
 - 优化表格显示
 - 不同目录层级使用不同的列表标记
+- 目录背景色、阴影修改
 在 `custom.scss` 添加下面的代码：
 
 ```scss
@@ -69,6 +71,34 @@ table td{
   border: 1px solid #eee;
   padding: 6px 12px;
   width: 400px;
+}
+// 目录样式修改
+.toc{
+  background: #FFFFFF;
+  box-shadow:  0 2px 10px rgba(0, 0, 0, 0.1);
+}
+// 目录标题
+.toc-title {
+  font-size: large;
+    text-align: left;
+    font-weight: bold;
+    color: #4d1e01;
+    border-bottom: 1px solid $color-accent;
+}
+// 不同目录层级使用不同的列表标记
+.toc ul ul {
+  list-style-type: decimal;
+}
+
+.toc ul ul ul {
+  list-style-type: none;
+  padding-left: 10px;
+  margin-left: 5px;
+  border-left: 1px solid darkgrey;
+}
+
+.toc ul ul ul ul {
+  list-style-type: none;
 }
 // 不同目录层级使用不同的列表标记
 .toc ul ul {
@@ -109,6 +139,7 @@ table td{
   }
 }
 ```
+
 {{< notice notice-tip >}}
 上述代码 `background` 的值是主题内置变量强调色的值，如果要应用于其他主题，可以将对应的值修改一下。
 {{< /notice >}}
@@ -138,279 +169,268 @@ table td{
 ```
 
 ## 代码块优化
+代码块做了如下优化：
+- 右上角添加复制代码块按钮
+- 中间添加代码块语言显示
+- 左上角添加 `MAC` 红绿灯样式
+- 添加代码块折叠功能，代码块默认高度 `300px` ，超出显示按钮控制折叠展开
 
-### 细节调整
-
-```scss
-pre {
-  background: rgba(46,46,46, 1) !important;
-  color: rgba(255,255,255, 1);
-  background: rgba($color-accent, 0.07);
-  padding: 12px 15px;
-  border-radius: 0;
-  font-family: $mono-font-list;
-  border-top: 1px solid #474747;
-  border-left: 1px solid #474747;
-  width: 100%;
-  overflow-x: auto;
-  margin-bottom: 0;
-  * {
-    background: none;
-    font-family: $mono-font-list !important;
-  }
-  code {
-    padding: 0;
-    * {
-      color: inherit;
-    }
-  }
-}
-```
-### 添加 Mac 风格标志
-同样在 `custom.scss` 中添加代码：
-```scss
-// mac风格代码块
-.highlight {
-  background: #2E2E2E;
-  border-radius: 5px;
-  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.2);
-  padding-top: 30px;
-  padding-inline-end: 0px;
-  position: relative;
-  display: block;
-  margin-bottom: 15px;
-  overflow-x: auto;
-  &::before {
-    background: #fc625d;
-    border-radius: 50%;
-    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
-    content: ' ';
-    height: 12px;
-    margin-top: -20px;
-    position: absolute;
-    width: 12px;
-    left: 12px;
-  }
-}
-```
-
-### 添加复制按钮
-
-1. 将 `~\themes\diary\layouts\partials\copyright.html` 复制到站点根目录同名文件夹下，并在最后一行加入：
-
+首先在 `~/layouts/partials/extended_head.html` 中引入一个 `js` 文件：
 ```html
-<script src="{{"/js/clipboard.js" | relURL}}"></script>
+<script src="{{ "/js/codeblock-enhancements.js" | relURL }}" defer></script>
 ```
 
-2. 在 `~\static\js\` 文件夹下新建 `clipboard.js` 文件，写入：
-
-```js
-(function() {
-  'use strict';
-
-  if(!document.queryCommandSupported('copy')) {
-    return;
-  }
-
-  function flashCopyMessage(el, msg) {
-    el.textContent = msg;
-    setTimeout(function() {
-      el.textContent = "Copy";
-    }, 1000);
-  }
-
-  function selectText(node) {
-    var selection = window.getSelection();
-    var range = document.createRange();
-    range.selectNodeContents(node);
-    selection.removeAllRanges();
-    selection.addRange(range);
-    return selection;
-  }
-
-  function addCopyButton(containerEl) {
-    var copyBtn = document.createElement("button");
-    copyBtn.className = "highlight-copy-btn";
-    copyBtn.textContent = "Copy";
-
-    var codeEl = containerEl.querySelector('code');
-    if (!codeEl) return;
-
-    copyBtn.addEventListener('click', function(e) {
-      e.stopPropagation();  // 防止点击事件冒泡到父元素
-      try {
-        var selection = selectText(codeEl);
-        document.execCommand('copy');
-        selection.removeAllRanges();
-
-        flashCopyMessage(copyBtn, 'Copied!')
-      } catch(e) {
-        console && console.log(e);
-        flashCopyMessage(copyBtn, 'Failed :\'(')
-      }
-    });
-
-    containerEl.appendChild(copyBtn);
-  }
-
-  // Add copy button to code blocks
-  var highlightBlocks = document.getElementsByClassName('highlight');
-  Array.prototype.forEach.call(highlightBlocks, addCopyButton);
-})();
-```
-
-3. 在 `~/assets/scss/custom.scss` 中添加样式代码：
-
-```scss
-// 复制按钮
-.highlight {
-  position: relative;
-}
-.highlight-copy-btn {
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: 0;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 0px;
-  padding: 1px;
-  height: 30px;
-  font-size: 0.8em;
-  line-height: 1.8;
-  color: #fff;
-  background-color: #444343;
-  min-width: 70px;
-  text-align: center;
-  opacity: 0;  /* 默认不可见 */
-  transition: opacity 0.3s;  /* 添加过渡效果 */
-}
-```
-{{< notice notice-tip >}}
-以下几点需要注意：
-1. `copyright.html` 文件是 `diary` 主题的 `footer` 模板，如果是其他主题，请添加到 `footer.html` 中
-2. 样式代码的第 `14` 行代码 `background-color: lighten($color-accent,15%);` 中，背景颜色是主题的变量强调色，如果是其他主题需要更改颜色。
-    {{< /notice >}}
-
-### 添加代码折叠功能
-给代码块添加折叠功能，首先新建 `~/static/js/codeblock.js` 文件，写入代码：
-
+然后新建 `~/static/js/codeblock-enhancements.js` 文件，写入代码：
 ```javascript
 document.addEventListener('DOMContentLoaded', function() {
-  const highlights = document.querySelectorAll('.highlight');
-  
-  highlights.forEach(highlight => {
-    const pre = highlight.querySelector('pre');
-    if (pre.offsetHeight > 300) { // 300px 是我们设置的最大高度
-      const expandBtn = document.createElement('button');
-      expandBtn.className = 'expand-btn';
-      highlight.appendChild(expandBtn);
-      
-      expandBtn.addEventListener('click', function() {
+  const codeBlocks = document.querySelectorAll('.highlight');
+
+  codeBlocks.forEach(function(highlight) {
+    // 创建横条
+    const toolbar = document.createElement('div');
+    toolbar.className = 'code-toolbar';
+    highlight.insertBefore(toolbar, highlight.firstChild);
+
+    // 添加 Mac 风格圆点
+    const macDots = document.createElement('div');
+    macDots.className = 'mac-dots';
+    toolbar.appendChild(macDots);
+
+    // 检测语言
+    let language = '';
+    const possibleElements = [
+      highlight,
+      highlight.querySelector('code'),
+      highlight.querySelector('pre > code'),
+      highlight.querySelector('pre'),
+      highlight.querySelector('td:nth-child(2) code')
+    ];
+
+    for (const element of possibleElements) {
+      if (element && element.className) {
+        const elementLanguageClass = element.className.split(' ').find(cls => cls.startsWith('language-'));
+        if (elementLanguageClass) {
+          language = elementLanguageClass.replace('language-', '');
+          break;
+        }
+      }
+    }
+
+    // 添加语言显示
+    if (language) {
+      const languageDisplay = document.createElement('span');
+      languageDisplay.className = 'language-display';
+      languageDisplay.textContent = language;
+      toolbar.appendChild(languageDisplay);
+    }
+
+    // 添加复制按钮
+    const copyButton = document.createElement('button');
+    copyButton.className = 'copy-button';
+    copyButton.innerHTML = '📋';
+    copyButton.title = '复制代码';
+    toolbar.appendChild(copyButton);
+
+    copyButton.addEventListener('click', function() {
+      let codeText;
+      const table = highlight.querySelector('table');
+      if (table) {
+        // 有行号的情况
+        codeText = Array.from(table.querySelectorAll('td:last-child'))
+          .map(td => td.textContent.replace(/\n$/, ''))  // 移除每行末尾的换行符
+          .join('\n');
+      } else {
+        // 没有行号的情况
+        const pre = highlight.querySelector('pre');
+        codeText = pre.textContent;
+      }
+
+      // 移除开头和结尾的空白字符，并确保只有一个换行符
+      codeText = codeText.trim().replace(/\n+/g, '\n');
+
+      navigator.clipboard.writeText(codeText).then(function() {
+        copyButton.innerHTML = '✅';
+        setTimeout(function() {
+          copyButton.innerHTML = '📋';
+        }, 2000);
+      }, function() {
+        copyButton.innerHTML = '❌';
+      });
+    });
+
+    // 添加折叠功能
+    if (highlight.offsetHeight > 300) {
+      highlight.classList.add('collapsible');
+      const expandButton = document.createElement('button');
+      expandButton.className = 'expand-button';
+      expandButton.innerHTML = '▼';
+      highlight.appendChild(expandButton);
+
+      expandButton.addEventListener('click', function() {
         highlight.classList.toggle('expanded');
+        expandButton.innerHTML = highlight.classList.contains('expanded') ? '▲' : '▼';
       });
     }
+
+    // 调整横条宽度
+    function adjustToolbarWidth() {
+      toolbar.style.width = `${highlight.offsetWidth}px`;
+    }
+
+    // 初始调整和窗口大小变化时调整
+    adjustToolbarWidth();
+    window.addEventListener('resize', adjustToolbarWidth);
   });
 });
 ```
 
-{{< notice notice-info >}}
-代码中第 `6` 行可以设置代码块的最大高度
-{{< /notice >}}
-
-完成后需要引入 `js` 文件，这里添加到 `extended_head.html` 中，添加一行：
-
-```html
-<script src="{{"/js/codeblock.js" | relURL}}"></script>
-```
 
 然后在 `custom.scss` 中添加样式代码：
+
 ```scss
-// 代码块折叠
+// 代码块样式
 .highlight {
-  max-height: 300px; // 设置最大高度，可以根据需要调整
-  overflow-y: hidden; // 隐藏超出部分
-  transition: max-height 0.3s ease-out; // 添加过渡效果
+  position: relative;
+  margin-bottom: 1em;
+  background-color: #2d2d2d;
+  border-radius: 6px;
+  overflow: hidden;
+}
 
-  &.expanded {
-    max-height: none; // 展开时取消最大高度限制
-  }
+.code-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1e1e1e;
+  padding: 8px 16px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
 
-  // 添加展开/折叠按钮样式
-  .expand-btn {
-    position: absolute;
-    bottom: 10px; // 稍微往上移动一点
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(70, 70, 70, 0.9);
-    color: #fff;
-    border: none;
-    border-radius: 20px; // 圆角按钮
-    padding: 6px 15px;
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: bold;
-    opacity: 0;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.mac-dots {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fc625d;
+  box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+}
 
-    &::before {
-      content: '▼'; // 下箭头
-      margin-right: 5px;
-      font-size: 10px;
-    }
+.language-display {
+  font-size: 0.9em;
+  color: #a0a0a0;
+}
 
-    &::after {
-      content: '展开代码';
-    }
+.copy-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #a0a0a0;
+  padding: 0;
+  line-height: 1;
 
-    &:hover {
-      background-color: rgba(80, 80, 80, 0.95);
-      box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-    }
-  }
-
-  &.expanded .expand-btn {
-    &::before {
-      content: '▲'; // 上箭头
-    }
-
-    &::after {
-      content: '收起代码';
-    }
-  }
-
-  &:hover .expand-btn {
-    opacity: 1;
+  &:hover {
+    color: #ffffff;
   }
 }
 
-// 当代码块内容超过最大高度时显示渐变效果
-.highlight:not(.expanded)::after {
+.highlight pre {
+  margin: 0;
+  padding: 1em;
+  overflow-x: auto;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  // background: rgba(46,46,46, 1) !important;
+  // color: rgba(255,255,255, 1);
+}
+
+.collapsible pre {
+  max-height: 300px;
+  overflow-y: hidden;
+}
+
+.collapsible::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 70px; // 增加渐变高度
-  background: linear-gradient(to bottom, rgba(46,46,46,0), rgba(46,46,46,1));
+  height: 30px;
+  background: linear-gradient(to bottom, rgba(45,45,45,0), rgba(45,45,45,1));
   pointer-events: none;
 }
 
-// 当代码块内容超过最大高度时显示渐变效果
-.highlight:not(.expanded)::after {
-  content: '';
+.collapsible.expanded pre {
+  max-height: none;
+}
+
+.collapsible.expanded::after {
+  display: none;
+}
+
+.expand-button {
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50px;
-  background: linear-gradient(to bottom, rgba(46,46,46,0), rgba(46,46,46,1));
-  pointer-events: none;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2px 8px;
+  background-color: transparent;
+  border: none;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #a0a0a0;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+  }
+}
+
+// 调整 Hugo 行号样式
+.highlight table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+.highlight td {
+  padding: 0;
+}
+
+.highlight .lntd:first-child {
+  width: 10px;
+  user-select: none;
+}
+
+.highlight .lnt {
+  margin-right: 0.4em;
+  padding: 0 0.4em 0 0.4em;
+  color: #7f7f7f;
+}
+
+.highlight .ln {
+  margin-right: 0.4em;
+  padding: 0 0.4em 0 0.4em;
+}
+
+// 确保行号和代码在同一行
+.highlight .lntable {
+  display: table;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.highlight .lntd {
+  display: table-cell;
+  vertical-align: top;
 }
 ```
+
+{{< notice notice-info >}}
+`js` 代码中第 ` 78 ` 行可以设置代码块的最大高度
+{{< /notice >}}
 
 ## 更改字体
 
