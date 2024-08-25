@@ -90,7 +90,7 @@ weight = 3
 
 [[menu.main]]
 url = "/about"
-name = '<i class="iconfont icon-archive"></i> 关于'
+name = '<i class="iconfont icon-user1"></i> 关于'
 weight = 4
 
 [[menu.main]]
