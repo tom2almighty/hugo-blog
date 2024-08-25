@@ -8,8 +8,8 @@
 
 
 {{ if eq .Type "alert" }}
-  <blockquote class="custom-alert-blockquote custom-alert-{{ .AlertType }}">
-    <p class="custom-alert-heading">
+  <blockquote class="alert-blockquote alert-{{ .AlertType }}">
+    <p class="alert-heading">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
         {{ index $alertTypes .AlertType | safeHTML }}
       </svg>
@@ -24,7 +24,7 @@
 {{ end }}
 
 <style>
-.custom-alert-blockquote {
+.alert-blockquote {
   all: revert;
   border-left-width: 4px !important;
   border-left-style: solid !important;
@@ -32,75 +32,75 @@
   margin: 1rem 0 !important;
   color: inherit !important;
 }
-.custom-alert-blockquote * {
+.alert-blockquote * {
   all: revert;
   color: inherit !important;
 }
-.custom-alert-blockquote .custom-alert-heading {
+.alert-blockquote .alert-heading {
   display: flex !important;
   align-items: center !important;
   font-weight: 600 !important;
   margin-bottom: 0.5rem !important;
 }
-.custom-alert-blockquote.custom-alert-note {
+.alert-blockquote.alert-note {
   border-left-color: #0969da !important;
 }
-.custom-alert-blockquote.custom-alert-note .custom-alert-heading {
+.alert-blockquote.alert-note .alert-heading {
   color: #0969da !important;
 }
-.custom-alert-blockquote.custom-alert-tip {
+.alert-blockquote.alert-tip {
   border-left-color: #1a7f37 !important;
 }
-.custom-alert-blockquote.custom-alert-tip .custom-alert-heading {
+.alert-blockquote.alert-tip .alert-heading {
   color: #1a7f37 !important;
 }
-.custom-alert-blockquote.custom-alert-important {
+.alert-blockquote.alert-important {
   border-left-color: #8250df !important;
 }
-.custom-alert-blockquote.custom-alert-important .custom-alert-heading {
+.alert-blockquote.alert-important .alert-heading {
   color: #8250df !important;
 }
-.custom-alert-blockquote.custom-alert-warning {
+.alert-blockquote.alert-warning {
   border-left-color: #9a6700 !important;
 }
-.custom-alert-blockquote.custom-alert-warning .custom-alert-heading {
+.alert-blockquote.alert-warning .alert-heading {
   color: #9a6700 !important;
 }
-.custom-alert-blockquote.custom-alert-caution {
+.alert-blockquote.alert-caution {
   border-left-color: #cf222e !important;
 }
-.custom-alert-blockquote.custom-alert-caution .custom-alert-heading {
+.alert-blockquote.alert-caution .alert-heading {
   color: #cf222e !important;
 }
-.custom-alert-blockquote .custom-alert-heading svg {
+.alert-blockquote .alert-heading svg {
   width: 1rem !important;
   height: 1rem !important;
   margin-right: 0.5rem !important;
   fill: currentColor !important;
 }
 /* 暗黑模式适配 */
-body.night .custom-alert-blockquote {
+body.night .alert-blockquote {
   color: #c9d1d9 !important;
 }
-body.night .custom-alert-blockquote * {
+body.night .alert-blockquote * {
   color: #c9d1d9 !important;
 }
-body.night .custom-alert-blockquote.custom-alert-note .custom-alert-heading {
+body.night .alert-blockquote.alert-note .alert-heading {
   color: #58a6ff !important;
 }
-body.night .custom-alert-blockquote.custom-alert-tip .custom-alert-heading {
+body.night .alert-blockquote.alert-tip .alert-heading {
   color: #3fb950 !important;
 }
-body.night .custom-alert-blockquote.custom-alert-important .custom-alert-heading {
+body.night .alert-blockquote.alert-important .alert-heading {
   color: #a371f7 !important;
 }
-body.night .custom-alert-blockquote.custom-alert-warning .custom-alert-heading {
+body.night .alert-blockquote.alert-warning .alert-heading {
   color: #d29922 !important;
 }
-body.night .custom-alert-blockquote.custom-alert-caution .custom-alert-heading {
+body.night .alert-blockquote.alert-caution .alert-heading {
   color: #f85149 !important;
 }
-body.night .custom-alert-blockquote .custom-alert-heading svg {
+body.night .alert-blockquote .alert-heading svg {
   fill: currentColor !important;
 }
 </style>
