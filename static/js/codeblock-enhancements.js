@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 添加复制按钮
     const copyButton = document.createElement('button');
     copyButton.className = 'copy-button';
-    copyButton.innerHTML = '📋';
+    copyButton.innerHTML = '<i class="iconfont icon-copy"></i>';
     copyButton.title = '复制代码';
     toolbar.appendChild(copyButton);
 
@@ -65,12 +65,12 @@ document.addEventListener('DOMContentLoaded', function() {
       codeText = codeText.trim().replace(/\n+/g, '\n');
 
       navigator.clipboard.writeText(codeText).then(function() {
-        copyButton.innerHTML = '✅';
+        copyButton.innerHTML = '<i class="iconfont icon-chenggong"></i>';
         setTimeout(function() {
-          copyButton.innerHTML = '📋';
+          copyButton.innerHTML = '<i class="iconfont icon-copy"></i>';
         }, 2000);
       }, function() {
-        copyButton.innerHTML = '❌';
+        copyButton.innerHTML = '<i class="iconfont icon-shibai"></i>';
       });
     });
 

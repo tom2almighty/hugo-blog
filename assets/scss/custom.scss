@@ -692,3 +692,19 @@ body.night {
   display: table-cell;
   vertical-align: top;
 }
+
+// 图标样式
+.iconfont.icon-copy,.iconfont.icon-chenggong,.iconfont.icon-shibai {
+  color: #d1cccc;
+  font-size: 20px !important;
+}
+
+.iconfont {
+  font-size: 22px !important;  /* 修改图标大小 */
+  color: #333;      /* 修改图标颜色 */
+  margin-right: 5px;
+  body.night & {
+    color: #e6e6e6;
+  }
+}
+

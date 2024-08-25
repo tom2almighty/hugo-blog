@@ -75,30 +75,30 @@ theme="github-light"
 
 [[menu.main]]
 url = "/posts"
-name = "💼 归档"
+name = '<i class="iconfont icon-archive"></i> 归档'
 weight = 1
 
 [[menu.main]]
 url = "/categories"
-name = "🗂 分类"
+name = '<i class="iconfont icon-folder1"></i> 分类'
 weight = 2
 
 [[menu.main]]
 url = "/tags"
-name = "🏷 标签"
+name = '<i class="iconfont icon-24gf-tags"></i> 标签'
 weight = 3
 
 [[menu.main]]
 url = "/about"
-name = "🎯 关于"
+name = '<i class="iconfont icon-archive"></i> 关于'
 weight = 4
 
 [[menu.main]]
 url = "/search"
-name = "🔍 搜索"
+name = '<i class="iconfont icon-search1"></i> 搜索'
 weight = 5
 
 [[menu.main]]
 url = "/posterwall"
-name = "🎬 观影"
+name = '<i class="iconfont icon-movie"></i> 观影'
 weight = 6
