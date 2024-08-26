@@ -24,82 +24,103 @@
 {{ end }}
 
 <style>
-.alert-blockquote {
-  all: revert !important;
-  border-left-width: 4px !important;
-  border-left-style: solid !important;
-  padding: 0.25rem 1rem !important;
-  margin: 1rem 0 !important;
-  color: inherit !important;
-}
-.alert-blockquote * {
-  color: inherit !important;
-}
-.alert-blockquote .alert-heading {
-  display: flex !important;
-  align-items: center !important;
-  font-weight: 600 !important;
-  margin-bottom: 0.5rem !important;
-}
-.alert-blockquote.alert-note {
-  border-left-color: #0969da !important;
-}
-.alert-blockquote.alert-note .alert-heading {
-  color: #0969da !important;
-}
-.alert-blockquote.alert-tip {
-  border-left-color: #1a7f37 !important;
-}
-.alert-blockquote.alert-tip .alert-heading {
-  color: #1a7f37 !important;
-}
-.alert-blockquote.alert-important {
-  border-left-color: #8250df !important;
-}
-.alert-blockquote.alert-important .alert-heading {
-  color: #8250df !important;
-}
-.alert-blockquote.alert-warning {
-  border-left-color: #9a6700 !important;
-}
-.alert-blockquote.alert-warning .alert-heading {
-  color: #9a6700 !important;
-}
-.alert-blockquote.alert-caution {
-  border-left-color: #cf222e !important;
-}
-.alert-blockquote.alert-caution .alert-heading {
-  color: #cf222e !important;
-}
-.alert-blockquote .alert-heading svg {
-  width: 1rem !important;
-  height: 1rem !important;
-  margin-right: 0.5rem !important;
-  fill: currentColor !important;
-}
-/* 暗黑模式适配 */
-body.night .alert-blockquote {
-  color: #c9d1d9 !important;
-}
-body.night .alert-blockquote * {
-  color: #c9d1d9 !important;
-}
-body.night .alert-blockquote.alert-note .alert-heading {
-  color: #58a6ff !important;
-}
-body.night .alert-blockquote.alert-tip .alert-heading {
-  color: #3fb950 !important;
-}
-body.night .alert-blockquote.alert-important .alert-heading {
-  color: #a371f7 !important;
-}
-body.night .alert-blockquote.alert-warning .alert-heading {
-  color: #d29922 !important;
-}
-body.night .alert-blockquote.alert-caution .alert-heading {
-  color: #f85149 !important;
-}
-body.night .alert-blockquote .alert-heading svg {
-  fill: currentColor !important;
-}
-</style>
+  .alert-blockquote {
+    --title-color: #fff;
+    --content-color: inherit;
+    padding: 18px;
+    line-height: 24px;
+    margin: 1rem 0;
+    border-radius: 4px;
+    color: var(--content-color);
+    border-left: none !important;
+  }
+  
+  .alert-blockquote * {
+    color: var(--content-color) !important;
+  }
+  
+  .alert-blockquote .alert-heading {
+    margin: -18px -18px 12px;
+    padding: 4px 18px;
+    border-radius: 4px 4px 0 0;
+    font-weight: 600;
+    color: var(--title-color) !important;
+    display: flex;
+    align-items: center;
+  }
+  
+  .alert-blockquote .alert-heading svg {
+    width: 1em !important;
+    height: 1em !important;
+    margin-right: 0.5rem !important;
+    fill: currentColor !important;
+  }
+  
+  .alert-blockquote p:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Light theme */
+  .alert-blockquote.alert-note {
+    --title-background-color: #166dd0;
+    --content-background-color: #e7f2fa;
+  }
+  
+  .alert-blockquote.alert-tip {
+    --title-background-color: #1a7f37;
+    --content-background-color: #efe;
+  }
+  
+  .alert-blockquote.alert-important {
+    --title-background-color: #8250df;
+    --content-background-color: #f5f0ff;
+  }
+  
+  .alert-blockquote.alert-warning {
+    --title-background-color: #9a6700;
+    --content-background-color: #fff8c5;
+  }
+  
+  .alert-blockquote.alert-caution {
+    --title-background-color: #cf222e;
+    --content-background-color: #ffebe9;
+  }
+  
+  /* Dark theme */
+  body.night .alert-blockquote {
+    --content-color: #d0d7dd;
+  }
+  
+  body.night .alert-blockquote.alert-note {
+    --title-background-color: #58a6ff;
+    --content-background-color: #0d1d30;
+  }
+  
+  body.night .alert-blockquote.alert-tip {
+    --title-background-color: #3fb950;
+    --content-background-color: #0f2a1b;
+  }
+  
+  body.night .alert-blockquote.alert-important {
+    --title-background-color: #a371f7;
+    --content-background-color: #2a1d3f;
+  }
+  
+  body.night .alert-blockquote.alert-warning {
+    --title-background-color: #d29922;
+    --content-background-color: #3b2300;
+  }
+  
+  body.night .alert-blockquote.alert-caution {
+    --title-background-color: #f85149;
+    --content-background-color: #3d0c0c;
+  }
+  
+  .alert-blockquote .alert-heading {
+    background: var(--title-background-color);
+  }
+  
+  .alert-blockquote {
+    background: var(--content-background-color);
+  }
+  </style>

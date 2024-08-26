@@ -52,6 +52,111 @@ slug: hugo-alert-blockquote
 然后可以在 `custom.scss` 中添加样式代码，可以直接写到模板中用 `<style>` 和 `</style>` 包裹：
 
 ```scss
+<style>
+.alert-blockquote {
+  --title-color: #fff;
+  --content-color: inherit;
+  padding: 18px;
+  line-height: 24px;
+  margin: 1rem 0;
+  border-radius: 4px;
+  color: var(--content-color);
+  border-left: none !important;
+}
+
+.alert-blockquote * {
+  color: var(--content-color) !important;
+}
+
+.alert-blockquote .alert-heading {
+  margin: -18px -18px 12px;
+  padding: 4px 18px;
+  border-radius: 4px 4px 0 0;
+  font-weight: 600;
+  color: var(--title-color) !important;
+  display: flex;
+  align-items: center;
+}
+
+.alert-blockquote .alert-heading svg {
+  width: 1em !important;
+  height: 1em !important;
+  margin-right: 0.5rem !important;
+  fill: currentColor !important;
+}
+
+.alert-blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Light theme */
+.alert-blockquote.alert-note {
+  --title-background-color: #166dd0;
+  --content-background-color: #e7f2fa;
+}
+
+.alert-blockquote.alert-tip {
+  --title-background-color: #1a7f37;
+  --content-background-color: #efe;
+}
+
+.alert-blockquote.alert-important {
+  --title-background-color: #8250df;
+  --content-background-color: #f5f0ff;
+}
+
+.alert-blockquote.alert-warning {
+  --title-background-color: #9a6700;
+  --content-background-color: #fff8c5;
+}
+
+.alert-blockquote.alert-caution {
+  --title-background-color: #cf222e;
+  --content-background-color: #ffebe9;
+}
+
+/* Dark theme */
+body.night .alert-blockquote {
+  --content-color: #d0d7dd;
+}
+
+body.night .alert-blockquote.alert-note {
+  --title-background-color: #58a6ff;
+  --content-background-color: #0d1d30;
+}
+
+body.night .alert-blockquote.alert-tip {
+  --title-background-color: #3fb950;
+  --content-background-color: #0f2a1b;
+}
+
+body.night .alert-blockquote.alert-important {
+  --title-background-color: #a371f7;
+  --content-background-color: #2a1d3f;
+}
+
+body.night .alert-blockquote.alert-warning {
+  --title-background-color: #d29922;
+  --content-background-color: #3b2300;
+}
+
+body.night .alert-blockquote.alert-caution {
+  --title-background-color: #f85149;
+  --content-background-color: #3d0c0c;
+}
+
+.alert-blockquote .alert-heading {
+  background: var(--title-background-color);
+}
+
+.alert-blockquote {
+  background: var(--content-background-color);
+}
+</style>
+```
+
+我的样式是根据 `Hugo-notice`  的样式而来，如果想使用 `GitHub ` 风格，可以替换样式代码：
+```scss
 .alert-blockquote {
   all: revert !important;
   border-left-width: 4px !important;
@@ -144,7 +249,7 @@ body.night .alert-blockquote .alert-heading svg {
 - id: important
   translation: '重要'
 - id: note
-  translation: '注意'
+  translation: '注释'
 - id: tip
   translation: '提示'
 - id: warning
