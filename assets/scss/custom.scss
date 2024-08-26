@@ -1,4 +1,7 @@
 // 自定义 scss
+body, .stream-container .post-list-container {
+  background: #FCFAF3;
+}
 // 调整正文部分的行间距
 p, li, body {
   line-height: 1.8;  // 根据需求调整此值
@@ -425,7 +428,7 @@ input{
         overflow: hidden;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        background-color: #fff;
+        //background-color: #fff;
 
         &:hover {
           transform: translateY(-5px);
