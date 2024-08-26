@@ -36,3 +36,5 @@
   translation: Tip
 - id: warning
   translation: Warning
+- id: info
+  translation: Info
