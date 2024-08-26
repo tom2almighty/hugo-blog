@@ -2,6 +2,13 @@
 // 调整正文部分的行间距
 p, li, body {
   line-height: 1.8;  // 根据需求调整此值
+  font-size: large;
+}
+// 行内代码
+code{
+  padding: 6px;
+  border-radius: 6px;
+  font-size: .875rem;
 }
 // 表格优化
 table{
