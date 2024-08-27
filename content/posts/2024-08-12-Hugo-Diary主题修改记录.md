@@ -9,10 +9,6 @@ tags:
 title: Hugo Diary主题修改记录
 ---
 
-
-
-
-
 <!--more-->
 
 ## 前言
@@ -610,8 +606,69 @@ body.night {
 }
 ```
 
+## 网站访问量
+主题自带了谷歌分析和微软的 `Clarity`，但是还是推荐使用其他的服务。这里可以使用 `Umami` ，后台能看到访问的详细记录，搭建方法可以参考访问[之前的文章](https://blog.grew.cc/umami/)。
+前台的展示可以使用不蒜子计数。
+### Umami
+首先在 `~/layouts\partials\extended_head.html` 中添加 `js` 引入：
+```html
+{{ if .Site.Params.umami -}}
+<script 
+    defer 
+    src="https://umami.grew.cc/myscript" 
+    data-website-id="b2daf838-b6d4-4783-a157-e2fbe0cc225d"
+    data-domains="blog.grew.cc"
+></script>
+{{- end }}
+```
 
+>[!NOTE]
+>	上述参数可以直接复制 `umami` 的跟踪代码，可以加一行 `data-domains` ，设置成自己的域名，这样可以防止本地调试时的访问被统计进去。
+
+最后在站点配置文件中 `[params]` 下加入配置开关，注意配置格式
+```toml
+umami = true
+```
+
+### 不蒜子
+这个前台展示可以使用杜老师说建的 `API`，提高国内访问速度，访问地址：[杜老师说自建国内不蒜子 API](https://bsz.dusays.com/)
+
+首先在 `~/layouts\partials\extended_head.html` 中添加 `js` 引入：
+```html
+{{/*  busuanzi统计  */}}
+{{ if .Site.Params.busuanzi -}}
+<script async src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js"></script>
+{{- end }}
+```
+
+然后在页脚添加本站访问量，在文章详情页添加本文访问量，`Diary` 主题页脚是 `copyright.html`
+
+将主题目录下的 `copyright.html` 和 `single.html` 复制到站点相同路径下，然后在 `copyright.html` 中添加：
+
+```html
+{{ if .Site.Params.busuanzi -}}
+<br>
+<span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>&nbsp;
+<span id="busuanzi_container_site_pv">本站总访客数 <span id="busuanzi_value_site_uv"></span> 人</span>
+{{- end }}
+```
+
+在 `single.html` 中 `59` 行，阅读时间配置后面添加：
+
+```html
+{{ if .Site.Params.busuanzi -}}
+<br>
+<span id="busuanzi_container_page_pv">本文阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>&nbsp;
+<span id="busuanzi_container_page_pv">本文访客数 <span id="busuanzi_value_page_uv"></span> 人</span>
+{{- end }}
+```
+
+最后在站点配置文件中 `[params]` 下添加开关，同 `umami` 一样：
+```toml
+busuanzi = true
+```
 ## 参考
 
 
 - [黄忠德的博客](https://huangzhongde.cn/post/2020-02-21-hugo-code-copy-to-clipboard/)
+- [使用Github Pages+Hugo+PaperMod搭建博客](https://www.elegantcrazy.com/posts/blog/build-blog-with-github-pages-hugo-and-papermod/#%E6%B7%BB%E5%8A%A0%E8%AE%BF%E9%97%AE%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD)

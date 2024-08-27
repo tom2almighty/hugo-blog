@@ -1,16 +1,31 @@
 <!-- Add your custom scripts/links/tags here that should go in the <head> section -->
+{{/*  自定义图标  */}}
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_4517171_nm8rvxbdbc.css">
+{{/*  代码块功能增强  */}}
+<script src="{{ "/js/codeblock-enhancements.js" | relURL }}" defer></script>
+
+{{/*  umami统计  */}}
+{{ if .Site.Params.umami -}}
 <script 
     defer 
     src="https://umami.grew.cc/myscript" 
     data-website-id="b2daf838-b6d4-4783-a157-e2fbe0cc225d"
     data-domains="blog.grew.cc"
 ></script>
+{{- end }}
 
+{{/*  busuanzi统计  */}}
+{{ if .Site.Params.busuanzi -}}
+<script async src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js"></script>
+{{- end }}
+
+{{/*  图片点击放大  */}}
 {{if .Page.Site.Params.fancybox }}
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 {{ end }}
 
-<link rel="stylesheet" href="//at.alicdn.com/t/c/font_4517171_nm8rvxbdbc.css">
-<script src="{{ "/js/codeblock-enhancements.js" | relURL }}" defer></script>
+
+
+
