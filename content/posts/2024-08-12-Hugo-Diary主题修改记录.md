@@ -24,6 +24,11 @@ title: Hugo Diary主题修改记录
  - 字体修改
  - 首页文章列表布局调整
 
+最终效果如下：
+
+![desktop](https://pic.imgdb.cn/item/66cdd2a2d9c307b7e9368bbe.webp)
+
+![mobile](https://pic.imgdb.cn/item/66cdd2a3d9c307b7e9368c84.webp)
 ## 准备工作
 
 主题没有 `custom.scss` 文件，自定义方式可以将 `~/themes/diary/assets/scss/journal.scss` 文件复制到站点根目录下 `~/assets/scss` 中，在其中直接更改，也可以复制后，在末尾添加 `custom.scss` 引用，然后在自定义文件中修改，这里采用第二种方式，文中 `~` 均代表博客根目录。
@@ -41,9 +46,14 @@ title: Hugo Diary主题修改记录
 - 优化表格显示
 - 不同目录层级使用不同的列表标记
 - 目录背景色、阴影修改
+- 主页背景色修改
 在 `custom.scss` 添加下面的代码：
 
 ```scss
+// 主页背景色修改
+body, .stream-container .post-list-container {
+  background: #FCFAF3;
+}
 // 调整正文部分的行间距
 p, li, body {
   line-height: 1.8;  // 根据需求调整此值
@@ -430,12 +440,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ## 更改字体
 
-这里给出两个字体样式，一个是霞鹜文楷，一个是鸿蒙字体。
-字体的地址如下：
+这里给出两个中文字体样式，一个是霞鹜文楷，一个是鸿蒙字体，英文字体使用 `Nunito`。英文字体的修改可以找一个不带中文的，然后第一个字体设置为英文字体，第二个设置为中文，字体的地址如下：
 
 - [霞鹜文楷 GitHub 仓库](https://github.com/lxgw/LxgwWenKai)
 - [霞骛文楷浏览器使用的 WebFont](https://github.com/chawyehsu/lxgw-wenkai-webfont)
 - [鸿蒙字体 WebFont](https://github.com/IKKI2000/harmonyos-fonts) 
+- [Nunoti](https://fonts.google.com/specimen/Nunito)
 
 首先引入字体 CSS 样式，需要在其他 CSS 样式前引用，所以直接将主题目录下的 `~/themes/diary/layouts/partials/head.html` 复制到主题根目录同名文件夹下，然后在 `<head>` 下引用，二选一直接放到开头：
 
@@ -444,13 +454,17 @@ document.addEventListener('DOMContentLoaded', function() {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css" />
 // 鸿蒙字体
 <link rel="stylesheet" href="https://s1.hdslb.com/bfs/static/jinkela/long/font/regular.css" />
+// Nunoti
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 ```
 
 在 `journal.scss` 中更改字体设置，选择对应的字体替换：
 
 ```scss
-$default-font-list: HarmonyOS_Regular, -apple-system, BlinkMacSystemFont,"Segoe UI", Roboto, "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$default-font-list: "LXGW WenKai Screen", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$default-font-list: Nunoti, HarmonyOS_Regular, -apple-system, BlinkMacSystemFont,"Segoe UI", Roboto, "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$default-font-list: Nunoti, "LXGW WenKai Screen", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 ```
 
 ## 调整首页文章列表布局
