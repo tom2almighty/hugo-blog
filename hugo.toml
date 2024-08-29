@@ -38,8 +38,8 @@ clarity = ""
 # 自定义 GitHub Stats Card URL
 githubStatsBaseURL = "https://gh-card.grew.cc"
 fancybox = true
-umami = true
-busuanzi = true
+umami = false
+busuanzi = false
 
 
 
