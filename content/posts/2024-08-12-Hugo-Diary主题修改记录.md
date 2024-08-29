@@ -2,10 +2,10 @@
 categories: 建站
 date: 2024-08-12 12:07:12+08:00
 description: Hugo Diary 主题修改记录。
-featured_image: ''
+featured_image: https://pic.imgdb.cn/item/66cfc921d9c307b7e955ff0d.jpg
 slug: hugo-diary-modify
 tags:
-- Hugo
+  - Hugo
 title: Hugo Diary主题修改记录
 ---
 
