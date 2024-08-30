@@ -1,4 +1,4 @@
-baseURL = "https://tom2almighty.github.io"
+baseURL = "https://tom2almighty.github.io/hugo-blog-diary"
 DefaultContentLanguage = "zh" # Theme's display language, supports: en, fr, zh, zh-hant
 languageCode = "zh"
 title = "Tom's Blog"
